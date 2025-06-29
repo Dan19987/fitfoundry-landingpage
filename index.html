@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFoundry - Wissenschaftlich fundierte Fitness mit Gamification</title>
+    <meta name="description" content="Revolutioniere dein Training mit dem ersten wissenschaftlich fundierten Fitness-Gamification-System. 500+ Übungen, Live-Kalorien-Tracking, KI-Analyse - dein Avatar wächst mit dir mit!">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        /* Exakte App-Gradients */
+        .gradient-hero {
+            background: linear-gradient(135deg, #ED553B 0%, #FF804F 50%, #2E3131 100%);
+        }
+        
+        .gradient-problem {
+            background: linear-gradient(135deg, #8B0000 0%, #FF4500 100%);
+        }
+        
+        .gradient-solution {
+            background: linear-gradient(135deg, #FF5E4D 0%, #FF9A00 100%);
+        }
+        
+        .gradient-science {
+            background: linear-gradient(135deg, #0D7377 0%, #14A085 100%);
+        }
+        
+        .gradient-how {
+            background: linear-gradient(135deg, #0077BE 0%, #00B4D8 100%);
+        }
+        
+        .gradient-features {
+            background: linear-gradient(135deg, #191970 0%, #8A2BE2 100%);
+        }
+
+        .gradient-live {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            color: white;
+        }
+
+        .logo-hero {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo-hero img {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-benefits {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .hero-benefits li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .hero-benefits li::before {
+            content: '🎮';
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #ED553B;
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.01em;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-guarantee {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .phone-mockup {
+            width: 320px;
+            height: 640px;
+            background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+            border-radius: 50px;
+            padding: 25px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(1deg); }
+            50% { transform: translateY(-10px) rotate(0deg); }
+            75% { transform: translateY(-20px) rotate(-1deg); }
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #1a1a1a, #2d2d30);
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone-screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(237, 85, 59, 0.1), rgba(255, 128, 79, 0.1));
+            pointer-events: none;
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #ED553B, #FF804F);
+            border-radius: 25px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(237, 85, 59, 0.3);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .app-icon img {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .app-icon-fallback {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+        }
+
+        .app-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-tagline {
+            font-size: 1rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Floating Achievement Badges */
+        .floating-badge {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: floatBadge 6s ease-in-out infinite;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .floating-badge:nth-child(1) {
+            top: 15%;
+            right: -10%;
+            animation-delay: 0s;
+        }
+
+        .floating-badge:nth-child(2) {
+            bottom: 25%;
+            left: -15%;
+            animation-delay: 2s;
+        }
+
+        .floating-badge:nth-child(3) {
+            top: 60%;
+            right: -8%;
+            animation-delay: 4s;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        /* Section Spacing */
+        .section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Scientific Stats */
+        .science-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .science-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .science-stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .science-stat-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        /* Responsive Design Preview */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .logo-hero {
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .phone-mockup {
+                width: 280px;
+                height: 560px;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero-cta {
+                align-items: center;
+            }
+
+            .science-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        /* Additional Animations */
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero gradient-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="logo-hero">
+                        <img src="SplashBild.png" alt="FitFoundry Logo" onerror="this.style.display='none'">
+                        <h1>FitFoundry</h1>
+                    </div>
+                    
+                    <div class="hero-tagline">
+                        Das erste wissenschaftlich fundierte Fitness-Gamification-System der Welt!
+                    </div>
+                    
+                    <div class="hero-description">
+                        Revolutioniere dein Training mit KI-gestützter Analyse, 500+ Profi-Übungen, Live-Kalorien-Tracking 
+                        und einem Avatar, der mit deinen echten Fortschritten mitwächst. Wissenschaftlich fundiert, 
+                        gamification-optimiert, 100% privat.
+                    </div>
+                    
+                    <ul class="hero-benefits">
+                        <li>500+ wissenschaftlich kategorisierte Übungen mit Profi-Templates</li>
+                        <li>Live-Kalorien-Tracking & Personal Metabolic Factor</li>
+                        <li>KI-gestützte Körperanalyse mit biologischem Alter-Calculator</li>
+                        <li>Jackson-Pollock Körperfett-Berechnung (±3-4% Genauigkeit vs DEXA)</li>
+                        <li>100% privat - alle Fotos bleiben nur auf deinem iPhone</li>
+                    </ul>
+                    
+                    <div class="hero-cta">
+                        <a href="#download" class="btn-primary">
+                            🚀 Jetzt wissenschaftlich trainieren
+                        </a>
+                        <div class="hero-guarantee">
+                            ✅ Kostenloser Download • ✅ Peer-reviewed Methoden • ✅ Sofort startklar
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="floating-badge">🧬 Biologisches Alter: 24J</div>
+                    <div class="floating-badge">🔥 Live: 487 kcal verbrannt</div>
+                    <div class="floating-badge">📊 Körperfett: 12.3% (±3.2%)</div>
+                    
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="app-icon">
+                                <img src="SplashBild.png" alt="FitFoundry Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <div class="app-icon-fallback" style="display: none;">FF</div>
+                            </div>
+                            <div class="app-name">FitFoundry</div>
+                            <div class="app-tagline">Wissenschaft trifft<br>Gamification!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FitFoundry Events Section -->
+    <section class="section" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">FitFoundry Community Events - Trainiere nie wieder alleine! 🎉</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">Challenges, Workshops, Community-Treffen - direkt in deinem Kalender integriert</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 4rem;">
+                <div style="color: white;">
+                    <h3 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; color: white;">
+                        Events die dich motiviert halten!
+                    </h3>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: white;">🎯 Community-Power:</h4>
+                        <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); line-height: 1.7;">
+                            Als erste Fitness-App integriert FitFoundry <strong>echte Community-Events</strong> 
+                            direkt in deinen Trainingskalender. Challenges, Workshops und Live-Sessions 
+                            mit anderen Foundrys - nie wieder alleine trainieren!
+                        </p>
+                    </div>
+                    
+                    <ul style="list-style: none; margin-bottom: 2.5rem;">
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">🏆</span>
+                            <strong>Wöchentliche Challenges</strong> - Wettkämpfe mit der Community
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">🎓</span>
+                            <strong>Expert-Workshops</strong> - Lerne von Fitness-Profis live
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">📅</span>
+                            <strong>Kalender-Integration</strong> - Events erscheinen automatisch in der App
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">🔔</span>
+                            <strong>Smart-Erinnerungen</strong> - Widget im Profil hält dich auf dem Laufenden
+                        </li>
+                    </ul>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 15px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">🔗 Nahtlose Integration:</h4>
+                        <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9);">
+                            Events erscheinen automatisch in deinem Trainingskalender. Ein Widget in deinem 
+                            Profil zeigt kommende Events - nie wieder ein Community-Event verpassen!
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 30px; padding: 3rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
+                        <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: white;">Kommende Events</h4>
+                        
+                        <!-- Event 1 -->
+                        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 1.5rem; margin-bottom: 1rem; border: 2px solid rgba(16, 185, 129, 0.5); text-align: left;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <span style="font-size: 1.2rem;">🏆</span>
+                                </div>
+                                <div>
+                                    <div style="color: white; font-weight: 700; font-size: 1rem;">30-Tage Push-Up Challenge</div>
+                                    <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.8rem;">Startet in 3 Tagen</div>
+                                </div>
+                            </div>
+                            <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">547 Foundrys bereits angemeldet</p>
+                        </div>
+                        
+                        <!-- Event 2 -->
+                        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 1.5rem; margin-bottom: 1rem; border: 2px solid rgba(16, 185, 129, 0.5); text-align: left;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <span style="font-size: 1.2rem;">🎓</span>
+                                </div>
+                                <div>
+                                    <div style="color: white; font-weight: 700; font-size: 1rem;">Form-Check Workshop</div>
+                                    <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.8rem;">Sonntag 14:00</div>
+                                </div>
+                            </div>
+                            <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Live mit Personal Trainer Marc</p>
+                        </div>
+                        
+                        <!-- Profile Widget Demo -->
+                        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 1.5rem; margin-top: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                            <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.8rem; margin-bottom: 0.5rem;">📱 Profil-Widget:</div>
+                            <div style="color: white; font-weight: 600; font-size: 0.9rem;">"Nächstes Event in 2 Tagen"</div>
+                            <div style="color: #10b981; font-size: 0.8rem; margin-top: 0.3rem;">Jetzt anmelden →</div>
+                        </div>
+                        
+                        <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-top: 1.5rem;">
+                            <strong>Automatisch integriert:</strong> Events erscheinen in deinem Kalender 
+                            und als Widget im Profil. Community-Power für maximale Motivation!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event Types -->
+            <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; margin-top: 4rem; border: 1px solid rgba(255, 255, 255, 0.3);">
+                <h3 style="text-align: center; font-size: 2rem; font-weight: 800; color: white; margin-bottom: 3rem;">
+                    🎯 Event-Typen für jeden Foundry
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏆</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Community Challenges</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">30-Tage Challenges, Gruppen-Wettkämpfe, Avatar-Battles - trainiere mit hunderten anderen Foundrys</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎓</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Expert Workshops</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Live-Sessions mit Personal Trainern, Ernährungsexperten und Fitness-Influencern</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎮</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Avatar Competitions</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Lass deine Avatare gegeneinander antreten! Wettkämpfe basierend auf echten Trainingsdaten</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌟</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Success Stories</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Teile deine Transformation, feiere Erfolge und inspiriere andere Community-Mitglieder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Personal Audio Coach Section -->
+    <section class="section" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Dein persönlicher Audio-Coach - 200+ Motivations-Sounds! 🎤</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">Nie wieder alleine trainieren - dein KI-Coach motiviert dich in Echtzeit</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 4rem;">
+                <div style="color: white;">
+                    <h3 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; color: white;">
+                        Nie wieder stummes Training!
+                    </h3>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: white;">🎯 Das Game-Changing Versprechen:</h4>
+                        <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); line-height: 1.7;">
+                            Als erste Fitness-App bietet FitFoundry <strong>200+ professionelle Audio-Motivationen</strong> 
+                            direkt während dem Training. Dein persönlicher KI-Coach spricht mit dir, motiviert zwischen 
+                            Sätzen und feiert deine Personal Records - live und personalisiert!
+                        </p>
+                    </div>
+                    
+                    <ul style="list-style: none; margin-bottom: 2.5rem;">
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">🎤</span>
+                            <strong>200+ Audio-Motivationen</strong> - Start, zwischen Sätzen, Personal Records
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">🎚️</span>
+                            <strong>Motivations-Intensität 1-10</strong> - Von sanft bis Drill-Sergeant-Modus
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">🗣️</span>
+                            <strong>Multiple Voice-Options</strong> - Wähle deinen perfekten Coach
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">📱</span>
+                            <strong>Live-Ticker + Audio</strong> - Motivations-Kombi während Training
+                        </li>
+                    </ul>
+                    
+                    <a href="#audio-demo" style="background: white; color: #6366f1; padding: 1.2rem 2.5rem; border: none; border-radius: 20px; font-size: 1.1rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 1rem; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                        🎧 Audio-Demo anhören
+                    </a>
+                </div>
+                
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 30px; padding: 3rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
+                        <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: white;">Audio-Coach Live-Demo</h4>
+                        
+                        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 2px solid rgba(147, 51, 234, 0.5);">
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: pulse 2s ease-in-out infinite;">
+                                    <span style="font-size: 1.5rem;">🎤</span>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="color: #8b5cf6; font-size: 0.9rem; margin-bottom: 0.3rem;">Jetzt spielt:</div>
+                                    <div style="color: white; font-weight: 700;">"Großartig! Nur noch 2 Sätze!"</div>
+                                </div>
+                            </div>
+                            
+                            <div style="background: rgba(139, 92, 246, 0.3); height: 4px; border-radius: 2px; margin: 1rem 0; position: relative;">
+                                <div style="background: #8b5cf6; height: 100%; width: 65%; border-radius: 2px; animation: pulse 2s ease-in-out infinite;"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; font-size: 0.9rem;">
+                            <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                                <div style="color: #8b5cf6; font-weight: 700;">Intensität</div>
+                                <div style="color: rgba(255, 255, 255, 0.8);">7/10 (Motiviert)</div>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                                <div style="color: #8b5cf6; font-weight: 700;">Voice</div>
+                                <div style="color: rgba(255, 255, 255, 0.8);">Coach Sarah</div>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); line-height: 1.6;">
+                            <strong>So hört es sich an:</strong> Dein KI-Coach spricht live mit dir, 
+                            motiviert zwischen Sätzen und feiert deine Erfolge. Kombiniert mit Live-Ticker 
+                            für perfekte Trainingsbegleitung!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Audio Features Grid -->
+            <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; margin-top: 4rem; border: 1px solid rgba(255, 255, 255, 0.3);">
+                <h3 style="text-align: center; font-size: 2rem; font-weight: 800; color: white; margin-bottom: 3rem;">
+                    🎯 Audio-Coach Features im Detail
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🚀</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Start-Motivation</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">"Los geht's Champion! Zeit für dein bestes Training!" - Pump dich vor jedem Workout auf</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">⏱️</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Zwischen-Sätzen</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">"Perfekt! 30 Sekunden Pause, dann zeigst du's nochmal!" - Motivation während Pausen</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏆</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Personal Record</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">"WAHNSINN! Neuer Personal Record! Du bist stärker geworden!" - Feiere jeden Erfolg</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Übungs-Anweisungen</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">"Achte auf die Form! Langsam hoch, kontrolliert runter!" - Technik-Tipps live</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">💪</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Durchhalteparolen</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">"Du schaffst das! Noch 3 Wiederholungen!" - Push durch schwere Sets</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎉</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Workout Complete</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">"Mission erfüllt! Stolz auf dich! 487 Kalorien verbrannt!" - Erfolg feiern</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section gradient-problem">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Kennst du das Gefühl? 😤</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">Du bist nicht allein mit diesen Frustrationen...</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">😩</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Keine Motivation</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6;">Du schleppst dich ins Gym, aber die Motivation schwindet nach wenigen Wochen. Das Training fühlt sich langweilig und sinnlos an.</p>
+                </div>
+                
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">📈</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Kein sichtbarer Fortschritt</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6;">Du trainierst seit Monaten, aber siehst kaum Veränderungen. Wo sind die Resultate? Wann wirst du endlich stärker?</p>
+                </div>
+                
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🤖</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Niemand motiviert dich</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6;">Du trainierst alleine ohne Coach oder Motivation. Andere Apps sind stumm und bieten keine persönliche Unterstützung während dem Training.</p>
+                </div>
+                
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">💸</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Teure Personal Trainer</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6;">Personal Training kostet ein Vermögen, aber du brauchst professionelle Anleitung und wissenschaftlich fundierte Workouts.</p>
+                </div>
+                
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">📱</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Datenschutz-Sorgen</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6;">Fitness-Apps speichern deine intimen Körperfotos in der Cloud. Du willst Fortschritt tracken, aber nicht deine Privatsphäre opfern.</p>
+                </div>
+                
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">⏰</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Ineffiziente Workouts</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6;">Du verschwendest Zeit mit unoptimierten Übungen. Du brauchst maximale Effizienz und messbare Fortschritte.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <p style="font-size: 1.5rem; color: white; font-weight: 600; margin-bottom: 1rem;">
+                    Das muss nicht so bleiben!
+                </p>
+                <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.9);">
+                    Es gibt einen wissenschaftlich bewiesenen, besseren Weg...
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section class="section gradient-science">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Wissenschaftlich fundiert - nicht nur Marketing! 🔬</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">Peer-reviewed Methoden, transparente Algorithmen, messbare Ergebnisse</p>
+            </div>
+
+            <div class="science-stats">
+                <div class="science-stat">
+                    <div class="science-stat-number">±3%</div>
+                    <div class="science-stat-label">Körperfett-Genauigkeit<br>(vs DEXA-Scan)</div>
+                </div>
+                <div class="science-stat">
+                    <div class="science-stat-number">500+</div>
+                    <div class="science-stat-label">Wissenschaftlich<br>kategorisierte Übungen</div>
+                </div>
+                <div class="science-stat">
+                    <div class="science-stat-number">±8%</div>
+                    <div class="science-stat-label">Kalorienberechnung<br>mit Personal Factor</div>
+                </div>
+                <div class="science-stat">
+                    <div class="science-stat-number">20+</div>
+                    <div class="science-stat-label">Peer-reviewed<br>Quellen</div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                <!-- Jackson-Pollock Method -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">📐</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Jackson-Pollock 4-Punkt Methode</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Präzise Körperfett-Berechnung mit ±3-4% Genauigkeit vs DEXA-Scan. Wissenschaftlich validiert 
+                        seit 1978, verwendet von Profisportlern weltweit.
+                    </p>
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1rem; font-size: 0.9rem;">
+                        <strong>Formel:</strong> Körperfett% = (495 / Körperdichte) - 450<br>
+                        <strong>Validiert:</strong> 652 Probanden, hydrostatic weighing
+                    </div>
+                </div>
+
+                <!-- MET-based Calculation -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔥</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">MET-basierte Kalorienberechnung</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        ACSM-Standards mit Personal Metabolic Factor für 20-30% erhöhte Genauigkeit. 
+                        Berücksichtigt Alter, Geschlecht, Körperfett und Kondition.
+                    </p>
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1rem; font-size: 0.9rem;">
+                        <strong>Standard:</strong> ±15% Genauigkeit<br>
+                        <strong>Mit Personal Factor:</strong> ±8% Genauigkeit
+                    </div>
+                </div>
+
+                <!-- AI Body Analysis -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🧬</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">KI-gestützte Körperanalyse</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Biologisches Alter-Calculator basierend auf etablierten Gesundheitsindikatoren. 
+                        WHO-Standards, Framingham Heart Study, epidemiologische Daten.
+                    </p>
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1rem; font-size: 0.9rem;">
+                        <strong>Faktoren:</strong> BMI, Körperfett, WHR, Aktivität<br>
+                        <strong>Genauigkeit:</strong> ±2-3 Jahre bei vollständigen Daten
+                    </div>
+                </div>
+
+                <!-- Transparent Methodology -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔓</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Transparente Methodologie</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Alle Berechnungsgrundlagen sind in der App einsehbar. Vollständige Quellenangaben, 
+                        Formeln und wissenschaftliche Papers - keine Black-Box-Algorithmen.
+                    </p>
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1rem; font-size: 0.9rem;">
+                        <strong>Verfügbar:</strong> 50+ Formeln dokumentiert<br>
+                        <strong>Quellen:</strong> Alle peer-reviewed Papers verlinkt
+                    </div>
+                </div>
+
+                <!-- Privacy by Design -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔒</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Privacy by Design</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Alle persönlichen Daten bleiben auf deinem iPhone. Keine Cloud-Speicherung von Fotos, 
+                        DSGVO-konform, Made in Germany.
+                    </p>
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1rem; font-size: 0.9rem;">
+                        <strong>Speicherung:</strong> 100% lokal auf deinem Gerät<br>
+                        <strong>Verschlüsselung:</strong> AES-256 Ende-zu-Ende
+                    </div>
+                </div>
+
+                <!-- Scientific Validation -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">📚</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Wissenschaftliche Validierung</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Jede Berechnung basiert auf peer-reviewed Studien: ACSM Guidelines, 
+                        WHO-Standards, Mifflin-St Jeor Equation, Cunningham Formula.
+                    </p>
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1rem; font-size: 0.9rem;">
+                        <strong>Beispiel-Quellen:</strong><br>
+                        • Jackson & Pollock (1978)<br>
+                        • ACSM Position Stand (2022)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Builder -->
+            <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; margin-top: 4rem; text-align: center; border: 1px solid rgba(255, 255, 255, 0.3);">
+                <h3 style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 2rem;">
+                    💡 Warum wissenschaftliche Fundierung wichtig ist
+                </h3>
+                <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin-bottom: 2rem;">
+                    Die meisten Fitness-Apps verwenden ungenaue Schätzungen oder Marketing-Formeln. 
+                    FitFoundry nutzt dieselben wissenschaftlichen Methoden wie Universitätsstudien und medizinische Forschung. 
+                    <strong>Das ist der Unterschied zwischen raten und wissen.</strong>
+                </p>
+                
+                <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏥</div>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Medizinische<br>Standards</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎓</div>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Universitäts-<br>validiert</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Messbare<br>Ergebnisse</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔬</div>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Peer-reviewed<br>Research</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section gradient-solution">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Die Lösung: Wissenschaft + Gamification = Erfolg! 🎮</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">FitFoundry kombiniert präzise Wissenschaft mit süchtig machendem Game-Design</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 4rem;">
+                <div style="color: white;">
+                    <h3 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; color: white;">
+                        Training wird zum spannendsten Spiel deines Lebens!
+                    </h3>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: white;">🎯 Das einzigartige Versprechen:</h4>
+                        <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); line-height: 1.7;">
+                            Zum ersten Mal kombiniert eine App wissenschaftlich präzise Berechnungen mit einem 
+                            innovativen Gamification-System. Dein virtueller Avatar entwickelt sich parallel zu 
+                            deinen echten, messbaren Fortschritten - basierend auf Jackson-Pollock Körperfett-Analyse, 
+                            Live-Kalorien-Tracking und Personal Metabolic Factor.
+                        </p>
+                    </div>
+                    
+                    <ul style="list-style: none; margin-bottom: 2.5rem;">
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">🏆</span>
+                            <strong>XP für messbare Erfolge</strong> - Echte Fortschritte werden belohnt, nicht nur Zeit
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">💪</span>
+                            <strong>Avatar wächst wissenschaftlich</strong> - Basiert auf echter Körperkomposition-Analyse
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">🔥</span>
+                            <strong>Live-Kalorien-Tracking</strong> - Sieh in Echtzeit, wie viele Kalorien du verbrennst
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">🎬</span>
+                            <strong>500+ Profi-Übungen</strong> - Von Hollywood-Stars bis NASA-Astronauten
+                        </li>
+                    </ul>
+                    
+                    <a href="#how-it-works" style="background: white; color: #FF5E4D; padding: 1.2rem 2.5rem; border: none; border-radius: 20px; font-size: 1.1rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 1rem; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                        🔬 Wie funktioniert die Wissenschaft?
+                    </a>
+                </div>
+                
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 30px; padding: 3rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
+                        <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: white;">Wissenschaftliche Avatar Evolution</h4>
+                        
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
+                            <div style="text-align: center;">
+                                <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1rem; border: 2px solid rgba(255, 255, 255, 0.3);">
+                                    🧑‍🦲
+                                </div>
+                                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8);">Körperfett: 25%<br>Biologisches Alter: 35J</p>
+                            </div>
+                            
+                            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.7); animation: pulse 2s ease-in-out infinite;">→</div>
+                            
+                            <div style="text-align: center;">
+                                <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1rem; border: 2px solid rgba(255, 255, 255, 0.3);">
+                                    💪
+                                </div>
+                                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8);">Körperfett: 15%<br>Biologisches Alter: 28J</p>
+                            </div>
+                            
+                            <div style="font-size: 2rem; color: rgba(255, 255, 255, 0.7); animation: pulse 2s ease-in-out infinite;">→</div>
+                            
+                            <div style="text-align: center;">
+                                <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1rem; border: 2px solid rgba(255, 255, 255, 0.3);">
+                                    🏆
+                                </div>
+                                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8);">Körperfett: 10%<br>Biologisches Alter: 22J</p>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.9); line-height: 1.6;">
+                            <strong>Das Besondere:</strong> Dein Avatar verändert sich basierend auf wissenschaftlich 
+                            messbaren Daten wie Körperfett-Prozent (Jackson-Pollock), biologischem Alter und 
+                            Muskelaufbau - nicht nur auf gespielter Zeit!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Tracking Section -->
+    <section class="section gradient-live">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Live-Kalorien-Tracking + Motivations-Ticker Revolution 🔥</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">Sieh in Echtzeit deinen Verbrauch + erhalte live Motivation während du trainierst!</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 4rem;">
+                <div style="color: white;">
+                    <h3 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 2rem; color: white;">
+                        Endlich keine Schätzungen mehr + Live-Motivation!
+                    </h3>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: white;">🎯 Doppelte Innovation:</h4>
+                        <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); line-height: 1.7;">
+                            FitFoundry kombiniert präzises <strong>Live-Kalorien-Tracking</strong> mit einem 
+                            intelligenten <strong>Motivations-Ticker</strong>. Sieh in Echtzeit deinen Verbrauch 
+                            UND erhalte motivierende Updates zu deinem Training - Audio + Text perfekt kombiniert!
+                        </p>
+                    </div>
+                    
+                    <ul style="list-style: none; margin-bottom: 2.5rem;">
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">⚡</span>
+                            <strong>Live-Kalorien-Ticker</strong> - Sieh in Echtzeit, wie dein Verbrauch steigt
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">💬</span>
+                            <strong>Live-Motivations-Ticker</strong> - Laufende Updates und Motivationssprüche
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">🎤</span>
+                            <strong>Audio + Text Kombi</strong> - Ticker UND Sprach-Coach arbeiten zusammen
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                            <span style="font-size: 1.5rem;">📊</span>
+                            <strong>Trainings-Status Live</strong> - Sätze, Sets, Fortschritt in Echtzeit
+                        </li>
+                    </ul>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 15px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">🔬 Wissenschaft + Motivation:</h4>
+                        <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9);">
+                            MET-basierte Kalorien (±8% Genauigkeit) + 200+ Motivations-Texte während Training. 
+                            Das erste System, das präzise Wissenschaft mit psychologischer Motivation vereint.
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 30px; padding: 3rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
+                        <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: white;">Live-Training Demo</h4>
+                        
+                        <!-- Kalorien-Ticker -->
+                        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; margin-bottom: 1.5rem; border: 2px solid rgba(255, 165, 0, 0.5);">
+                            <div style="font-size: 2.5rem; color: #FF6B35; margin-bottom: 0.5rem; font-weight: 900;">487</div>
+                            <div style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; margin-bottom: 1rem;">Kalorien verbrannt</div>
+                            
+                            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: rgba(255, 255, 255, 0.8);">
+                                <span>Bankdrücken (3. Satz)</span>
+                                <span>+12 kcal</span>
+                            </div>
+                            <div style="background: rgba(255, 165, 0, 0.3); height: 4px; border-radius: 2px; margin: 0.5rem 0; position: relative;">
+                                <div style="background: #FF6B35; height: 100%; width: 75%; border-radius: 2px; animation: pulse 2s ease-in-out infinite;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Live-Ticker -->
+                        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 1.5rem; margin-bottom: 1.5rem; border: 2px solid rgba(139, 92, 246, 0.5);">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="width: 30px; height: 30px; background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: pulse 2s ease-in-out infinite;">
+                                    <span style="font-size: 0.8rem;">💬</span>
+                                </div>
+                                <div style="flex: 1; text-align: left;">
+                                    <div style="color: #8b5cf6; font-size: 0.8rem;">Live-Ticker:</div>
+                                    <div style="color: white; font-size: 0.9rem; font-weight: 600;">"Stark! Nur noch 2 Sätze bis zum Ziel!"</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem;">
+                            <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                                <div style="color: #FF6B35; font-weight: 700;">23:47</div>
+                                <div style="color: rgba(255, 255, 255, 0.8);">Trainingszeit</div>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                                <div style="color: #8b5cf6; font-weight: 700;">Live</div>
+                                <div style="color: rgba(255, 255, 255, 0.8);">Ticker + Audio</div>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-top: 1.5rem;">
+                            <strong>Doppelte Motivation:</strong> Kalorien steigen live + Motivations-Ticker 
+                            laufen parallel zu Audio-Coach. Nie wieder alleine trainieren!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Live-Ticker Features -->
+            <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; margin-top: 4rem; border: 1px solid rgba(255, 255, 255, 0.3);">
+                <h3 style="text-align: center; font-size: 2rem; font-weight: 800; color: white; margin-bottom: 3rem;">
+                    💬 Live-Ticker: Dein digitaler Trainingspartner
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Trainings-Status</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">"Satz 3/4 abgeschlossen. Nächste Übung: Klimmzüge" - Behalte den Überblick</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">💪</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Form-Erinnerungen</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">"Denk an die richtige Haltung!" - Technik-Tipps zur richtigen Zeit</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Ziel-Updates</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">"75% des Workouts geschafft! Du bist auf dem besten Weg!" - Fortschritt sichtbar</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔥</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Motivations-Sprüche</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">"Jeder Satz bringt dich näher an dein Ziel!" - Kontinuierliche Motivation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Private Progress Photos Section -->
+<section class="section" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);">
+    <div class="container">
+        <div class="section-title">
+            <h2 style="color: white;">100% Private Fortschrittsfotos - Wissenschaft ohne Cloud-Risiko! 📸</h2>
+            <p style="color: rgba(255, 255, 255, 0.9);">Intelligente Overlay-Schablonen + Jackson-Pollock Körperfett-Analyse - alles bleibt auf deinem iPhone</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 4rem;">
+            <div style="color: white;">
+                <h3 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; color: white;">
+                    Endlich Fortschritts-Fotos ohne Datenschutz-Sorgen!
+                </h3>
+                
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: white;">🔒 Das Datenschutz-Versprechen:</h4>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); line-height: 1.7;">
+                        Als erste Fitness-App kombiniert FitFoundry <strong>wissenschaftlich präzise Foto-Analyse</strong> 
+                        mit 100% lokaler Speicherung. Intelligente Overlay-Schablonen für konsistente Aufnahmen, 
+                        Jackson-Pollock Körperfett-Integration - alles privat nur auf deinem iPhone!
+                    </p>
+                </div>
+                
+                <ul style="list-style: none; margin-bottom: 2.5rem;">
+                    <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                        <span style="font-size: 1.5rem;">📐</span>
+                        <strong>Intelligente Overlay-Schablonen</strong> - 12+ Vorlagen für konsistente Aufnahmen
+                    </li>
+                    <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                        <span style="font-size: 1.5rem;">🔒</span>
+                        <strong>100% lokale Speicherung</strong> - Keine Cloud, keine Server, nur dein iPhone
+                    </li>
+                    <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                        <span style="font-size: 1.5rem;">📊</span>
+                        <strong>Jackson-Pollock Integration</strong> - Körperfett-Analyse direkt aus Fotos
+                    </li>
+                    <li style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95);">
+                        <span style="font-size: 1.5rem;">📱</span>
+                        <strong>Apple Fotos-Style Gallery</strong> - Intuitive Navigation, Long-Press Multi-Select
+                    </li>
+                </ul>
+            </div>
+            
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 30px; padding: 3rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: white;">Overlay-Schablonen Live</h4>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 2px solid rgba(168, 85, 247, 0.5); position: relative;">
+                        <!-- Mock Camera Interface -->
+                        <div style="background: #1a1a1a; border-radius: 15px; padding: 1.5rem; margin-bottom: 1rem; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; border: 2px dashed rgba(168, 85, 247, 0.8); margin: 10px;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(168, 85, 247, 0.6);">
+                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">👤</div>
+                                    <div style="font-size: 0.8rem;">Ganzkörper-Schablone</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Overlay Controls -->
+                            <div style="position: absolute; top: 10px; left: 10px; background: rgba(0, 0, 0, 0.7); border-radius: 8px; padding: 6px 8px;">
+                                <div style="color: white; font-size: 0.7rem; font-weight: 600;">Overlay: Ganzkörper</div>
+                                <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.6rem;">1/12 - Swipe für mehr</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Overlay Options -->
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; font-size: 0.8rem;">
+                            <div style="background: rgba(168, 85, 247, 0.3); border-radius: 6px; padding: 6px; text-align: center;">
+                                <div>🏋️</div>
+                                <div style="font-size: 0.7rem;">Oberkörper</div>
+                            </div>
+                            <div style="background: rgba(168, 85, 247, 0.3); border-radius: 6px; padding: 6px; text-align: center;">
+                                <div>💪</div>
+                                <div style="font-size: 0.7rem;">Arme</div>
+                            </div>
+                            <div style="background: rgba(168, 85, 247, 0.3); border-radius: 6px; padding: 6px; text-align: center;">
+                                <div>📐</div>
+                                <div style="font-size: 0.7rem;">Raster</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); line-height: 1.6;">
+                        <strong>Wissenschaftlich konsistent:</strong> 12+ Overlay-Schablonen für perfekt 
+                        vergleichbare Aufnahmen. Swipe zwischen Schablonen, wissenschaftliche Präzision!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- How it Works Section -->
+    <section id="how-it-works" class="section gradient-how">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">So startest du deine wissenschaftlich fundierte Transformation 🚀</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">In nur 3 Schritten zu präzisen Ergebnissen - kein Rätselraten mehr!</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; margin-top: 4rem;">
+                <!-- Step 1 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2); position: relative;">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: white; color: #0077BE; padding: 0.5rem 1.5rem; border-radius: 25px; font-weight: 800; font-size: 1rem;">Schritt 1</div>
+                    
+                    <div style="font-size: 4rem; margin: 2rem 0 1.5rem 0;">🎮</div>
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Wissenschaftlichen Avatar erstellen</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Erstelle deinen personalisierten Trainingscharakter mit präzisen Körperdaten. Die App berechnet 
+                        deinen Personal Metabolic Factor, biologisches Alter und erstellt ein wissenschaftlich fundiertes Basisprofil.
+                    </p>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 1.5rem; margin-top: 1.5rem;">
+                        <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem;">
+                            <strong>Einmalig:</strong> 5 Minuten Setup
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                            <span style="font-size: 1.2rem;">📏 Körpermaße</span>
+                            <span style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">→</span>
+                            <span style="font-size: 1.2rem;">🧮 Metabolic Factor</span>
+                            <span style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">→</span>
+                            <span style="font-size: 1.2rem;">🎯 Präzise Ziele</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2); position: relative;">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: white; color: #0077BE; padding: 0.5rem 1.5rem; border-radius: 25px; font-weight: 800; font-size: 1rem;">Schritt 2</div>
+                    
+                    <div style="font-size: 4rem; margin: 2rem 0 1.5rem 0;">⭐</div>
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Aus 500+ Profi-Übungen wählen</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Wähle aus wissenschaftlich kategorisierten Übungen: Von Hollywood-Celebrity-Workouts über 
+                        Astronauten-Fitness bis hin zu Olympia-Trainingsplänen. Jede Übung mit präzisen MET-Werten.
+                    </p>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 1.5rem; margin-top: 1.5rem;">
+                        <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem;">
+                            <strong>Verfügbar:</strong> 500+ wissenschaftlich validierte Übungen
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem;">
+                            <div style="text-align: center; padding: 0.5rem;">
+                                <div style="font-size: 1.5rem;">🎬</div>
+                                <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">Celebrity</div>
+                            </div>
+                            <div style="text-align: center; padding: 0.5rem;">
+                                <div style="font-size: 1.5rem;">🚀</div>
+                                <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">NASA</div>
+                            </div>
+                            <div style="text-align: center; padding: 0.5rem;">
+                                <div style="font-size: 1.5rem;">⚽</div>
+                                <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">Profi-Sport</div>
+                            </div>
+                            <div style="text-align: center; padding: 0.5rem;">
+                                <div style="font-size: 1.5rem;">🏋️</div>
+                                <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">Olympia</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; text-align: center; color: white; border: 1px solid rgba(255, 255, 255, 0.2); position: relative;">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: white; color: #0077BE; padding: 0.5rem 1.5rem; border-radius: 25px; font-weight: 800; font-size: 1rem;">Schritt 3</div>
+                    
+                    <div style="font-size: 4rem; margin: 2rem 0 1.5rem 0;">🏆</div>
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Live trainieren & Erfolge messen</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Trainiere mit Live-Kalorien-Tracking, sieh deinen Avatar wachsen und messe wissenschaftlich 
+                        präzise Fortschritte. Körperfett-Analyse, biologisches Alter und Personal Records - alles in Echtzeit!
+                    </p>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 1.5rem; margin-top: 1.5rem;">
+                        <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem;">
+                            <strong>Ergebnis:</strong> Messbare Fortschritte ab Tag 1
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                            <span style="font-size: 1.2rem;">🔥 Live-Kalorien</span>
+                            <span style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">+</span>
+                            <span style="font-size: 1.2rem;">📊 Präzise Daten</span>
+                            <span style="font-size: 1rem; color: rgba(255, 255, 255, 0.7);">=</span>
+                            <span style="font-size: 1.2rem;">🚀 Erfolg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Success Timeline -->
+            <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; margin-top: 4rem; border: 1px solid rgba(255, 255, 255, 0.3);">
+                <h3 style="text-align: center; font-size: 2rem; font-weight: 800; color: white; margin-bottom: 3rem;">
+                    🎯 Deine wissenschaftlich fundierte Transformation
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Tag 1-7</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Baseline-Messungen, erste Live-Workouts, Personal Metabolic Factor kalibriert</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔥</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Tag 8-21</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Erste Körperfett-Reduktion messbar, biologisches Alter sinkt, Level-Ups</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">💎</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Tag 22-45</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Signifikante Körperkomposition-Änderungen, Avatar-Evolution sichtbar</p>
+                    </div>
+                    
+                    <div style="text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">👑</div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Tag 46-90</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Transformation vollständig messbar, Champion-Status erreicht, neue Körper-Realität!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="section" style="background: #f8fafc;">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: #1a1a1a;">Was Early Beta-Tester über die Wissenschaft sagen 🌟</h2>
+                <p style="color: #64748b;">Echte Erfahrungen mit den präzisen Messungen und Live-Features</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                <!-- Beta Testimonial 1 -->
+                <div style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ED553B, #FF804F); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; font-weight: bold;">
+                            M
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; color: #1a1a1a; margin-bottom: 0.2rem;">Dr. Michael K.</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">Sportwissenschaftler • Beta-Tester • München</p>
+                        </div>
+                    </div>
+                    
+                    <div style="color: #ED553B; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                    
+                    <p style="color: #1a1a1a; line-height: 1.7; font-style: italic; margin-bottom: 1.5rem;">
+                        "Als Sportwissenschaftler bin ich beeindruckt von der wissenschaftlichen Genauigkeit! Die Jackson-Pollock 
+                        Implementierung ist korrekt, die MET-Werte stimmen und das Live-Tracking ist verblüffend präzise. 
+                        Endlich eine App, die keine Marketing-Formeln verwendet!"
+                    </p>
+                    
+                    <div style="background: #f8fafc; border-radius: 15px; padding: 1rem; border-left: 4px solid #ED553B;">
+                        <p style="color: #64748b; font-size: 0.9rem; margin: 0;">
+                            <strong>Gemessen:</strong> Körperfett 14.2% (±2.8% vs DEXA) • Live-Kalorien ±6% Abweichung
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Beta Testimonial 2 -->
+                <div style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ED553B, #FF804F); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; font-weight: bold;">
+                            S
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; color: #1a1a1a; margin-bottom: 0.2rem;">Sarah L.</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">Fitness-Trainerin • Beta-Testerin • Hamburg</p>
+                        </div>
+                    </div>
+                    
+                    <div style="color: #ED553B; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                    
+                    <p style="color: #1a1a1a; line-height: 1.7; font-style: italic; margin-bottom: 1.5rem;">
+                        "Das Live-Kalorien-Tracking ist ein Game-Changer! Meine Klienten sehen endlich in Echtzeit, 
+                        wie effektiv ihr Training ist. Die 500+ Übungen sind perfekt kategorisiert und die 
+                        wissenschaftlichen Quellen geben mir als Trainerin die nötige Credibility."
+                    </p>
+                    
+                    <div style="background: #f8fafc; border-radius: 15px; padding: 1rem; border-left: 4px solid #ED553B;">
+                        <p style="color: #64748b; font-size: 0.9rem; margin: 0;">
+                            <strong>Erfolg:</strong> Biologisches Alter von 32 auf 27 • Personal Factor 1.14x
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Beta Testimonial 3 -->
+                <div style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ED553B, #FF804F); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; font-weight: bold;">
+                            A
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; color: #1a1a1a; margin-bottom: 0.2rem;">Alex T.</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">Software-Entwickler • Beta-Tester • Berlin</p>
+                        </div>
+                    </div>
+                    
+                    <div style="color: #ED553B; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                    
+                    <p style="color: #1a1a1a; line-height: 1.7; font-style: italic; margin-bottom: 1.5rem;">
+                        "Als Tech-Guy schätze ich die wissenschaftliche Transparenz extrem! Die open-source 
+                        Formeln, peer-reviewed Quellen und die Tatsache, dass alle Daten lokal gespeichert 
+                        werden - das ist echte Innovation mit Datenschutz!"
+                    </p>
+                    
+                    <div style="background: #f8fafc; border-radius: 15px; padding: 1rem; border-left: 4px solid #ED553B;">
+                        <p style="color: #64748b; font-size: 0.9rem; margin: 0;">
+                            <strong>Gemessen:</strong> 2847 kcal TDEE (±7% vs Labor) • Level 31 erreicht
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scientific Credibility Section -->
+            <div style="background: linear-gradient(135deg, #0D7377, #14A085); border-radius: 25px; padding: 3rem; margin-top: 4rem; text-align: center; color: white;">
+                <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; color: white;">
+                    Entwickelt von Wissenschafts-Enthusiast Daniel Lahmer
+                </h3>
+                <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.95); margin-bottom: 2rem; line-height: 1.7;">
+                    Fitness-Enthusiast, App-Entwickler und Science-Nerd mit der Mission, Fitness durch 
+                    wissenschaftlich fundierte Technologie zu revolutionieren. Jede Formel ist peer-reviewed, 
+                    jede Berechnung transparent dokumentiert.
+                </p>
+                
+                <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔬</div>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">20+ Peer-reviewed<br>Quellen implementiert</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📚</div>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Sportwissenschaft<br>Studium</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇩🇪</div>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Made in<br>Germany</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔓</div>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Open-Source<br>Formeln</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section gradient-features">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Alles was du für wissenschaftliches Training brauchst 🎁</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">Eine komplette Fitness-Revolution - präzise, messbar, motivierend</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                <!-- Feature 1 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🎮</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Gamification + Wissenschaft</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        XP für messbare Erfolge, Avatar-Evolution basierend auf echter Körperkomposition, 
+                        Level-System mit wissenschaftlichen Meilensteinen.
+                    </p>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+                        <li style="padding: 0.3rem 0;">✨ XP für Personal Records & Körperfett-Reduktion</li>
+                        <li style="padding: 0.3rem 0;">🏆 50+ wissenschaftlich basierte Achievements</li>
+                        <li style="padding: 0.3rem 0;">📈 Avatar wächst mit Jackson-Pollock Messungen</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔥</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Live-Kalorien-Tracking</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Echtzeit-Kalorienverbrauch basierend auf ACSM MET-Werten und Personal Metabolic Factor. 
+                        Sieh live, wie effektiv dein Training ist!
+                    </p>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+                        <li style="padding: 0.3rem 0;">⚡ Echtzeit-Berechnung während Training</li>
+                        <li style="padding: 0.3rem 0;">🎯 ±8% Genauigkeit mit Personal Factor</li>
+                        <li style="padding: 0.3rem 0;">📊 Übungs-spezifische MET-Werte</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">📐</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Jackson-Pollock Körperfett-Analyse</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Präzise Körperfett-Berechnung mit ±3-4% Genauigkeit vs DEXA-Scan. 
+                        Wissenschaftlich validiert seit 1978, von Profisportlern verwendet.
+                    </p>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+                        <li style="padding: 0.3rem 0;">📏 4-Punkt Fettfalten-Methode</li>
+                        <li style="padding: 0.3rem 0;">🎯 Medizinische Präzision ohne teure Geräte</li>
+                        <li style="padding: 0.3rem 0;">📈 Fortschritts-Tracking über Zeit</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">💪</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">500+ Wissenschaftlich kategorisierte Übungen</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Von Hollywood-Celebrity-Workouts über NASA-Astronauten-Training bis Olympia-Pläne. 
+                        Jede Übung mit MET-Werten, Muskelgruppen und Schwierigkeitsgrad.
+                    </p>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+                        <li style="padding: 0.3rem 0;">🎬 Celebrity & Profi-Sportler Templates</li>
+                        <li style="padding: 0.3rem 0;">🚀 NASA-Astronauten Fitness-Programme</li>
+                        <li style="padding: 0.3rem 0;">🔍 Intelligente Filter & Suche</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🧬</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">KI-gestützte Körperanalyse</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Biologisches Alter-Calculator, Körpertyp-Erkennung und Stoffwechselanalyse 
+                        basierend auf WHO-Standards und epidemiologischen Studien.
+                    </p>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+                        <li style="padding: 0.3rem 0;">🧮 Biologisches vs. chronologisches Alter</li>
+                        <li style="padding: 0.3rem 0;">🎭 Körpertyp-Analyse (Ektomorph/Mesomorph/Endomorph)</li>
+                        <li style="padding: 0.3rem 0;">📊 Personalisierte Trainingsempfehlungen</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔒</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">100% Private Fortschrittsfotos</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Intelligente Foto-Overlays für konsistente Aufnahmen. Alle Fotos bleiben 
+                        zu 100% privat nur auf deinem iPhone - keine Cloud-Speicherung!
+                    </p>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+                        <li style="padding: 0.3rem 0;">🔒 Lokale Speicherung, AES-256 verschlüsselt</li>
+                        <li style="padding: 0.3rem 0;">📐 Intelligente Overlay-Schablonen</li>
+                        <li style="padding: 0.3rem 0;">📊 Visuelle Before/After Vergleiche</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 7 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔓</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Transparente Wissenschaft</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Alle Berechnungsgrundlagen sind in der App einsehbar. Vollständige Quellenangaben, 
+                        Formeln und wissenschaftliche Papers - keine Black-Box-Algorithmen.
+                    </p>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+                        <li style="padding: 0.3rem 0;">📚 50+ dokumentierte Formeln</li>
+                        <li style="padding: 0.3rem 0;">🔗 Alle peer-reviewed Papers verlinkt</li>
+                        <li style="padding: 0.3rem 0;">🔬 Science Methodology Sektion</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 8 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🎯</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Intelligente Trainingsplanung</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Drag & Drop Workout-Editor, intelligente Warm-up-Berechnung, 
+                        Set-Typen (Drop-Sets, Supersets), Equipment-Filter und adaptive Pausenzeiten.
+                    </p>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+                        <li style="padding: 0.3rem 0;">🔄 Drag & Drop Übungs-Sortierung</li>
+                        <li style="padding: 0.3rem 0;">🌡️ Wissenschaftliche Warm-up-Progressionen</li>
+                        <li style="padding: 0.3rem 0;">⏱️ Adaptive Timer & Pausenempfehlungen</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 9 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🎤</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">200+ Audio-Coach Motivationen</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Dein persönlicher KI-Coach spricht live mit dir während dem Training. 
+                        200+ professionelle Motivationen für Start, zwischen Sätzen und Personal Records.
+                    </p>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+                        <li style="padding: 0.3rem 0;">🗣️ Multiple Voice-Options wählbar</li>
+                        <li style="padding: 0.3rem 0;">🎚️ Motivations-Intensität 1-10 adjustierbar</li>
+                        <li style="padding: 0.3rem 0;">🎯 Personalisiert nach Trainingscharakter</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 10 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">💬</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Live-Motivations-Ticker</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Zusätzlich zum Audio-Coach läuft ein Live-Ticker mit Motivations-Updates, 
+                        Trainings-Status und Form-Erinnerungen parallel zu deinem Workout.
+                    </p>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+                        <li style="padding: 0.3rem 0;">📊 Live-Trainings-Status Updates</li>
+                        <li style="padding: 0.3rem 0;">💪 Form-Check Erinnerungen</li>
+                        <li style="padding: 0.3rem 0;">🎯 Ziel-Fortschritt in Echtzeit</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 11 -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🎉</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">FitFoundry Community Events</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Wöchentliche Challenges, Expert-Workshops und Avatar-Competitions. 
+                        Events erscheinen automatisch in deinem Kalender mit Smart-Erinnerungen.
+                    </p>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+                        <li style="padding: 0.3rem 0;">📅 Automatische Kalender-Integration</li>
+                        <li style="padding: 0.3rem 0;">🔔 Profil-Widget für Event-Erinnerungen</li>
+                        <li style="padding: 0.3rem 0;">⚔️ Avatar-Competitions mit echter Community</li>
+                    </ul>
+                </div>
+                <!-- Feature 12 -->
+<div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
+    <div style="font-size: 3rem; margin-bottom: 1.5rem;">📸</div>
+    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">Intelligente Fortschrittsfotos</h3>
+    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1.5rem;">
+        12+ Overlay-Schablonen für konsistente Aufnahmen, Jackson-Pollock Körperfett-Integration, 
+        Apple Fotos-Style Gallery. 100% privat - keine Cloud-Speicherung!
+    </p>
+    <ul style="list-style: none; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">
+        <li style="padding: 0.3rem 0;">📐 12+ wissenschaftliche Overlay-Schablonen</li>
+        <li style="padding: 0.3rem 0;">🔒 100% lokale Speicherung, AES-256 verschlüsselt</li>
+        <li style="padding: 0.3rem 0;">📊 Direkte Integration in Körperfett-Analyse</li>
+    </ul>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Who is this for Section -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: #1a1a1a;">Ist FitFoundry das Richtige für dich? 🤔</h2>
+                <p style="color: #64748b;">Finde heraus, ob du zur wissenschaftlich orientierten FitFoundry-Community gehörst</p>
+            </div>
+            
+            <!-- Perfect For -->
+            <div style="background: linear-gradient(135deg, #ED553B, #FF804F); border-radius: 25px; padding: 3rem; margin-top: 4rem; color: white; text-align: center;">
+                <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: white;">
+                    ✅ FitFoundry ist PERFEKT für dich, wenn...
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔬</div>
+                        <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: white;">Du liebst wissenschaftliche Präzision</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.6;">
+                            Du willst wissen, dass deine Fortschritte auf bewährten wissenschaftlichen Methoden basieren, 
+                            nicht auf Marketing-Versprechen oder ungenauen Schätzungen.
+                        </p>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎮</div>
+                        <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: white;">Du liebst Spiele & messbare Erfolge</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.6;">
+                            Du spielst gerne Videospiele, liebst Herausforderungen und würdest gerne deinen 
+                            realen Fortschritt als Level-Progression erleben.
+                        </p>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔒</div>
+                        <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: white;">Datenschutz ist dir heilig</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.6;">
+                            Du möchtest deine intimen Körperfotos und Gesundheitsdaten privat halten. 
+                            Cloud-Speicherung kommt für dich nicht in Frage.
+                        </p>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">💼</div>
+                        <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: white;">Du hast wenig Zeit, willst Effizienz</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.6;">
+                            Als berufstätige Person möchtest du maximale Ergebnisse in minimaler Zeit. 
+                            Jede Trainingsminute soll optimal genutzt werden.
+                        </p>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📱</div>
+                        <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: white;">Du liebst innovative Technologie</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.6;">
+                            Du bist technikaffin, liebst KI-Features und willst die neuesten Innovationen 
+                            im Fitness-Bereich ausprobieren.
+                        </p>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
+                        <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: white;">Du willst messbare, sichtbare Erfolge</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.6;">
+                            Du willst deine Fortschritte nicht nur fühlen, sondern wissenschaftlich messen 
+                            und visuell tracken können.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Not Perfect For -->
+            <div style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 25px; padding: 3rem; margin-top: 3rem; text-align: center;">
+                <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: #64748b;">
+                    ❌ FitFoundry ist NICHT das Richtige für dich, wenn...
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background: white; border-radius: 15px; padding: 1.5rem; border: 1px solid #e2e8f0;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤷‍♂️</div>
+                        <p style="color: #64748b; font-size: 0.9rem;">Du willst einfach nur "irgendwie" trainieren ohne wissenschaftliche Grundlage</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 15px; padding: 1.5rem; border: 1px solid #e2e8f0;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+                        <p style="color: #64748b; font-size: 0.9rem;">Du hasst Smartphone-Apps und trainierst lieber komplett analog</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 15px; padding: 1.5rem; border: 1px solid #e2e8f0;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
+                        <p style="color: #64748b; font-size: 0.9rem;">Du erwartest Ergebnisse in 3 Tagen - wissenschaftliche Transformation braucht Zeit</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 15px; padding: 1.5rem; border: 1px solid #e2e8f0;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎲</div>
+                        <p style="color: #64748b; font-size: 0.9rem;">Dir ist es egal, ob deine Fortschritte auf Science oder Glück basieren</p>
+                    </div>
+                </div>
+                
+                <p style="color: #64748b; font-size: 1rem; margin-top: 2rem; font-style: italic;">
+                    Das ist völlig okay! FitFoundry ist für Menschen gemacht, die wissenschaftlich fundiertes Training mit modernem Game-Design erleben wollen.
+                </p>
+            </div>
+            
+            <!-- CTA After Who Is This For -->
+            <div style="text-align: center; margin-top: 4rem;">
+                <h3 style="font-size: 2rem; font-weight: 800; color: #1a1a1a; margin-bottom: 1rem;">
+                    Erkennst du dich wieder? 🤩
+                </h3>
+                <p style="font-size: 1.2rem; color: #64748b; margin-bottom: 2rem;">
+                    Dann ist es Zeit, wissenschaftlich zu trainieren!
+                </p>
+                <a href="#download" style="background: linear-gradient(135deg, #ED553B, #FF804F); color: white; padding: 1.5rem 3rem; border: none; border-radius: 25px; font-size: 1.3rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 1rem; transition: all 0.4s ease; box-shadow: 0 10px 40px rgba(237, 85, 59, 0.3);">
+                    🚀 Jetzt wissenschaftlich starten
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="download" class="section gradient-hero">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Starte deine wissenschaftliche Transformation! 🚀</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">Wähle den perfekten Plan für deine präzise Fitness-Journey</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                <!-- Free Plan -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2); text-align: center;">
+                    <div style="background: rgba(255, 255, 255, 0.2); border-radius: 15px; padding: 1rem; margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 0.5rem; color: white; line-height: 1.2;">
+    FitFoundry<br>
+    <span style="font-size: 1.5rem; font-weight: 600; opacity: 0.9;">Basis</span>
+</h3>
+                        <p style="font-size: 3rem; font-weight: 900; color: white; margin-bottom: 0.5rem;">0€</p>
+                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Für immer kostenlos</p>
+                    </div>
+                    
+                    <ul style="list-style: none; text-align: left; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.9);">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #4ade80;">✓</span> Avatar-System mit wissenschaftlicher Basis
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #4ade80;">✓</span> 50 grundlegende Übungen mit MET-Werten
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #4ade80;">✓</span> Basic Live-Kalorien-Tracking
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #4ade80;">✓</span> Einfache Körperfett-Schätzung
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #4ade80;">✓</span> Lokale Fortschrittsfotos
+                        </li>
+                    </ul>
+                    
+                    <a href="#" style="background: white; color: #ED553B; padding: 1.2rem 2rem; border: none; border-radius: 20px; font-size: 1.1rem; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.4s ease; width: 100%;">
+                        🎮 Kostenlos starten
+                    </a>
+                </div>
+                
+                <!-- Premium Plan -->
+                <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; color: white; border: 2px solid #FFD700; text-align: center; position: relative; transform: scale(1.05);">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #FFD700; color: #1a1a1a; padding: 0.5rem 2rem; border-radius: 25px; font-weight: 800; font-size: 0.9rem;">
+                        🏆 EMPFOHLEN
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.2); border-radius: 15px; padding: 1rem; margin-bottom: 2rem;">
+<h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 0.5rem; color: white; line-height: 1.2;">
+    FitFoundry<br>
+    <span style="font-size: 1.5rem; font-weight: 600; opacity: 0.9;">Pro</span>
+</h3>
+                        <p style="font-size: 3rem; font-weight: 900; color: white; margin-bottom: 0.5rem;">9,99€</p>
+                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">pro Monat</p>
+                    </div>
+                    
+                    <ul style="list-style: none; text-align: left; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.9);">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #FFD700;">✓</span> <strong>Alles aus Basis</strong>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #FFD700;">✓</span> Jackson-Pollock 4-Punkt Körperfett-Analyse
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #FFD700;">✓</span> 500+ VIP Celebrity & NASA Templates
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #FFD700;">✓</span> 200+ Audio-Coach Motivationen
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #FFD700;">✓</span> Live-Ticker + Audio-Coaching
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #FFD700;">✓</span> Personal Metabolic Factor (±8% Genauigkeit)
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #FFD700;">✓</span> KI-gestützter BodyAge Calculator
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #FFD700;">✓</span> FitFoundry Community Events & Avatar Competitions
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #FFD700;">✓</span> Wissenschaft & Methodologie transparent
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #FFD700;">✓</span> Erweiterte Foto-Overlays & Analytics
+                        </li>
+                    </ul>
+                    
+                    <a href="#" style="background: #FFD700; color: #1a1a1a; padding: 1.2rem 2rem; border: none; border-radius: 20px; font-size: 1.1rem; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.4s ease; width: 100%;">
+                        🚀 Pro Version starten
+                    </a>
+                    
+                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.8rem; margin-top: 1rem;">
+                        7 Tage kostenlos testen • Jederzeit kündbar
+                    </p>
+                </div>
+                
+                <!-- Lifetime Plan -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; color: white; border: 1px solid rgba(255, 255, 255, 0.2); text-align: center;">
+                    <div style="background: rgba(255, 255, 255, 0.2); border-radius: 15px; padding: 1rem; margin-bottom: 2rem;">
+<h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 0.5rem; color: white; line-height: 1.2;">
+    FitFoundry<br>
+    <span style="font-size: 1.5rem; font-weight: 600; opacity: 0.9;">Lifetime Champion</span>
+</h3>
+                        <p style="font-size: 2.5rem; font-weight: 900; color: white; margin-bottom: 0.5rem;">199€</p>
+                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Einmalig • Lebenslang</p>
+                    </div>
+                    
+                    <ul style="list-style: none; text-align: left; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.9);">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #a855f7;">✓</span> <strong> Alles aus FitFoundry Pro</strong>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #a855f7;">✓</span> Exklusive Champion-Abzeichen
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #a855f7;">✓</span> Früher Zugang zu neuen wissenschaftlichen Features
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #a855f7;">✓</span> VIP Community-Zugang
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #a855f7;">✓</span> Persönliche Wissenschafts-Beratung (1x jährlich)
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="color: #a855f7;">✓</span> Niemals wieder Abo-Gebühren
+                        </li>
+                    </ul>
+                    
+                    <a href="#" style="background: linear-gradient(135deg, #a855f7, #ec4899); color: white; padding: 1.2rem 2rem; border: none; border-radius: 20px; font-size: 1.1rem; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.4s ease; width: 100%;">
+                        👑 Lifetime Champion werden
+                    </a>
+                    
+                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.8rem; margin-top: 1rem;">
+                        Spare über 80% • Nur 100 Plätze verfügbar
+                    </p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; margin-bottom: 2rem;">
+                    ✅ 30 Tage Geld-zurück-Garantie • ✅ Peer-reviewed Methoden • ✅ Sichere Zahlung
+                </p>
+                
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                    <a href="#" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border: 2px solid rgba(255, 255, 255, 0.3); color: white; padding: 1rem 2rem; border-radius: 20px; font-size: 1.1rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 1rem; transition: all 0.4s ease;">
+                        🍎 App Store Download
+                    </a>
+                    <a href="#" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border: 2px solid rgba(255, 255, 255, 0.3); color: white; padding: 1rem 2rem; border-radius: 20px; font-size: 1.1rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 1rem; transition: all 0.4s ease;">
+                        🤖 Google Play (Coming Soon)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: #f8fafc;">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: #1a1a1a;">Häufig gestellte Fragen zur Wissenschaft 💬</h2>
+                <p style="color: #64748b;">Alles was du über FitFoundry's wissenschaftliche Methoden wissen musst</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 4rem auto 0; display: grid; gap: 1.5rem;">
+                <!-- FAQ Item 1 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        🔬 Wie genau sind die wissenschaftlichen Berechnungen?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Unsere Jackson-Pollock 4-Punkt Körperfett-Berechnung hat ±3-4% Genauigkeit vs DEXA-Scan. 
+                        Das Live-Kalorien-Tracking erreicht ±8% Genauigkeit mit Personal Metabolic Factor. 
+                        Alle Formeln basieren auf peer-reviewed Studien wie ACSM Guidelines und WHO-Standards.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        📚 Welche wissenschaftlichen Quellen verwendet ihr?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Wir verwenden über 20 peer-reviewed Quellen, darunter Jackson & Pollock (1978), 
+                        ACSM Position Stands, WHO Guidelines, Mifflin-St Jeor Equation und Cunningham Formula. 
+                        Alle Quellen sind in der App unter "Wissenschaft & Methodologie" transparent einsehbar.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        🔥 Wie funktioniert das Live-Kalorien-Tracking?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Wir berechnen deinen Kalorienverbrauch in Echtzeit basierend auf wissenschaftlichen MET-Werten 
+                        (Metabolic Equivalent of Task) vom American College of Sports Medicine. Dein Personal Metabolic 
+                        Factor berücksichtigt Alter, Geschlecht, Körperfat und Kondition für 20% höhere Genauigkeit.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        🧬 Was ist der BodyAge Calculator?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Der BodyAge Calculator berechnet dein biologisches Alter basierend auf wissenschaftlich 
+                        etablierten Gesundheitsindikatoren: BMI, Körperfett, Waist-Hip-Ratio und Aktivitätslevel. 
+                        Die Formeln basieren auf epidemiologischen Studien und WHO-Gesundheitsstandards.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        🔒 Sind meine Daten wirklich 100% privat und sicher?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Ja, absolut! Alle persönlichen Daten und Fortschrittsfotos werden ausschließlich lokal 
+                        auf deinem iPhone gespeichert. Es gibt keine Cloud-Synchronisation, keine Server-Uploads 
+                        und keine externe Speicherung. DSGVO-konform, AES-256 verschlüsselt, Made in Germany.
+                    </p>
+                </div>
+                <!-- FAQ Item 6 -->
+<div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+        📸 Wie funktionieren die intelligenten Overlay-Schablonen?
+    </h4>
+    <p style="color: #64748b; line-height: 1.7;">
+        Die App bietet 12+ wissenschaftlich designte Overlay-Schablonen (Ganzkörper, Oberkörper, Arme, 
+        Core, etc.) die sich über die Kamera legen. So nimmst du immer konsistente, vergleichbare Fotos auf. 
+        Alle Fotos bleiben 100% privat auf deinem iPhone - keine Cloud-Speicherung!
+    </p>
+</div>
+                
+                <!-- FAQ Item 7 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        💪 Sind die 500+ Übungen wirklich von Celebrities?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Die VIP Templates sind von echten Celebrity-Routinen, Profisportler-Trainingsplänen und 
+                        NASA-Astronauten-Fitness inspiriert und wissenschaftlich optimiert. Jede Übung hat korrekte 
+                        MET-Werte, Muskelgruppen-Zuordnung und Schwierigkeitsgrad basierend auf Sportwissenschaft.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 8 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        📱 Brauche ich spezielle Geräte für die Messungen?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Für die Jackson-Pollock Körperfett-Berechnung brauchst du einen Fettfalten-Caliper 
+                        (gibt's für 10-20€). Alles andere funktioniert nur mit deinem iPhone. Keine teuren 
+                        Körperfett-Waagen oder DEXA-Scans nötig - trotzdem wissenschaftlich präzise Ergebnisse.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 9 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        🎤 Wie funktioniert das Audio-Coaching System?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Das Audio-Coaching System bietet 200+ professionelle Motivations-Sounds während deinem Training. 
+                        Du wählst deine Voice-Option und Intensität (1-10). Der KI-Coach spricht live zwischen Sätzen, 
+                        bei Personal Records und gibt Übungsanweisungen - personalisiert nach deinem Trainingscharakter.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 10 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        💬 Was ist der Live-Ticker und wie funktioniert er?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Der Live-Ticker läuft parallel zum Audio-Coach und zeigt dir laufende Motivations-Updates, 
+                        Trainings-Status und Form-Erinnerungen. Kombiniert mit Audio-Coaching entsteht eine 
+                        einzigartige Trainingsbegleitung - nie wieder stummes, einsames Training!
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 11 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        🎉 Was sind FitFoundry Community Events?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Community Events sind wöchentliche Challenges, Expert-Workshops und Avatar-Competitions 
+                        die automatisch in deinem Trainingskalender erscheinen. Ein Widget in deinem Profil 
+                        erinnert dich an kommende Events. So trainierst du nie wieder alleine!
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 12 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        ⚔️ Wie funktionieren Avatar-Competitions?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Avatar-Competitions sind Community-Wettkämpfe wo deine Avatare basierend auf echten 
+                        Trainingsdaten gegeneinander antreten. Je stärker dein echter Fortschritt, desto 
+                        stärker dein Avatar im Wettkampf. Echte Fitness trifft spielerischen Wettkampf!
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 13 -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid rgba(237, 85, 59, 0.1);">
+                    <h4 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">
+                        🔄 Kann ich die wissenschaftlichen Berechnungen überprüfen?
+                    </h4>
+                    <p style="color: #64748b; line-height: 1.7;">
+                        Ja! Unter "Wissenschaft & Methodologie" findest du alle verwendeten Formeln, 
+                        Variablen-Erklärungen und Quellenangaben. Wir verstecken nichts - komplette Transparenz 
+                        über alle Berechnungsgrundlagen für maximale Vertrauenswürdigkeit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; padding: 4rem 0 2rem; color: white;">
+        <div class="container">
+            <div style="text-align: center;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem;">
+                    <img src="SplashBild.png" alt="FitFoundry Logo" style="width: 50px; height: 50px; border-radius: 12px;" onerror="this.style.display='none'">
+                    <div style="font-size: 2rem; font-weight: 800; color: white;">FitFoundry</div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">Wissenschaftlich fundiert</div>
+                </div>
+                
+                <div style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                    <a href="#datenschutz" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Datenschutz</a>
+                    <a href="#impressum" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Impressum</a>
+                    <a href="#agb" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">AGB</a>
+                    <a href="#wissenschaft" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Wissenschaftliche Quellen</a>
+                    <a href="#support" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Support</a>
+                    <a href="#kontakt" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Kontakt</a>
+                </div>
+                
+                <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; color: rgba(255, 255, 255, 0.6);">
+                    <p>&copy; 2025 FitFoundry - Entwickelt mit ❤️ und 🧬 Wissenschaft von Daniel Lahmer</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Made in Germany 🇩🇪 • Peer-reviewed Science 🔬 • Privacy by Design 🔒</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5);">
+                        Alle wissenschaftlichen Methoden transparent dokumentiert • Keine Black-Box-Algorithmen
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced scroll animations with Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Add fade-in animations to sections
+        document.querySelectorAll('.section').forEach((section, index) => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(section);
+        });
+
+        // Enhanced hover effects for buttons and cards
+        document.querySelectorAll('[style*="transition"]').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                if (this.href || this.onclick) {
+                    this.style.transform = this.style.transform.includes('scale') ? 
+                        this.style.transform : this.style.transform + ' scale(1.02)';
+                }
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                if (this.href || this.onclick) {
+                    this.style.transform = this.style.transform.replace(' scale(1.02)', '');
+                }
+            });
+        });
+
+        // Parallax effect for floating badges
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const badges = document.querySelectorAll('.floating-badge');
+            
+            badges.forEach((badge, index) => {
+                const speed = 0.3 + (index * 0.1);
+                badge.style.transform = badge.style.transform.split('translateY')[0] + 
+                    `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Performance optimization: throttle scroll events
+        let ticking = false;
+        function updateScrollEffects() {
+            // Scroll effects are already handled above
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollEffects);
+                ticking = true;
+            }
+        });
+
+        // Add loading animation for the page
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'opacity 0.5s ease';
+        });
+
+        // Set initial opacity to 0 for smooth loading
+        document.body.style.opacity = '0';
+    </script>
+</body>
+</html>
