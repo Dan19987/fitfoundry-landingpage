@@ -1,0 +1,439 @@
+/* ================================================================
+   FITFOUNDRY MOBILE OPTIMIERUNGEN - iPhone 13 & Mobile Devices
+   ================================================================ */
+
+/* HAUPTPROBLEME BEHOBEN:
+   1. Audio Section Grid Layout
+   2. Pricing Section zu schmale Karten
+   3. Features Grid zu breite minmax Werte
+   4. Allgemeine Touch-Optimierungen
+*/
+
+/* ================================================================
+   KLEINE HANDYS (iPhone 13 & ähnlich) - bis 480px
+   ================================================================ */
+@media (max-width: 480px) {
+    
+    /* CONTAINER & SECTIONS */
+    .container {
+        padding: 0 1rem; /* Weniger padding für mehr Platz */
+    }
+    
+    .section {
+        padding: 4rem 0; /* Weniger vertikaler Abstand */
+    }
+    
+    .section-title h2 {
+        font-size: 2rem !important; /* Kleinere Headlines */
+        line-height: 1.2;
+    }
+    
+    .section-title p {
+        font-size: 1.1rem !important;
+    }
+    
+    /* ================================================================
+       HERO SECTION FIXES
+       ================================================================ */
+    .hero-content {
+        grid-template-columns: 1fr !important; /* Eine Spalte */
+        gap: 2rem !important;
+        text-align: center;
+    }
+    
+    .hero-tagline {
+        font-size: 1.2rem !important;
+        min-height: 3rem !important;
+    }
+    
+    .hero-description {
+        font-size: 1rem !important;
+    }
+    
+    .hero-benefits li {
+        font-size: 0.95rem !important;
+    }
+    
+    .phone-mockup {
+        width: 250px !important;
+        height: 500px !important;
+    }
+    
+    .floating-badge {
+        font-size: 0.75rem !important;
+        padding: 0.7rem 1rem !important;
+    }
+    
+    /* ================================================================
+       PROBLEMATISCHE GRID LAYOUTS FIXEN
+       ================================================================ */
+    
+    /* Audio Section - HAUPTPROBLEM */
+    .section.gradient-audio .hero-content,
+    .section.gradient-audio > .container > div[style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important; /* Kein Grid mehr */
+    }
+    
+    .section.gradient-audio .scroll-fade-in {
+        margin-bottom: 2rem;
+    }
+    
+    .section.gradient-audio .scroll-scale-in {
+        margin-top: 0;
+    }
+    
+    /* Live Section - HAUPTPROBLEM */
+    .section.gradient-live .hero-content,
+    .section.gradient-live > .container > div[style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important;
+    }
+    
+    /* Photos Section - HAUPTPROBLEM */
+    .section.gradient-photos .hero-content,
+    .section.gradient-photos > .container > div[style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important;
+    }
+    
+    /* Community Section - HAUPTPROBLEM */
+    .section.gradient-community .hero-content,
+    .section.gradient-community > .container > div[style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important;
+    }
+    
+    /* Solution Section - HAUPTPROBLEM */
+    .section.gradient-solution > .container > div[style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important;
+    }
+    
+    /* ================================================================
+       FEATURES GRID FIXES
+       ================================================================ */
+    .features-grid {
+        grid-template-columns: 1fr !important; /* Eine Spalte */
+        gap: 1.5rem !important;
+    }
+    
+    .audio-features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .privacy-features {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .event-types-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* ================================================================
+       PRICING SECTION FIXES - HAUPTPROBLEM
+       ================================================================ */
+    .pricing-grid {
+        grid-template-columns: 1fr !important; /* Eine Spalte */
+        gap: 2rem !important;
+    }
+    
+    .pricing-card {
+        padding: 2rem !important;
+        margin: 0 !important;
+        transform: none !important; /* Kein 3D transform auf Mobile */
+    }
+    
+    .pricing-card.featured {
+        transform: none !important;
+        order: -1; /* Featured Card nach oben */
+    }
+    
+    .plan-price {
+        font-size: 2.5rem !important;
+    }
+    
+    .pricing-cta {
+        padding: 1rem 1.5rem !important;
+        font-size: 1rem !important;
+    }
+    
+    /* ================================================================
+       TESTIMONIALS FIXES
+       ================================================================ */
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* ================================================================
+       TIMELINE FIXES
+       ================================================================ */
+    .how-it-works-timeline {
+        max-width: 100% !important;
+    }
+    
+    .step-content {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1.5rem !important;
+    }
+    
+    .timeline-step:nth-child(even) .step-content {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .step-number {
+        position: relative !important;
+        left: auto !important;
+        transform: none !important;
+        margin: 0 auto 1rem auto !important;
+    }
+    
+    .timeline-line {
+        display: none !important; /* Linie verstecken auf Mobile */
+    }
+    
+    /* ================================================================
+       PROBLEM CARDS FIXES
+       ================================================================ */
+    .problem-cards-grid,
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* ================================================================
+       SCIENCE STATS FIXES
+       ================================================================ */
+    .science-stats {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2x2 Grid */
+        gap: 1rem !important;
+    }
+    
+    .science-stat {
+        padding: 1.5rem !important;
+    }
+    
+    .science-stat-number {
+        font-size: 2.5rem !important;
+    }
+    
+    /* ================================================================
+       BUTTONS & INTERACTIVE ELEMENTS
+       ================================================================ */
+    .btn-primary {
+        padding: 1.2rem 2rem !important;
+        font-size: 1.1rem !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        text-align: center !important;
+    }
+    
+    .download-btn {
+        padding: 1rem 1.5rem !important;
+        font-size: 1rem !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .pricing-cta {
+        width: 100% !important;
+        max-width: none !important;
+    }
+    
+    /* ================================================================
+       DEMO CONTAINERS FIXES
+       ================================================================ */
+    .photos-demo-container,
+    .events-demo-container,
+    .audio-demo-container,
+    .live-demo-container {
+        padding: 2rem !important;
+        margin: 2rem 0 !important;
+    }
+    
+    .camera-interface {
+        min-height: 250px !important;
+    }
+    
+    .overlay-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+    }
+    
+    /* ================================================================
+       COMPARISON TABLE FIXES
+       ================================================================ */
+    .comparison-table {
+        padding: 1.5rem !important;
+        overflow-x: auto !important;
+    }
+    
+    .comparison-header,
+    .comparison-row {
+        grid-template-columns: 2fr 1fr 1fr 1fr !important;
+        gap: 0.5rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    /* ================================================================
+       FORMS & INPUT OPTIMIERUNG
+       ================================================================ */
+    .features-tabs {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
+    }
+    
+    .feature-tab {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0.8rem !important;
+    }
+    
+    /* ================================================================
+       FAQ SECTION OPTIMIERUNG
+       ================================================================ */
+    .scroll-fade-in[style*="background: white"] {
+        padding: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* ================================================================
+       FOOTER FIXES
+       ================================================================ */
+    footer .scroll-fade-in[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
+    }
+}
+
+/* ================================================================
+   MITTLERE HANDYS & TABLETS - 481px bis 768px
+   ================================================================ */
+@media (min-width: 481px) and (max-width: 768px) {
+    
+    /* Pricing bleibt 2-spaltig auf größeren Handys */
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Features können 2-spaltig sein */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Science Stats bleibt 2x2 */
+    .science-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Problem Cards können 2-spaltig */
+    .problem-cards-grid,
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ================================================================
+   TOUCH OPTIMIERUNGEN FÜR ALLE MOBILE GERÄTE
+   ================================================================ */
+@media (max-width: 768px) {
+    
+    /* Hover-Effekte für Touch anpassen */
+    .feature-card:hover,
+    .pricing-card:hover,
+    .testimonial-card:hover {
+        transform: none !important; /* Kein 3D auf Touch */
+    }
+    
+    /* Click-Areas vergrößern */
+    .feature-tab,
+    .pricing-cta,
+    .btn-primary,
+    .download-btn {
+        min-height: 44px !important; /* Apple Touch-Guidelines */
+    }
+    
+    /* Animationen reduzieren für bessere Performance */
+    * {
+        animation-duration: 0.3s !important;
+        transition-duration: 0.3s !important;
+    }
+    
+    /* Partikel-System auf Mobile reduzieren */
+    .particles {
+        display: none !important; /* Spart Battery */
+    }
+    
+    /* 3D-Transforms deaktivieren */
+    .phone-mockup {
+        transform: none !important;
+        animation: none !important;
+    }
+    
+    .phone-mockup.mouse-tracking {
+        transform: none !important;
+    }
+}
+
+/* ================================================================
+   LANDSCAPE MODUS FIXES
+   ================================================================ */
+@media (max-width: 768px) and (orientation: landscape) {
+    
+    .section {
+        padding: 3rem 0 !important;
+    }
+    
+    .hero {
+        min-height: 80vh !important;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* ================================================================
+   PERFORMANCE OPTIMIERUNGEN
+   ================================================================ */
+@media (max-width: 768px) {
+    
+    /* GPU-Acceleration reduzieren */
+    .feature-card,
+    .pricing-card,
+    .testimonial-card {
+        transform: none !important;
+        will-change: auto !important;
+    }
+    
+    /* Backdrop-filter auf schwächeren Geräten vereinfachen */
+    .feature-card,
+    .pricing-card,
+    .audio-demo-container,
+    .live-demo-container,
+    .photos-demo-container,
+    .events-demo-container {
+        backdrop-filter: blur(10px) !important; /* Weniger blur */
+    }
+}
+
+/* ================================================================
+   DEBUGGING HELPER (ENTFERNEN VOR PRODUKTION)
+   ================================================================ */
+/*
+@media (max-width: 480px) {
+    * {
+        border: 1px solid red !important;
+    }
+}
+*/
