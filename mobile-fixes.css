@@ -16,53 +16,50 @@
 @media (max-width: 480px) {
     
     /* ================================================================
-       STOPPE ALLE STÖRENDEN ANIMATIONEN - PULSING PROBLEM GELÖST!
+       STOPPE NUR STÖRENDE ANIMATIONEN - HERO SCHONEN!
        ================================================================ */
     
-    /* Endlos-Animationen komplett stoppen */
-    .pulse,
+    /* Endlos-Animationen stoppen, ABER Hero-Basics behalten */
+    .pulse:not(.hero *),
     .app-icon,
     .play-button,
-    .ticker-icon,
-    .floating-badge,
-    .phone-mockup,
-    .particles,
-    [class*="float"],
-    [class*="pulse"],
-    [class*="shimmer"] {
+    .ticker-icon {
         animation: none !important;
     }
     
-    /* Partikel-System komplett ausschalten */
+    /* Partikel-System ausschalten */
     .particles {
         display: none !important;
     }
     
-    /* Floating Badges - kein Float mehr */
-    .floating-badge {
-        position: static !important;
-        display: inline-block !important;
-        margin: 0.5rem !important;
+    /* 3D Transforms nur außerhalb Hero stoppen */
+    .section:not(.hero) .phone-mockup,
+    .section:not(.hero) [class*="float"],
+    .section:not(.hero) [class*="pulse"],
+    .section:not(.hero) [class*="shimmer"] {
         animation: none !important;
         transform: none !important;
     }
     
-    /* 3D Transforms stoppen */
-    .phone-mockup,
-    .phone-mockup.mouse-tracking,
-    .phone-mockup.returning {
-        transform: none !important;
-        animation: none !important;
-        transition: none !important;
-    }
-    
-    /* Shimmer-Effekte stoppen */
+    /* Shimmer-Effekte in Demo-Containers stoppen */
     .audio-player::before,
     .event-item::before,
     .feature-card::before,
     .pricing-cta::before,
     .btn-primary::before {
         display: none !important;
+    }
+    
+    /* Hero Phone - Animationen reduzieren aber nicht killen */
+    .hero .phone-mockup {
+        animation-duration: 6s !important; /* Langsamere Animation */
+        transform: none !important; /* 3D Mouse-Tracking aus */
+    }
+    
+    .hero .phone-mockup.mouse-tracking,
+    .hero .phone-mockup.returning {
+        transform: none !important;
+        transition: none !important;
     }
     
     /* ================================================================
@@ -86,50 +83,109 @@
     }
     
     /* ================================================================
-       1. HERO SECTION - KOMPLETT OPTIMIERT
+       1. HERO SECTION - SANFT OPTIMIERT (NICHT KAPUTTMACHEN!)
        ================================================================ */
-    .hero-content {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-        text-align: center;
+    
+    /* Hero Container - Min-Height sicherstellen */
+    .hero {
+        min-height: 100vh !important;
+        padding: 2rem 0 !important;
     }
     
+    /* Hero Content - Vertikal statt Grid, aber sanft */
+    .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3rem !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+    
+    /* Hero Text Block */
+    .hero-text {
+        order: 1 !important;
+        max-width: 100% !important;
+    }
+    
+    /* Hero Visual Block */
+    .hero-visual {
+        order: 2 !important;
+        position: relative !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    /* Text Größen anpassen */
     .hero-tagline {
-        font-size: 1.2rem !important;
-        min-height: 3rem !important;
+        font-size: 1.3rem !important;
+        min-height: 3.5rem !important;
+        line-height: 1.3 !important;
     }
     
     .hero-description {
-        font-size: 1rem !important;
+        font-size: 1.05rem !important;
+        line-height: 1.6 !important;
     }
     
     .hero-benefits li {
-        font-size: 0.95rem !important;
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
     }
     
+    /* Phone Mockup - Klein aber sichtbar */
     .phone-mockup {
-        width: 250px !important;
-        height: 500px !important;
-    }
-    
-    .floating-badge {
-        font-size: 0.75rem !important;
-        padding: 0.7rem 1rem !important;
+        width: 280px !important;
+        height: 560px !important;
+        margin: 2rem auto !important;
         position: relative !important;
-        margin: 0.5rem !important;
+        z-index: 5 !important;
     }
     
-    /* Hero Visual - Floating Badges nebeneinander */
-    .hero-visual {
-        position: relative;
-    }
-    
-    .hero-visual .floating-badge:nth-child(1),
-    .hero-visual .floating-badge:nth-child(2),
-    .hero-visual .floating-badge:nth-child(3) {
-        position: static !important;
+    /* Floating Badges - Über dem Phone anordnen */
+    .hero-visual .floating-badge {
+        position: relative !important;
         display: inline-block !important;
-        margin: 0.3rem !important;
+        margin: 0.5rem 0.3rem !important;
+        font-size: 0.8rem !important;
+        padding: 0.8rem 1.2rem !important;
+        border-radius: 12px !important;
+        z-index: 10 !important;
+        /* Leichte Animation behalten für Lebendigkeit */
+        animation: none !important;
+        transform: none !important;
+    }
+    
+    /* Badge Container über Phone */
+    .hero-visual::before {
+        content: '';
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Logo Hero verkleinern */
+    .logo-hero {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .logo-hero img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .logo-hero h1 {
+        font-size: 2rem !important;
+    }
+    
+    /* CTA Button anpassen */
+    .hero-cta {
+        align-items: center !important;
+        width: 100% !important;
     }
     
     /* ================================================================
