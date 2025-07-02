@@ -1,12 +1,13 @@
 /* ================================================================
-   FITFOUNDRY MOBILE OPTIMIERUNGEN - iPhone 13 & Mobile Devices
+   FITFOUNDRY MOBILE OPTIMIERUNGEN - KOMPLETT FÜR ALLE SEKTIONEN
    ================================================================ */
 
-/* HAUPTPROBLEME BEHOBEN:
-   1. Audio Section Grid Layout
-   2. Pricing Section zu schmale Karten
-   3. Features Grid zu breite minmax Werte
-   4. Allgemeine Touch-Optimierungen
+/* ALLE PROBLEME BEHOBEN:
+   ✅ Alle Grid-Layouts Mobile-optimiert
+   ✅ Pulsing/Float Animationen gestoppt
+   ✅ Touch-Optimierungen
+   ✅ Performance-Verbesserungen
+   ✅ Alle 15 Sektionen einzeln optimiert
 */
 
 /* ================================================================
@@ -14,17 +15,69 @@
    ================================================================ */
 @media (max-width: 480px) {
     
-    /* CONTAINER & SECTIONS */
+    /* ================================================================
+       STOPPE ALLE STÖRENDEN ANIMATIONEN - PULSING PROBLEM GELÖST!
+       ================================================================ */
+    
+    /* Endlos-Animationen komplett stoppen */
+    .pulse,
+    .app-icon,
+    .play-button,
+    .ticker-icon,
+    .floating-badge,
+    .phone-mockup,
+    .particles,
+    [class*="float"],
+    [class*="pulse"],
+    [class*="shimmer"] {
+        animation: none !important;
+    }
+    
+    /* Partikel-System komplett ausschalten */
+    .particles {
+        display: none !important;
+    }
+    
+    /* Floating Badges - kein Float mehr */
+    .floating-badge {
+        position: static !important;
+        display: inline-block !important;
+        margin: 0.5rem !important;
+        animation: none !important;
+        transform: none !important;
+    }
+    
+    /* 3D Transforms stoppen */
+    .phone-mockup,
+    .phone-mockup.mouse-tracking,
+    .phone-mockup.returning {
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    /* Shimmer-Effekte stoppen */
+    .audio-player::before,
+    .event-item::before,
+    .feature-card::before,
+    .pricing-cta::before,
+    .btn-primary::before {
+        display: none !important;
+    }
+    
+    /* ================================================================
+       CONTAINER & SECTIONS - GLOBAL
+       ================================================================ */
     .container {
-        padding: 0 1rem; /* Weniger padding für mehr Platz */
+        padding: 0 1rem;
     }
     
     .section {
-        padding: 4rem 0; /* Weniger vertikaler Abstand */
+        padding: 4rem 0;
     }
     
     .section-title h2 {
-        font-size: 2rem !important; /* Kleinere Headlines */
+        font-size: 2rem !important;
         line-height: 1.2;
     }
     
@@ -33,10 +86,10 @@
     }
     
     /* ================================================================
-       HERO SECTION FIXES
+       1. HERO SECTION - KOMPLETT OPTIMIERT
        ================================================================ */
     .hero-content {
-        grid-template-columns: 1fr !important; /* Eine Spalte */
+        grid-template-columns: 1fr !important;
         gap: 2rem !important;
         text-align: center;
     }
@@ -62,115 +115,301 @@
     .floating-badge {
         font-size: 0.75rem !important;
         padding: 0.7rem 1rem !important;
+        position: relative !important;
+        margin: 0.5rem !important;
+    }
+    
+    /* Hero Visual - Floating Badges nebeneinander */
+    .hero-visual {
+        position: relative;
+    }
+    
+    .hero-visual .floating-badge:nth-child(1),
+    .hero-visual .floating-badge:nth-child(2),
+    .hero-visual .floating-badge:nth-child(3) {
+        position: static !important;
+        display: inline-block !important;
+        margin: 0.3rem !important;
     }
     
     /* ================================================================
-       PROBLEMATISCHE GRID LAYOUTS FIXEN
+       2. PROBLEM SECTION - ALLE CARDS OPTIMIERT
+       ================================================================ */
+    .problem-cards-grid,
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .problem-card {
+        padding: 2rem !important;
+        transform: none !important;
+    }
+    
+    /* ================================================================
+       3. SCIENCE SECTION - ALLE 6 CARDS + TRUST BUILDER
        ================================================================ */
     
-    /* Audio Section - HAUPTPROBLEM */
-    .section.gradient-audio .hero-content,
-    .section.gradient-audio > .container > div[style*="grid-template-columns: 1fr 1fr"] {
-        display: block !important; /* Kein Grid mehr */
+    /* Science Stats - 4 Zahlen */
+    .science-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
     }
     
-    .section.gradient-audio .scroll-fade-in {
-        margin-bottom: 2rem;
+    .science-stat {
+        padding: 1.5rem !important;
     }
     
-    .section.gradient-audio .scroll-scale-in {
-        margin-top: 0;
+    .science-stat-number {
+        font-size: 2.5rem !important;
     }
     
-    /* Live Section - HAUPTPROBLEM */
-    .section.gradient-live .hero-content,
-    .section.gradient-live > .container > div[style*="grid-template-columns: 1fr 1fr"] {
-        display: block !important;
+    /* Science Content - 6 Cards */
+    .section.gradient-science div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        margin-top: 2rem !important;
     }
     
-    /* Photos Section - HAUPTPROBLEM */
-    .section.gradient-photos .hero-content,
-    .section.gradient-photos > .container > div[style*="grid-template-columns: 1fr 1fr"] {
-        display: block !important;
+    /* Science Cards individuell */
+    .section.gradient-science div[style*="background: rgba(255, 255, 255, 0.1)"] {
+        padding: 2rem !important;
+        margin-bottom: 1rem !important;
     }
     
-    /* Community Section - HAUPTPROBLEM */
-    .section.gradient-community .hero-content,
-    .section.gradient-community > .container > div[style*="grid-template-columns: 1fr 1fr"] {
-        display: block !important;
+    /* Trust Builder */
+    .section.gradient-science div[style*="background: rgba(255, 255, 255, 0.15)"] {
+        padding: 2rem !important;
+        margin-top: 2rem !important;
     }
     
-    /* Solution Section - HAUPTPROBLEM */
-    .section.gradient-solution > .container > div[style*="grid-template-columns: 1fr 1fr"] {
-        display: block !important;
+    /* Science Badges */
+    .section.gradient-science div[style*="display: flex; justify-content: center; gap: 3rem"] {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        margin-top: 1.5rem !important;
     }
     
     /* ================================================================
-       FEATURES GRID FIXES
+       4. SOLUTION SECTION - TEXT + AVATAR EVOLUTION
+       ================================================================ */
+    
+    /* Links/Rechts zu Vertikal */
+    .section.gradient-solution div[style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important;
+    }
+    
+    .section.gradient-solution .scroll-fade-in {
+        margin-bottom: 2rem !important;
+    }
+    
+    .section.gradient-solution .scroll-scale-in {
+        margin-top: 0 !important;
+    }
+    
+    /* Avatar Timeline vertikal */
+    .section.gradient-solution div[style*="display: flex; align-items: center; justify-content: center"] {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Evolution Arrows drehen */
+    .section.gradient-solution div[style*="font-size: 2rem"] {
+        transform: rotate(90deg) !important;
+        margin: 0.5rem 0 !important;
+    }
+    
+    /* ================================================================
+       5. FEATURES SECTION - TABS + CARDS
        ================================================================ */
     .features-grid {
-        grid-template-columns: 1fr !important; /* Eine Spalte */
-        gap: 1.5rem !important;
-    }
-    
-    .audio-features-grid {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
     }
     
-    .feature-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
+    .features-tabs {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
     }
     
+    .feature-tab {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0.8rem !important;
+    }
+    
+    .feature-card {
+        padding: 2rem !important;
+        transform: none !important;
+    }
+    
+    /* ================================================================
+       6. PHOTOS SECTION - OVERLAY DEMO + PRIVACY FEATURES
+       ================================================================ */
+    
+    /* Links/Rechts zu Vertikal */
+    .section.gradient-photos div[style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important;
+    }
+    
+    .photos-demo-container {
+        padding: 2rem !important;
+        margin: 2rem 0 !important;
+    }
+    
+    .camera-interface {
+        min-height: 250px !important;
+    }
+    
+    .overlay-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+    }
+    
+    /* Privacy Features Grid */
     .privacy-features {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
     }
     
+    /* ================================================================
+       7. "IST FITFOUNDRY DAS RICHTIGE" SECTION - PERFECT FOR + NOT FOR
+       ================================================================ */
+    
+    /* Perfect For - 6 Cards */
+    .scroll-scale-in div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    /* Not Perfect For - 4 Cards */
+    .scroll-fade-in div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    /* Perfect For Cards */
+    .scroll-scale-in div[style*="background: rgba(255, 255, 255, 0.1)"] {
+        padding: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Not Perfect For Cards */
+    .scroll-fade-in div[style*="background: white; border-radius: 15px"] {
+        padding: 1.2rem !important;
+        text-align: center !important;
+    }
+    
+    /* CTA am Ende */
+    .scroll-fade-in[style*="text-align: center; margin-top: 4rem"] {
+        margin-top: 2rem !important;
+        padding: 0 1rem !important;
+    }
+    
+    /* ================================================================
+       8. COMMUNITY SECTION - EVENTS + CALENDAR
+       ================================================================ */
+    
+    /* Links/Rechts zu Vertikal */
+    .section.gradient-community div[style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important;
+    }
+    
+    .events-demo-container {
+        padding: 2rem !important;
+        margin: 2rem 0 !important;
+    }
+    
+    /* Event Types Grid */
     .event-types-grid {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
     }
     
-    /* ================================================================
-       PRICING SECTION FIXES - HAUPTPROBLEM
-       ================================================================ */
-    .pricing-grid {
-        grid-template-columns: 1fr !important; /* Eine Spalte */
-        gap: 2rem !important;
+    /* Calendar responsive */
+    .calendar-header {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
     }
     
-    .pricing-card {
+    .event-item {
+        padding: 1.2rem !important;
+    }
+    
+    /* ================================================================
+       9. AUDIO COACH SECTION - DEMO + FEATURES
+       ================================================================ */
+    
+    /* Links/Rechts zu Vertikal */
+    .section.gradient-audio div[style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important;
+    }
+    
+    .audio-demo-container {
         padding: 2rem !important;
-        margin: 0 !important;
-        transform: none !important; /* Kein 3D transform auf Mobile */
+        margin: 2rem 0 !important;
     }
     
-    .pricing-card.featured {
-        transform: none !important;
-        order: -1; /* Featured Card nach oben */
+    /* Audio Features Grid */
+    .audio-features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
     }
     
-    .plan-price {
-        font-size: 2.5rem !important;
+    /* Audio Player optimieren */
+    .audio-controls {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
     }
     
-    .pricing-cta {
-        padding: 1rem 1.5rem !important;
-        font-size: 1rem !important;
+    .play-button {
+        animation: none !important;
     }
     
     /* ================================================================
-       TESTIMONIALS FIXES
+       10. LIVE TRACKING SECTION - DEMO + TICKER
        ================================================================ */
-    .testimonials-grid {
+    
+    /* Links/Rechts zu Vertikal */
+    .section.gradient-live div[style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important;
+    }
+    
+    .live-demo-container {
+        padding: 2rem !important;
+        margin: 2rem 0 !important;
+    }
+    
+    /* Live Counter optimieren */
+    .live-counter {
+        padding: 1.5rem !important;
+    }
+    
+    .counter-number {
+        font-size: 2rem !important;
+    }
+    
+    /* Training Stats responsive */
+    .training-stats {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    /* Feature Grid (Live Section) */
+    .feature-grid {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
     }
     
     /* ================================================================
-       TIMELINE FIXES
+       11. HOW IT WORKS SECTION - TIMELINE + STEPS
        ================================================================ */
     .how-it-works-timeline {
         max-width: 100% !important;
@@ -192,183 +431,85 @@
         left: auto !important;
         transform: none !important;
         margin: 0 auto 1rem auto !important;
+        animation: none !important;
     }
     
-    .timeline-line {
-        display: none !important; /* Linie verstecken auf Mobile */
+    .timeline-line,
+    .timeline-progress {
+        display: none !important;
+    }
+    
+    /* Avatar Progression */
+    .avatar-progression {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .progress-arrow {
+        transform: rotate(90deg) !important;
+    }
+    
+    /* Success Grid */
+    .success-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
     }
     
     /* ================================================================
-       PROBLEM CARDS FIXES
+       12. SOCIAL PROOF/TESTIMONIALS SECTION
        ================================================================ */
-    .problem-cards-grid,
-    div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+    .testimonials-grid {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
     }
     
-    /* ================================================================
-       SCIENCE SECTION FIXES - ZUSÄTZLICHE OPTIMIERUNG
-       ================================================================ */
-    
-    /* Science Section - 6 Science Cards Grid */
-    .section.gradient-science div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-        margin-top: 2rem !important;
-    }
-    
-    /* Science Cards individuell optimieren */
-    .section.gradient-science div[style*="background: rgba(255, 255, 255, 0.1)"] {
+    .testimonial-card {
         padding: 2rem !important;
-        margin-bottom: 1rem !important;
+        transform: none !important;
     }
     
-    /* Trust Builder Section in Science */
-    .section.gradient-science div[style*="background: rgba(255, 255, 255, 0.15)"] {
-        padding: 2rem !important;
-        margin-top: 2rem !important;
-    }
-    
-    /* Science Badges Grid */
-    .section.gradient-science div[style*="display: flex; justify-content: center; gap: 3rem"] {
+    /* Credibility Badges */
+    .credibility-badges {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1rem !important;
         margin-top: 1.5rem !important;
     }
     
-    /* ================================================================
-       SOLUTION SECTION FIXES - HAUPTPROBLEM
-       ================================================================ */
-    
-    /* Solution Section - Links/Rechts Layout */
-    .section.gradient-solution div[style*="grid-template-columns: 1fr 1fr"] {
-        display: block !important;
-    }
-    
-    /* Solution Text Block */
-    .section.gradient-solution .scroll-fade-in {
-        margin-bottom: 2rem !important;
-    }
-    
-    /* Avatar Evolution Container */
-    .section.gradient-solution .scroll-scale-in {
-        margin-top: 0 !important;
-    }
-    
-    /* Avatar Timeline in Solution */
-    .section.gradient-solution div[style*="display: flex; align-items: center; justify-content: center"] {
-        flex-direction: column !important;
-        gap: 1rem !important;
-        margin-bottom: 1.5rem !important;
-    }
-    
-    /* Avatar Evolution Arrows */
-    .section.gradient-solution div[style*="font-size: 2rem"] {
-        transform: rotate(90deg) !important;
-        margin: 0.5rem 0 !important;
+    .credibility-section {
+        padding: 2rem !important;
     }
     
     /* ================================================================
-       "IST FITFOUNDRY DAS RICHTIGE" SECTION FIXES
+       13. PRICING SECTION - CARDS + COMPARISON TABLE
        ================================================================ */
-    
-    /* Perfect For Section - 6 Cards */
-    .scroll-scale-in div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] {
+    .pricing-grid {
         grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-        margin-top: 1.5rem !important;
+        gap: 2rem !important;
     }
     
-    /* Not Perfect For Section - 4 Cards */
-    .scroll-fade-in div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"] {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1rem !important;
-        margin-top: 1.5rem !important;
+    .pricing-card {
+        padding: 2rem !important;
+        margin: 0 !important;
+        transform: none !important;
     }
     
-    /* Perfect For Cards Styling */
-    .scroll-scale-in div[style*="background: rgba(255, 255, 255, 0.1)"] {
-        padding: 1.5rem !important;
-        margin-bottom: 1rem !important;
+    .pricing-card.featured {
+        transform: none !important;
+        order: -1;
     }
     
-    /* Not Perfect For Cards Styling */
-    .scroll-fade-in div[style*="background: white; border-radius: 15px"] {
-        padding: 1.2rem !important;
-        text-align: center !important;
-    }
-    
-    /* CTA nach "Who is this for" Section */
-    .scroll-fade-in[style*="text-align: center; margin-top: 4rem"] {
-        margin-top: 2rem !important;
-        padding: 0 1rem !important;
-    }
-    
-    /* ================================================================
-       SCIENCE STATS FIXES
-       ================================================================ */
-    .science-stats {
-        grid-template-columns: repeat(2, 1fr) !important; /* 2x2 Grid */
-        gap: 1rem !important;
-    }
-    
-    .science-stat {
-        padding: 1.5rem !important;
-    }
-    
-    .science-stat-number {
+    .plan-price {
         font-size: 2.5rem !important;
     }
     
-    /* ================================================================
-       BUTTONS & INTERACTIVE ELEMENTS
-       ================================================================ */
-    .btn-primary {
-        padding: 1.2rem 2rem !important;
-        font-size: 1.1rem !important;
-        width: 100% !important;
-        max-width: 300px !important;
-        text-align: center !important;
-    }
-    
-    .download-btn {
+    .pricing-cta {
         padding: 1rem 1.5rem !important;
         font-size: 1rem !important;
         width: 100% !important;
-        max-width: 280px !important;
-        margin-bottom: 1rem !important;
     }
     
-    .pricing-cta {
-        width: 100% !important;
-        max-width: none !important;
-    }
-    
-    /* ================================================================
-       DEMO CONTAINERS FIXES
-       ================================================================ */
-    .photos-demo-container,
-    .events-demo-container,
-    .audio-demo-container,
-    .live-demo-container {
-        padding: 2rem !important;
-        margin: 2rem 0 !important;
-    }
-    
-    .camera-interface {
-        min-height: 250px !important;
-    }
-    
-    .overlay-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.5rem !important;
-    }
-    
-    /* ================================================================
-       COMPARISON TABLE FIXES
-       ================================================================ */
+    /* Comparison Table */
     .comparison-table {
         padding: 1.5rem !important;
         overflow-x: auto !important;
@@ -381,36 +522,123 @@
         font-size: 0.8rem !important;
     }
     
-    /* ================================================================
-       FORMS & INPUT OPTIMIERUNG
-       ================================================================ */
-    .features-tabs {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 0.5rem !important;
-    }
-    
-    .feature-tab {
+    /* Download Section */
+    .download-btn {
+        padding: 1rem 1.5rem !important;
+        font-size: 1rem !important;
         width: 100% !important;
-        text-align: center !important;
-        padding: 0.8rem !important;
-    }
-    
-    /* ================================================================
-       FAQ SECTION OPTIMIERUNG
-       ================================================================ */
-    .scroll-fade-in[style*="background: white"] {
-        padding: 1.5rem !important;
+        max-width: 280px !important;
         margin-bottom: 1rem !important;
     }
     
     /* ================================================================
-       FOOTER FIXES
+       14. FAQ SECTION - ALLE QUESTIONS OPTIMIERT
        ================================================================ */
-    footer .scroll-fade-in[style*="display: flex"] {
+    
+    /* FAQ Container */
+    div[style*="max-width: 800px; margin: 4rem auto 0"] {
+        max-width: 100% !important;
+        margin: 2rem auto 0 !important;
+        padding: 0 1rem !important;
+    }
+    
+    /* FAQ Items */
+    .scroll-fade-in[style*="background: white; border-radius: 20px"] {
+        padding: 1.5rem !important;
+        margin-bottom: 1rem !important;
+        border-radius: 15px !important;
+    }
+    
+    /* FAQ Titles */
+    .scroll-fade-in h4 {
+        font-size: 1.1rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    /* FAQ Text */
+    .scroll-fade-in p {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* ================================================================
+       15. FOOTER - LINKS + COPYRIGHT
+       ================================================================ */
+    
+    /* Footer Container */
+    footer .container {
+        padding: 0 1rem !important;
+    }
+    
+    /* Footer Logo Section */
+    footer .scroll-fade-in[style*="display: flex; align-items: center"] {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Footer Links */
+    footer .scroll-fade-in[style*="display: flex; justify-content: center"] {
         flex-direction: column !important;
         gap: 1rem !important;
         text-align: center !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Footer Copyright */
+    footer .scroll-fade-in[style*="border-top"] {
+        padding-top: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    footer .scroll-fade-in p {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* ================================================================
+       BUTTONS & INTERACTIVE ELEMENTS - GLOBAL
+       ================================================================ */
+    .btn-primary {
+        padding: 1.2rem 2rem !important;
+        font-size: 1.1rem !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        text-align: center !important;
+    }
+    
+    .download-btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* ================================================================
+       ALLE BENEFITS LISTS OPTIMIEREN
+       ================================================================ */
+    .benefits-list,
+    .hero-benefits,
+    .solution-benefits,
+    .photos-benefits,
+    .community-benefits,
+    .audio-benefits,
+    .live-benefits,
+    .pricing-features {
+        margin-bottom: 2rem !important;
+    }
+    
+    .benefits-list li,
+    .hero-benefits li,
+    .solution-benefits li,
+    .photos-benefits li,
+    .community-benefits li,
+    .audio-benefits li,
+    .live-benefits li,
+    .pricing-features li {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        padding: 0.8rem 0 !important;
     }
 }
 
@@ -419,7 +647,7 @@
    ================================================================ */
 @media (min-width: 481px) and (max-width: 768px) {
     
-    /* Pricing bleibt 2-spaltig auf größeren Handys */
+    /* Pricing kann 2-spaltig bleiben */
     .pricing-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1.5rem !important;
@@ -441,29 +669,49 @@
         grid-template-columns: repeat(2, 1fr) !important;
     }
     
-    /* Science Section - 6 Cards können 2-spaltig auf Tablets */
+    /* Science Section - 6 Cards können 2-spaltig */
     .section.gradient-science div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1.5rem !important;
     }
     
-    /* Solution Section - kann nebeneinander bleiben auf Tablets */
+    /* Solution Section - kann nebeneinander bleiben */
     .section.gradient-solution div[style*="grid-template-columns: 1fr 1fr"] {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         gap: 2rem !important;
     }
     
-    /* Perfect For Section - 2 Spalten auf Tablets */
+    /* Perfect For Section - 2 Spalten */
     .scroll-scale-in div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1.5rem !important;
     }
     
-    /* Not Perfect For Section - 2 Spalten auf Tablets */
+    /* Not Perfect For Section - 2 Spalten */
     .scroll-fade-in div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"] {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1.5rem !important;
+    }
+    
+    /* Testimonials können 2-spaltig */
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Success Grid */
+    .success-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    /* Audio/Live Sections können nebeneinander bleiben */
+    .section.gradient-audio div[style*="grid-template-columns: 1fr 1fr"],
+    .section.gradient-live div[style*="grid-template-columns: 1fr 1fr"],
+    .section.gradient-photos div[style*="grid-template-columns: 1fr 1fr"],
+    .section.gradient-community div[style*="grid-template-columns: 1fr 1fr"] {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2rem !important;
     }
 }
 
@@ -472,40 +720,81 @@
    ================================================================ */
 @media (max-width: 768px) {
     
-    /* Hover-Effekte für Touch anpassen */
+    /* Hover-Effekte für Touch deaktivieren */
     .feature-card:hover,
     .pricing-card:hover,
-    .testimonial-card:hover {
-        transform: none !important; /* Kein 3D auf Touch */
+    .testimonial-card:hover,
+    .problem-card:hover,
+    .audio-feature-card:hover,
+    .privacy-feature:hover,
+    .event-type:hover,
+    .success-item:hover {
+        transform: none !important;
+        background: inherit !important;
+        box-shadow: inherit !important;
     }
     
-    /* Click-Areas vergrößern */
+    /* Click-Areas vergrößern für Touch */
     .feature-tab,
     .pricing-cta,
     .btn-primary,
-    .download-btn {
-        min-height: 44px !important; /* Apple Touch-Guidelines */
+    .download-btn,
+    .overlay-option,
+    .nav-btn {
+        min-height: 44px !important; /* Apple Touch Guidelines */
+        min-width: 44px !important;
     }
     
-    /* Animationen reduzieren für bessere Performance */
-    * {
+    /* Alle störenden Animationen stoppen */
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.3s !important;
         transition-duration: 0.3s !important;
     }
     
-    /* Partikel-System auf Mobile reduzieren */
-    .particles {
-        display: none !important; /* Spart Battery */
-    }
-    
-    /* 3D-Transforms deaktivieren */
-    .phone-mockup {
-        transform: none !important;
+    /* Spezielle endlos-Animationen komplett stoppen */
+    .pulse,
+    .playPulse,
+    .floatBadgeEnhanced,
+    .subtleFloat,
+    .iconPulse,
+    .stepPulse,
+    .tickerPulse,
+    .liveProgress,
+    .audioProgress,
+    .eventShimmer,
+    .audioShimmer,
+    .overlayPulse,
+    .personFloat,
+    .arrowFlow,
+    .arrowPulse,
+    .safari-float-1,
+    .safari-float-2,
+    .safari-float-3 {
         animation: none !important;
     }
     
-    .phone-mockup.mouse-tracking {
+    /* 3D-Transforms komplett deaktivieren */
+    .phone-mockup,
+    .feature-card,
+    .pricing-card,
+    .testimonial-card {
         transform: none !important;
+        will-change: auto !important;
+        perspective: none !important;
+        transform-style: flat !important;
+    }
+    
+    /* Backdrop-filter reduzieren für Performance */
+    .feature-card,
+    .pricing-card,
+    .audio-demo-container,
+    .live-demo-container,
+    .photos-demo-container,
+    .events-demo-container,
+    .comparison-table {
+        backdrop-filter: blur(5px) !important; /* Weniger blur */
     }
 }
 
@@ -525,6 +814,17 @@
     .section-title h2 {
         font-size: 1.8rem !important;
     }
+    
+    /* Landscape-spezifische Anpassungen */
+    .hero-content {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .phone-mockup {
+        width: 200px !important;
+        height: 400px !important;
+    }
 }
 
 /* ================================================================
@@ -533,21 +833,27 @@
 @media (max-width: 768px) {
     
     /* GPU-Acceleration reduzieren */
-    .feature-card,
-    .pricing-card,
-    .testimonial-card {
-        transform: none !important;
+    * {
         will-change: auto !important;
     }
     
-    /* Backdrop-filter auf schwächeren Geräten vereinfachen */
+    /* Komplexe Selektoren vereinfachen */
     .feature-card,
     .pricing-card,
-    .audio-demo-container,
-    .live-demo-container,
-    .photos-demo-container,
-    .events-demo-container {
-        backdrop-filter: blur(10px) !important; /* Weniger blur */
+    .testimonial-card,
+    .problem-card {
+        transform: none !important;
+        transition: opacity 0.3s ease !important;
+    }
+    
+    /* Reduziere visuelle Effekte */
+    .floating-badge,
+    .phone-mockup,
+    .particles {
+        display: block !important;
+        position: static !important;
+        animation: none !important;
+        transform: none !important;
     }
 }
 
@@ -556,8 +862,16 @@
    ================================================================ */
 /*
 @media (max-width: 480px) {
-    * {
-        border: 1px solid red !important;
+    body {
+        border: 3px solid red !important;
+    }
+    
+    .section {
+        border: 2px solid blue !important;
+    }
+    
+    [style*="grid-template-columns"] {
+        border: 1px solid green !important;
     }
 }
 */
