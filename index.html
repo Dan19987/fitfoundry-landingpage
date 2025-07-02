@@ -252,7 +252,7 @@
 }
 
 .counter-number {
-    font-size: 2.5rem;
+    font-size: 1.0rem;
     color: #FF6B35;
     margin-bottom: 0.5rem;
     font-weight: 900;
@@ -1000,11 +1000,138 @@
             }
         }
 
-        .counter-number {
-            font-weight: 900;
-            color: #FFD700;
-            display: inline-block;
-        }
+/* =============================================================================
+   COUNTER CSS FIX - SEPARATE GRÖSSEN FÜR VERSCHIEDENE COUNTER
+   ============================================================================= */
+
+/* ALLGEMEINE COUNTER-NUMMER BASIS (wird überschrieben) */
+.counter-number {
+    font-weight: 700;
+    color: #FFD700;
+    display: inline-block;
+    margin: 0;
+    line-height: 1;
+}
+
+/* =============================================================================
+   1. FLOATING BADGE COUNTER - KLEIN UND KOMPAKT
+   ============================================================================= */
+.floating-badge .counter-number {
+    font-size: 1rem !important;        /* Klein für Badges */
+    font-weight: 700 !important;       /* Weniger fett */
+    color: #FFD700 !important;         /* Gold-Farbe */
+    margin: 0 !important;
+    line-height: 1 !important;
+    display: inline !important;        /* Inline für natürlichen Textfluss */
+}
+
+/* =============================================================================
+   2. LIVE-TICKER COUNTER - GROSS UND PROMINENT
+   ============================================================================= */
+.live-counter .counter-number {
+    font-size: 2.5rem !important;      /* Groß für Live-Demo */
+    color: #FF6B35 !important;         /* Orange-Farbe */
+    margin-bottom: 0.5rem !important;
+    font-weight: 900 !important;       /* Extra fett */
+    display: inline-block !important;
+    line-height: 1 !important;
+}
+
+/* =============================================================================
+   3. SCIENCE STATS COUNTER - EXTRA GROSS
+   ============================================================================= */
+.science-stat .animated-counter {
+    font-size: 3rem !important;        /* Extra groß für Stats */
+    font-weight: 900 !important;       /* Extra fett */
+    color: white !important;           /* Weiße Farbe */
+    margin-bottom: 0.5rem !important;
+    display: inline-block !important;
+    line-height: 1 !important;
+}
+
+.science-stat-number {
+    font-size: 3rem !important;
+    font-weight: 900 !important;
+    color: white !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1 !important;
+}
+
+/* =============================================================================
+   4. AUDIO DEMO COUNTER - MITTELGROSS
+   ============================================================================= */
+.audio-demo-container .counter-number,
+.live-demo-container .animated-counter {
+    font-size: 2rem !important;        /* Mittelgroß für Demos */
+    color: #8b5cf6 !important;         /* Lila-Farbe */
+    font-weight: 700 !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+}
+
+/* =============================================================================
+   5. PARTICIPANT COUNT ANIMATION (Event-Section)
+   ============================================================================= */
+.event-participants .counter-number {
+    font-size: 1rem !important;        /* Normal für Event-Teilnehmer */
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 600 !important;
+    display: inline !important;
+}
+
+/* =============================================================================
+   6. TESTIMONIAL METRICS COUNTER
+   ============================================================================= */
+.testimonial-metrics .counter-number {
+    font-size: 1.1rem !important;      /* Leicht größer für Testimonials */
+    color: #1a1a1a !important;         /* Dunkle Farbe */
+    font-weight: 700 !important;
+    display: inline !important;
+}
+
+/* =============================================================================
+   FALLBACK - ALLE ANDEREN COUNTER
+   ============================================================================= */
+.animated-counter {
+    font-size: 1.2rem;                 /* Standard-Größe als Fallback */
+    font-weight: 700;
+    color: inherit;
+    display: inline-block;
+    line-height: 1;
+}
+
+/* =============================================================================
+   RESPONSIVE ANPASSUNGEN
+   ============================================================================= */
+@media (max-width: 768px) {
+    .floating-badge .counter-number {
+        font-size: 0.9rem !important;  /* Noch kleiner auf Mobile */
+    }
+    
+    .live-counter .counter-number {
+        font-size: 2rem !important;    /* Etwas kleiner auf Mobile */
+    }
+    
+    .science-stat .animated-counter,
+    .science-stat-number {
+        font-size: 2.5rem !important;  /* Kleiner auf Mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-badge .counter-number {
+        font-size: 0.8rem !important;  /* Sehr klein auf sehr kleinen Screens */
+    }
+    
+    .live-counter .counter-number {
+        font-size: 1.8rem !important;
+    }
+    
+    .science-stat .animated-counter,
+    .science-stat-number {
+        font-size: 2rem !important;
+    }
+}
 
         /* =============================================================================
            PROBLEM CARDS - AUS INDEX-03
@@ -2503,7 +2630,184 @@
             opacity: 1 !important;
             transform: none !important;
         }
-    </style>
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-container {
+    background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+    max-width: 500px;
+    margin: 5% auto;
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(237, 85, 59, 0.2);
+    position: relative;
+    animation: modalSlideIn 0.4s ease-out;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: rgba(237, 85, 59, 0.1);
+    color: #ED553B;
+    transform: scale(1.1);
+}
+
+.modal-header {
+    margin-bottom: 2rem;
+}
+
+.modal-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+.modal-header h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.modal-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.modal-benefits {
+    background: rgba(237, 85, 59, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(237, 85, 59, 0.1);
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.benefit-item span {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.modal-form {
+    margin-bottom: 1.5rem;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: #ED553B;
+    box-shadow: 0 0 0 3px rgba(237, 85, 59, 0.1);
+}
+
+.modal-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #ED553B, #FF804F);
+    color: white;
+    border: none;
+    padding: 1.2rem 2rem;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(237, 85, 59, 0.3);
+}
+
+.modal-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(237, 85, 59, 0.4);
+}
+
+.modal-footer {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Animationen */
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-50px) scale(0.9); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}
+
+@keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .modal-container {
+        margin: 10% 1rem;
+        padding: 2rem;
+        max-width: none;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-input, .modal-submit {
+        padding: 1rem 1.2rem;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -5515,6 +5819,143 @@ animateComparisonTable(tableElement) {
                 }
             });
         });
+function showEarlyBirdModal() {
+    document.getElementById('earlyBirdModal').style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Scroll verhindern
+}
+
+// Modal schließen
+function closeEarlyBirdModal() {
+    document.getElementById('earlyBirdModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Scroll wiederherstellen
+}
+
+// Form absenden
+function submitEarlyBird(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('earlyBirdEmail').value;
+    
+    if (email) {
+        // An Formspree senden
+        fetch('https://formspree.io/f/mkgberjk', {  // ← HIER DEINE ID EINFÜGEN
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email,
+                subject: 'FitFoundry Early Bird Anmeldung',
+                message: `Neue Early Bird Anmeldung!\n\nE-Mail: ${email}\nZeitpunkt: ${new Date().toLocaleString('de-DE')}\nQuelle: Website`
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                // Success-Nachricht anzeigen
+                showSuccessMessage();
+            } else {
+                // Fehler-Behandlung
+                alert('❌ Ups! Da ist etwas schiefgelaufen. Versuche es nochmal.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('❌ Netzwerk-Fehler. Bitte versuche es später nochmal.');
+        });
+    }
+}
+
+// Success-Message Funktion hinzufügen
+function showSuccessMessage() {
+    document.querySelector('.modal-container').innerHTML = `
+        <div style="text-align: center; padding: 2rem;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">🎉</div>
+            <h3 style="color: #10b981; margin-bottom: 1rem;">Perfekt!</h3>
+            <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 2rem;">
+                Du bekommst eine E-Mail sobald FitFoundry im App Store verfügbar ist!<br>
+                <strong>+ 50% Early Bird Rabatt sichern!</strong>
+            </p>
+            <button onclick="closeEarlyBirdModal()" style="background: #10b981; color: white; border: none; padding: 1rem 2rem; border-radius: 10px; font-weight: bold; cursor: pointer;">
+                ✅ Verstanden
+            </button>
+        </div>
+    `;
+    
+    // Modal nach 4 Sekunden automatisch schließen
+    setTimeout(() => {
+        closeEarlyBirdModal();
+    }, 4000);
+	}
+	
+	
+
+// Alle Button-Clicks abfangen
+document.addEventListener('DOMContentLoaded', function() {
+    // Alle relevanten Buttons finden und Event-Listener hinzufügen
+    const buttons = document.querySelectorAll('.btn-primary, .pricing-cta, .download-btn, .cta-basic, .cta-premium, .cta-lifetime');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault(); // Link-Navigation verhindern
+            showEarlyBirdModal();
+        });
+    });
+});
+
+// ESC-Taste zum Schließen
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeEarlyBirdModal();
+    }
+});
+
+// Klick außerhalb Modal zum Schließen
+document.getElementById('earlyBirdModal')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeEarlyBirdModal();
+    }
+});
+
     </script>
+<div id="earlyBirdModal" class="modal-overlay">
+    <div class="modal-container">
+        <button class="modal-close" onclick="closeEarlyBirdModal()">×</button>
+        
+        <div class="modal-header">
+            <div class="modal-icon">🚀</div>
+            <h3>Sei der Erste dabei!</h3>
+            <p>FitFoundry wird bald im App Store verfügbar sein.</p>
+        </div>
+        
+        <div class="modal-benefits">
+            <div class="benefit-item">
+                <span>🎯</span> Exklusiver Early Bird Zugang
+            </div>
+            <div class="benefit-item">
+                <span>💰</span> 50% Rabatt auf FitFoundry Pro
+            </div>
+            <div class="benefit-item">
+                <span>🧪</span> Beta-Tester Platz sichern
+            </div>
+        </div>
+        
+        <form class="modal-form" onsubmit="submitEarlyBird(event)">
+            <input 
+                type="email" 
+                id="earlyBirdEmail" 
+                placeholder="deine@email.com" 
+                required
+                class="modal-input"
+            >
+            <button type="submit" class="modal-submit">
+                📧 Jetzt Early Bird werden
+            </button>
+        </form>
+        
+        <div class="modal-footer">
+            <p>🔒 Deine E-Mail bleibt privat • Jederzeit abmeldbar</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
