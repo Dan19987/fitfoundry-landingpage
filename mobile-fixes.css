@@ -208,6 +208,105 @@
     }
     
     /* ================================================================
+       SCIENCE SECTION FIXES - ZUSÄTZLICHE OPTIMIERUNG
+       ================================================================ */
+    
+    /* Science Section - 6 Science Cards Grid */
+    .section.gradient-science div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        margin-top: 2rem !important;
+    }
+    
+    /* Science Cards individuell optimieren */
+    .section.gradient-science div[style*="background: rgba(255, 255, 255, 0.1)"] {
+        padding: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Trust Builder Section in Science */
+    .section.gradient-science div[style*="background: rgba(255, 255, 255, 0.15)"] {
+        padding: 2rem !important;
+        margin-top: 2rem !important;
+    }
+    
+    /* Science Badges Grid */
+    .section.gradient-science div[style*="display: flex; justify-content: center; gap: 3rem"] {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    /* ================================================================
+       SOLUTION SECTION FIXES - HAUPTPROBLEM
+       ================================================================ */
+    
+    /* Solution Section - Links/Rechts Layout */
+    .section.gradient-solution div[style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important;
+    }
+    
+    /* Solution Text Block */
+    .section.gradient-solution .scroll-fade-in {
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Avatar Evolution Container */
+    .section.gradient-solution .scroll-scale-in {
+        margin-top: 0 !important;
+    }
+    
+    /* Avatar Timeline in Solution */
+    .section.gradient-solution div[style*="display: flex; align-items: center; justify-content: center"] {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Avatar Evolution Arrows */
+    .section.gradient-solution div[style*="font-size: 2rem"] {
+        transform: rotate(90deg) !important;
+        margin: 0.5rem 0 !important;
+    }
+    
+    /* ================================================================
+       "IST FITFOUNDRY DAS RICHTIGE" SECTION FIXES
+       ================================================================ */
+    
+    /* Perfect For Section - 6 Cards */
+    .scroll-scale-in div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    /* Not Perfect For Section - 4 Cards */
+    .scroll-fade-in div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    /* Perfect For Cards Styling */
+    .scroll-scale-in div[style*="background: rgba(255, 255, 255, 0.1)"] {
+        padding: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Not Perfect For Cards Styling */
+    .scroll-fade-in div[style*="background: white; border-radius: 15px"] {
+        padding: 1.2rem !important;
+        text-align: center !important;
+    }
+    
+    /* CTA nach "Who is this for" Section */
+    .scroll-fade-in[style*="text-align: center; margin-top: 4rem"] {
+        margin-top: 2rem !important;
+        padding: 0 1rem !important;
+    }
+    
+    /* ================================================================
        SCIENCE STATS FIXES
        ================================================================ */
     .science-stats {
@@ -340,6 +439,31 @@
     .problem-cards-grid,
     div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
         grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Science Section - 6 Cards können 2-spaltig auf Tablets */
+    .section.gradient-science div[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Solution Section - kann nebeneinander bleiben auf Tablets */
+    .section.gradient-solution div[style*="grid-template-columns: 1fr 1fr"] {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    /* Perfect For Section - 2 Spalten auf Tablets */
+    .scroll-scale-in div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Not Perfect For Section - 2 Spalten auf Tablets */
+    .scroll-fade-in div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
     }
 }
 
