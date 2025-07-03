@@ -1,9 +1,70 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitFoundry - Wissenschaftlich fundierte Fitness mit Gamification</title>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitFoundry - Wissenschaftlich fundierte Fitness mit Gamification</title>
+
+<!-- ✅ SEO META TAGS - HIER EINFÜGEN -->
+<meta name="description" content="Revolutioniere dein Training mit dem ersten wissenschaftlich fundierten Fitness-Gamification-System. 500+ Übungen, Live-Kalorien-Tracking, KI-Analyse - dein Avatar wächst mit dir mit!">
+<meta name="keywords" content="fitness app, wissenschaftlich fundierte fitness, gamification training, jackson-pollock körperfett, live kalorien tracking, avatar fitness, personal metabolic factor, sportwissenschaft app, fitness gamification, bodyage calculator">
+<meta name="author" content="Daniel Lahmer">
+<meta name="robots" content="index, follow">
+<meta name="language" content="de">
+<meta name="revisit-after" content="7 days">
+
+<!-- Open Graph für Social Media -->
+<meta property="og:title" content="FitFoundry - Wissenschaftlich fundierte Fitness mit Gamification">
+<meta property="og:description" content="Das erste wissenschaftlich fundierte Fitness-Gamification-System der Welt. 500+ Übungen, Live-Tracking, Avatar-Evolution - wissenschaftlich präzise, süchtig machend motivierend!">
+<meta property="og:image" content="https://fitfoundry.de/SplashBild.png">
+<meta property="og:url" content="https://fitfoundry.de">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FitFoundry">
+<meta property="og:locale" content="de_DE">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FitFoundry - Wissenschaftlich fundierte Fitness">
+<meta name="twitter:description" content="Das erste wissenschaftlich fundierte Fitness-Gamification-System der Welt!">
+<meta name="twitter:image" content="https://fitfoundry.de/SplashBild.png">
+
+<!-- Apple Meta Tags -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FitFoundry">
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#ED553B">
+<meta name="msapplication-TileColor" content="#ED553B">
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+
+<!-- Lazy Loading Script - MUSS VOR ALLEM ANDEREN LADEN -->
+<script src="lazy-load.js"></script>
+
+<!-- Fallback für Fonts -->
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+
+<!-- Critical CSS inline für Hero -->
+<style>
+    /* Nur das wichtigste für den ersten Eindruck */
+    body { margin: 0; font-family: 'Inter', sans-serif; }
+    .hero { min-height: 100vh; display: flex; align-items: center; }
+    .gradient-hero { background: linear-gradient(135deg, #ED553B 0%, #FF804F 50%, #2E3131 100%); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    
+    /* Verstecke nicht-kritische Sektionen initial */
+    .section:not(.hero) { opacity: 0; }
+</style>
+
+
     <meta name="description" content="Revolutioniere dein Training mit dem ersten wissenschaftlich fundierten Fitness-Gamification-System. 500+ Übungen, Live-Kalorien-Tracking, KI-Analyse - dein Avatar wächst mit dir mit!">
     
     <!-- Fonts -->
@@ -2807,6 +2868,57 @@
         padding: 1rem 1.2rem;
     }
 }
+
+/* ================================================================
+   LAZY LOADING STYLES
+   ================================================================ */
+   
+/* Lazy Sections - Initial versteckt */
+.lazy-section:not(.section-loaded) {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.lazy-section {
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.section-loaded {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Lazy Images */
+.lazy-img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.lazy-img.lazy-loaded {
+    opacity: 1;
+}
+
+/* Placeholder für Bilder */
+img[data-src] {
+    background: #f0f0f0;
+    min-height: 50px;
+}
+
+/* Performance Optimierungen */
+.gradient-features:not(.section-loaded) .feature-card,
+.gradient-pricing:not(.section-loaded) .pricing-card,
+.gradient-social:not(.section-loaded) .testimonial-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Animationen initial stoppen */
+.lazy-section .animated-counter,
+.lazy-section .floating-badge,
+.lazy-section .pulse {
+    animation: none !important;
+}
+
 </style>
 </head>
 <body>
@@ -2819,7 +2931,8 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="logo-hero">
-                        <img src="SplashBild.png" alt="FitFoundry Logo" onerror="this.style.display='none'">
+			<img data-src="SplashBild.png" alt="FitFoundry Logo" class="lazy-img"
+ onerror="this.style.display='none'">
                         <h1>FitFoundry</h1>
                     </div>
                     
@@ -2865,7 +2978,7 @@
                     <div class="phone-mockup">
                         <div class="phone-screen">
                             <div class="app-icon">
-                                <img src="SplashBild.png" alt="FitFoundry Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <img data-src="SplashBild.png" alt="FitFoundry Logo" class="lazy-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                                 <div class="app-icon-fallback" style="display: none;">FF</div>
                             </div>
                             <div class="app-name">FitFoundry</div>
@@ -2878,7 +2991,7 @@
     </section>
 
     <!-- Problem Section (Index-03) -->
-    <section class="section gradient-problem scroll-trigger-section">
+    <section class="section gradient-problem scroll-trigger-section lazy-section">
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: white;">Kennst du das Gefühl? 😤</h2>
@@ -3081,7 +3194,7 @@
     </section>
     
     <!-- Solution Section (Index-03) -->
-    <section class="section gradient-solution scroll-trigger-section">
+    <section class="section gradient-solution scroll-trigger-section lazy-section">
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: white;">Die Lösung: Wissenschaft + Gamification = Erfolg! 🎮</h2>
@@ -3167,7 +3280,7 @@
     </section>
 
     <!-- Features Section (Index-06) -->
-    <section class="section gradient-features scroll-trigger-section">
+    <section class="section gradient-features scroll-trigger-section lazy-section">
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: white;">Alles was du für wissenschaftliches Training brauchst 🎁</h2>
@@ -3367,7 +3480,7 @@
     </section>
 
     <!-- Private Progress Photos Section (Index-05) -->
-    <section class="section gradient-photos scroll-trigger-section">
+    <section class="section gradient-photos scroll-trigger-section lazy-section">
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: white;">100% Private Fortschrittsfotos - Wissenschaft ohne Cloud-Risiko! 📸</h2>
@@ -3503,7 +3616,7 @@
     </section>
 
 <!-- Who is this for Section -->
-    <section class="section scroll-trigger-section" style="background: white;">
+    <section class="section scroll-trigger-section lazy-section" style="background: white;>
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: #1a1a1a;">Ist FitFoundry das Richtige für dich? 🤔</h2>
@@ -3622,7 +3735,7 @@
     </section>
 
     <!-- Community Events Section (Index-05) -->
-    <section class="section gradient-community scroll-trigger-section">
+    <section class="section gradient-community scroll-trigger-section lazy-section">
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: white;">FitFoundry Community Events - Trainiere nie wieder alleine! 🎉</h2>
@@ -3761,7 +3874,7 @@
     </section>
 
 <!-- Personal Audio Coach Section (Index-04) -->
-    <section class="section gradient-audio scroll-trigger-section">
+    <section class="section gradient-audio scroll-trigger-section lazy-section">
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: white;">Dein persönlicher Audio-Coach - 200+ Motivations-Sounds! 🎤</h2>
@@ -3893,7 +4006,7 @@
     </section>
 
     <!-- Live Tracking Section (Index-04) -->
-    <section class="section gradient-live scroll-trigger-section">
+    <section class="section gradient-live scroll-trigger-section lazy-section">
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: white;">Live-Kalorien-Tracking + Motivations-Ticker Revolution 🔥</h2>
@@ -4029,7 +4142,7 @@
     </section>
 
     <!-- How it Works Section (Index-06) -->
-    <section class="section gradient-how scroll-trigger-section">
+    <section class="section gradient-how scroll-trigger-section lazy-section">
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: white;">So startest du deine wissenschaftliche Transformation 🚀</h2>
@@ -4142,7 +4255,7 @@
     </section>
 
     <!-- Social Proof Section (Index-07) -->
-    <section class="section gradient-social scroll-trigger-section">
+    <section class="section gradient-social scroll-trigger-section lazy-section">
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: #1a1a1a;">Was Early Beta-Tester über die Wissenschaft sagen 🌟</h2>
@@ -4259,7 +4372,7 @@
     </section>
 
     <!-- Pricing Section (Index-07) -->
-    <section class="section gradient-pricing scroll-trigger-section">
+    <section class="section gradient-pricing scroll-trigger-section lazy-section">
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: white;">Starte deine wissenschaftliche Transformation! 🚀</h2>
@@ -4433,7 +4546,7 @@
     </section>
 
 <!-- FAQ Section -->
-    <section class="section scroll-trigger-section" style="background: #f8fafc;">
+    <section class="section scroll-trigger-section lazy-section" style="background: #f8fafc;">
         <div class="container">
             <div class="section-title scroll-fade-in">
                 <h2 style="color: #1a1a1a;">Häufig gestellte Fragen zur Wissenschaft 💬</h2>
@@ -4569,7 +4682,7 @@
         <div class="container">
             <div style="text-align: center;">
                 <div class="scroll-fade-in" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem;">
-                    <img src="SplashBild.png" alt="FitFoundry Logo" style="width: 50px; height: 50px; border-radius: 12px;" onerror="this.style.display='none'">
+                    <img data-src="SplashBild.png" alt="FitFoundry Logo" class="lazy-img" style="width: 50px; height: 50px; border-radius: 12px;" onerror="this.style.display='none'">
                     <div style="font-size: 2rem; font-weight: 800; color: white;">FitFoundry</div>
                     <div style="background: rgba(255, 255, 255, 0.1); padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">Wissenschaftlich fundiert</div>
                 </div>
@@ -4616,7 +4729,12 @@
                 }
             }
 
-startAnimations() {
+            startAnimations() {
+                // Prüfe ob Lazy Loader existiert
+                if (window.fitFoundryLazyLoader) {
+                    console.log('✅ Lazy Loader aktiv - Animationen werden bei Bedarf geladen');
+                }
+                
                 setTimeout(() => {
                     this.initScrollObserver();
                     this.initInteractiveElements();
@@ -5887,6 +6005,14 @@ function showSuccessMessage() {
     }, 4000);
 	}
 	
+
+// Lazy Load Modal Code
+function loadModalCode() {
+    if (window.modalLoaded) return;
+    window.modalLoaded = true;
+    
+    // Modal Funktionen hier...
+}
 	
 
 // Alle Button-Clicks abfangen
