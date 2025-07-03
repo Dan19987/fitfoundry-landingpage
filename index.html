@@ -18,7 +18,7 @@
 <!-- Open Graph für Social Media -->
 <meta property="og:title" content="FitFoundry - Wissenschaftlich fundierte Fitness mit Gamification">
 <meta property="og:description" content="Das erste wissenschaftlich fundierte Fitness-Gamification-System der Welt. 500+ Übungen, Live-Tracking, Avatar-Evolution - wissenschaftlich präzise, süchtig machend motivierend!">
-<meta property="og:image" content="https://fitfoundry.de/SplashBild.png">
+<meta property="og:image" content="https://fitfoundry.de/SplashBild-64.webp">
 <meta property="og:url" content="https://fitfoundry.de">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FitFoundry">
@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FitFoundry - Wissenschaftlich fundierte Fitness">
 <meta name="twitter:description" content="Das erste wissenschaftlich fundierte Fitness-Gamification-System der Welt!">
-<meta name="twitter:image" content="https://fitfoundry.de/SplashBild.png">
+<meta name="twitter:image" content="https://fitfoundry.de/SplashBild-64.webp">
 
 <!-- Apple Meta Tags -->
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,7 +47,7 @@
 <link rel="manifest" href="manifest.json">
 
 <!-- Lazy Loading Script - MUSS VOR ALLEM ANDEREN LADEN -->
-<script src="lazy-load.js"></script>
+<script src="lazy-load.js" defer></script>
 
 <!-- ✅ GOOGLE ANALYTICS 4 - DSGVO-KONFORM -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-08FBC0TKGP"></script>
@@ -98,10 +98,12 @@
 
     <meta name="description" content="Revolutioniere dein Training mit dem ersten wissenschaftlich fundierten Fitness-Gamification-System. 500+ Übungen, Live-Kalorien-Tracking, KI-Analyse - dein Avatar wächst mit dir mit!">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-    <link rel="stylesheet" href="mobile-fixes.css">    
+<link rel="preload" href="mobile-fixes.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="mobile-fixes.css"></noscript>  
 
     <style>
         * {
@@ -3092,7 +3094,7 @@ img[data-src] {
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="logo-hero">
-			<img data-src="SplashBild.png" alt="FitFoundry Logo" class="lazy-img"
+			<img data-src="SplashBild-64.webp" alt="FitFoundry Logo" class="lazy-img"
  onerror="this.style.display='none'">
                         <h1>FitFoundry</h1>
                     </div>
@@ -3139,7 +3141,7 @@ img[data-src] {
                     <div class="phone-mockup">
                         <div class="phone-screen">
                             <div class="app-icon">
-                                <img data-src="SplashBild.png" alt="FitFoundry Logo" class="lazy-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <img data-src="SplashBild-64.webp" alt="FitFoundry Logo" class="lazy-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                                 <div class="app-icon-fallback" style="display: none;">FF</div>
                             </div>
                             <div class="app-name">FitFoundry</div>
@@ -4843,7 +4845,7 @@ img[data-src] {
         <div class="container">
             <div style="text-align: center;">
                 <div class="scroll-fade-in" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem;">
-                    <img data-src="SplashBild.png" alt="FitFoundry Logo" class="lazy-img" style="width: 50px; height: 50px; border-radius: 12px;" onerror="this.style.display='none'">
+                    <img data-src="SplashBild-64.webp" alt="FitFoundry Logo" class="lazy-img" style="width: 50px; height: 50px; border-radius: 12px;" onerror="this.style.display='none'">
                     <div style="font-size: 2rem; font-weight: 800; color: white;">FitFoundry</div>
                     <div style="background: rgba(255, 255, 255, 0.1); padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">Wissenschaftlich fundiert</div>
                 </div>
