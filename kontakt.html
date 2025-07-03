@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - FitFoundry</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kontakt zu FitFoundry - Fragen, Support und Feedback zur wissenschaftlich fundierten Fitness App">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- ✅ GOOGLE ANALYTICS 4 - DSGVO-KONFORM (nach den Fonts einfügen) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-08FBC0TKGP"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    // Cookie-Consent Check
+    function hasConsent() {
+        return localStorage.getItem('fitfoundry_analytics_consent') === 'true';
+    }
+    
+    // Initialize Analytics only with consent
+    if (hasConsent()) {
+        gtag('js', new Date());
+        gtag('config', 'G-08FBC0TKGP', {
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=None;Secure'
+        });
+    }
+    
+    // Track Events (only with consent)
+    function trackEvent(action, category = 'Kontakt') {
+        if (hasConsent()) {
+            gtag('event', action, {
+                event_category: category,
+                event_label: window.location.pathname
+            });
+        }
+    }
+</script>
+
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ED553B 0%, #FF804F 50%, #2E3131 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            background: white;
+            margin: 2rem auto;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        .content h2 {
+            color: #ED553B;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid #ED553B;
+            padding-bottom: 0.5rem;
+        }
+
+        .content h3 {
+            color: #2E3131;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #ED553B;
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2E3131;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ED553B;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #ED553B, #FF804F);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(237, 85, 59, 0.3);
+        }
+
+        .back-link {
+            background: linear-gradient(135deg, #ED553B, #FF804F);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(237, 85, 59, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>📞 Kontakt</h1>
+            <p>Wir freuen uns auf deine Nachricht!</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Wie können wir dir helfen?</h2>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>E-Mail Support</h3>
+                <p><strong>info@fitfoundry.de</strong></p>
+                <p>Antwortzeit: 24-48 Stunden</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">💬</div>
+                <h3>Feedback & Ideen</h3>
+                <p>Deine Verbesserungsvorschläge sind willkommen!</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">🐛</div>
+                <h3>Bug Reports</h3>
+                <p>Gefunden? Melde es und wir fixen es schnell!</p>
+            </div>
+        </div>
+
+        <h2>Nachricht senden</h2>
+        
+        <div class="contact-form">
+            <form action="https://formspree.io/f/mkgberjk" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Betreff</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Bitte wählen...</option>
+                        <option value="Support">🛠️ Support & Hilfe</option>
+                        <option value="Bug Report">🐛 Bug Report</option>
+                        <option value="Feature Request">💡 Feature Wunsch</option>
+                        <option value="Feedback">💬 Feedback</option>
+                        <option value="Business">💼 Business Anfrage</option>
+                        <option value="Andere">📝 Andere</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Nachricht</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Beschreibe dein Anliegen..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    📤 Nachricht senden
+                </button>
+            </form>
+        </div>
+
+        <h2>Häufige Fragen</h2>
+        
+        <h3>📱 App-Probleme</h3>
+        <p>Bei technischen Problemen mit der FitFoundry App, sende uns bitte:</p>
+        <ul style="margin: 1rem 0 1rem 2rem;">
+            <li>iOS Version</li>
+            <li>iPhone Modell</li>
+            <li>FitFoundry App Version</li>
+            <li>Beschreibung des Problems</li>
+        </ul>
+
+        <h3>📊 Wissenschaftliche Fragen</h3>
+        <p>
+            Fragen zu unseren wissenschaftlichen Methoden? 
+            Schau zuerst in unsere <a href="wissenschaft.html" style="color: #ED553B;">Wissenschaftlichen Quellen</a> 
+            oder kontaktiere uns direkt.
+        </p>
+
+        <h3>💰 Billing & Abonnements</h3>
+        <p>
+            Fragen zu Abonnements werden über den Apple App Store abgewickelt. 
+            Bei Problemen wende dich an den Apple Support oder kontaktiere uns.
+        </p>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" class="back-link">
+                ← Zurück zur Hauptseite
+            </a>
+        </div>
+    </div>
+
+    <footer style="background: #1a1a1a; padding: 4rem 0 2rem; color: white;">
+        <div class="container">
+            <div style="text-align: center;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem;">
+                    <img src="SplashBild.png" alt="FitFoundry Logo" style="width: 50px; height: 50px; border-radius: 12px;" onerror="this.style.display='none'">
+                    <div style="font-size: 2rem; font-weight: 800; color: white;">FitFoundry</div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">Wissenschaftlich fundiert</div>
+                </div>
+                
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                    <a href="datenschutz.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Datenschutz</a>
+                    <a href="impressum.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Impressum</a>
+                    <a href="agb.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">AGB</a>
+                    <a href="wissenschaft.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Wissenschaftliche Quellen</a>
+                    <a href="support.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Support</a>
+                    <a href="kontakt.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Kontakt</a>
+                </div>
+                
+                <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; color: rgba(255, 255, 255, 0.6);">
+                    <p>&copy; 2025 FitFoundry - Entwickelt mit ❤️ und 🧬 Wissenschaft von Daniel Lahmer</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Made in Germany 🇩🇪 • Peer-reviewed Science 🔬 • Privacy by Design 🔒</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5);">
+                        Alle wissenschaftlichen Methoden transparent dokumentiert • Keine Black-Box-Algorithmen
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- ✅ KONTAKT-SPEZIFISCHE EVENTS (vor </body> einfügen) -->
+<script>
+// Analytics Event Tracking für Kontakt-Seite
+document.addEventListener('DOMContentLoaded', function() {
+    trackEvent('kontakt_page_view', 'Contact');
+    
+    // Track Contact Form Interactions
+    const contactForm = document.querySelector('form, .contact-form');
+    if (contactForm) {
+        // Form field focus tracking
+        contactForm.querySelectorAll('input, textarea, select').forEach(field => {
+            field.addEventListener('focus', () => {
+                const fieldType = field.type || field.tagName.toLowerCase();
+                trackEvent('contact_field_focus', 'Contact_Form', fieldType);
+            });
+        });
+        
+        // Form submission tracking
+        contactForm.addEventListener('submit', (e) => {
+            const formData = new FormData(contactForm);
+            const messageType = formData.get('category') || 'general';
+            trackEvent('contact_form_submitted', 'Contact_Form', messageType);
+        });
+        
+        // Track form abandonment (user starts typing but doesn't submit)
+        let formStarted = false;
+        let formSubmitted = false;
+        
+        contactForm.querySelectorAll('input, textarea').forEach(field => {
+            field.addEventListener('input', () => {
+                if (!formStarted) {
+                    formStarted = true;
+                    trackEvent('contact_form_started', 'Contact_Form');
+                }
+            });
+        });
+        
+        window.addEventListener('beforeunload', () => {
+            if (formStarted && !formSubmitted) {
+                trackEvent('contact_form_abandoned', 'Contact_Form');
+            }
+        });
+    }
+    
+    // Track Email Clicks
+    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+        link.addEventListener('click', () => {
+            const email = link.href.replace('mailto:', '');
+            trackEvent('email_link_clicked', 'Contact_Method', email);
+        });
+    });
+    
+    // Track Phone Clicks
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+        link.addEventListener('click', () => {
+            trackEvent('phone_link_clicked', 'Contact_Method');
+        });
+    });
+    
+    // Track Contact Card Views (wenn Contact Cards vorhanden sind)
+    document.querySelectorAll('.contact-card').forEach((card, index) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cardTitle = card.querySelector('h3, h4')?.textContent || `Card ${index + 1}`;
+                    trackEvent('contact_card_viewed', 'Contact_Cards', cardTitle);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(card);
+    });
+    
+    // Track Contact Method Preferences
+    const contactMethods = [
+        { selector: '.email-card, [href*="mailto"]', method: 'email' },
+        { selector: '.phone-card, [href*="tel"]', method: 'phone' },
+        { selector: '.form-card, .contact-form', method: 'form' },
+        { selector: '.support-card, [href*="support"]', method: 'support' }
+    ];
+    
+    contactMethods.forEach(({ selector, method }) => {
+        document.querySelectorAll(selector).forEach(element => {
+            element.addEventListener('click', () => {
+                trackEvent('contact_method_selected', 'Contact_Preference', method);
+            });
+        });
+    });
+    
+    // Track FAQ Expansion (falls FAQ auf Kontakt-Seite vorhanden)
+    document.querySelectorAll('.faq-question, [data-faq-toggle]').forEach(question => {
+        question.addEventListener('click', () => {
+            const faqText = question.textContent.trim().substring(0, 50);
+            trackEvent('contact_faq_expanded', 'Contact_Support', faqText);
+        });
+    });
+    
+    // Back-Link Clicks
+    document.querySelectorAll('.back-link, [href="index.html"]').forEach(link => {
+        link.addEventListener('click', () => {
+            trackEvent('kontakt_back_to_homepage', 'Navigation');
+        });
+    });
+    
+    // Footer Links
+    document.querySelectorAll('footer a').forEach(link => {
+        link.addEventListener('click', () => {
+            const linkText = link.textContent.trim();
+            trackEvent('footer_link_click', 'Navigation', linkText);
+        });
+    });
+    
+    // Contact Page Engagement Tracking
+    let maxScroll = 0;
+    window.addEventListener('scroll', function() {
+        const scrollPercentage = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        if (scrollPercentage > maxScroll) {
+            maxScroll = scrollPercentage;
+            if (maxScroll >= 50 && maxScroll < 75) {
+                trackEvent('contact_scroll_50_percent', 'Contact_Engagement');
+            } else if (maxScroll >= 75) {
+                trackEvent('contact_scroll_75_percent', 'Contact_Engagement');
+            }
+        }
+    });
+    
+    // Track time spent on contact page
+    const startTime = Date.now();
+    window.addEventListener('beforeunload', () => {
+        const timeSpent = Math.round((Date.now() - startTime) / 1000);
+        if (timeSpent > 20) { // Only track if more than 20 seconds
+            trackEvent('contact_time_spent', 'Contact_Engagement', `${timeSpent} seconds`);
+        }
+    });
+    
+    // Track Contact Intent Categories
+    document.querySelectorAll('select[name*="category"], select[name*="type"]').forEach(select => {
+        select.addEventListener('change', () => {
+            const selectedCategory = select.value;
+            trackEvent('contact_category_selected', 'Contact_Intent', selectedCategory);
+        });
+    });
+});
+</script>
+
+</body>
+</html>
