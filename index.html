@@ -49,6 +49,37 @@
 <!-- Lazy Loading Script - MUSS VOR ALLEM ANDEREN LADEN -->
 <script src="lazy-load.js"></script>
 
+<!-- ✅ GOOGLE ANALYTICS 4 - DSGVO-KONFORM -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-08FBC0TKGP"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    // Cookie-Consent Check
+    function hasConsent() {
+        return localStorage.getItem('fitfoundry_analytics_consent') === 'true';
+    }
+    
+    // Initialize Analytics only with consent
+    if (hasConsent()) {
+        gtag('js', new Date());
+        gtag('config', 'G-08FBC0TKGP', {
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=None;Secure'
+        });
+    }
+    
+    // Track Events (only with consent)
+    function trackEvent(action, category = 'Homepage') {
+        if (hasConsent()) {
+            gtag('event', action, {
+                event_category: category,
+                event_label: window.location.pathname
+            });
+        }
+    }
+</script>
+
 <!-- Fallback für Fonts -->
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 
@@ -2585,6 +2616,136 @@
             animation: pulse 2s ease-in-out infinite;
         }
 
+/* ================================================================
+   COOKIE CONSENT BANNER
+   ================================================================ */
+.cookie-banner {
+    position: fixed;
+    bottom: -200px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d30 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    z-index: 10000;
+    border-top: 3px solid #ED553B;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+    transition: bottom 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.cookie-banner.show {
+    bottom: 0;
+}
+
+.cookie-banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cookie-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.cookie-text h4 {
+    color: #ED553B;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.cookie-text p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.cookie-privacy-link {
+    color: #ED553B;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cookie-privacy-link:hover {
+    color: #FF804F;
+    text-decoration: underline;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cookie-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.cookie-btn-accept {
+    background: linear-gradient(135deg, #ED553B, #FF804F);
+    color: white;
+}
+
+.cookie-btn-accept:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(237, 85, 59, 0.4);
+}
+
+.cookie-btn-decline {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-btn-decline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .cookie-banner {
+        padding: 1.2rem 1rem;
+    }
+    
+    .cookie-banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .cookie-text {
+        min-width: auto;
+    }
+    
+    .cookie-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .cookie-btn {
+        flex: 1;
+        min-width: 120px;
+    }
+}
+
+
         /* =============================================================================
            RESPONSIVE DESIGN
            ============================================================================= */
@@ -4687,13 +4848,13 @@ img[data-src] {
                     <div style="background: rgba(255, 255, 255, 0.1); padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">Wissenschaftlich fundiert</div>
                 </div>
                 
-                <div class="scroll-fade-in" style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; flex-wrap: wrap;">
-                    <a href="#datenschutz" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Datenschutz</a>
-                    <a href="#impressum" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Impressum</a>
-                    <a href="#agb" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">AGB</a>
-                    <a href="#wissenschaft" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Wissenschaftliche Quellen</a>
-                    <a href="#support" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Support</a>
-                    <a href="#kontakt" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Kontakt</a>
+                <div class="scroll-fade-in" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                    <a href="datenschutz.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Datenschutz</a>
+                    <a href="impressum.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Impressum</a>
+                    <a href="agb.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">AGB</a>
+                    <a href="wissenschaft.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Wissenschaftliche Quellen</a>
+                    <a href="support.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Support</a>
+                    <a href="kontakt.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Kontakt</a>
                 </div>
                 
                 <div class="scroll-fade-in" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; color: rgba(255, 255, 255, 0.6);">
@@ -5924,6 +6085,54 @@ animateComparisonTable(tableElement) {
         // App starten
         new FitFoundryAnimations();
 
+// ✅ ANALYTICS EVENT TRACKING FÜR FITFOUNDRY HOMEPAGE
+        document.addEventListener('DOMContentLoaded', function() {
+            trackEvent('page_view', 'Homepage');
+            
+            // Hero CTA Button
+            document.querySelectorAll('.btn-primary').forEach(btn => {
+                btn.addEventListener('click', () => trackEvent('hero_cta_click', 'Engagement'));
+            });
+            
+            // Pricing Card Clicks
+            document.querySelectorAll('.pricing-cta').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const planName = btn.closest('.pricing-card').querySelector('.plan-name').textContent;
+                    trackEvent('pricing_click', 'Conversion', planName);
+                });
+            });
+            
+            // Download Button Clicks
+            document.querySelectorAll('.download-btn').forEach(btn => {
+                btn.addEventListener('click', () => trackEvent('download_click', 'Conversion'));
+            });
+            
+            // Feature Card Interactions
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const featureTitle = card.querySelector('.feature-title').textContent;
+                    trackEvent('feature_interest', 'Engagement', featureTitle);
+                });
+            });
+            
+            // Section Scroll Tracking (zusätzlich zu GA4 Auto-Scroll)
+            const sections = ['hero', 'problem', 'science', 'solution', 'features', 'pricing'];
+            sections.forEach(sectionName => {
+                const section = document.querySelector(`.gradient-${sectionName}, .${sectionName}`);
+                if (section) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                trackEvent(`${sectionName}_section_view`, 'Navigation');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+                    observer.observe(section);
+                }
+            });
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -5940,6 +6149,7 @@ animateComparisonTable(tableElement) {
 function showEarlyBirdModal() {
     document.getElementById('earlyBirdModal').style.display = 'block';
     document.body.style.overflow = 'hidden'; // Scroll verhindern
+    trackEvent('early_bird_modal_opened', 'Lead_Generation'); // ✅ NEU
 }
 
 // Modal schließen
@@ -5969,9 +6179,11 @@ function submitEarlyBird(event) {
         })
         .then(response => {
             if (response.ok) {
+                trackEvent('early_bird_signup_success', 'Conversion'); // ✅ NEU
                 // Success-Nachricht anzeigen
                 showSuccessMessage();
             } else {
+                trackEvent('early_bird_signup_error', 'Error'); // ✅ NEU
                 // Fehler-Behandlung
                 alert('❌ Ups! Da ist etwas schiefgelaufen. Versuche es nochmal.');
             }
@@ -6042,6 +6254,64 @@ document.getElementById('earlyBirdModal')?.addEventListener('click', function(e)
     }
 });
 
+// ================================================================
+// COOKIE CONSENT BANNER MANAGEMENT
+// ================================================================
+
+// Check if user has made a consent decision
+function checkCookieConsent() {
+    const consent = localStorage.getItem('fitfoundry_analytics_consent');
+    if (consent === null) {
+        // No decision made yet - show banner
+        setTimeout(() => {
+            document.getElementById('cookieBanner').classList.add('show');
+        }, 2000); // Show after 2 seconds
+    }
+    // If consent exists (true/false), banner stays hidden
+}
+
+// Accept cookies and enable analytics
+function acceptCookies() {
+    localStorage.setItem('fitfoundry_analytics_consent', 'true');
+    hideCookieBanner();
+    
+    // Initialize Google Analytics
+    gtag('js', new Date());
+    gtag('config', 'G-08FBC0TKGP', {
+        anonymize_ip: true,
+        cookie_flags: 'SameSite=None;Secure'
+    });
+    
+    // Track the consent acceptance
+    trackEvent('cookie_consent_accepted', 'Privacy');
+    
+    console.log('✅ Analytics aktiviert');
+}
+
+// Decline cookies - only essential functionality
+function declineCookies() {
+    localStorage.setItem('fitfoundry_analytics_consent', 'false');
+    hideCookieBanner();
+    
+    console.log('❌ Analytics deaktiviert - nur notwendige Cookies');
+}
+
+// Hide banner with animation
+function hideCookieBanner() {
+    const banner = document.getElementById('cookieBanner');
+    banner.classList.remove('show');
+    
+    // Remove from DOM after animation
+    setTimeout(() => {
+        banner.style.display = 'none';
+    }, 500);
+}
+
+// Initialize cookie consent check on page load
+document.addEventListener('DOMContentLoaded', function() {
+    checkCookieConsent();
+});
+
     </script>
 <div id="earlyBirdModal" class="modal-overlay">
     <div class="modal-container">
@@ -6083,5 +6353,27 @@ document.getElementById('earlyBirdModal')?.addEventListener('click', function(e)
         </div>
     </div>
 </div>
+<!-- Cookie Consent Banner -->
+<div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-banner-content">
+        <div class="cookie-text">
+            <h4>🍪 Cookies & Analytics</h4>
+            <p>
+                Wir nutzen Google Analytics um unsere Website zu verbessern. 
+                Alle Daten werden anonymisiert und DSGVO-konform verarbeitet. 
+                <a href="datenschutz.html" class="cookie-privacy-link" target="_blank">Mehr in der Datenschutzerklärung</a>
+            </p>
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">
+                ✅ Analytics akzeptieren
+            </button>
+            <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">
+                ❌ Nur notwendige
+            </button>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

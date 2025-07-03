@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - FitFoundry</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="FitFoundry Support - Hilfe und FAQ zur wissenschaftlich fundierten Fitness App">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-08FBC0TKGP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Cookie-Consent Check
+        function hasConsent() {
+            return localStorage.getItem('fitfoundry_analytics_consent') === 'true';
+        }
+        
+        // Initialize Analytics only with consent
+        if (hasConsent()) {
+            gtag('js', new Date());
+            gtag('config', 'G-08FBC0TKGP', {
+                anonymize_ip: true,
+                cookie_flags: 'SameSite=None;Secure'
+            });
+        }
+        
+        // Track Events (only with consent)
+        function trackEvent(action, category = 'Support') {
+            if (hasConsent()) {
+                gtag('event', action, {
+                    event_category: category,
+                    event_label: window.location.pathname
+                });
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ED553B 0%, #FF804F 50%, #2E3131 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            background: white;
+            margin: 2rem auto;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+        }
+
+        .content h2 {
+            color: #ED553B;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem 0;
+            border-bottom: 2px solid #ED553B;
+            padding-bottom: 0.5rem;
+        }
+
+        .content h3 {
+            color: #2E3131;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 2rem 0 0.5rem 0;
+        }
+
+        .content h4 {
+            color: #64748b;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .content ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .support-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #0D7377;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .support-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .support-title {
+            font-weight: 700;
+            color: #2E3131;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .support-description {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            background: #f8fafc;
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: #2E3131;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #f1f5f9;
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            color: #64748b;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #0ea5e9;
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #0ea5e9;
+        }
+
+        .contact-info {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #ED553B;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box {
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #0ea5e9;
+            margin: 1.5rem 0;
+        }
+
+        .emergency-box {
+            background: #fef2f2;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #ef4444;
+            margin: 1.5rem 0;
+        }
+
+        .back-link {
+            background: linear-gradient(135deg, #ED553B, #FF804F);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(237, 85, 59, 0.3);
+        }
+
+
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <h1>🎧 FitFoundry Support</h1>
+            <p>Schnelle Hilfe für deine wissenschaftlich fundierte Fitness-Journey</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="highlight-box">
+            <h3>🚀 Schnelle Hilfe</h3>
+            <p>Die meisten Fragen können sofort mit unserer FAQ beantwortet werden. 
+            Für persönliche Unterstützung sind wir innerhalb von 24 Stunden für dich da!</p>
+        </div>
+
+        <h2>Support-Kategorien</h2>
+        
+        <div class="support-grid">
+            <div class="support-card" onclick="scrollToSection('app-probleme'); trackEvent('support_card_click', 'App_Probleme');">
+                <span class="support-icon">📱</span>
+                <div class="support-title">App & Technische Probleme</div>
+                <div class="support-description">
+                    App startet nicht, Features funktionieren nicht, Performance-Probleme, 
+                    Sync-Issues und andere technische Fragen.
+                </div>
+            </div>
+
+            <div class="support-card" onclick="scrollToSection('wissenschaft-fragen'); trackEvent('support_card_click', 'Wissenschaft');">
+                <span class="support-icon">🔬</span>
+                <div class="support-title">Wissenschaft & Berechnungen</div>
+                <div class="support-description">
+                    Fragen zu Jackson-Pollock Körperfett-Analyse, Live-Kalorien-Tracking, 
+                    Personal Metabolic Factor und anderen wissenschaftlichen Methoden.
+                </div>
+            </div>
+
+            <div class="support-card" onclick="scrollToSection('account-bezahlung'); trackEvent('support_card_click', 'Account_Bezahlung');">
+                <span class="support-icon">💳</span>
+                <div class="support-title">Account & Bezahlung</div>
+                <div class="support-description">
+                    Abonnement-Verwaltung, Lifetime-Käufe, Erstattungen, 
+                    App Store Probleme und Account-Einstellungen.
+                </div>
+            </div>
+
+            <div class="support-card" onclick="scrollToSection('datenschutz-sicherheit'); trackEvent('support_card_click', 'Datenschutz');">
+                <span class="support-icon">🔒</span>
+                <div class="support-title">Datenschutz & Sicherheit</div>
+                <div class="support-description">
+                    Lokale Datenspeicherung, Privacy by Design Features, 
+                    Fortschrittsfotos-Sicherheit und DSGVO-Fragen.
+                </div>
+            </div>
+
+            <div class="support-card" onclick="scrollToSection('community-features'); trackEvent('support_card_click', 'Community');">
+                <span class="support-icon">🎉</span>
+                <div class="support-title">Community & Events</div>
+                <div class="support-description">
+                    Community-Challenges, Avatar-Competitions, Event-Kalender, 
+                    Profil-Widgets und Social Features.
+                </div>
+            </div>
+
+            <div class="support-card" onclick="scrollToSection('training-hilfe'); trackEvent('support_card_click', 'Training');">
+                <span class="support-icon">💪</span>
+                <div class="support-title">Training & Übungen</div>
+                <div class="support-description">
+                    500+ Übungen, Celebrity-Templates, Audio-Coach, 
+                    Trainingsplanung und Form-Check Hilfe.
+                </div>
+            </div>
+        </div>
+
+        <h2 id="haeufige-fragen">Häufig gestellte Fragen (FAQ)</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    📱 Die App startet nicht oder stürzt ab - was kann ich tun?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Erste Schritte:</strong>
+                    <ul>
+                        <li>iPhone neu starten (Power + Volume Down 10 Sek)</li>
+                        <li>App komplett schließen und neu öffnen</li>
+                        <li>iOS Version prüfen (mindestens iOS 14.0 erforderlich)</li>
+                        <li>2GB freier Speicherplatz verfügbar?</li>
+                    </ul>
+                    <strong>Wenn das nicht hilft:</strong> App neu installieren (Daten bleiben durch lokale Verschlüsselung erhalten)
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    🔬 Wie genau sind die wissenschaftlichen Berechnungen?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Unsere Genauigkeits-Standards:</strong>
+                    <ul>
+                        <li><strong>Jackson-Pollock Körperfett:</strong> ±3-4% vs DEXA-Scan</li>
+                        <li><strong>Live-Kalorien-Tracking:</strong> ±8% mit Personal Metabolic Factor</li>
+                        <li><strong>Biologisches Alter:</strong> ±2-3 Jahre bei vollständigen Daten</li>
+                    </ul>
+                    Alle Formeln basieren auf peer-reviewed Studien und sind in der App unter "Wissenschaft" dokumentiert.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    💳 Wie kann ich mein Abonnement kündigen oder eine Erstattung beantragen?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Abonnement kündigen:</strong>
+                    <ol>
+                        <li>iPhone Einstellungen → [Dein Name] → Abonnements</li>
+                        <li>FitFoundry auswählen → "Abonnement kündigen"</li>
+                        <li>Bestätigen - läuft zum Ende der Periode aus</li>
+                    </ol>
+                    <strong>Erstattung:</strong> Über Apple Support beantragen oder kontaktiere uns direkt mit deiner Rechnung.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    🔒 Sind meine Fortschrittsfotos wirklich 100% privat?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Ja, absolut!</strong>
+                    <ul>
+                        <li>Alle Fotos werden <strong>nur lokal</strong> auf deinem iPhone gespeichert</li>
+                        <li>AES-256 Verschlüsselung (Military-Grade Security)</li>
+                        <li>Keine Cloud-Uploads, keine Server-Speicherung</li>
+                        <li>Selbst Apple hat keinen Zugang zu deinen Daten</li>
+                        <li>DSGVO-konform, Made in Germany</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    🎤 Der Audio-Coach funktioniert nicht - was kann ich tun?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Audio-Coach Troubleshooting:</strong>
+                    <ul>
+                        <li>Lautstärke am iPhone prüfen (nicht nur Klingelton)</li>
+                        <li>Stumm-Schalter (Orange-Ring) deaktivieren</li>
+                        <li>Bluetooth-Kopfhörer neu verbinden</li>
+                        <li>In App-Einstellungen: Audio-Coach aktiviert?</li>
+                        <li>Intensität über 0 eingestellt?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    📊 Kann ich meine Daten exportieren oder sichern?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Datensicherung:</strong>
+                    <ul>
+                        <li>Automatische Sicherung durch iPhone Backup (verschlüsselt)</li>
+                        <li>Export als PDF-Report verfügbar</li>
+                        <li>CSV-Export für Trainings- und Messdaten</li>
+                        <li>Fotos bleiben in der Fotos-App verfügbar</li>
+                    </ul>
+                    <strong>Wichtig:</strong> Bei App-Deinstallation gehen Daten verloren (Privacy by Design).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    🎯 Wie finde ich die passenden Übungen für mein Ziel?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Übungs-Filter nutzen:</strong>
+                    <ul>
+                        <li><strong>Muskelgruppen:</strong> Brust, Rücken, Beine, etc.</li>
+                        <li><strong>Equipment:</strong> Gym, Zuhause, Bodyweight</li>
+                        <li><strong>Schwierigkeit:</strong> Anfänger bis Profi</li>
+                        <li><strong>Templates:</strong> Celebrity, NASA, Olympia</li>
+                        <li><strong>Ziel:</strong> Kraft, Ausdauer, Fettverbrennung</li>
+                    </ul>
+                    <strong>Tipp:</strong> Nutze den "Für mich empfohlen" Algorithmus!
+                </div>
+            </div>
+        </div>
+
+        <h2 id="kontakt">Direkter Kontakt</h2>
+
+        <div class="contact-methods">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h4>E-Mail Support</h4>
+                <p><strong><a href="mailto:info@fitfoundry.de" onclick="trackEvent('email_click', 'Support')">info@fitfoundry.de</a></strong></p>
+                <p>Antwortzeit: 24 Stunden<br>
+                Sprachen: Deutsch, Englisch</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">💬</div>
+                <h4>Kontaktformular</h4>
+                <p><strong><a href="kontakt.html" onclick="trackEvent('kontakt_click', 'Support')" style="color: #0ea5e9; text-decoration: none;">Nachricht senden</a></strong></p>
+                <p>Feedback, Feature-Wünsche,<br>
+                Verbesserungsvorschläge</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">🌐</div>
+                <h4>Community Forum</h4>
+                <p>FitFoundry Community Events</p>
+                <p>Tausche dich mit anderen<br>
+                Foundrys aus</p>
+            </div>
+        </div>
+
+        <div class="emergency-box">
+            <h3>🚨 Dringende Probleme</h3>
+            <p><strong>Bei kritischen App-Problemen:</strong></p>
+            <ul>
+                <li>E-Mail mit Betreff: "URGENT - [Problem]"</li>
+                <li>Screenshots des Problems anhängen</li>
+                <li>iOS Version und iPhone Modell angeben</li>
+            </ul>
+            <p><strong>Antwortzeit:</strong> Innerhalb von 4 Stunden (Mo-Fr, 9-18 Uhr)</p>
+        </div>
+
+        <h2>Support-Qualität</h2>
+
+        <div class="contact-info">
+            <h3>🎯 Unser Support-Versprechen</h3>
+            <ul>
+                <li><strong>Antwortzeit:</strong> Maximal 24 Stunden</li>
+                <li><strong>Lösungsrate:</strong> 95% der Probleme beim ersten Kontakt gelöst</li>
+                <li><strong>Sprachen:</strong> Deutsch (Muttersprache), Englisch</li>
+                <li><strong>Zeiten:</strong> Mo-Fr 9-18 Uhr, Wochenende eingeschränkt</li>
+                <li><strong>Entwickler-Support:</strong> Direkter Draht zum FitFoundry-Entwickler</li>
+            </ul>
+        </div>
+
+        <h3>Feedback & Verbesserungsvorschläge</h3>
+        <p>
+            Wir lieben Feedback! Teile deine Ideen, Verbesserungsvorschläge oder neue Feature-Wünsche mit uns:
+        </p>
+        <ul>
+            <li><strong><a href="kontakt.html" onclick="trackEvent('feedback_link_click', 'Support')" style="color: #ED553B; text-decoration: none;">Kontaktformular nutzen</a></strong> - Wähle "Feature Wunsch" oder "Feedback"</li>
+            <li>App Store Bewertung mit Kommentar</li>
+            <li>Community Events - Direktes Feedback an andere Foundrys</li>
+        </ul>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" class="back-link" onclick="trackEvent('back_to_home_click', 'Navigation')">
+                ← Zurück zur Hauptseite
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; padding: 4rem 0 2rem; color: white;">
+        <div class="container">
+            <div style="text-align: center;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem;">
+                    <img src="SplashBild.png" alt="FitFoundry Logo" style="width: 50px; height: 50px; border-radius: 12px;" onerror="this.style.display='none'">
+                    <div style="font-size: 2rem; font-weight: 800; color: white;">FitFoundry</div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">Wissenschaftlich fundiert</div>
+                </div>
+                
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                    <a href="datenschutz.html" onclick="trackEvent('footer_link_click', 'Datenschutz')" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Datenschutz</a>
+                    <a href="impressum.html" onclick="trackEvent('footer_link_click', 'Impressum')" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Impressum</a>
+                    <a href="agb.html" onclick="trackEvent('footer_link_click', 'AGB')" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">AGB</a>
+                    <a href="wissenschaft.html" onclick="trackEvent('footer_link_click', 'Wissenschaft')" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Wissenschaftliche Quellen</a>
+                    <a href="support.html" onclick="trackEvent('footer_link_click', 'Support')" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Support</a>
+                    <a href="kontakt.html" onclick="trackEvent('footer_link_click', 'Kontakt')" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Kontakt</a>
+                </div>
+                
+                <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; color: rgba(255, 255, 255, 0.6);">
+                    <p>&copy; 2025 FitFoundry - Entwickelt mit ❤️ und 🧬 Wissenschaft von Daniel Lahmer</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Made in Germany 🇩🇪 • Peer-reviewed Science 🔬 • Privacy by Design 🔒</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5);">
+                        Alle wissenschaftlichen Methoden transparent dokumentiert • Keine Black-Box-Algorithmen
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Management
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            const questionText = element.textContent.substring(0, 50) + '...';
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open current item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+                trackEvent('faq_opened', questionText);
+            } else {
+                trackEvent('faq_closed', questionText);
+            }
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // Fallback to FAQ section
+                document.getElementById('haeufige-fragen').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Track scroll depth
+        let maxScroll = 0;
+        window.addEventListener('scroll', function() {
+            const scrollPercentage = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercentage > maxScroll) {
+                maxScroll = scrollPercentage;
+                if (maxScroll >= 25 && maxScroll < 50) {
+                    trackEvent('scroll_depth', '25_percent');
+                } else if (maxScroll >= 50 && maxScroll < 75) {
+                    trackEvent('scroll_depth', '50_percent');
+                } else if (maxScroll >= 75 && maxScroll < 90) {
+                    trackEvent('scroll_depth', '75_percent');
+                } else if (maxScroll >= 90) {
+                    trackEvent('scroll_depth', '90_percent');
+                }
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            trackEvent('page_view', 'support');
+        });
+    </script>
+</body>
+</html>

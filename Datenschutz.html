@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung - FitFoundry</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Datenschutzerklärung für FitFoundry - transparent und DSGVO-konform">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- ✅ GOOGLE ANALYTICS 4 - DSGVO-KONFORM -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-08FBC0TKGP"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    // Cookie-Consent Check
+    function hasConsent() {
+        return localStorage.getItem('fitfoundry_analytics_consent') === 'true';
+    }
+    
+    // Initialize Analytics only with consent
+    if (hasConsent()) {
+        gtag('js', new Date());
+        gtag('config', 'G-08FBC0TKGP', {
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=None;Secure'
+        });
+    }
+    
+    // Track Events (only with consent)
+    function trackEvent(action, category = 'Datenschutz') {
+        if (hasConsent()) {
+            gtag('event', action, {
+                event_category: category,
+                event_label: window.location.pathname
+            });
+        }
+    }
+</script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ED553B 0%, #FF804F 50%, #2E3131 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            background: white;
+            margin: 2rem auto;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+        }
+
+        .content h2 {
+            color: #ED553B;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem 0;
+            border-bottom: 2px solid #ED553B;
+            padding-bottom: 0.5rem;
+        }
+
+        .content h3 {
+            color: #2E3131;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 2rem 0 0.5rem 0;
+        }
+
+        .content h4 {
+            color: #64748b;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .content ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #0ea5e9;
+            margin: 1.5rem 0;
+        }
+
+        .privacy-box {
+            background: #f0fdf4;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #10b981;
+            margin: 1.5rem 0;
+        }
+
+        .analytics-box {
+            background: #fef3c7;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #f59e0b;
+            margin: 1.5rem 0;
+        }
+
+        .contact-info {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #ED553B;
+            margin: 1.5rem 0;
+        }
+
+        .back-link {
+            background: linear-gradient(135deg, #ED553B, #FF804F);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(237, 85, 59, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>🔐 Datenschutzerklärung</h1>
+            <p>Transparent, verständlich und DSGVO-konform</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="privacy-box">
+            <h3>🎯 Das Wichtigste in Kürze</h3>
+            <p><strong>Privacy by Design:</strong> FitFoundry wurde von Grund auf datenschutzfreundlich entwickelt. 
+            Deine persönlichen Daten und Fotos bleiben 100% lokal auf deinem iPhone gespeichert - 
+            keine Cloud-Synchronisation, keine externe Speicherung. Website-Analytics nur mit deiner ausdrücklichen Zustimmung.</p>
+        </div>
+
+        <h2>1. Datenschutz auf einen Blick</h2>
+        
+        <h3>Allgemeine Hinweise</h3>
+        <p>
+            Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten 
+            passiert, wenn Sie unsere Website besuchen oder unsere FitFoundry App nutzen. Personenbezogene Daten 
+            sind alle Daten, mit denen Sie persönlich identifiziert werden können.
+        </p>
+
+        <h3>Datenerfassung auf unserer Website</h3>
+        <h4>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>
+        <p>
+            Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten 
+            können Sie dem Abschnitt „Hinweis zur verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.
+        </p>
+
+        <h4>Wie erfassen wir Ihre Daten?</h4>
+        <p>
+            Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich 
+            z.B. um Daten handeln, die Sie in unser Early Bird Anmeldeformular eingeben.
+        </p>
+
+        <p>
+            Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere 
+            IT-Systeme erfasst. Das sind vor allem technische Daten (z.B. Internetbrowser, Betriebssystem oder 
+            Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.
+        </p>
+
+        <h2>2. Hinweis zur verantwortlichen Stelle</h2>
+        
+        <div class="contact-info">
+            <strong>Verantwortliche Stelle für die Datenverarbeitung:</strong><br>
+            Daniel Lahmer<br>
+            Bohnsdorfer Weg 66A<br>
+            12524 Berlin<br>
+            Deutschland<br><br>
+            <strong>E-Mail:</strong> info@fitfoundry.de
+        </div>
+
+        <p>
+            Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen 
+            über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.
+        </p>
+
+        <h2>3. Google Analytics 4 (GA4)</h2>
+
+        <div class="analytics-box">
+            <h3>📊 Wichtige Information zu Website-Analytics</h3>
+            <p>
+                Diese Website nutzt <strong>Google Analytics 4</strong> zur Analyse des Nutzerverhaltens. 
+                Die Nutzung erfolgt <strong>nur mit Ihrer ausdrücklichen Einwilligung</strong> über unseren Cookie-Banner.
+            </p>
+        </div>
+
+        <h3>Was ist Google Analytics 4?</h3>
+        <p>
+            Google Analytics 4 ist ein Webanalysedienst der Google Ireland Limited („Google"). 
+            Google Analytics verwendet Cookies und ähnliche Technologien, um Nutzerverhalten zu analysieren.
+        </p>
+
+        <h3>Welche Daten werden erfasst?</h3>
+        <p>Google Analytics erfasst automatisch folgende Informationen:</p>
+        <ul>
+            <li>Seitenaufrufe und Besuchsdauer</li>
+            <li>Klicks auf Buttons und Links</li>
+            <li>Scroll-Verhalten (wie tief scrollen Nutzer)</li>
+            <li>Referrer (von welcher Website kommen Besucher)</li>
+            <li>Technische Daten (Browser, Betriebssystem, Bildschirmauflösung)</li>
+            <li>Ungefährer Standort (nur Land/Region)</li>
+        </ul>
+
+        <h3>Rechtsgrundlage</h3>
+        <p>
+            Die Nutzung von Google Analytics erfolgt auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO. 
+            Sie können Ihre Einwilligung jederzeit widerrufen.
+        </p>
+
+        <h3>Datenschutzmaßnahmen</h3>
+        <ul>
+            <li><strong>IP-Anonymisierung aktiviert:</strong> Ihre IP-Adresse wird vor der Analyse gekürzt</li>
+            <li><strong>Keine personenbezogenen Daten:</strong> Wir erfassen bewusst keine PII (Personally Identifiable Information)</li>
+            <li><strong>Datenaufbewahrung:</strong> Automatische Löschung nach 14 Monaten</li>
+            <li><strong>Kein Cross-Device-Tracking:</strong> Keine gerätübergreifende Verfolgung</li>
+        </ul>
+
+        <h3>Ihre Kontrolle über Analytics</h3>
+        <h4>Einwilligung widerrufen</h4>
+        <p>
+            Sie können Ihre Einwilligung jederzeit über die Browser-Entwicklertools widerrufen:
+        </p>
+        <ul>
+            <li>F12 drücken → Console öffnen</li>
+            <li>Eingeben: <code>localStorage.removeItem('fitfoundry_analytics_consent')</code></li>
+            <li>Seite neu laden → Cookie-Banner erscheint wieder</li>
+        </ul>
+
+        <h4>Google Analytics deaktivieren</h4>
+        <p>
+            Sie können Google Analytics komplett deaktivieren durch das 
+            <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" style="color: #ED553B;">
+                Google Analytics Opt-out Browser-Add-on
+            </a>.
+        </p>
+
+        <h3>Google's Datenschutz</h3>
+        <p>
+            Weitere Informationen zu Google Analytics finden Sie in Google's Datenschutzerklärung: 
+            <a href="https://policies.google.com/privacy" target="_blank" style="color: #ED553B;">
+                https://policies.google.com/privacy
+            </a>
+        </p>
+
+        <h2>4. Datenverarbeitung auf unserer Website</h2>
+
+        <h3>Server-Log-Dateien</h3>
+        <p>
+            Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, 
+            die Ihr Browser automatisch an uns übermittelt. Dies sind:
+        </p>
+        <ul>
+            <li>Browsertyp und Browserversion</li>
+            <li>Verwendetes Betriebssystem</li>
+            <li>Referrer URL</li>
+            <li>Hostname des zugreifenden Rechners</li>
+            <li>Uhrzeit der Serveranfrage</li>
+            <li>IP-Adresse (anonymisiert)</li>
+        </ul>
+        <p>
+            Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. 
+            Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+        </p>
+
+        <h3>Early Bird Anmeldung</h3>
+        <p>
+            Wenn Sie sich für unseren Early Bird Newsletter anmelden, erheben wir folgende Daten:
+        </p>
+        <ul>
+            <li>E-Mail-Adresse</li>
+            <li>Zeitpunkt der Anmeldung</li>
+            <li>IP-Adresse (zur Spam-Prävention)</li>
+        </ul>
+        
+        <div class="highlight-box">
+            <h4>🎯 Zweck der Datenverarbeitung:</h4>
+            <ul>
+                <li>Information über den App-Launch</li>
+                <li>Early Bird Rabatt-Angebote</li>
+                <li>Wichtige Updates zur FitFoundry App</li>
+            </ul>
+            <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</p>
+            <p><strong>Speicherdauer:</strong> Bis zur Abmeldung oder Widerruf</p>
+        </div>
+
+        <h2>5. Cookies</h2>
+
+        <h3>Was sind Cookies?</h3>
+        <p>
+            Cookies sind kleine Textdateien, die von Websites auf Ihrem Gerät gespeichert werden. 
+            Sie dienen dazu, Websites funktionsfähiger und benutzerfreundlicher zu machen.
+        </p>
+
+        <h3>Welche Cookies nutzen wir?</h3>
+        <h4>Technisch notwendige Cookies</h4>
+        <ul>
+            <li><strong>fitfoundry_analytics_consent:</strong> Speichert Ihre Cookie-Einwilligung</li>
+            <li><strong>Dauer:</strong> Bis zum Löschen durch den Nutzer</li>
+            <li><strong>Zweck:</strong> DSGVO-konforme Einwilligungsverwaltung</li>
+        </ul>
+
+        <h4>Google Analytics Cookies (nur mit Einwilligung)</h4>
+        <ul>
+            <li><strong>_ga:</strong> Unterscheidet Nutzer (Laufzeit: 2 Jahre)</li>
+            <li><strong>_ga_*:</strong> Speichert Session-Informationen (Laufzeit: 2 Jahre)</li>
+            <li><strong>_gid:</strong> Unterscheidet Nutzer (Laufzeit: 24 Stunden)</li>
+        </ul>
+
+        <h3>Cookies verwalten</h3>
+        <p>
+            Sie können Cookies in Ihrem Browser jederzeit löschen:
+        </p>
+        <ul>
+            <li><strong>Chrome:</strong> Einstellungen → Datenschutz → Cookies löschen</li>
+            <li><strong>Safari:</strong> Einstellungen → Datenschutz → Website-Daten verwalten</li>
+            <li><strong>Firefox:</strong> Einstellungen → Datenschutz → Cookies löschen</li>
+        </ul>
+
+        <h2>6. FitFoundry App - Datenschutz</h2>
+
+        <div class="privacy-box">
+            <h3>🔒 Privacy by Design Prinzip</h3>
+            <p>
+                Die FitFoundry App wurde nach dem "Privacy by Design" Prinzip entwickelt. 
+                Das bedeutet: <strong>Alle persönlichen Daten bleiben ausschließlich auf Ihrem iPhone gespeichert.</strong>
+            </p>
+        </div>
+
+        <h3>Lokale Datenspeicherung</h3>
+        <p>Die FitFoundry App speichert folgende Daten <strong>ausschließlich lokal auf Ihrem Gerät:</strong></p>
+        <ul>
+            <li>Trainings- und Übungsdaten</li>
+            <li>Körpermessungen und Fortschrittsfotos</li>
+            <li>Personal Metabolic Factor Berechnungen</li>
+            <li>Avatar-Progression und Achievements</li>
+            <li>Persönliche Einstellungen und Präferenzen</li>
+        </ul>
+
+        <h4>Verschlüsselung</h4>
+        <p>
+            Alle lokal gespeicherten Daten werden mit AES-256 Verschlüsselung gesichert. 
+            Selbst Apple hat keinen Zugang zu Ihren persönlichen Fitnessdaten.
+        </p>
+
+        <h3>Keine Cloud-Synchronisation</h3>
+        <p>
+            Die FitFoundry App sendet <strong>keine persönlichen Daten an externe Server</strong>. 
+            Es gibt bewusst keine Cloud-Synchronisation oder Backup-Funktion für persönliche Daten.
+        </p>
+
+        <h3>Apple App Store Datenverarbeitung</h3>
+        <p>
+            Beim Download der App über den Apple App Store gelten die 
+            <a href="https://www.apple.com/legal/privacy/" target="_blank" style="color: #ED553B;">
+                Datenschutzbestimmungen von Apple
+            </a>. 
+            Wir haben keinen Zugang zu diesen Daten.
+        </p>
+
+        <h2>7. Ihre Rechte</h2>
+
+        <h3>Auskunftsrecht</h3>
+        <p>
+            Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob betreffende Daten verarbeitet werden 
+            und auf Auskunft über diese Daten sowie auf weitere Informationen und Kopie der Daten.
+        </p>
+
+        <h3>Recht auf Berichtigung</h3>
+        <p>
+            Sie haben ein Recht auf Berichtigung und/oder Vervollständigung, falls die Sie betreffenden 
+            personenbezogenen Daten unrichtig oder unvollständig sind.
+        </p>
+
+        <h3>Recht auf Löschung</h3>
+        <p>
+            Sie haben das Recht auf Löschung Ihrer personenbezogenen Daten. Für die FitFoundry App: 
+            Da alle Daten lokal gespeichert werden, können Sie diese jederzeit durch Löschen der App entfernen.
+        </p>
+
+        <h3>Recht auf Einschränkung</h3>
+        <p>
+            Sie haben das Recht, die Einschränkung der Verarbeitung der Sie betreffenden personenbezogenen Daten zu verlangen.
+        </p>
+
+        <h3>Recht auf Widerruf</h3>
+        <p>
+            Sie haben das Recht, Ihre Einwilligung zur Datenverarbeitung jederzeit zu widerrufen:
+        </p>
+        <ul>
+            <li><strong>Google Analytics:</strong> Browser-Console verwenden oder Seite neu laden</li>
+            <li><strong>Early Bird Newsletter:</strong> Link in der E-Mail oder Nachricht an uns</li>
+        </ul>
+
+        <h3>Recht auf Datenübertragbarkeit</h3>
+        <p>
+            Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags 
+            automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen.
+        </p>
+
+        <h2>8. SSL-Verschlüsselung</h2>
+        <p>
+            Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte 
+            eine SSL-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile 
+            des Browsers von "http://" auf "https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+        </p>
+
+        <h2>9. Kontakt bei Datenschutzfragen</h2>
+        
+        <div class="contact-info">
+            <strong>Datenschutzverantwortlicher:</strong><br>
+            Daniel Lahmer<br>
+            E-Mail: info@fitfoundry.de<br><br>
+            <strong>Betreff für Datenschutzanfragen:</strong> "Datenschutz - FitFoundry"
+        </div>
+
+        <h2>10. Änderungen der Datenschutzerklärung</h2>
+        <p>
+            Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen 
+            rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der 
+            Datenschutzerklärung umzusetzen.
+        </p>
+
+        <p><strong>Stand dieser Datenschutzerklärung:</strong> Januar 2025</p>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" class="back-link">
+                ← Zurück zur Hauptseite
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; padding: 4rem 0 2rem; color: white;">
+        <div class="container">
+            <div style="text-align: center;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem;">
+                    <img src="SplashBild.png" alt="FitFoundry Logo" style="width: 50px; height: 50px; border-radius: 12px;" onerror="this.style.display='none'">
+                    <div style="font-size: 2rem; font-weight: 800; color: white;">FitFoundry</div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">Wissenschaftlich fundiert</div>
+                </div>
+                
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                    <a href="datenschutz.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Datenschutz</a>
+                    <a href="impressum.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Impressum</a>
+                    <a href="agb.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">AGB</a>
+                    <a href="wissenschaft.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Wissenschaftliche Quellen</a>
+                    <a href="support.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Support</a>
+                    <a href="kontakt.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Kontakt</a>
+                </div>
+                
+                <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; color: rgba(255, 255, 255, 0.6);">
+                    <p>&copy; 2025 FitFoundry - Entwickelt mit ❤️ und 🧬 Wissenschaft von Daniel Lahmer</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Made in Germany 🇩🇪 • Peer-reviewed Science 🔬 • Privacy by Design 🔒</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5);">
+                        Alle wissenschaftlichen Methoden transparent dokumentiert • Keine Black-Box-Algorithmen
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+// Analytics Event Tracking für Datenschutz-Seite
+document.addEventListener('DOMContentLoaded', function() {
+    trackEvent('datenschutz_page_view', 'Legal');
+    
+    // Track wichtige Section Views
+    const sections = [
+        { selector: 'h2:contains("Google Analytics")', name: 'analytics_section_view' },
+        { selector: 'h2:contains("Cookie")', name: 'cookies_section_view' },
+        { selector: 'h2:contains("Ihre Rechte")', name: 'rights_section_view' },
+        { selector: 'h2:contains("FitFoundry App")', name: 'app_privacy_section_view' }
+    ];
+    
+    // Section Tracking mit IntersectionObserver
+    document.querySelectorAll('h2').forEach(heading => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const headingText = entry.target.textContent.toLowerCase();
+                    if (headingText.includes('google analytics')) {
+                        trackEvent('analytics_section_viewed', 'Privacy_Interest');
+                    } else if (headingText.includes('cookie')) {
+                        trackEvent('cookies_section_viewed', 'Privacy_Interest');
+                    } else if (headingText.includes('ihre rechte')) {
+                        trackEvent('rights_section_viewed', 'Privacy_Interest');
+                    } else if (headingText.includes('fitfoundry app')) {
+                        trackEvent('app_privacy_viewed', 'Privacy_Interest');
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(heading);
+    });
+    
+    // Back-Link Clicks
+    document.querySelectorAll('.back-link').forEach(link => {
+        link.addEventListener('click', () => {
+            trackEvent('privacy_back_to_homepage', 'Navigation');
+        });
+    });
+    
+    // Footer Links
+    document.querySelectorAll('footer a').forEach(link => {
+        link.addEventListener('click', () => {
+            const linkText = link.textContent.trim();
+            trackEvent('footer_link_click', 'Navigation', linkText);
+        });
+    });
+    
+    // Scroll Depth für Datenschutz (zusätzlich zu GA4)
+    let maxScroll = 0;
+    window.addEventListener('scroll', function() {
+        const scrollPercentage = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        if (scrollPercentage > maxScroll) {
+            maxScroll = scrollPercentage;
+            if (maxScroll >= 50 && maxScroll < 75) {
+                trackEvent('privacy_scroll_50_percent', 'Engagement');
+            } else if (maxScroll >= 75 && maxScroll < 90) {
+                trackEvent('privacy_scroll_75_percent', 'Engagement');
+            } else if (maxScroll >= 90) {
+                trackEvent('privacy_read_completely', 'Engagement');
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>
