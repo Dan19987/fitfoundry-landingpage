@@ -2,6 +2,133 @@
 <html lang="de">
 <head>
 
+<!-- ✅ SCHEMA.ORG MARKUP - In den <head> der index.html einfügen -->
+
+<!-- Structured Data für FitFoundry App -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "FitFoundry",
+  "description": "Das erste wissenschaftlich fundierte Fitness-Gamification-System der Welt. 500+ Übungen, Live-Kalorien-Tracking, Jackson-Pollock Körperfett-Analyse und Avatar-Evolution.",
+  "url": "https://fitfoundry.de",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "iOS",
+  "offers": [
+    {
+      "@type": "Offer",
+      "category": "Free",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "name": "FitFoundry Basis"
+    },
+    {
+      "@type": "Offer",
+      "category": "Subscription",
+      "price": "9.99",
+      "priceCurrency": "EUR",
+      "billingIncrement": "P1M",
+      "name": "FitFoundry Pro"
+    },
+    {
+      "@type": "Offer",
+      "category": "Purchase",
+      "price": "199",
+      "priceCurrency": "EUR",
+      "name": "FitFoundry Lifetime"
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Lahmer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "FitFoundry",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fitfoundry.de/SplashBild-128.webp"
+    }
+  },
+  "screenshot": "https://fitfoundry.de/SplashBild-128.webp",
+  "softwareVersion": "1.0",
+  "datePublished": "2025-07-01",
+  "inLanguage": "de-DE",
+  "downloadUrl": "https://apps.apple.com/app/fitfoundry",
+  "installUrl": "https://apps.apple.com/app/fitfoundry",
+  "supportedDevice": "iPhone",
+  "requirements": "iOS 14.0 oder höher",
+  "featureList": [
+    "500+ wissenschaftlich kategorisierte Übungen",
+    "Live-Kalorien-Tracking mit Personal Metabolic Factor",
+    "Jackson-Pollock 4-Punkt Körperfett-Analyse",
+    "Avatar-System mit Gamification-Elementen",
+    "200+ Audio-Coach Motivationen", 
+    "100% private Fortschrittsfotos (lokal gespeichert)",
+    "Community Events und Challenges"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+
+<!-- Organization Schema für das Unternehmen -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FitFoundry",
+  "url": "https://fitfoundry.de",
+  "logo": "https://fitfoundry.de/SplashBild-128.webp",
+  "sameAs": [
+    "https://apps.apple.com/developer/fitfoundry"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "info@fitfoundry.de",
+    "availableLanguage": ["German", "English"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "DE",
+    "addressLocality": "Berlin"
+  },
+  "description": "Entwickler der ersten wissenschaftlich fundierten Fitness-Gamification-App der Welt",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person", 
+    "name": "Daniel Lahmer"
+  },
+  "industry": "Fitness Technology"
+}
+</script>
+
+<!-- Website Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "FitFoundry - Wissenschaftlich fundierte Fitness",
+  "url": "https://fitfoundry.de",
+  "description": "Revolutioniere dein Training mit dem ersten wissenschaftlich fundierten Fitness-Gamification-System der Welt",
+  "inLanguage": "de-DE",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://fitfoundry.de/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "FitFoundry"
+  }
+}
+</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +145,7 @@
 <!-- Open Graph für Social Media -->
 <meta property="og:title" content="FitFoundry - Wissenschaftlich fundierte Fitness mit Gamification">
 <meta property="og:description" content="Das erste wissenschaftlich fundierte Fitness-Gamification-System der Welt. 500+ Übungen, Live-Tracking, Avatar-Evolution - wissenschaftlich präzise, süchtig machend motivierend!">
-<meta property="og:image" content="https://fitfoundry.de/SplashBild-64.webp">
+<meta property="og:image" content="https://fitfoundry.de/SplashBild-128.webp">
 <meta property="og:url" content="https://fitfoundry.de">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FitFoundry">

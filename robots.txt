@@ -1,0 +1,25 @@
+# robots.txt für FitFoundry.de
+
+# Alle Crawler erlaubt
+User-agent: *
+Allow: /
+
+# Sitemap-Verweis für Google
+Sitemap: https://fitfoundry.de/sitemap.xml
+
+# Wichtige Seiten explizit erlauben
+Allow: /index.html
+Allow: /wissenschaft.html
+Allow: /support.html
+Allow: /kontakt.html
+
+# Static Assets erlauben
+Allow: /*.css
+Allow: /*.js
+Allow: /*.webp
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.woff2
+
+# Crawl-Delay für respektvolles Crawling
+Crawl-delay: 1
