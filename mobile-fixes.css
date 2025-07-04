@@ -845,6 +845,155 @@
     }
 }
 
+<!-- ============================================================================
+     CSS IMPLEMENTATION GUIDE
+     Aufteilung: mobile-fixes.css vs. main CSS (index.html)
+     ============================================================================ -->
+
+<!-- ============================================================================
+     FÜR DEINE mobile-fixes.css DATEI HINZUFÜGEN:
+     ============================================================================ -->
+
+/* ================================================================
+   MOBILE RESPONSIVE ERGÄNZUNGEN - mobile-fixes.css
+   ================================================================ */
+
+/* Freeletics Comparison Table Mobile */
+@media (max-width: 768px) {
+    /* Comparison Grid für alle neuen Sektionen */
+    .comparison-grid,
+    div[style*="grid-template-columns: 1fr 1fr 1fr"],
+    div[style*="grid-template-columns: 2fr 1fr 1fr 1fr"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .comparison-grid > div,
+    div[style*="grid-template-columns"] > div {
+        text-align: left !important;
+        padding: 1rem !important;
+        margin: 0 !important;
+    }
+    
+    /* Erste Spalte (Headers) auf Mobile hervorheben */
+    .comparison-grid > div:nth-child(4n+1),
+    div[style*="grid-template-columns"] > div:nth-child(4n+1) {
+        font-weight: 700 !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 10px !important;
+        margin-top: 1.5rem !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    /* Avatar-Sektion Mobile */
+    .avatar-section .container > div {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .avatar-section h2 {
+        font-size: 2rem !important;
+    }
+    
+    /* Avatar Evolution Timeline Mobile */
+    div[style*="justify-content: space-between"] {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+    }
+    
+    /* Arrows auf Mobile verstecken */
+    div[style*="font-size: 1.2rem"]:contains("→"),
+    div[style*="font-size: 1.5rem"]:contains("→") {
+        display: none !important;
+    }
+    
+    /* FAQ Mobile Optimization */
+    .faq-question h3 {
+        font-size: 1.1rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .faq-question {
+        padding: 1.5rem !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .faq-answer {
+        padding: 0 1.5rem 1.5rem !important;
+    }
+    
+    .faq-answer div[style*="grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+    }
+    
+    /* Privacy Grid Mobile */
+    div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    /* Science/Privacy Sektionen Mobile */
+    .privacy-section .container > div,
+    .science-section .container > div {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .privacy-section h2,
+    .science-section h2 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    /* Neue Sektionen - allgemeine Mobile Rules */
+    section[style*="background: linear-gradient"] h2 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    section[style*="background: linear-gradient"] .section-title p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Feature Cards Mobile */
+    div[style*="display: flex; align-items: center"] {
+        flex-direction: column !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+    
+    div[style*="display: flex; align-items: center"] > div:first-child {
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+/* ================================================================
+   TABLET ANPASSUNGEN
+   ================================================================ */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    /* Tablet-spezifische Anpassungen für neue Sektionen */
+    div[style*="grid-template-columns: 1fr 1fr"] {
+        gap: 2rem !important;
+    }
+    
+    .comparison-grid {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Avatar Timeline auf Tablet */
+    div[style*="justify-content: space-between"] {
+        gap: 1.5rem !important;
+    }
+}
+
 /* ================================================================
    TOUCH OPTIMIERUNGEN FÜR ALLE MOBILE GERÄTE
    ================================================================ */
