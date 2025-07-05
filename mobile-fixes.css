@@ -45,9 +45,9 @@
     }
     
     /* Partikel-System ausschalten */
-    .particles {
-        display: none !important;
-    }
+.particles{
+    display: none !important;
+}
     
     /* 3D Transforms nur außerhalb Hero stoppen */
     .section:not(.hero) .phone-mockup,
@@ -1137,14 +1137,22 @@
     }
     
     /* Reduziere visuelle Effekte */
-    .floating-badge,
-    .phone-mockup,
-    .particles {
-        display: block !important;
-        position: static !important;
-        animation: none !important;
-        transform: none !important;
-    }
+.floating-badge,
+.phone-mockup {
+    display: block !important;
+    position: static !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Partikel komplett verstecken */
+.particles {
+    display: block !important;
+    position: static !important;
+    animation: none !important;
+    transform: none !important;
+    visibility: hidden !important;
+}
 }
 
 /* ================================================================
@@ -1238,4 +1246,211 @@
         align-items: center !important;
         text-align: center !important;
     }
+@media (max-width: 600px) {
+    
+    /* Absolute Positioning entfernen */
+    .floating-badge:nth-child(1),
+    .floating-badge:nth-child(2), 
+    .floating-badge:nth-child(3) {
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        position: relative !important;
+        display: block !important;
+        margin: 0.5rem auto !important;
+        text-align: center !important;
+        max-width: 200px !important;
+    }
+    
+    /* Container für Zentrierung */
+    .hero-visual {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
+
+/* Science Boxes - Kleiner und zentriert, aber 2x2 Grid */
+@media (max-width: 600px) {
+    .science-stats {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 nebeneinander */
+        gap: 0.8rem !important; /* Weniger Abstand */
+        max-width: 350px !important; /* Grid begrenzen */
+        margin: 0 auto !important; /* Grid zentrieren */
+
+    }
+    
+    .science-stat {
+        padding: 1.2rem !important; /* Weniger Padding */
+        border-radius: 15px !important; /* Kleiner Radius */
+    }
+    
+    .science-stat-number {
+        font-size: 2rem !important; /* Kleinere Zahlen */
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .science-stat-label {
+        font-size: 0.85rem !important; /* Kleinerer Text */
+        line-height: 1.3 !important;
+    }
+}
+
+/* ================================================================
+   AVATAR-GAMIFICATION SEKTION - Mobile Fix
+   ================================================================ */
+@media (max-width: 600px) {
+    
+    /* Main Content Grid - Von 2 Spalten zu vertikal */
+    section[style*="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="grid-template-columns: 1fr 1fr"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        align-items: center !important;
+    }
+    
+    /* Avatar Timeline - Vertikal statt horizontal */
+    section[style*="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="justify-content: space-between"] {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        align-items: center !important;
+    }
+    
+    /* Arrows in Timeline verstecken */
+    section[style*="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="font-size: 1.5rem"]:contains("→") {
+        display: none !important;
+    }
+    
+    /* Success Stories Grid - 1 Spalte */
+    section[style*="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="repeat(auto-fit, minmax(300px, 1fr))"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Gamification Science Grid - 1 Spalte */
+    section[style*="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="repeat(auto-fit, minmax(250px, 1fr))"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Feature Cards - Weniger Padding */
+    section[style*="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="display: flex; align-items: center"] {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 1.2rem !important;
+    }
+    
+    /* Icons in Feature Cards */
+    section[style*="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="font-size: 2.5rem; margin-right: 1.5rem"] {
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+================================================================
+   AVATAR-GAMIFICATION SEKTION - Mobile Fix
+   ================================================================ */
+@media (max-width: 600px) {
+
+    /* Main Content Grid - Von 2 Spalten zu vertikal /
+    section[style="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="grid-template-columns: 1fr 1fr"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        align-items: center !important;
+    }
+
+    /* Avatar Timeline - Vertikal statt horizontal /
+    section[style="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="justify-content: space-between"] {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        align-items: center !important;
+    }
+
+    /* Arrows in Timeline verstecken /
+    section[style="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="font-size: 1.5rem"]:contains("→") {
+        display: none !important;
+    }
+
+    /* Success Stories Grid - 1 Spalte /
+    section[style="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="repeat(auto-fit, minmax(300px, 1fr))"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Gamification Science Grid - 1 Spalte /
+    section[style="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="repeat(auto-fit, minmax(250px, 1fr))"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Feature Cards - Weniger Padding /
+    section[style="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="display: flex; align-items: center"] {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 1.2rem !important;
+    }
+
+    /* Icons in Feature Cards /
+    section[style="background: linear-gradient(135deg, rgb(79, 70, 229)"] div[style*="font-size: 2.5rem; margin-right: 1.5rem"] {
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+/* ================================================================
+   PRIVACY/DATENSCHUTZ SEKTION - Mobile Fix
+   ================================================================ */
+
+/* ================================================================
+   PRIVACY BENEFIT CARDS - GARANTIERT FUNKTIONIEREND
+   ================================================================ */
+@media (max-width: 768px) {
+    
+    /* Privacy Benefit Cards - SUPER SPEZIFISCH */
+    section[style*="rgb(31, 41, 55)"] div[style*="display: flex; align-items: center; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 15px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1)"] {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 1.2rem !important;
+    }
+    
+    /* Icons - von rechts nach unten */
+    section[style*="rgb(31, 41, 55)"] div[style*="font-size: 2.5rem; margin-right: 1.5rem"] {
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* NOTFALL - Falls der obere nicht funktioniert */
+    div[style*="rgba(255, 255, 255, 0.05)"][style*="backdrop-filter: blur(10px)"][style*="border-radius: 15px"] {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    div[style*="font-size: 2.5rem; margin-right: 1.5rem"] {
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* ULTIMATIVER NOTFALL */
+    [style*="🇩🇪"] {
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    [style*="📱"] {
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    [style*="🚫"] {
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    [style*="🔐"] {
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+}
 }
