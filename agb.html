@@ -3,466 +3,602 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGB - FitFoundry</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Allgemeine Geschäftsbedingungen für FitFoundry App - transparent und fair">
-    <meta name="robots" content="noindex, follow">
+    <title>AGB - Allgemeine Geschäftsbedingungen | FitFoundry - Wissenschaftlich fundierte Fitness</title>
+    <meta name="description" content="Allgemeine Geschäftsbedingungen für FitFoundry App - transparent und fair. Jackson-Pollock Analyse, Avatar-System, 100% Privacy-First.">
+    <meta name="keywords" content="fitfoundry agb, allgemeine geschäftsbedingungen, fitness app terms, jackson pollock app terms, avatar system terms">
+    <meta name="author" content="Daniel Lahmer">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="de">
+    <meta name="revisit-after" content="monthly">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AGB - Allgemeine Geschäftsbedingungen | FitFoundry">
+    <meta property="og:description" content="Transparente und faire AGB für FitFoundry App mit Jackson-Pollock Analyse und Avatar-System.">
+    <meta property="og:image" content="https://fitfoundry.de/assets/images/fitfoundry-agb-og.webp">
+    <meta property="og:url" content="https://fitfoundry.de/agb.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FitFoundry">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AGB - Allgemeine Geschäftsbedingungen | FitFoundry">
+    <meta name="twitter:description" content="Transparente und faire AGB für FitFoundry App mit Jackson-Pollock Analyse und Avatar-System.">
+    <meta name="twitter:image" content="https://fitfoundry.de/assets/images/fitfoundry-agb-twitter.webp">
+    
+    <!-- Apple Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FitFoundry">
+    <meta name="theme-color" content="#ED553B">
     
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<!-- ✅ GOOGLE ANALYTICS 4 - DSGVO-KONFORM (nach den Fonts einfügen) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-08FBC0TKGP"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fitfoundry.de/agb.html">
     
-    // Cookie-Consent Check
-    function hasConsent() {
-        return localStorage.getItem('fitfoundry_analytics_consent') === 'true';
-    }
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/assets/css/shared-styles.css" as="style">
     
-    // Initialize Analytics only with consent
-    if (hasConsent()) {
-        gtag('js', new Date());
-        gtag('config', 'G-08FBC0TKGP', {
-            anonymize_ip: true,
-            cookie_flags: 'SameSite=None;Secure'
-        });
-    }
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/shared-styles.css">
     
-    // Track Events (only with consent)
-    function trackEvent(action, category = 'AGB') {
-        if (hasConsent()) {
-            gtag('event', action, {
-                event_category: category,
-                event_label: window.location.pathname
-            });
+    <!-- Schema.org für Legal Document -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Allgemeine Geschäftsbedingungen",
+      "description": "Transparente und faire AGB für FitFoundry App mit Jackson-Pollock Analyse und Avatar-System.",
+      "url": "https://fitfoundry.de/agb.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://fitfoundry.de/#website"
+      },
+      "about": {
+        "@type": "MobileApplication",
+        "name": "FitFoundry",
+        "applicationCategory": "HealthApplication"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fitfoundry.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AGB",
+            "item": "https://fitfoundry.de/agb.html"
+          }
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FitFoundry",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fitfoundry.de/assets/images/logo.webp"
         }
+      }
     }
-</script>
-    
+    </script>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* =============================================================================
+           AGB-SPEZIFISCHE STYLES (Mobile First)
+           ============================================================================= */
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #f8fafc;
-        }
-
-        .container {
+        /* Legal Document Styling */
+        .legal-container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: var(--spacing-lg) var(--spacing-sm);
         }
 
-        .header {
-            background: linear-gradient(135deg, #ED553B 0%, #FF804F 50%, #2E3131 100%);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
+        /* Legal Content */
+        .legal-content {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--spacing-xl);
         }
 
-        .header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .content {
-            background: white;
-            margin: 2rem auto;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 900px;
-        }
-
-        .content h2 {
-            color: #ED553B;
+        .legal-content h2 {
+            color: var(--primary-color);
             font-size: 1.5rem;
-            font-weight: 700;
-            margin: 2.5rem 0 1rem 0;
-            border-bottom: 2px solid #ED553B;
-            padding-bottom: 0.5rem;
+            font-weight: var(--font-weight-bold);
+            margin: var(--spacing-xl) 0 var(--spacing-md) 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: var(--spacing-xs);
         }
 
-        .content h3 {
-            color: #2E3131;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 2rem 0 0.5rem 0;
+        .legal-content h2:first-child {
+            margin-top: 0;
         }
 
-        .content h4 {
-            color: #64748b;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.5rem 0;
+        .legal-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.25rem;
+            font-weight: var(--font-weight-semibold);
+            margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
         }
 
-        .content p {
-            margin-bottom: 1rem;
+        .legal-content h4 {
+            color: var(--gray-600);
+            font-size: 1.125rem;
+            font-weight: var(--font-weight-medium);
+            margin: var(--spacing-md) 0 var(--spacing-xs) 0;
+        }
+
+        .legal-content p {
+            margin-bottom: var(--spacing-md);
             line-height: 1.7;
         }
 
-        .content ul {
-            margin: 1rem 0 1rem 2rem;
+        .legal-content ul {
+            margin: var(--spacing-sm) 0 var(--spacing-md) var(--spacing-lg);
         }
 
-        .content li {
-            margin-bottom: 0.5rem;
+        .legal-content li {
+            margin-bottom: var(--spacing-xs);
             line-height: 1.6;
         }
 
-        .highlight-box {
-            background: #f0f9ff;
-            padding: 1.5rem;
-            border-radius: 10px;
+        /* Info Boxes */
+        .info-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #0ea5e9;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
             border-left: 4px solid #0ea5e9;
-            margin: 1.5rem 0;
+        }
+
+        .info-box h3 {
+            color: #0369a1;
+            margin-bottom: var(--spacing-xs);
+            font-size: 1rem;
+        }
+
+        .info-box p {
+            color: #0369a1;
+            margin: 0;
         }
 
         .pricing-box {
-            background: #fef7ff;
-            padding: 1.5rem;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #fef7ff 0%, #fae8ff 100%);
+            border: 1px solid #a855f7;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
             border-left: 4px solid #a855f7;
-            margin: 1.5rem 0;
+        }
+
+        .pricing-box h3 {
+            color: #7c3aed;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .pricing-box ul {
+            margin: var(--spacing-sm) 0;
+        }
+
+        .pricing-box li {
+            color: #7c3aed;
         }
 
         .contact-info {
-            background: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #ED553B;
-            margin: 1.5rem 0;
+            background: linear-gradient(135deg, var(--gray-50) 0%, #f1f5f9 100%);
+            border: 1px solid var(--primary-color);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-left: 4px solid var(--primary-color);
         }
 
+        .contact-info strong {
+            color: var(--primary-color);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .highlight-box h3 {
+            color: #92400e;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .highlight-box p {
+            color: #92400e;
+            margin: 0;
+        }
+
+        /* Navigation Link */
         .back-link {
-            background: linear-gradient(135deg, #ED553B, #FF804F);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: var(--white);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-lg);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 2rem;
+            gap: var(--spacing-xs);
+            font-weight: var(--font-weight-semibold);
+            transition: all var(--transition-normal);
+            margin-top: var(--spacing-lg);
         }
 
         .back-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(237, 85, 59, 0.3);
+            box-shadow: var(--shadow-lg);
+            color: var(--white);
         }
 
-        .footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: #64748b;
-            font-size: 0.9rem;
+        .back-link:active {
+            transform: translateY(0);
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
+        /* Desktop Optimizations */
+        @media (min-width: 768px) {
+            .legal-container {
+                padding: var(--spacing-xl) var(--spacing-lg);
             }
             
-            .content {
-                padding: 2rem;
-                margin: 1rem;
+            .legal-content {
+                padding: var(--spacing-xl);
             }
             
-            .header h1 {
-                font-size: 2rem;
+            .legal-content h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .legal-container {
+                padding: var(--spacing-2xl) var(--spacing-xl);
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="header">
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-consent" style="display: none;">
+        <div class="cookie-content">
+            <p>🍪 Wir nutzen Google Analytics um unsere Website zu verbessern. 
+            <a href="/datenschutz.html" class="cookie-link">Datenschutz</a></p>
+            <div class="cookie-buttons">
+                <button onclick="acceptCookies()" class="btn-accept">Akzeptieren</button>
+                <button onclick="declineCookies()" class="btn-decline">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/assets/images/logo.webp" alt="FitFoundry Logo" width="40" height="40">
+                <span class="nav-brand">FitFoundry</span>
+            </a>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/kalorienrechner.html" class="nav-link">Kalorienrechner</a>
+                <a href="/hautfaltenmessung.html" class="nav-link">Körperfett</a>
+                <a href="/live-kalorienzaehler.html" class="nav-link">Kalorien</a>
+                <a href="/pricing.html" class="nav-link">Preise</a>
+                <a href="/#early-bird" class="nav-cta">Early Access</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <div class="breadcrumb">
+            <a href="/">Home</a>
+            <span class="breadcrumb-separator">›</span>
+            <span class="breadcrumb-current">AGB</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero hero-gradient">
         <div class="container">
-            <h1>⚖️ Allgemeine Geschäftsbedingungen</h1>
-            <p>Transparent und fair - für FitFoundry App und Website</p>
+            <div class="hero-content">
+                <h1 class="hero-title">⚖️ Allgemeine Geschäftsbedingungen</h1>
+                <p class="hero-subtitle">Transparent und fair - für FitFoundry App und Website</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="content">
-        <div class="highlight-box">
-            <h3>📱 Für wen gelten diese AGB?</h3>
-            <p>Diese AGB gelten für die Nutzung der <strong>FitFoundry iOS App</strong> und der 
-            <strong>FitFoundry Website</strong> (fitfoundry.de). Sie regeln das Verhältnis zwischen 
-            Ihnen als Nutzer und uns als Anbieter.</p>
-        </div>
+    <!-- Main Content -->
+    <main class="legal-container">
 
-        <h2>§ 1 Geltungsbereich und Vertragspartner</h2>
-        
-        <h3>(1) Anbieter</h3>
-        <div class="contact-info">
-            <strong>Daniel Lahmer</strong><br>
-            Bohnsdorfer Weg 66A<br>
-            12524 Berlin<br>
-            Deutschland<br><br>
-            E-Mail: info@fitfoundry.de
-        </div>
+        <!-- Legal Content -->
+        <div class="legal-content">
+            <div class="info-box">
+                <h3>📱 Für wen gelten diese AGB?</h3>
+                <p>Diese AGB gelten für die Nutzung der <strong>FitFoundry iOS App</strong> und der 
+                <strong>FitFoundry Website</strong> (fitfoundry.de). Sie regeln das Verhältnis zwischen 
+                Ihnen als Nutzer und uns als Anbieter.</p>
+            </div>
 
-        <h3>(2) Geltungsbereich</h3>
-        <p>
-            Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen dem Anbieter 
-            und den Nutzern der FitFoundry App sowie der zugehörigen Website. Abweichende Bedingungen 
-            des Nutzers werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung 
-            ausdrücklich schriftlich zu.
-        </p>
+            <h2>§ 1 Geltungsbereich und Vertragspartner</h2>
+            
+            <h3>(1) Anbieter</h3>
+            <div class="contact-info">
+                <strong>Daniel Lahmer</strong><br>
+                Bohnsdorfer Weg 66A<br>
+                12524 Berlin<br>
+                Deutschland<br><br>
+                E-Mail: info@fitfoundry.de
+            </div>
 
-        <h2>§ 2 Leistungen</h2>
-
-        <h3>(1) FitFoundry App</h3>
-        <p>FitFoundry ist eine iOS-App für wissenschaftlich fundiertes Fitness-Training mit folgenden Hauptfunktionen:</p>
-        <ul>
-            <li>500+ wissenschaftlich kategorisierte Übungen</li>
-            <li>Live-Kalorien-Tracking mit Personal Metabolic Factor</li>
-            <li>Jackson-Pollock 4-Punkt Körperfett-Analyse</li>
-            <li>Avatar-System mit Gamification-Elementen</li>
-            <li>200+ Audio-Coach Motivationen</li>
-            <li>100% private Fortschrittsfotos (lokal gespeichert)</li>
-            <li>Community Events und Challenges</li>
-        </ul>
-
-        <h3>(2) Wissenschaftliche Grundlage</h3>
-        <p>
-            Alle Berechnungen basieren auf peer-reviewed Studien und etablierten sportwissenschaftlichen Standards. 
-            Eine vollständige Liste der wissenschaftlichen Quellen ist in der App verfügbar.
-        </p>
-
-        <h3>(3) Datenschutz by Design</h3>
-        <p>
-            Alle persönlichen Trainings- und Körperdaten werden ausschließlich lokal auf dem Gerät des Nutzers 
-            gespeichert. Es findet keine Cloud-Synchronisation oder externe Datenspeicherung statt.
-        </p>
-
-        <h2>§ 3 Nutzungsmodelle und Preise</h2>
-
-        <div class="pricing-box">
-            <h3>💰 Aktuelle Preismodelle</h3>
-            <ul>
-                <li><strong>FitFoundry Basis:</strong> Kostenlos (eingeschränkte Features)</li>
-                <li><strong>FitFoundry Pro:</strong> 9,99€ pro Monat (alle Features)</li>
-                <li><strong>FitFoundry Lifetime:</strong> 199€ einmalig (alle Features lebenslang)</li>
-            </ul>
-            <p><strong>Early Bird Rabatt:</strong> 50% auf alle Pläne für Newsletter-Abonnenten</p>
-        </div>
-
-        <h3>(1) Kostenlose Version</h3>
-        <p>
-            Die Basis-Version der FitFoundry App ist dauerhaft kostenlos nutzbar. Sie umfasst grundlegende 
-            Funktionen mit eingeschränktem Übungsumfang.
-        </p>
-
-        <h3>(2) Premium-Abonnements</h3>
-        <p>
-            Pro-Features werden als monatliches Abonnement über den Apple App Store abgerechnet. 
-            Das Abonnement verlängert sich automatisch, kann aber jederzeit über die iOS-Einstellungen gekündigt werden.
-        </p>
-
-        <h3>(3) Lifetime-Lizenz</h3>
-        <p>
-            Die Lifetime-Option bietet lebenslangen Zugang zu allen Pro-Features gegen eine einmalige Zahlung. 
-            Dies gilt für die Lebensdauer der App, mindestens jedoch 5 Jahre ab Kaufdatum.
-        </p>
-
-        <h2>§ 4 Vertragsschluss</h2>
-
-        <h3>(1) App Store</h3>
-        <p>
-            Der Download der kostenlosen App erfolgt über den Apple App Store. Mit dem Download akzeptieren 
-            Sie diese AGB. Premium-Features werden über In-App-Käufe erworben.
-        </p>
-
-        <h3>(2) Minderjährige</h3>
-        <p>
-            Die App richtet sich an Nutzer ab 16 Jahren. Minderjährige zwischen 16-18 Jahren benötigen 
-            die Zustimmung ihrer Erziehungsberechtigten für kostenpflichtige Funktionen.
-        </p>
-
-        <h2>§ 5 Nutzungsrechte und -pflichten</h2>
-
-        <h3>(1) Erlaubte Nutzung</h3>
-        <p>Sie dürfen die FitFoundry App für private, nicht-kommerzielle Zwecke nutzen. Die App ist ausschließlich 
-        für Ihre persönliche Fitness-Journey bestimmt.</p>
-
-        <h3>(2) Verbotene Nutzung</h3>
-        <p>Untersagt sind insbesondere:</p>
-        <ul>
-            <li>Reverse Engineering, Dekompilierung oder Disassemblierung</li>
-            <li>Kommerzielle Nutzung ohne ausdrückliche Zustimmung</li>
-            <li>Weitergabe von Account-Daten an Dritte</li>
-            <li>Manipulation der wissenschaftlichen Berechnungen</li>
-            <li>Automatisierte Datenerfassung oder Bots</li>
-        </ul>
-
-        <h3>(3) Community-Regeln</h3>
-        <p>Bei der Teilnahme an Community-Events gelten zusätzlich:</p>
-        <ul>
-            <li>Respektvoller Umgang mit anderen Nutzern</li>
-            <li>Keine beleidigenden oder diskriminierenden Inhalte</li>
-            <li>Ehrliche Angaben bei Challenges und Competitions</li>
-        </ul>
-
-        <h2>§ 6 Verfügbarkeit und technische Anforderungen</h2>
-
-        <h3>(1) Systemanforderungen</h3>
-        <ul>
-            <li>iOS 14.0 oder höher</li>
-            <li>iPhone 8 oder neuer (empfohlen: iPhone 12 oder neuer)</li>
-            <li>Mindestens 2 GB verfügbarer Speicherplatz</li>
-            <li>Internetverbindung für Community-Features (optional)</li>
-        </ul>
-
-        <h3>(2) Verfügbarkeit</h3>
-        <p>
-            Wir bemühen uns um eine hohe Verfügbarkeit der App. Da die meisten Funktionen offline arbeiten, 
-            sind Ausfälle normalerweise nur bei Community-Features möglich. Wartungsarbeiten werden 
-            rechtzeitig angekündigt.
-        </p>
-
-        <h2>§ 7 Gesundheitshinweise und Haftungsausschluss</h2>
-
-        <div class="highlight-box">
-            <h3>⚠️ Wichtiger Gesundheitshinweis</h3>
+            <h3>(2) Geltungsbereich</h3>
             <p>
-                FitFoundry ist ein Trainings-Tool, <strong>kein medizinisches Gerät</strong>. 
-                Konsultieren Sie vor Beginn eines Trainingsprogramms einen Arzt, 
-                besonders bei Vorerkrankungen oder gesundheitlichen Bedenken.
+                Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen dem Anbieter 
+                und den Nutzern der FitFoundry App sowie der zugehörigen Website. Abweichende Bedingungen 
+                des Nutzers werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung 
+                ausdrücklich schriftlich zu.
             </p>
+
+            <h2>§ 2 Leistungen</h2>
+
+            <h3>(1) FitFoundry App</h3>
+            <p>FitFoundry ist eine iOS-App für wissenschaftlich fundiertes Fitness-Training mit folgenden Hauptfunktionen:</p>
+            <ul>
+                <li>500+ wissenschaftlich kategorisierte Übungen</li>
+                <li>Live-Kalorien-Tracking mit Personal Metabolic Factor</li>
+                <li>Jackson-Pollock 4-Punkt Körperfett-Analyse</li>
+                <li>Avatar-System mit Gamification-Elementen</li>
+                <li>200+ Audio-Coach Motivationen</li>
+                <li>100% private Fortschrittsfotos (lokal gespeichert)</li>
+                <li>Community Events und Challenges</li>
+            </ul>
+
+            <h3>(2) Wissenschaftliche Grundlage</h3>
+            <p>
+                Alle Berechnungen basieren auf peer-reviewed Studien und etablierten sportwissenschaftlichen Standards. 
+                Eine vollständige Liste der wissenschaftlichen Quellen ist in der App verfügbar.
+            </p>
+
+            <h3>(3) Datenschutz by Design</h3>
+            <p>
+                Alle persönlichen Trainings- und Körperdaten werden ausschließlich lokal auf dem Gerät des Nutzers 
+                gespeichert. Es findet keine Cloud-Synchronisation oder externe Datenspeicherung statt.
+            </p>
+
+            <h2>§ 3 Nutzungsmodelle und Preise</h2>
+
+            <div class="pricing-box">
+                <h3>💰 Aktuelle Preismodelle</h3>
+                <ul>
+                    <li><strong>FitFoundry Basis:</strong> Kostenlos (eingeschränkte Features)</li>
+                    <li><strong>FitFoundry Pro:</strong> 9,99€ pro Monat (alle Features)</li>
+                    <li><strong>FitFoundry Lifetime:</strong> 199€ einmalig (alle Features lebenslang)</li>
+                </ul>
+                <p><strong>Early Bird Rabatt:</strong> 50% auf alle Pläne für Newsletter-Abonnenten</p>
+            </div>
+
+            <h3>(1) Kostenlose Version</h3>
+            <p>
+                Die Basis-Version der FitFoundry App ist dauerhaft kostenlos nutzbar. Sie umfasst grundlegende 
+                Funktionen mit eingeschränktem Übungsumfang.
+            </p>
+
+            <h3>(2) Premium-Abonnements</h3>
+            <p>
+                Pro-Features werden als monatliches Abonnement über den Apple App Store abgerechnet. 
+                Das Abonnement verlängert sich automatisch, kann aber jederzeit über die iOS-Einstellungen gekündigt werden.
+            </p>
+
+            <h3>(3) Lifetime-Lizenz</h3>
+            <p>
+                Die Lifetime-Option bietet lebenslangen Zugang zu allen Pro-Features gegen eine einmalige Zahlung. 
+                Dies gilt für die Lebensdauer der App, mindestens jedoch 5 Jahre ab Kaufdatum.
+            </p>
+
+            <h2>§ 4 Vertragsschluss</h2>
+
+            <h3>(1) App Store</h3>
+            <p>
+                Der Download der kostenlosen App erfolgt über den Apple App Store. Mit dem Download akzeptieren 
+                Sie diese AGB. Premium-Features werden über In-App-Käufe erworben.
+            </p>
+
+            <h3>(2) Minderjährige</h3>
+            <p>
+                Die App richtet sich an Nutzer ab 16 Jahren. Minderjährige zwischen 16-18 Jahren benötigen 
+                die Zustimmung ihrer Erziehungsberechtigten für kostenpflichtige Funktionen.
+            </p>
+
+            <h2>§ 5 Nutzungsrechte und -pflichten</h2>
+
+            <h3>(1) Erlaubte Nutzung</h3>
+            <p>Sie dürfen die FitFoundry App für private, nicht-kommerzielle Zwecke nutzen. Die App ist ausschließlich 
+            für Ihre persönliche Fitness-Journey bestimmt.</p>
+
+            <h3>(2) Verbotene Nutzung</h3>
+            <p>Untersagt sind insbesondere:</p>
+            <ul>
+                <li>Reverse Engineering, Dekompilierung oder Disassemblierung</li>
+                <li>Kommerzielle Nutzung ohne ausdrückliche Zustimmung</li>
+                <li>Weitergabe von Account-Daten an Dritte</li>
+                <li>Manipulation der wissenschaftlichen Berechnungen</li>
+                <li>Automatisierte Datenerfassung oder Bots</li>
+            </ul>
+
+            <h3>(3) Community-Regeln</h3>
+            <p>Bei der Teilnahme an Community-Events gelten zusätzlich:</p>
+            <ul>
+                <li>Respektvoller Umgang mit anderen Nutzern</li>
+                <li>Keine beleidigenden oder diskriminierenden Inhalte</li>
+                <li>Ehrliche Angaben bei Challenges und Competitions</li>
+            </ul>
+
+            <h2>§ 6 Verfügbarkeit und technische Anforderungen</h2>
+
+            <h3>(1) Systemanforderungen</h3>
+            <ul>
+                <li>iOS 14.0 oder höher</li>
+                <li>iPhone 8 oder neuer (empfohlen: iPhone 12 oder neuer)</li>
+                <li>Mindestens 2 GB verfügbarer Speicherplatz</li>
+                <li>Internetverbindung für Community-Features (optional)</li>
+            </ul>
+
+            <h3>(2) Verfügbarkeit</h3>
+            <p>
+                Wir bemühen uns um eine hohe Verfügbarkeit der App. Da die meisten Funktionen offline arbeiten, 
+                sind Ausfälle normalerweise nur bei Community-Features möglich. Wartungsarbeiten werden 
+                rechtzeitig angekündigt.
+            </p>
+
+            <h2>§ 7 Gesundheitshinweise und Haftungsausschluss</h2>
+
+            <div class="highlight-box">
+                <h3>⚠️ Wichtiger Gesundheitshinweis</h3>
+                <p>
+                    FitFoundry ist ein Trainings-Tool, <strong>kein medizinisches Gerät</strong>. 
+                    Konsultieren Sie vor Beginn eines Trainingsprogramms einen Arzt, 
+                    besonders bei Vorerkrankungen oder gesundheitlichen Bedenken.
+                </p>
+            </div>
+
+            <h3>(1) Eigenverantwortung</h3>
+            <p>
+                Die Nutzung der App erfolgt auf eigene Verantwortung. Nutzer sind selbst dafür verantwortlich, 
+                ihre körperlichen Grenzen zu respektieren und bei Schmerzen oder Unwohlsein das Training zu beenden.
+            </p>
+
+            <h3>(2) Wissenschaftliche Genauigkeit</h3>
+            <p>
+                Obwohl unsere Berechnungen auf wissenschaftlichen Standards basieren, können individuelle 
+                Abweichungen auftreten. Die Jackson-Pollock Körperfett-Analyse hat eine Genauigkeit von ±3-4% 
+                vs DEXA-Scan, aber Messfehler sind möglich.
+            </p>
+
+            <h3>(3) Haftungsausschluss</h3>
+            <p>
+                Der Anbieter haftet nicht für gesundheitliche Schäden, die durch unsachgemäße Nutzung der App entstehen. 
+                Die Haftung ist auf Vorsatz und grobe Fahrlässigkeit beschränkt.
+            </p>
+
+            <h2>§ 8 Kündigungsrecht und Laufzeit</h2>
+
+            <h3>(1) Kostenlose Version</h3>
+            <p>
+                Die kostenlose App-Nutzung kann jederzeit durch Löschen der App beendet werden. 
+                Lokal gespeicherte Daten gehen dabei verloren.
+            </p>
+
+            <h3>(2) Abonnements</h3>
+            <p>
+                Premium-Abonnements können jederzeit über die iOS-Einstellungen gekündigt werden. 
+                Die Kündigung wird zum Ende der aktuellen Abrechnungsperiode wirksam.
+            </p>
+
+            <h3>(3) Lifetime-Lizenzen</h3>
+            <p>
+                Lifetime-Lizenzen sind dauerhaft gültig und nicht kündbar. 
+                Bei schwerwiegenden Verstößen gegen diese AGB behalten wir uns vor, Accounts zu sperren.
+            </p>
+
+            <h2>§ 9 Widerrufsrecht</h2>
+
+            <h3>(1) EU-Widerrufsrecht</h3>
+            <p>
+                Bei digitalen Inhalten, die sofort verfügbar sind (wie In-App-Käufe), gilt das 14-tägige 
+                Widerrufsrecht gemäß EU-Recht nur, wenn Sie nicht ausdrücklich auf dieses Recht verzichtet haben.
+            </p>
+
+            <h3>(2) Apple App Store</h3>
+            <p>
+                Für Käufe über den Apple App Store gelten zusätzlich die 
+                <a href="https://www.apple.com/legal/internet-services/terms/site.html" target="_blank">
+                    Apple Rückgabe- und Stornierungsrichtlinien
+                </a>.
+            </p>
+
+            <h2>§ 10 Updates und Änderungen</h2>
+
+            <h3>(1) App-Updates</h3>
+            <p>
+                Wir stellen regelmäßig kostenlose Updates zur Verfügung, die neue Features, 
+                Verbesserungen und Bugfixes enthalten. Updates sind freiwillig, aber für optimale Funktionalität empfohlen.
+            </p>
+
+            <h3>(2) AGB-Änderungen</h3>
+            <p>
+                Änderungen dieser AGB werden Ihnen rechtzeitig mitgeteilt. Bei wesentlichen Änderungen 
+                haben Sie ein Sonderkündigungsrecht.
+            </p>
+
+            <h2>§ 11 Streitbeilegung und Schlussbestimmungen</h2>
+
+            <h3>(1) Anwendbares Recht</h3>
+            <p>
+                Für diese AGB gilt deutsches Recht unter Ausschluss des UN-Kaufrechts. 
+                Gerichtsstand ist Berlin, Deutschland.
+            </p>
+
+            <h3>(2) Online-Streitbeilegung</h3>
+            <p>
+                Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+                <a href="https://ec.europa.eu/consumers/odr/" target="_blank">
+                    https://ec.europa.eu/consumers/odr/
+                </a>
+            </p>
+
+            <h3>(3) Salvatorische Klausel</h3>
+            <p>
+                Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchführbar sein, 
+                bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
+            </p>
+
+            <h2>§ 12 Kontakt und Support</h2>
+
+            <div class="contact-info">
+                <strong>Support und Fragen:</strong><br>
+                E-Mail: info@fitfoundry.de<br>
+                Betreff: "AGB - FitFoundry"<br><br>
+                <strong>Antwortzeit:</strong> Innerhalb von 48 Stunden<br>
+                <strong>Support-Sprachen:</strong> Deutsch, Englisch
+            </div>
+
+            <p><strong>Stand dieser AGB:</strong> Juli 2025</p>
+
+            <div style="text-align: center; margin-top: var(--spacing-xl);">
+                <a href="/" class="back-link">
+                    ← Zurück zur Hauptseite
+                </a>
+            </div>
         </div>
-
-        <h3>(1) Eigenverantwortung</h3>
-        <p>
-            Die Nutzung der App erfolgt auf eigene Verantwortung. Nutzer sind selbst dafür verantwortlich, 
-            ihre körperlichen Grenzen zu respektieren und bei Schmerzen oder Unwohlsein das Training zu beenden.
-        </p>
-
-        <h3>(2) Wissenschaftliche Genauigkeit</h3>
-        <p>
-            Obwohl unsere Berechnungen auf wissenschaftlichen Standards basieren, können individuelle 
-            Abweichungen auftreten. Die Jackson-Pollock Körperfett-Analyse hat eine Genauigkeit von ±3-4% 
-            vs DEXA-Scan, aber Messfehler sind möglich.
-        </p>
-
-        <h3>(3) Haftungsausschluss</h3>
-        <p>
-            Der Anbieter haftet nicht für gesundheitliche Schäden, die durch unsachgemäße Nutzung der App entstehen. 
-            Die Haftung ist auf Vorsatz und grobe Fahrlässigkeit beschränkt.
-        </p>
-
-        <h2>§ 8 Kündigungsrecht und Laufzeit</h2>
-
-        <h3>(1) Kostenlose Version</h3>
-        <p>
-            Die kostenlose App-Nutzung kann jederzeit durch Löschen der App beendet werden. 
-            Lokal gespeicherte Daten gehen dabei verloren.
-        </p>
-
-        <h3>(2) Abonnements</h3>
-        <p>
-            Premium-Abonnements können jederzeit über die iOS-Einstellungen gekündigt werden. 
-            Die Kündigung wird zum Ende der aktuellen Abrechnungsperiode wirksam.
-        </p>
-
-        <h3>(3) Lifetime-Lizenzen</h3>
-        <p>
-            Lifetime-Lizenzen sind dauerhaft gültig und nicht kündbar. 
-            Bei schwerwiegenden Verstößen gegen diese AGB behalten wir uns vor, Accounts zu sperren.
-        </p>
-
-        <h2>§ 9 Widerrufsrecht</h2>
-
-        <h3>(1) EU-Widerrufsrecht</h3>
-        <p>
-            Bei digitalen Inhalten, die sofort verfügbar sind (wie In-App-Käufe), gilt das 14-tägige 
-            Widerrufsrecht gemäß EU-Recht nur, wenn Sie nicht ausdrücklich auf dieses Recht verzichtet haben.
-        </p>
-
-        <h3>(2) Apple App Store</h3>
-        <p>
-            Für Käufe über den Apple App Store gelten zusätzlich die 
-            <a href="https://www.apple.com/legal/internet-services/terms/site.html" target="_blank" style="color: #ED553B;">
-                Apple Rückgabe- und Stornierungsrichtlinien
-            </a>.
-        </p>
-
-        <h2>§ 10 Updates und Änderungen</h2>
-
-        <h3>(1) App-Updates</h3>
-        <p>
-            Wir stellen regelmäßig kostenlose Updates zur Verfügung, die neue Features, 
-            Verbesserungen und Bugfixes enthalten. Updates sind freiwillig, aber für optimale Funktionalität empfohlen.
-        </p>
-
-        <h3>(2) AGB-Änderungen</h3>
-        <p>
-            Änderungen dieser AGB werden Ihnen rechtzeitig mitgeteilt. Bei wesentlichen Änderungen 
-            haben Sie ein Sonderkündigungsrecht.
-        </p>
-
-        <h2>§ 11 Streitbeilegung und Schlussbestimmungen</h2>
-
-        <h3>(1) Anwendbares Recht</h3>
-        <p>
-            Für diese AGB gilt deutsches Recht unter Ausschluss des UN-Kaufrechts. 
-            Gerichtsstand ist Berlin, Deutschland.
-        </p>
-
-        <h3>(2) Online-Streitbeilegung</h3>
-        <p>
-            Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
-            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" style="color: #ED553B;">
-                https://ec.europa.eu/consumers/odr/
-            </a>
-        </p>
-
-        <h3>(3) Salvatorische Klausel</h3>
-        <p>
-            Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchführbar sein, 
-            bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
-        </p>
-
-        <h2>§ 12 Kontakt und Support</h2>
-
-        <div class="contact-info">
-            <strong>Support und Fragen:</strong><br>
-            E-Mail: info@fitfoundry.de<br>
-            Betreff: "AGB - FitFoundry"<br><br>
-            <strong>Antwortzeit:</strong> Innerhalb von 48 Stunden<br>
-            <strong>Support-Sprachen:</strong> Deutsch, Englisch
-        </div>
-
-        <p><strong>Stand dieser AGB:</strong> Juli 2025</p>
-
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="index.html" class="back-link">
-                ← Zurück zur Hauptseite
-            </a>
-        </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer class="main-footer">
@@ -473,12 +609,12 @@
                         <img src="/assets/images/logo.webp" alt="FitFoundry Logo" width="50" height="50">
                         <span>FitFoundry</span>
                     </a>
-                    <p>Der wissenschaftlich genaueste Kalorienrechner für Krafttraining, Grundumsatz und Tagesbedarf. Mit Personal Metabolic Factor für ±8% Präzision.</p>
+                    <p>Allgemeine Geschäftsbedingungen für die erste wissenschaftlich fundierte Fitness-Gamification-App der Welt mit Jackson-Pollock Körperfett-Analyse und Avatar-System.</p>
                 </div>
                 
                 <div class="footer-links">
                     <div class="footer-section">
-                        <h4>AGB Features</h4>
+                        <h4>Legal Features</h4>
                         <a href="/hautfaltenmessung.html">Jackson-Pollock Analyse</a>
                         <a href="/apple-watch-trainingsarten.html">Apple Watch Training</a>
                         <a href="/fitness-gamification.html">Avatar-Gamification</a>
@@ -490,206 +626,132 @@
                         <a href="/deutsche-fitness-app.html">DSGVO-Konformität</a>
                         <a href="/pricing.html">Preismodell</a>
                         <a href="/kontakt.html">Kontakt</a>
+                        <a href="/agb.html">AGB</a>
                         <a href="/impressum.html">Impressum</a>
                         <a href="/datenschutz.html">Datenschutz</a>
+			<a href="/support.html">Support</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 FitFoundry. Der präziseste Kalorienrechner der Welt. Entwickelt in Deutschland mit ❤️ für deine Fitness.</p>
+                <p>&copy; 2025 FitFoundry. Transparente AGB für wissenschaftlich fundierte Fitness. Entwickelt in Deutschland mit ❤️ für deine Sicherheit.</p>
             </div>
         </div>
     </footer>
-<!-- ✅ AGB-SPEZIFISCHE EVENTS (vor </body> einfügen) -->
-<script>
-// Analytics Event Tracking für AGB-Seite
-document.addEventListener('DOMContentLoaded', function() {
-    trackEvent('agb_page_view', 'Legal');
-    
-    // Track wichtige AGB Section Views
-    const agbSections = [
-        { selector: 'h2:contains("Leistungen"), h2:contains("FitFoundry App")', name: 'app_features_section' },
-        { selector: 'h2:contains("Preise"), h2:contains("Nutzungsmodelle")', name: 'pricing_section' },
-        { selector: 'h2:contains("Vertragsschluss")', name: 'contract_section' },
-        { selector: 'h2:contains("Haftung")', name: 'liability_section' },
-        { selector: 'h2:contains("Kündigung")', name: 'cancellation_section' },
-        { selector: 'h2:contains("Datenschutz")', name: 'privacy_section' }
-    ];
-    
-    // Section Tracking mit IntersectionObserver
-    document.querySelectorAll('h2').forEach(heading => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const headingText = entry.target.textContent.toLowerCase();
-                    
-                    // Categorize different sections
-                    if (headingText.includes('leistung') || headingText.includes('fitfoundry app')) {
-                        trackEvent('agb_app_features_viewed', 'Legal_Sections');
-                    } else if (headingText.includes('preis') || headingText.includes('nutzungsmodell')) {
-                        trackEvent('agb_pricing_viewed', 'Legal_Sections');
-                    } else if (headingText.includes('vertrag')) {
-                        trackEvent('agb_contract_viewed', 'Legal_Sections');
-                    } else if (headingText.includes('haftung')) {
-                        trackEvent('agb_liability_viewed', 'Legal_Sections');
-                    } else if (headingText.includes('kündigung')) {
-                        trackEvent('agb_cancellation_viewed', 'Legal_Sections');
-                    } else if (headingText.includes('datenschutz')) {
-                        trackEvent('agb_privacy_viewed', 'Legal_Sections');
-                    }
-                    
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        observer.observe(heading);
-    });
-    
-    // Track Pricing Box Views (falls vorhanden)
-    document.querySelectorAll('.pricing-box, .price-card, [class*="preis"]').forEach((priceBox, index) => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const priceText = priceBox.textContent;
-                    let pricingType = 'unknown';
-                    
-                    if (priceText.includes('kostenlos') || priceText.includes('gratis')) {
-                        pricingType = 'free';
-                    } else if (priceText.includes('9,99') || priceText.includes('pro monat')) {
-                        pricingType = 'monthly';
-                    } else if (priceText.includes('199') || priceText.includes('lifetime')) {
-                        pricingType = 'lifetime';
-                    }
-                    
-                    trackEvent('agb_pricing_model_viewed', 'Legal_Pricing', pricingType);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.6 });
-        observer.observe(priceBox);
-    });
-    
-    // Track External Links (App Store, etc.)
-    document.querySelectorAll('a[href*="apple.com"], a[href*="app-store"], a[href*="itunes"]').forEach(link => {
-        link.addEventListener('click', () => {
-            trackEvent('agb_app_store_link_clicked', 'Legal_External');
-        });
-    });
-    
-    // Track Internal Reference Links
-    document.querySelectorAll('a[href*="datenschutz"], a[href*="privacy"]').forEach(link => {
-        link.addEventListener('click', () => {
-            trackEvent('agb_privacy_link_clicked', 'Legal_Internal');
-        });
-    });
-    
-    document.querySelectorAll('a[href*="impressum"]').forEach(link => {
-        link.addEventListener('click', () => {
-            trackEvent('agb_impressum_link_clicked', 'Legal_Internal');
-        });
-    });
-    
-    document.querySelectorAll('a[href*="wissenschaft"]').forEach(link => {
-        link.addEventListener('click', () => {
-            trackEvent('agb_science_link_clicked', 'Legal_Internal');
-        });
-    });
-    
-    // Back-Link Clicks
-    document.querySelectorAll('.back-link, [href="index.html"]').forEach(link => {
-        link.addEventListener('click', () => {
-            trackEvent('agb_back_to_homepage', 'Navigation');
-        });
-    });
-    
-    // Footer Links
-    document.querySelectorAll('footer a').forEach(link => {
-        link.addEventListener('click', () => {
-            const linkText = link.textContent.trim();
-            trackEvent('footer_link_click', 'Navigation', linkText);
-        });
-    });
-    
-    // AGB Reading Behavior - Scroll Tracking
-    let maxScroll = 0;
-    let sectionProgress = {};
-    
-    window.addEventListener('scroll', function() {
-        const scrollPercentage = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-        
-        if (scrollPercentage > maxScroll) {
-            maxScroll = scrollPercentage;
-            
-            // Track reading progress milestones
-            if (maxScroll >= 25 && maxScroll < 50 && !sectionProgress['25']) {
-                sectionProgress['25'] = true;
-                trackEvent('agb_scroll_25_percent', 'Legal_Engagement');
-            } else if (maxScroll >= 50 && maxScroll < 75 && !sectionProgress['50']) {
-                sectionProgress['50'] = true;
-                trackEvent('agb_scroll_50_percent', 'Legal_Engagement');
-            } else if (maxScroll >= 75 && maxScroll < 90 && !sectionProgress['75']) {
-                sectionProgress['75'] = true;
-                trackEvent('agb_scroll_75_percent', 'Legal_Engagement');
-            } else if (maxScroll >= 90 && !sectionProgress['90']) {
-                sectionProgress['90'] = true;
-                trackEvent('agb_read_completely', 'Legal_Compliance');
+
+    <!-- JavaScript -->
+    <script src="/assets/js/analytics-consent.js"></script>
+    <script src="/assets/js/navigation.js"></script>
+
+    <script>
+        // AGB-specific Analytics Tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track AGB page view
+            if (typeof trackEvent === 'function') {
+                trackEvent('agb_page_view', 'Legal');
             }
-        }
-    });
-    
-    // Track time spent reading AGB
-    const startTime = Date.now();
-    window.addEventListener('beforeunload', () => {
-        const timeSpent = Math.round((Date.now() - startTime) / 1000);
-        
-        if (timeSpent > 30) { // Only track if more than 30 seconds
-            let engagementLevel = 'quick_scan';
-            if (timeSpent > 120) engagementLevel = 'thorough_read';
-            else if (timeSpent > 60) engagementLevel = 'moderate_read';
             
-            trackEvent('agb_time_spent', 'Legal_Engagement', `${timeSpent}s_${engagementLevel}`);
-        }
-    });
-    
-    // Track Legal Compliance Interest
-    document.querySelectorAll('strong, .highlight, .important, [class*="wichtig"]').forEach(highlight => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const highlightText = entry.target.textContent.toLowerCase();
-                    
-                    if (highlightText.includes('datenschutz') || highlightText.includes('dsgvo')) {
-                        trackEvent('agb_privacy_highlight_viewed', 'Legal_Compliance');
-                    } else if (highlightText.includes('kündigung') || highlightText.includes('widerruf')) {
-                        trackEvent('agb_cancellation_highlight_viewed', 'Legal_Compliance');
-                    } else if (highlightText.includes('haftung') || highlightText.includes('gewährleistung')) {
-                        trackEvent('agb_liability_highlight_viewed', 'Legal_Compliance');
-                    }
-                    
-                    observer.unobserve(entry.target);
-                }
+            // Track important AGB section views
+            document.querySelectorAll('h2').forEach(heading => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const headingText = entry.target.textContent.toLowerCase();
+                            
+                            // Categorize different sections
+                            if (headingText.includes('leistung') || headingText.includes('fitfoundry app')) {
+                                if (typeof trackEvent === 'function') {
+                                    trackEvent('agb_app_features_viewed', 'Legal_Sections');
+                                }
+                            } else if (headingText.includes('preis') || headingText.includes('nutzungsmodell')) {
+                                if (typeof trackEvent === 'function') {
+                                    trackEvent('agb_pricing_viewed', 'Legal_Sections');
+                                }
+                            } else if (headingText.includes('haftung')) {
+                                if (typeof trackEvent === 'function') {
+                                    trackEvent('agb_liability_viewed', 'Legal_Sections');
+                                }
+                            } else if (headingText.includes('kündigung')) {
+                                if (typeof trackEvent === 'function') {
+                                    trackEvent('agb_cancellation_viewed', 'Legal_Sections');
+                                }
+                            }
+                            
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                observer.observe(heading);
             });
-        }, { threshold: 0.8 });
-        observer.observe(highlight);
-    });
-    
-    // Track App Store Terms Interest
-    const appStoreTerms = document.querySelectorAll('p, div').forEach(element => {
-        if (element.textContent.includes('App Store') || element.textContent.includes('Apple')) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        trackEvent('agb_app_store_terms_viewed', 'Legal_App_Store');
-                        observer.unobserve(entry.target);
+            
+            // Track pricing box views
+            document.querySelectorAll('.pricing-box').forEach((priceBox, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (typeof trackEvent === 'function') {
+                                trackEvent('agb_pricing_model_viewed', 'Legal_Pricing');
+                            }
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.6 });
+                observer.observe(priceBox);
+            });
+            
+            // Track external links
+            document.querySelectorAll('a[href*="apple.com"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('agb_app_store_link_clicked', 'Legal_External');
                     }
                 });
-            }, { threshold: 0.6 });
-            observer.observe(element);
-        }
-    });
-});
-</script>
-
+            });
+            
+            // Track internal navigation
+            document.querySelectorAll('a[href*="datenschutz"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('agb_privacy_link_clicked', 'Legal_Internal');
+                    }
+                });
+            });
+            
+            // Back-link clicks
+            document.querySelectorAll('.back-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('agb_back_to_homepage', 'Navigation');
+                    }
+                });
+            });
+            
+            // Reading progress tracking
+            let maxScroll = 0;
+            let sectionProgress = {};
+            
+            window.addEventListener('scroll', function() {
+                const scrollPercentage = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                
+                if (scrollPercentage > maxScroll) {
+                    maxScroll = scrollPercentage;
+                    
+                    // Track reading progress milestones
+                    if (maxScroll >= 50 && maxScroll < 75 && !sectionProgress['50']) {
+                        sectionProgress['50'] = true;
+                        if (typeof trackEvent === 'function') {
+                            trackEvent('agb_scroll_50_percent', 'Legal_Engagement');
+                        }
+                    } else if (maxScroll >= 90 && !sectionProgress['90']) {
+                        sectionProgress['90'] = true;
+                        if (typeof trackEvent === 'function') {
+                            trackEvent('agb_read_completely', 'Legal_Compliance');
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -3,253 +3,539 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum - FitFoundry</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Impressum und rechtliche Angaben zu FitFoundry - wissenschaftlich fundierte Fitness App">
-    <meta name="robots" content="noindex, follow">
+    <title>Impressum | FitFoundry - Wissenschaftlich fundierte Fitness App</title>
+    <meta name="description" content="Impressum und Kontaktdaten für FitFoundry - Die erste wissenschaftlich fundierte Fitness App mit Jackson-Pollock Analyse und Avatar-System. Made in Germany.">
+    <meta name="keywords" content="fitfoundry impressum, daniel lahmer, fitness app entwickler, jackson pollock app impressum, berlin fitness startup">
+    <meta name="author" content="Daniel Lahmer">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="de">
+    <meta name="revisit-after" content="monthly">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Impressum | FitFoundry - Wissenschaftlich fundierte Fitness App">
+    <meta property="og:description" content="Impressum und Kontaktdaten für FitFoundry - Die erste wissenschaftlich fundierte Fitness App mit Jackson-Pollock Analyse.">
+    <meta property="og:image" content="https://fitfoundry.de/assets/images/fitfoundry-impressum-og.webp">
+    <meta property="og:url" content="https://fitfoundry.de/impressum.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FitFoundry">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Impressum | FitFoundry - Wissenschaftlich fundierte Fitness App">
+    <meta name="twitter:description" content="Impressum und Kontaktdaten für FitFoundry - Die erste wissenschaftlich fundierte Fitness App.">
+    <meta name="twitter:image" content="https://fitfoundry.de/assets/images/fitfoundry-impressum-twitter.webp">
+    
+    <!-- Apple Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FitFoundry">
+    <meta name="theme-color" content="#ED553B">
     
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<!-- ✅ GOOGLE ANALYTICS 4 - DSGVO-KONFORM (nach den Fonts einfügen) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-08FBC0TKGP"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fitfoundry.de/impressum.html">
     
-    // Cookie-Consent Check
-    function hasConsent() {
-        return localStorage.getItem('fitfoundry_analytics_consent') === 'true';
-    }
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/assets/css/shared-styles.css" as="style">
     
-    // Initialize Analytics only with consent
-    if (hasConsent()) {
-        gtag('js', new Date());
-        gtag('config', 'G-08FBC0TKGP', {
-            anonymize_ip: true,
-            cookie_flags: 'SameSite=None;Secure'
-        });
-    }
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/shared-styles.css">
     
-    // Track Events (only with consent)
-    function trackEvent(action, category = 'Impressum') {
-        if (hasConsent()) {
-            gtag('event', action, {
-                event_category: category,
-                event_label: window.location.pathname
-            });
+    <!-- Schema.org für Impressum -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Impressum",
+      "description": "Impressum und Kontaktdaten für FitFoundry - Die erste wissenschaftlich fundierte Fitness App mit Jackson-Pollock Analyse.",
+      "url": "https://fitfoundry.de/impressum.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://fitfoundry.de/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "FitFoundry",
+        "founder": {
+          "@type": "Person",
+          "name": "Daniel Lahmer"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bohnsdorfer Weg 66A",
+          "postalCode": "12524",
+          "addressLocality": "Berlin",
+          "addressCountry": "DE"
         }
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fitfoundry.de"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Impressum",
+            "item": "https://fitfoundry.de/impressum.html"
+          }
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FitFoundry",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fitfoundry.de/assets/images/logo.webp"
+        }
+      }
     }
-</script>
-    
+    </script>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* =============================================================================
+           IMPRESSUM-SPEZIFISCHE STYLES (Mobile First)
+           ============================================================================= */
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #f8fafc;
-        }
-
-        .container {
-            max-width: 800px;
+        /* Legal Document Styling */
+        .legal-container {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: var(--spacing-lg) var(--spacing-sm);
         }
 
-        .header {
-            background: linear-gradient(135deg, #ED553B 0%, #FF804F 50%, #2E3131 100%);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
+        /* Legal Content */
+        .legal-content {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--spacing-xl);
         }
 
-        .header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .content {
-            background: white;
-            margin: 2rem auto;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-        }
-
-        .content h2 {
-            color: #ED553B;
+        .legal-content h2 {
+            color: var(--primary-color);
             font-size: 1.5rem;
-            font-weight: 700;
-            margin: 2rem 0 1rem 0;
-            border-bottom: 2px solid #ED553B;
-            padding-bottom: 0.5rem;
+            font-weight: var(--font-weight-bold);
+            margin: var(--spacing-xl) 0 var(--spacing-md) 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: var(--spacing-xs);
         }
 
-        .content h3 {
-            color: #2E3131;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.5rem 0;
+        .legal-content h2:first-child {
+            margin-top: 0;
         }
 
-        .content p {
-            margin-bottom: 1rem;
+        .legal-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.25rem;
+            font-weight: var(--font-weight-semibold);
+            margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
+        }
+
+        .legal-content h4 {
+            color: var(--gray-600);
+            font-size: 1.125rem;
+            font-weight: var(--font-weight-medium);
+            margin: var(--spacing-md) 0 var(--spacing-xs) 0;
+        }
+
+        .legal-content p {
+            margin-bottom: var(--spacing-md);
             line-height: 1.7;
         }
 
-        .contact-info {
-            background: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #ED553B;
-            margin: 1.5rem 0;
+        .legal-content ul {
+            margin: var(--spacing-sm) 0 var(--spacing-md) var(--spacing-lg);
         }
 
+        .legal-content li {
+            margin-bottom: var(--spacing-xs);
+            line-height: 1.6;
+        }
+
+        /* Contact Info Styling */
+        .contact-card {
+            background: linear-gradient(135deg, var(--gray-50) 0%, #f1f5f9 100%);
+            border: 1px solid var(--primary-color);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-md) 0;
+            border-left: 4px solid var(--primary-color);
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--white) 0%, #f8fafc 100%);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            margin: var(--spacing-sm) 0;
+            text-align: left;
+        }
+
+        .contact-info strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .startup-highlight {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 1px solid var(--accent-color);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .startup-highlight h3 {
+            color: #166534;
+            margin-bottom: var(--spacing-xs);
+            font-size: 1rem;
+        }
+
+        .startup-highlight p {
+            color: #166534;
+            margin: 0;
+        }
+
+        .app-info-box {
+            background: linear-gradient(135deg, #fef7ff 0%, #fae8ff 100%);
+            border: 1px solid #a855f7;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-left: 4px solid #a855f7;
+        }
+
+        .app-info-box h3 {
+            color: #7c3aed;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .app-info-box ul {
+            margin: var(--spacing-sm) 0;
+        }
+
+        .app-info-box li {
+            color: #7c3aed;
+        }
+
+        /* Navigation Link */
         .back-link {
-            background: linear-gradient(135deg, #ED553B, #FF804F);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: var(--white);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-lg);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 2rem;
+            gap: var(--spacing-xs);
+            font-weight: var(--font-weight-semibold);
+            transition: all var(--transition-normal);
+            margin-top: var(--spacing-lg);
         }
 
         .back-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(237, 85, 59, 0.3);
+            box-shadow: var(--shadow-lg);
+            color: var(--white);
         }
 
-        .footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: #64748b;
-            font-size: 0.9rem;
+        .back-link:active {
+            transform: translateY(0);
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
+        /* Desktop Optimizations */
+        @media (min-width: 768px) {
+            .legal-container {
+                padding: var(--spacing-xl) var(--spacing-lg);
             }
             
-            .content {
-                padding: 2rem;
-                margin: 1rem;
+            .legal-content {
+                padding: var(--spacing-xl);
             }
             
-            .header h1 {
-                font-size: 2rem;
+            .legal-content h2 {
+                font-size: 1.75rem;
+            }
+            
+            .contact-card {
+                padding: var(--spacing-xl);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .legal-container {
+                padding: var(--spacing-2xl) var(--spacing-xl);
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="header">
-        <div class="container">
-            <h1>📋 Impressum</h1>
-            <p>Rechtliche Angaben gemäß § 5 TMG</p>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-consent" style="display: none;">
+        <div class="cookie-content">
+            <p>🍪 Wir nutzen Google Analytics um unsere Website zu verbessern. 
+            <a href="/datenschutz.html" class="cookie-link">Datenschutz</a></p>
+            <div class="cookie-buttons">
+                <button onclick="acceptCookies()" class="btn-accept">Akzeptieren</button>
+                <button onclick="declineCookies()" class="btn-decline">Ablehnen</button>
+            </div>
         </div>
     </div>
 
-    <div class="content">
-        <h2>Angaben gemäß § 5 TMG</h2>
-        
-        <div class="contact-info">
-            <strong>Verantwortlich für den Inhalt:</strong><br>
-            Daniel Lahmer<br>
-            Bohnsdorfer Weg 66A<br>
-            12524 Berlin<br>
-            Deutschland
-        </div>
-
-        <h3>Kontakt</h3>
-        <p>
-            <strong>E-Mail:</strong> info@fitfoundry.de<br>
-            <strong>Website:</strong> https://fitfoundry.de
-        </p>
-
-        <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-        <div class="contact-info">
-            Daniel Lahmer<br>
-            Bohnsdorfer Weg 66A<br>
-            12524 Berlin
-        </div>
-
-        <h2>Haftungsausschluss</h2>
-        
-        <h3>Haftung für Inhalte</h3>
-        <p>
-            Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den 
-            allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht 
-            unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach 
-            Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-        </p>
-        <p>
-            Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen 
-            Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt 
-            der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden 
-            Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-        </p>
-
-        <h3>Haftung für Links</h3>
-        <p>
-            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. 
-            Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der 
-            verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
-        </p>
-
-        <h2>Urheberrecht</h2>
-        <p>
-            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen 
-            Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der 
-            Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-        </p>
-
-        <h2>App-spezifische Angaben</h2>
-        <p>
-            <strong>FitFoundry App:</strong><br>
-            Entwickler: Daniel Lahmer<br>
-            Plattform: iOS (Apple App Store)<br>
-            Kategorie: Gesundheit & Fitness<br>
-            Version: 1.0
-        </p>
-
-        <h3>Wissenschaftliche Grundlagen</h3>
-        <p>
-            Die in der FitFoundry App verwendeten wissenschaftlichen Methoden basieren auf peer-reviewed 
-            Studien und etablierten sportwissenschaftlichen Standards. Eine vollständige Liste der 
-            wissenschaftlichen Quellen finden Sie unter: 
-            <a href="wissenschaft.html" style="color: #ED553B;">Wissenschaftliche Quellen</a>.
-        </p>
-
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="index.html" class="back-link">
-                ← Zurück zur Hauptseite
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/assets/images/logo.webp" alt="FitFoundry Logo" width="40" height="40">
+                <span class="nav-brand">FitFoundry</span>
             </a>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/kalorienrechner.html" class="nav-link">Kalorienrechner</a>
+                <a href="/hautfaltenmessung.html" class="nav-link">Körperfett</a>
+                <a href="/live-kalorienzaehler.html" class="nav-link">Kalorien</a>
+                <a href="/pricing.html" class="nav-link">Preise</a>
+                <a href="/#early-bird" class="nav-cta">Early Access</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <div class="breadcrumb">
+            <a href="/">Home</a>
+            <span class="breadcrumb-separator">›</span>
+            <span class="breadcrumb-current">Impressum</span>
         </div>
     </div>
+
+    <!-- Hero Section -->
+    <section class="hero hero-gradient">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">📄 Impressum</h1>
+                <p class="hero-subtitle">Angaben gemäß § 5 TMG - Made in Germany</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="legal-container">
+        <!-- Legal Content -->
+        <div class="legal-content">
+            <div class="startup-highlight">
+                <h3>🚀 FitFoundry - Berlin Fitness Startup</h3>
+                <p>Die erste wissenschaftlich fundierte Fitness-Gamification-App der Welt. <strong>100% deutsche Entwicklung</strong> mit Jackson-Pollock Präzision und Avatar-System.</p>
+            </div>
+
+            <h2>Angaben gemäß § 5 TMG</h2>
+            
+            <div class="contact-card">
+                <h3>Verantwortlich für den Inhalt</h3>
+                
+                <div class="contact-info">
+                    <strong>Name:</strong>
+                    Daniel Lahmer
+                </div>
+                
+                <div class="contact-info">
+                    <strong>Anschrift:</strong>
+                    Bohnsdorfer Weg 66A<br>
+                    12524 Berlin<br>
+                    Deutschland
+                </div>
+                
+                <div class="contact-info">
+                    <strong>Kontakt:</strong>
+                    E-Mail: info@fitfoundry.de<br>
+                    Telefon: +49 (0) 30 123456789<br>
+                    WhatsApp: +49 (0) 30 123456789
+                </div>
+                
+                <div class="contact-info">
+                    <strong>Geschäftszeiten:</strong>
+                    Montag - Freitag: 9:00 - 18:00 Uhr<br>
+                    Samstag: 10:00 - 16:00 Uhr<br>
+                    Sonntag: Geschlossen
+                </div>
+            </div>
+
+            <h2>FitFoundry App Informationen</h2>
+
+            <div class="app-info-box">
+                <h3>📱 App Details</h3>
+                <ul>
+                    <li><strong>App Name:</strong> FitFoundry - Wissenschaftliche Fitness</li>
+                    <li><strong>Entwickler:</strong> Daniel Lahmer</li>
+                    <li><strong>Plattform:</strong> iOS (iPhone & Apple Watch)</li>
+                    <li><strong>Release:</strong> Q4 2025</li>
+                    <li><strong>App Store:</strong> apps.apple.com/developer/fitfoundry</li>
+                    <li><strong>Support:</strong> support@fitfoundry.de</li>
+                </ul>
+            </div>
+
+            <h3>Wissenschaftliche Grundlage</h3>
+            <p>
+                FitFoundry basiert auf peer-reviewed wissenschaftlichen Studien, insbesondere der Jackson-Pollock 
+                Körperfett-Analyse (1978) mit ±3-4% Genauigkeit vs. DEXA-Scan. Alle verwendeten Formeln und 
+                Berechnungen sind wissenschaftlich validiert.
+            </p>
+
+            <h3>Technische Realisierung</h3>
+            <p>
+                Die FitFoundry App wurde mit modernen iOS-Entwicklungstools erstellt und nutzt Apple's neueste 
+                Frameworks für Health-Integration, Core ML für Avatar-Berechnungen und lokale Datenspeicherung 
+                für maximalen Datenschutz.
+            </p>
+
+            <h2>Verantwortlichkeit für Inhalte</h2>
+
+            <h3>Website Inhalte</h3>
+            <p>
+                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den 
+                allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch 
+                nicht unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+            </p>
+
+            <h3>App Store Bewertungen</h3>
+            <p>
+                Für Nutzerkommentare und Bewertungen im Apple App Store sind wir nicht verantwortlich. 
+                Diese entsprechen den persönlichen Meinungen der Nutzer und spiegeln nicht zwangsläufig 
+                unsere Ansichten wider.
+            </p>
+
+            <h2>Haftungsausschluss</h2>
+
+            <h3>Haftung für Inhalte</h3>
+            <p>
+                Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, 
+                Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. 
+                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten 
+                nach den allgemeinen Gesetzen verantwortlich.
+            </p>
+
+            <h3>Haftung für Links</h3>
+            <p>
+                Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen 
+                Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. 
+                Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der 
+                Seiten verantwortlich.
+            </p>
+
+            <h3>Fitness und Gesundheit</h3>
+            <div class="app-info-box">
+                <h3>⚠️ Wichtiger Hinweis</h3>
+                <p>
+                    FitFoundry ist ein Trainings-Tool und <strong>kein medizinisches Gerät</strong>. 
+                    Konsultieren Sie vor Beginn eines Trainingsprogramms einen Arzt. Die Jackson-Pollock 
+                    Körperfett-Analyse dient der Fitness-Überwachung, nicht der medizinischen Diagnose.
+                </p>
+            </div>
+
+            <h2>Urheberrecht</h2>
+
+            <h3>Website und App Inhalte</h3>
+            <p>
+                Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen 
+                dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art 
+                der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen 
+                Zustimmung des jeweiligen Autors bzw. Erstellers.
+            </p>
+
+            <h3>FitFoundry Markenrechte</h3>
+            <p>
+                "FitFoundry", das FitFoundry Logo und alle zugehörigen Markenzeichen sind Eigentum von 
+                Daniel Lahmer. Die Nutzung dieser Marken ohne ausdrückliche schriftliche Genehmigung ist untersagt.
+            </p>
+
+            <h3>Wissenschaftliche Quellen</h3>
+            <p>
+                Alle in der App verwendeten wissenschaftlichen Formeln und Berechnungsmethoden basieren 
+                auf veröffentlichten, peer-reviewed Studien. Eine vollständige Quellenangabe ist in der 
+                App unter "Wissenschaftliche Grundlagen" verfügbar.
+            </p>
+
+            <h2>Streitbeilegung</h2>
+
+            <h3>EU-Streitbeilegung</h3>
+            <p>
+                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+                <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a>
+            </p>
+
+            <h3>Verbraucherstreitbeilegung</h3>
+            <p>
+                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer 
+                Verbraucherschlichtungsstelle teilzunehmen.
+            </p>
+
+            <h2>Social Media und Community</h2>
+
+            <h3>Instagram</h3>
+            <p>
+                Folgen Sie uns auf Instagram: 
+                <a href="https://instagram.com/fitfoundry_app" target="_blank">@fitfoundry_app</a>
+            </p>
+
+            <h3>App Store Connect</h3>
+            <p>
+                Entwickler-Profil: 
+                <a href="https://apps.apple.com/developer/fitfoundry" target="_blank">Daniel Lahmer</a>
+            </p>
+
+            <h2>Technische Details</h2>
+
+            <h3>Hosting</h3>
+            <p>
+                Diese Website wird über GitHub Pages gehostet. Weitere Informationen zum Hosting 
+                finden Sie in unserer <a href="/datenschutz.html">Datenschutzerklärung</a>.
+            </p>
+
+            <h3>SSL-Verschlüsselung</h3>
+            <p>
+                Diese Seite nutzt aus Sicherheitsgründen eine SSL-Verschlüsselung. Sie erkennen eine 
+                verschlüsselte Verbindung daran, dass die Adresszeile des Browsers von "http://" auf 
+                "https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+            </p>
+
+            <p><strong>Stand dieses Impressums:</strong> Juli 2025</p>
+
+            <div style="text-align: center; margin-top: var(--spacing-xl);">
+                <a href="/" class="back-link">
+                    ← Zurück zur Hauptseite
+                </a>
+            </div>
+        </div>
+    </main>
 
     <!-- Footer -->
     <footer class="main-footer">
@@ -260,7 +546,7 @@
                         <img src="/assets/images/logo.webp" alt="FitFoundry Logo" width="50" height="50">
                         <span>FitFoundry</span>
                     </a>
-                    <p>Der wissenschaftlich genaueste Kalorienrechner für Krafttraining, Grundumsatz und Tagesbedarf. Mit Personal Metabolic Factor für ±8% Präzision.</p>
+                    <p>Impressum für die erste wissenschaftlich fundierte Fitness-Gamification-App der Welt. Entwickelt von Daniel Lahmer in Berlin mit Jackson-Pollock Präzision und Avatar-System.</p>
                 </div>
                 
                 <div class="footer-links">
@@ -277,221 +563,157 @@
                         <a href="/deutsche-fitness-app.html">DSGVO-Konformität</a>
                         <a href="/pricing.html">Preismodell</a>
                         <a href="/kontakt.html">Kontakt</a>
+                        <a href="/agb.html">AGB</a>
                         <a href="/impressum.html">Impressum</a>
                         <a href="/datenschutz.html">Datenschutz</a>
+			<a href="/support.html">Support</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 FitFoundry. Der präziseste Kalorienrechner der Welt. Entwickelt in Deutschland mit ❤️ für deine Fitness.</p>
+                <p>&copy; 2025 FitFoundry. Entwickelt von Daniel Lahmer in Berlin. Wissenschaftlich fundierte Fitness seit 1978. Made in Germany mit ❤️</p>
             </div>
         </div>
     </footer>
-<!-- ✅ IMPRESSUM-SPEZIFISCHE EVENTS (vor </body> einfügen) -->
-<script>
-// Analytics Event Tracking für Impressum-Seite
-document.addEventListener('DOMContentLoaded', function() {
-    trackEvent('impressum_page_view', 'Legal');
-    
-    // Track Contact Information Views
-    document.querySelectorAll('.contact-info, .impressum-contact, [class*="kontakt"]').forEach((contactSection, index) => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    trackEvent('impressum_contact_info_viewed', 'Legal_Contact');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.6 });
-        observer.observe(contactSection);
-    });
-    
-    // Track wichtige Impressum Section Views
-    document.querySelectorAll('h2, h3').forEach(heading => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const headingText = entry.target.textContent.toLowerCase();
-                    
-                    // Categorize different impressum sections
-                    if (headingText.includes('angaben') || headingText.includes('verantwortlich')) {
-                        trackEvent('impressum_responsible_party_viewed', 'Legal_Sections');
-                    } else if (headingText.includes('kontakt') || headingText.includes('erreichbarkeit')) {
-                        trackEvent('impressum_contact_section_viewed', 'Legal_Sections');
-                    } else if (headingText.includes('redaktion') || headingText.includes('inhalt')) {
-                        trackEvent('impressum_editorial_viewed', 'Legal_Sections');
-                    } else if (headingText.includes('haftung') || headingText.includes('disclaimer')) {
-                        trackEvent('impressum_liability_viewed', 'Legal_Sections');
-                    } else if (headingText.includes('urheberrecht') || headingText.includes('copyright')) {
-                        trackEvent('impressum_copyright_viewed', 'Legal_Sections');
-                    } else if (headingText.includes('streitschlichtung') || headingText.includes('verbraucherschutz')) {
-                        trackEvent('impressum_dispute_resolution_viewed', 'Legal_Sections');
-                    }
-                    
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        observer.observe(heading);
-    });
-    
-    // Track Email Address Clicks
-    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-        link.addEventListener('click', () => {
-            const email = link.href.replace('mailto:', '');
-            trackEvent('impressum_email_clicked', 'Legal_Contact', email);
-        });
-    });
-    
-    // Track Phone Number Clicks  
-    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-        link.addEventListener('click', () => {
-            trackEvent('impressum_phone_clicked', 'Legal_Contact');
-        });
-    });
-    
-    // Track Address/Location Views
-    document.querySelectorAll('address, .address, [class*="adresse"]').forEach(address => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    trackEvent('impressum_address_viewed', 'Legal_Contact');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.7 });
-        observer.observe(address);
-    });
-    
-    // Track Legal Reference Links
-    document.querySelectorAll('a[href*="datenschutz"], a[href*="privacy"]').forEach(link => {
-        link.addEventListener('click', () => {
-            trackEvent('impressum_privacy_link_clicked', 'Legal_Internal');
-        });
-    });
-    
-    document.querySelectorAll('a[href*="agb"], a[href*="terms"]').forEach(link => {
-        link.addEventListener('click', () => {
-            trackEvent('impressum_agb_link_clicked', 'Legal_Internal');
-        });
-    });
-    
-    document.querySelectorAll('a[href*="wissenschaft"], a[href*="sources"]').forEach(link => {
-        link.addEventListener('click', () => {
-            trackEvent('impressum_science_link_clicked', 'Legal_Internal');
-        });
-    });
-    
-    // Track External Legal/Regulatory Links
-    document.querySelectorAll('a[href*="ec.europa.eu"], a[href*="gesetze-im-internet.de"], a[href*="bundesnetzagentur.de"]').forEach(link => {
-        link.addEventListener('click', () => {
-            const domain = new URL(link.href).hostname;
-            trackEvent('impressum_regulatory_link_clicked', 'Legal_External', domain);
-        });
-    });
-    
-    // Back-Link Clicks
-    document.querySelectorAll('.back-link, [href="index.html"]').forEach(link => {
-        link.addEventListener('click', () => {
-            trackEvent('impressum_back_to_homepage', 'Navigation');
-        });
-    });
-    
-    // Footer Links
-    document.querySelectorAll('footer a').forEach(link => {
-        link.addEventListener('click', () => {
-            const linkText = link.textContent.trim();
-            trackEvent('footer_link_click', 'Navigation', linkText);
-        });
-    });
-    
-    // Track Legal Compliance Interest - Scroll Behavior
-    let maxScroll = 0;
-    window.addEventListener('scroll', function() {
-        const scrollPercentage = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-        
-        if (scrollPercentage > maxScroll) {
-            maxScroll = scrollPercentage;
-            
-            if (maxScroll >= 50 && maxScroll < 75) {
-                trackEvent('impressum_scroll_50_percent', 'Legal_Engagement');
-            } else if (maxScroll >= 75) {
-                trackEvent('impressum_read_completely', 'Legal_Compliance');
+
+    <!-- JavaScript -->
+    <script src="/assets/js/analytics-consent.js"></script>
+    <script src="/assets/js/navigation.js"></script>
+
+    <script>
+        // Impressum-specific Analytics Tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track impressum page view
+            if (typeof trackEvent === 'function') {
+                trackEvent('impressum_page_view', 'Legal');
             }
-        }
-    });
-    
-    // Track time spent on impressum
-    const startTime = Date.now();
-    window.addEventListener('beforeunload', () => {
-        const timeSpent = Math.round((Date.now() - startTime) / 1000);
-        
-        if (timeSpent > 15) { // Only track if more than 15 seconds
-            let readingBehavior = 'quick_check';
-            if (timeSpent > 60) readingBehavior = 'thorough_read';
-            else if (timeSpent > 30) readingBehavior = 'standard_read';
             
-            trackEvent('impressum_time_spent', 'Legal_Engagement', `${timeSpent}s_${readingBehavior}`);
-        }
-    });
-    
-    // Track Developer/Company Information Interest
-    document.querySelectorAll('p, div').forEach(element => {
-        const text = element.textContent.toLowerCase();
-        if ((text.includes('daniel lahmer') || text.includes('fitfoundry') || text.includes('berlin')) && 
-            text.length > 20 && text.length < 200) {
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (text.includes('daniel lahmer')) {
-                            trackEvent('impressum_developer_info_viewed', 'Legal_Developer');
-                        } else if (text.includes('berlin')) {
-                            trackEvent('impressum_location_info_viewed', 'Legal_Developer');
-                        } else if (text.includes('fitfoundry')) {
-                            trackEvent('impressum_company_info_viewed', 'Legal_Developer');
+            // Track important impressum section views
+            document.querySelectorAll('h2').forEach(heading => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const headingText = entry.target.textContent.toLowerCase();
+                            
+                            // Categorize different sections
+                            if (headingText.includes('angaben') || headingText.includes('tmg')) {
+                                if (typeof trackEvent === 'function') {
+                                    trackEvent('impressum_contact_viewed', 'Legal_Contact');
+                                }
+                            } else if (headingText.includes('fitfoundry app')) {
+                                if (typeof trackEvent === 'function') {
+                                    trackEvent('impressum_app_info_viewed', 'Legal_App');
+                                }
+                            } else if (headingText.includes('haftung')) {
+                                if (typeof trackEvent === 'function') {
+                                    trackEvent('impressum_liability_viewed', 'Legal_Liability');
+                                }
+                            } else if (headingText.includes('urheberrecht')) {
+                                if (typeof trackEvent === 'function') {
+                                    trackEvent('impressum_copyright_viewed', 'Legal_Copyright');
+                                }
+                            }
+                            
+                            observer.unobserve(entry.target);
                         }
-                        observer.unobserve(entry.target);
+                    });
+                }, { threshold: 0.5 });
+                observer.observe(heading);
+            });
+            
+            // Track contact card interactions
+            document.querySelectorAll('.contact-card').forEach((card, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (typeof trackEvent === 'function') {
+                                trackEvent('impressum_contact_card_viewed', 'Legal_Contact');
+                            }
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.6 });
+                observer.observe(card);
+            });
+            
+            // Track external links
+            document.querySelectorAll('a[href*="instagram.com"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('impressum_instagram_link_clicked', 'Legal_External');
                     }
                 });
-            }, { threshold: 0.6 });
-            observer.observe(element);
-        }
-    });
-    
-    // Track Regulatory/License Information Views
-    document.querySelectorAll('strong, .license, .regulatory, [class*="lizenz"]').forEach(element => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const text = entry.target.textContent.toLowerCase();
-                    if (text.includes('steuer') || text.includes('ust') || text.includes('finanzamt')) {
-                        trackEvent('impressum_tax_info_viewed', 'Legal_Regulatory');
-                    } else if (text.includes('handelsregister') || text.includes('gewerbe')) {
-                        trackEvent('impressum_business_registration_viewed', 'Legal_Regulatory');
+            });
+            
+            document.querySelectorAll('a[href*="apps.apple.com"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('impressum_app_store_link_clicked', 'Legal_External');
                     }
-                    observer.unobserve(entry.target);
+                });
+            });
+            
+            document.querySelectorAll('a[href*="ec.europa.eu"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('impressum_eu_odr_link_clicked', 'Legal_External');
+                    }
+                });
+            });
+            
+            // Track internal navigation
+            document.querySelectorAll('a[href*="datenschutz"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('impressum_privacy_link_clicked', 'Legal_Internal');
+                    }
+                });
+            });
+            
+            // Back-link clicks
+            document.querySelectorAll('.back-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('impressum_back_to_homepage', 'Navigation');
+                    }
+                });
+            });
+            
+            // Developer contact engagement
+            document.querySelectorAll('a[href*="mailto:"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('impressum_email_contact_clicked', 'Contact_Intent');
+                    }
+                });
+            });
+            
+            // Reading progress tracking
+            let maxScroll = 0;
+            let sectionProgress = {};
+            
+            window.addEventListener('scroll', function() {
+                const scrollPercentage = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                
+                if (scrollPercentage > maxScroll) {
+                    maxScroll = scrollPercentage;
+                    
+                    // Track reading progress milestones
+                    if (maxScroll >= 50 && maxScroll < 75 && !sectionProgress['50']) {
+                        sectionProgress['50'] = true;
+                        if (typeof trackEvent === 'function') {
+                            trackEvent('impressum_scroll_50_percent', 'Legal_Engagement');
+                        }
+                    } else if (maxScroll >= 90 && !sectionProgress['90']) {
+                        sectionProgress['90'] = true;
+                        if (typeof trackEvent === 'function') {
+                            trackEvent('impressum_read_completely', 'Legal_Compliance');
+                        }
+                    }
                 }
             });
-        }, { threshold: 0.7 });
-        observer.observe(element);
-    });
-    
-    // Track Trust Signals
-    document.querySelectorAll('.trust, .verification, [class*="sicher"]').forEach(trustElement => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    trackEvent('impressum_trust_signal_viewed', 'Legal_Trust');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.6 });
-        observer.observe(trustElement);
-    });
-});
-</script>
-
+        });
+    </script>
 </body>
 </html>
