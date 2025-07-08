@@ -1,25 +1,214 @@
 # robots.txt für FitFoundry.de
+# Optimiert für maximale SEO-Performance
 
-# Alle Crawler erlaubt
 User-agent: *
 Allow: /
 
-# Sitemap-Verweis für Google
+# Prioritäre Seiten für alle Crawler freigeben
+Allow: /apple-watch-trainingsarten.html
+Allow: /hautfaltenmessung.html
+Allow: /deutsche-fitness-app.html
+Allow: /fitness-app.html
+Allow: /sport-app.html
+Allow: /fitness-app-iphone.html
+
+# Assets erlauben für bessere Page Experience
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+Allow: /assets/fonts/
+
+# Manifest und wichtige Meta-Dateien
+Allow: /manifest.json
+Allow: /sitemap.xml
+
+# Admin/Development Bereiche blockieren
+Disallow: /admin/
+Disallow: /dev/
+Disallow: /test/
+Disallow: /tmp/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /src/
+
+# Duplicate Content vermeiden
+Disallow: /*?
+Disallow: /*#
+Disallow: /print/
+Disallow: /*print=
+Disallow: /*ref=
+Disallow: /*utm_
+
+# Private/Tracking Parameter blockieren
+Disallow: /*fbclid=
+Disallow: /*gclid=
+Disallow: /*_ga=
+Disallow: /*sessionid=
+
+# Crawler-spezifische Anweisungen
+
+# Google Bot - Vollzugriff
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Google Image Bot - Bilder crawlen erlauben
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.svg
+Crawl-delay: 1
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Yahoo Bot
+User-agent: Slurp
+Allow: /
+Crawl-delay: 3
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 2
+
+# Yandex (für internationale Reichweite)
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 3
+
+# Facebook Bot (für Social Media Sharing)
+User-agent: facebookexternalhit
+Allow: /
+Allow: /assets/images/
+Crawl-delay: 1
+
+# Twitter Bot (für Card Previews)
+User-agent: Twitterbot
+Allow: /
+Allow: /assets/images/
+Crawl-delay: 1
+
+# LinkedIn Bot
+User-agent: LinkedInBot
+Allow: /
+Allow: /assets/images/
+Crawl-delay: 2
+
+# Apple Bot (für iOS/Siri)
+User-agent: Applebot
+Allow: /
+Allow: /assets/images/
+Crawl-delay: 1
+
+# Problematische Bots blockieren
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: SeznamBot
+Disallow: /
+
+# Spam/Malware Bots blockieren
+User-agent: SentiBot
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+User-agent: EmailWolf
+Disallow: /
+
+User-agent: EmailCollector
+Disallow: /
+
+User-agent: WebEmailExtract
+Disallow: /
+
+User-agent: ExtractorPro
+Disallow: /
+
+# Scraper Bots blockieren
+User-agent: HTTrack
+Disallow: /
+
+User-agent: wget
+Disallow: /
+
+User-agent: WebZIP
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: SiteSnagger
+Disallow: /
+
+User-agent: WebStripper
+Disallow: /
+
+User-agent: WebSauger
+Disallow: /
+
+# AI Training Bots (opt-out für Content-Schutz)
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Archive Bots einschränken
+User-agent: ia_archiver
+Disallow: /admin/
+Disallow: /dev/
+Allow: /
+
+User-agent: archive.org_bot
+Disallow: /admin/
+Disallow: /dev/
+Allow: /
+
+# Sitemap Location (wichtig für SEO)
 Sitemap: https://fitfoundry.de/sitemap.xml
 
-# Wichtige Seiten explizit erlauben
-Allow: /index.html
-Allow: /wissenschaft.html
-Allow: /support.html
-Allow: /kontakt.html
+# Host Directive (hilft bei www/non-www Kanonisierung)
+Host: fitfoundry.de
 
-# Static Assets erlauben
-Allow: /*.css
-Allow: /*.js
-Allow: /*.webp
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.woff2
+# Kommentare für Future Updates:
+# - Wenn Blog hinzugefügt wird: Allow: /blog/
+# - Wenn API hinzugefügt wird: Disallow: /api/ (außer öffentliche Endpoints)
+# - Wenn User-Generated Content: Anpassung der Crawler-Delays
+# - Regelmäßig prüfen: Google Search Console → Coverage Report
+# - Performance Monitor: PageSpeed Insights für Crawl-Budget Optimierung
 
-# Crawl-Delay für respektvolles Crawling
-Crawl-delay: 1
+# Last Updated: 2025-07-06
+# Next Review: 2025-08-06
+# SEO Contact: info@fitfoundry.de
