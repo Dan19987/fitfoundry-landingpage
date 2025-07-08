@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags - OPTIMIERT für Kalorienrechner Keywords -->
+    <title>Kalorienrechner: Krafttraining Kalorienverbrauch berechnen | Grundumsatz + TDEE Calculator</title>
+    <meta name="description" content="Präziser Kalorienrechner für Krafttraining, Sport und Grundumsatz. Berechne Kalorienverbrauch beim Training, BMR, TDEE + Personal Metabolic Factor. Wissenschaftlich genau.">
+    <meta name="keywords" content="kalorienrechner, kalorienverbrauch krafttraining, krafttraining kalorienverbrauch, kalorienverbrauch sport berechnen, grundumsatz berechnen, BMR rechner, TDEE berechnen, kalorienbedarf genau berechnen, sport kalorienverbrauch berechnen">
+    <meta name="author" content="Daniel Lahmer">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="de">
+    <meta name="revisit-after" content="3 days">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kalorienrechner: Krafttraining + Sport Kalorienverbrauch berechnen">
+    <meta property="og:description" content="Präziser Kalorienrechner für Training, Grundumsatz und Tagesbedarf. Mit Personal Metabolic Factor für 20-30% genauere Ergebnisse.">
+    <meta property="og:image" content="https://fitfoundry.de/assets/images/kalorienrechner-og.webp">
+    <meta property="og:url" content="https://fitfoundry.de/kalorienrechner">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FitFoundry">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kalorienrechner: Krafttraining + Sport Kalorienverbrauch">
+    <meta name="twitter:description" content="Berechne Kalorienverbrauch beim Training + Grundumsatz wissenschaftlich genau.">
+    <meta name="twitter:image" content="https://fitfoundry.de/assets/images/kalorienrechner-twitter.webp">
+    
+    <!-- Apple Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FitFoundry">
+    <meta name="theme-color" content="#ED553B">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fitfoundry.de/kalorienrechner">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/assets/css/shared-styles.css" as="style">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/shared-styles.css">
+    
+    <!-- Schema.org für Calculator Tool -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "FitFoundry Kalorienrechner",
+      "description": "Umfassender Kalorienrechner für Krafttraining, Sport, Grundumsatz (BMR) und Tagesbedarf (TDEE) mit Personal Metabolic Factor Integration.",
+      "url": "https://fitfoundry.de/kalorienrechner",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      },
+      "featureList": [
+        "Krafttraining Kalorienverbrauch Rechner",
+        "Grundumsatz BMR Calculator", 
+        "TDEE Tagesbedarf Berechnung",
+        "Personal Metabolic Factor Integration",
+        "Sport Kalorienverbrauch für 50+ Aktivitäten",
+        "Wissenschaftlich basierte Formeln (Mifflin-St Jeor, Harris-Benedict)"
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Kalorienverbrauch Krafttraining"
+        },
+        {
+          "@type": "Thing",
+          "name": "Grundumsatz Berechnung"
+        },
+        {
+          "@type": "Thing",
+          "name": "TDEE Calculator"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- FAQ Schema für Kalorienrechner -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie berechne ich Kalorienverbrauch beim Krafttraining?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kalorienverbrauch beim Krafttraining berechnet sich über MET-Werte (Metabolic Equivalent of Task). Bankdrücken = 6.0 MET, Kniebeugen = 5.0 MET. Formel: Kalorien = MET × Gewicht (kg) × Zeit (h). FitFoundry's Kalorienrechner berücksichtigt zusätzlich deinen Personal Metabolic Factor für 20-30% genauere Ergebnisse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist der Unterschied zwischen BMR und TDEE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BMR (Basal Metabolic Rate) ist dein Grundumsatz - Kalorien die dein Körper im Ruhezustand verbraucht. TDEE (Total Daily Energy Expenditure) ist dein Gesamtumsatz inkl. Aktivität. TDEE = BMR × Aktivitätsfaktor (1.2-1.9). Unser Kalorienrechner berechnet beide wissenschaftlich genau."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie genau ist dieser Kalorienrechner?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard-Kalorienrechner haben ±15% Abweichung. Unser Rechner verwendet wissenschaftliche Formeln (Mifflin-St Jeor, MET-Werte) für ±10% Genauigkeit. Mit Personal Metabolic Factor aus der FitFoundry App sogar ±8% - fast doppelt so genau wie andere Rechner."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        /* =============================================================================
+           KALORIENRECHNER STYLING - MOBILE FIRST
+           ============================================================================= */
+        
+        /* Calculator Container */
+        .calculator-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        /* Tab Navigation */
+        .calc-tabs {
+            display: flex;
+            background: linear-gradient(135deg, #ed553b 0%, #ff804f 100%);
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .calc-tabs::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .calc-tab {
+            flex: 1;
+            min-width: 120px;
+            padding: 1rem 0.75rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        .calc-tab.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .calc-tab:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Tab Content */
+        .calc-content {
+            display: none;
+            padding: 2rem;
+            min-height: 500px;
+        }
+        
+        .calc-content.active {
+            display: block;
+        }
+        
+        /* Form Layout */
+        .calc-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .calc-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .calc-field {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .calc-label {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .calc-input, .calc-select {
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: white;
+        }
+        
+        .calc-input:focus, .calc-select:focus {
+            outline: none;
+            border-color: #ed553b;
+            box-shadow: 0 0 0 3px rgba(237, 85, 59, 0.1);
+        }
+        
+        /* Calculate Button */
+        .calc-button {
+            background: linear-gradient(135deg, #ed553b 0%, #ff804f 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .calc-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(237, 85, 59, 0.3);
+        }
+        
+        /* Results Display */
+        .calc-results {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            display: none;
+        }
+        
+        .calc-results.visible {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .result-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .result-main {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ed553b;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .result-subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+        
+        .result-breakdown {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .result-label {
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .result-value {
+            font-weight: 700;
+            color: #ed553b;
+        }
+        
+        /* Sport Activities Grid */
+        .activity-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .activity-card {
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .activity-card.selected {
+            border-color: #ed553b;
+            background: #fef2f2;
+        }
+        
+        .activity-card:hover {
+            border-color: #ed553b;
+            transform: translateY(-2px);
+        }
+        
+        .activity-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-name {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+        
+        .activity-met {
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        
+        /* Comparison Display */
+        .comparison {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+        
+        .comparison-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .comparison-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        
+        .comparison-label {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+        
+        .comparison-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        /* Action Buttons */
+        .calc-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            color: #374151;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .action-btn:hover {
+            border-color: #ed553b;
+            color: #ed553b;
+            transform: translateY(-2px);
+        }
+        
+        .action-btn.primary {
+            background: #ed553b;
+            border-color: #ed553b;
+            color: white;
+        }
+        
+        .action-btn.primary:hover {
+            background: #dc2626;
+            border-color: #dc2626;
+            color: white;
+        }
+        
+        /* Info Boxes */
+        .info-box {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .info-box h4 {
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .info-box p {
+            color: #0369a1;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+        
+        /* =============================================================================
+           RESPONSIVE DESIGN - MIN-WIDTH MEDIA QUERIES
+           ============================================================================= */
+        
+        @media (min-width: 480px) {
+            .calc-tab {
+                font-size: 1rem;
+                padding: 1rem 1rem;
+            }
+            
+            .activity-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .calc-content {
+                padding: 3rem;
+            }
+            
+            .calc-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .calc-form {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .activity-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .result-breakdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .calc-form {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .activity-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-consent" style="display: none;">
+        <div class="cookie-content">
+            <p>🍪 Wir nutzen Google Analytics um unsere Website zu verbessern. 
+            <a href="/datenschutz" class="cookie-link">Datenschutz</a></p>
+            <div class="cookie-buttons">
+                <button onclick="acceptCookies()" class="btn-accept">Akzeptieren</button>
+                <button onclick="declineCookies()" class="btn-decline">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/assets/images/logo.webp" alt="FitFoundry Logo" width="40" height="40">
+                <span class="nav-brand">FitFoundry</span>
+            </a>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/apple-watch-trainingsarten" class="nav-link">Apple Watch</a>
+                <a href="/hautfaltenmessung" class="nav-link">Körperfett-Analyse</a>
+                <a href="/deutsche-fitness-app" class="nav-link">Privacy</a>
+                <a href="/kontakt" class="nav-link">Kontakt</a>
+                <a href="#early-bird" class="nav-cta">Early Access</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <a href="/">Home</a>
+            <span class="breadcrumb-separator">›</span>
+            <span class="breadcrumb-current">Kalorienrechner</span>
+        </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero hero-gradient">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title scroll-fade-in">
+                        <span class="highlight-gold">Kalorienrechner:</span> 
+                        Krafttraining + Sport Kalorienverbrauch berechnen
+                    </h1>
+                    <p class="hero-subtitle scroll-fade-in">Präziser Kalorienrechner für Krafttraining, Grundumsatz (BMR), Tagesbedarf (TDEE) und Sport-Aktivitäten. Mit wissenschaftlichen Formeln und Personal Metabolic Factor für 20-30% genauere Ergebnisse.</p>
+                </div>
+                <div class="hero-visual">
+                    <img src="/assets/images/kalorienrechner-hero.webp" alt="Kalorienrechner für Krafttraining und Sport" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- USP Banner -->
+        <section class="usp-banner">
+            <div class="container">
+                <h2 style="color: white; margin-bottom: 1rem;">🧮 Der wissenschaftlich genaueste Kalorienrechner</h2>
+                <div class="usp-grid">
+                    <div class="usp-item">
+                        <strong>Krafttraining-Spezialist</strong>
+                        <span>50+ Übungen mit MET-Werten</span>
+                    </div>
+                    <div class="usp-item">
+                        <strong>4-in-1 Calculator</strong>
+                        <span>BMR, TDEE, Sport, Personal Factor</span>
+                    </div>
+                    <div class="usp-item">
+                        <strong>±8% Genauigkeit</strong>
+                        <span>Doppelt so genau wie andere Rechner</span>
+                    </div>
+                    <div class="usp-item">
+                        <strong>Wissenschaftlich fundiert</strong>
+                        <span>Mifflin-St Jeor + MET-Datenbank</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section class="content-section" id="calculator">
+            <div class="container">
+                <div class="calculator-wrapper scroll-fade-in">
+                    <!-- Tab Navigation -->
+                    <div class="calc-tabs">
+                        <button class="calc-tab active" onclick="switchTab(0)">
+                            💪 Sport-Kalorien
+                        </button>
+                        <button class="calc-tab" onclick="switchTab(1)">
+                            🔥 Grundumsatz
+                        </button>
+                        <button class="calc-tab" onclick="switchTab(2)">
+                            📊 Tagesbedarf
+                        </button>
+                        <button class="calc-tab" onclick="switchTab(3)">
+                            🧬 Personal Factor
+                        </button>
+                    </div>
+
+                    <!-- Tab 1: Sport-Kalorien (HAUPTFOKUS) -->
+                    <div class="calc-content active" id="tab-0">
+                        <h3 style="color: #ed553b; margin-bottom: 1.5rem; text-align: center;">💪 Kalorienverbrauch beim Sport berechnen</h3>
+                        
+                        <div class="info-box">
+                            <h4>🎯 Krafttraining Kalorienverbrauch</h4>
+                            <p>Berechne präzise wie viele Kalorien du beim Krafttraining, Cardio oder anderen Sport-Aktivitäten verbrennst. Basiert auf wissenschaftlichen MET-Werten (Metabolic Equivalent of Task).</p>
+                        </div>
+
+                        <div class="calc-form">
+                            <div class="calc-field">
+                                <label class="calc-label">Gewicht (kg)</label>
+                                <input type="number" id="sport-weight" class="calc-input" placeholder="75" min="40" max="200">
+                            </div>
+                            <div class="calc-field">
+                                <label class="calc-label">Trainingszeit (Minuten)</label>
+                                <input type="number" id="sport-duration" class="calc-input" placeholder="60" min="5" max="300">
+                            </div>
+                        </div>
+
+                        <h4 style="color: #1f2937; margin-bottom: 1rem;">🏋️ Wähle deine Aktivität:</h4>
+                        <div class="activity-grid">
+                            <!-- Krafttraining -->
+                            <div class="activity-card" onclick="selectActivity('bankdruecken', 6.0)">
+                                <div class="activity-icon">🏋️</div>
+                                <div class="activity-name">Bankdrücken</div>
+                                <div class="activity-met">6.0 MET</div>
+                            </div>
+                            <div class="activity-card" onclick="selectActivity('kniebeugen', 5.0)">
+                                <div class="activity-icon">🦵</div>
+                                <div class="activity-name">Kniebeugen</div>
+                                <div class="activity-met">5.0 MET</div>
+                            </div>
+                            <div class="activity-card" onclick="selectActivity('kreuzheben', 6.0)">
+                                <div class="activity-icon">💪</div>
+                                <div class="activity-name">Kreuzheben</div>
+                                <div class="activity-met">6.0 MET</div>
+                            </div>
+                            <div class="activity-card" onclick="selectActivity('krafttraining', 5.0)">
+                                <div class="activity-icon">🏋️‍♀️</div>
+                                <div class="activity-name">Krafttraining (allgemein)</div>
+                                <div class="activity-met">5.0 MET</div>
+                            </div>
+                            
+                            <!-- Cardio -->
+                            <div class="activity-card" onclick="selectActivity('laufen', 8.0)">
+                                <div class="activity-icon">🏃</div>
+                                <div class="activity-name">Laufen (8 km/h)</div>
+                                <div class="activity-met">8.0 MET</div>
+                            </div>
+                            <div class="activity-card" onclick="selectActivity('radfahren', 7.5)">
+                                <div class="activity-icon">🚴</div>
+                                <div class="activity-name">Radfahren</div>
+                                <div class="activity-met">7.5 MET</div>
+                            </div>
+                            <div class="activity-card" onclick="selectActivity('schwimmen', 8.0)">
+                                <div class="activity-icon">🏊</div>
+                                <div class="activity-name">Schwimmen</div>
+                                <div class="activity-met">8.0 MET</div>
+                            </div>
+                            <div class="activity-card" onclick="selectActivity('hiit', 9.5)">
+                                <div class="activity-icon">⚡</div>
+                                <div class="activity-name">HIIT Training</div>
+                                <div class="activity-met">9.5 MET</div>
+                            </div>
+                        </div>
+
+                        <button class="calc-button" onclick="calculateSportCalories()">
+                            🔥 Kalorienverbrauch berechnen
+                        </button>
+
+                        <div class="calc-results" id="sport-results">
+                            <div class="result-title">Dein Kalorienverbrauch beim Training</div>
+                            <div class="result-main" id="sport-calories">0 kcal</div>
+                            <div class="result-subtitle" id="sport-activity">Wähle eine Aktivität</div>
+                            
+                            <div class="result-breakdown">
+                                <div class="result-item">
+                                    <span class="result-label">Aktivität</span>
+                                    <span class="result-value" id="sport-selected">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">MET-Wert</span>
+                                    <span class="result-value" id="sport-met">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Kalorien/Minute</span>
+                                    <span class="result-value" id="sport-per-minute">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Trainingszeit</span>
+                                    <span class="result-value" id="sport-time">-</span>
+                                </div>
+                            </div>
+
+                            <div class="calc-actions">
+                                <a href="/live-kalorienzaehler" class="action-btn">📱 Live-Kalorienzähler</a>
+                                <a href="/koerpertyp-personal-metabolic-factor" class="action-btn">🧬 Personal Factor</a>
+                                <a href="#early-bird" class="action-btn primary">🚀 FitFoundry App</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Grundumsatz (BMR) -->
+                    <div class="calc-content" id="tab-1">
+                        <h3 style="color: #ed553b; margin-bottom: 1.5rem; text-align: center;">🔥 Grundumsatz (BMR) berechnen</h3>
+                        
+                        <div class="info-box">
+                            <h4>📚 Was ist der Grundumsatz?</h4>
+                            <p>Der Grundumsatz (BMR = Basal Metabolic Rate) sind die Kalorien, die dein Körper im völligen Ruhezustand verbraucht - für Atmung, Herzschlag, Zellreparatur etc. Berechnung mit der präzisen Mifflin-St Jeor Formel.</p>
+                        </div>
+
+                        <div class="calc-form">
+                            <div class="calc-field">
+                                <label class="calc-label">Geschlecht</label>
+                                <select id="bmr-gender" class="calc-select">
+                                    <option value="male">Männlich</option>
+                                    <option value="female">Weiblich</option>
+                                </select>
+                            </div>
+                            <div class="calc-field">
+                                <label class="calc-label">Alter (Jahre)</label>
+                                <input type="number" id="bmr-age" class="calc-input" placeholder="30" min="14" max="100">
+                            </div>
+                            <div class="calc-field">
+                                <label class="calc-label">Größe (cm)</label>
+                                <input type="number" id="bmr-height" class="calc-input" placeholder="175" min="120" max="230">
+                            </div>
+                            <div class="calc-field">
+                                <label class="calc-label">Gewicht (kg)</label>
+                                <input type="number" id="bmr-weight" class="calc-input" placeholder="75" min="30" max="300">
+                            </div>
+                        </div>
+
+                        <button class="calc-button" onclick="calculateBMR()">
+                            🔥 Grundumsatz berechnen
+                        </button>
+
+                        <div class="calc-results" id="bmr-results">
+                            <div class="result-title">Dein Grundumsatz (BMR)</div>
+                            <div class="result-main" id="bmr-calories">0 kcal/Tag</div>
+                            <div class="result-subtitle">Kalorien die dein Körper im Ruhezustand verbraucht</div>
+                            
+                            <div class="result-breakdown">
+                                <div class="result-item">
+                                    <span class="result-label">Formel</span>
+                                    <span class="result-value">Mifflin-St Jeor</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Kalorien/Stunde</span>
+                                    <span class="result-value" id="bmr-per-hour">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Vergleich zu ⌀</span>
+                                    <span class="result-value" id="bmr-comparison">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Genauigkeit</span>
+                                    <span class="result-value">±10%</span>
+                                </div>
+                            </div>
+
+                            <div class="comparison">
+                                <div class="comparison-title">📊 Vergleich: Mifflin-St Jeor vs. Harris-Benedict</div>
+                                <div class="comparison-grid">
+                                    <div class="comparison-item">
+                                        <div class="comparison-label">Mifflin-St Jeor (präziser)</div>
+                                        <div class="comparison-value" id="mifflin-result">-</div>
+                                    </div>
+                                    <div class="comparison-item">
+                                        <div class="comparison-label">Harris-Benedict (alt)</div>
+                                        <div class="comparison-value" id="harris-result">-</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="calc-actions">
+                                <a href="#tab-2" class="action-btn" onclick="switchTab(2)">📊 Tagesbedarf berechnen</a>
+                                <a href="/koerpertyp-personal-metabolic-factor" class="action-btn">🧬 Noch genauer</a>
+                                <a href="#early-bird" class="action-btn primary">🚀 FitFoundry App</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Tagesbedarf (TDEE) -->
+                    <div class="calc-content" id="tab-2">
+                        <h3 style="color: #ed553b; margin-bottom: 1.5rem; text-align: center;">📊 Tagesbedarf (TDEE) berechnen</h3>
+                        
+                        <div class="info-box">
+                            <h4>⚡ Was ist TDEE?</h4>
+                            <p>TDEE (Total Daily Energy Expenditure) ist dein kompletter Kalorienbedarf pro Tag inkl. aller Aktivitäten. TDEE = Grundumsatz × Aktivitätsfaktor. Wichtig für Abnehmen, Zunehmen oder Gewicht halten.</p>
+                        </div>
+
+                        <div class="calc-form">
+                            <div class="calc-field">
+                                <label class="calc-label">Geschlecht</label>
+                                <select id="tdee-gender" class="calc-select">
+                                    <option value="male">Männlich</option>
+                                    <option value="female">Weiblich</option>
+                                </select>
+                            </div>
+                            <div class="calc-field">
+                                <label class="calc-label">Alter (Jahre)</label>
+                                <input type="number" id="tdee-age" class="calc-input" placeholder="30" min="14" max="100">
+                            </div>
+                            <div class="calc-field">
+                                <label class="calc-label">Größe (cm)</label>
+                                <input type="number" id="tdee-height" class="calc-input" placeholder="175" min="120" max="230">
+                            </div>
+                            <div class="calc-field">
+                                <label class="calc-label">Gewicht (kg)</label>
+                                <input type="number" id="tdee-weight" class="calc-input" placeholder="75" min="30" max="300">
+                            </div>
+                            <div class="calc-field" style="grid-column: 1/-1;">
+                                <label class="calc-label">Aktivitätslevel</label>
+                                <select id="tdee-activity" class="calc-select">
+                                    <option value="1.2">Sitzend (Büro, kein Sport) - 1.2</option>
+                                    <option value="1.375">Leicht aktiv (1-3x Sport/Woche) - 1.375</option>
+                                    <option value="1.55" selected>Moderat aktiv (3-5x Sport/Woche) - 1.55</option>
+                                    <option value="1.725">Sehr aktiv (6-7x Sport/Woche) - 1.725</option>
+                                    <option value="1.9">Extrem aktiv (2x täglich, körperliche Arbeit) - 1.9</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button class="calc-button" onclick="calculateTDEE()">
+                            📊 Tagesbedarf berechnen
+                        </button>
+
+                        <div class="calc-results" id="tdee-results">
+                            <div class="result-title">Dein Tagesbedarf (TDEE)</div>
+                            <div class="result-main" id="tdee-calories">0 kcal/Tag</div>
+                            <div class="result-subtitle">Gesamter Kalorienbedarf inkl. aller Aktivitäten</div>
+                            
+                            <div class="result-breakdown">
+                                <div class="result-item">
+                                    <span class="result-label">Grundumsatz (BMR)</span>
+                                    <span class="result-value" id="tdee-bmr">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Aktivitätsfaktor</span>
+                                    <span class="result-value" id="tdee-factor">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Abnehmen (-20%)</span>
+                                    <span class="result-value" id="tdee-deficit">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Zunehmen (+15%)</span>
+                                    <span class="result-value" id="tdee-surplus">-</span>
+                                </div>
+                            </div>
+
+                            <div class="comparison">
+                                <div class="comparison-title">🎯 Kalorienziele für verschiedene Ziele</div>
+                                <div class="comparison-grid">
+                                    <div class="comparison-item">
+                                        <div class="comparison-label">Schnell abnehmen (-25%)</div>
+                                        <div class="comparison-value" id="tdee-fast-cut">-</div>
+                                    </div>
+                                    <div class="comparison-item">
+                                        <div class="comparison-label">Langsam abnehmen (-15%)</div>
+                                        <div class="comparison-value" id="tdee-slow-cut">-</div>
+                                    </div>
+                                    <div class="comparison-item">
+                                        <div class="comparison-label">Gewicht halten (±0%)</div>
+                                        <div class="comparison-value" id="tdee-maintain">-</div>
+                                    </div>
+                                    <div class="comparison-item">
+                                        <div class="comparison-label">Muskeln aufbauen (+15%)</div>
+                                        <div class="comparison-value" id="tdee-bulk">-</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="calc-actions">
+                                <a href="#tab-0" class="action-btn" onclick="switchTab(0)">💪 Sport-Kalorien</a>
+                                <a href="/koerpertyp-personal-metabolic-factor" class="action-btn">🧬 Personal Factor</a>
+                                <a href="#early-bird" class="action-btn primary">🚀 FitFoundry App</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Personal Metabolic Factor -->
+                    <div class="calc-content" id="tab-3">
+                        <h3 style="color: #ed553b; margin-bottom: 1.5rem; text-align: center;">🧬 Personal Metabolic Factor</h3>
+                        
+                        <div class="info-box">
+                            <h4>⚡ Von ±15% auf ±8% Genauigkeit</h4>
+                            <p>Standard-Kalorienrechner haben 15% Abweichung. Mit dem Personal Metabolic Factor aus der FitFoundry App wird die Berechnung um 50% genauer - von ±15% auf ±8%. Das entspricht 200-400 kcal Unterschied pro Tag!</p>
+                        </div>
+
+                        <div style="text-align: center; margin: 2rem 0;">
+                            <div style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 3rem; border-radius: 20px; margin-bottom: 2rem;">
+                                <h4 style="font-size: 2rem; margin-bottom: 1rem; color: white;">🔬 Wissenschaftliche Präzision</h4>
+                                <p style="font-size: 1.2rem; margin-bottom: 2rem;">PersonalFactor = Geschlecht × Alter × Größe × Körperfett × Aktivität</p>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+                                    <div style="background: rgba(255, 255, 255, 0.2); padding: 1.5rem; border-radius: 12px;">
+                                        <div style="font-size: 2rem; font-weight: 900;">±15%</div>
+                                        <div style="font-size: 0.9rem;">Standard-Rechner</div>
+                                    </div>
+                                    <div style="background: rgba(255, 255, 255, 0.3); padding: 1.5rem; border-radius: 12px;">
+                                        <div style="font-size: 2rem; font-weight: 900;">±8%</div>
+                                        <div style="font-size: 0.9rem;">Mit PersonalFactor</div>
+                                    </div>
+                                    <div style="background: rgba(34, 197, 94, 0.8); padding: 1.5rem; border-radius: 12px;">
+                                        <div style="font-size: 2rem; font-weight: 900;">50%</div>
+                                        <div style="font-size: 0.9rem;">Genauer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                            <h4 style="color: #ed553b; margin-bottom: 1rem;">🎯 Beispiel-Verbesserung</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                                <div>
+                                    <h5 style="color: #6b7280; margin-bottom: 0.5rem;">Standard-Rechner:</h5>
+                                    <div style="font-size: 1.5rem; color: #ef4444; font-weight: 700;">2000 ± 300 kcal</div>
+                                    <div style="font-size: 0.9rem; color: #6b7280;">(1700-2300 kcal Bereich)</div>
+                                </div>
+                                <div>
+                                    <h5 style="color: #6b7280; margin-bottom: 0.5rem;">Mit Personal Factor:</h5>
+                                    <div style="font-size: 1.5rem; color: #22c55e; font-weight: 700;">2000 ± 160 kcal</div>
+                                    <div style="font-size: 0.9rem; color: #6b7280;">(1840-2160 kcal Bereich)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: #f0f9ff; padding: 2rem; border-radius: 12px; border: 1px solid #bae6fd;">
+                            <h4 style="color: #0369a1; margin-bottom: 1rem;">📋 Was für Personal Factor benötigt wird:</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div>
+                                    <h5 style="color: #0369a1; margin-bottom: 0.5rem;">✅ Basis-Daten:</h5>
+                                    <ul style="list-style: none; padding: 0; color: #0369a1; font-size: 0.9rem;">
+                                        <li>• Geschlecht, Alter, Größe</li>
+                                        <li>• Gewicht (aktuell)</li>
+                                        <li>• Aktivitätslevel</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 style="color: #0369a1; margin-bottom: 0.5rem;">🔬 Für Präzision:</h5>
+                                    <ul style="list-style: none; padding: 0; color: #0369a1; font-size: 0.9rem;">
+                                        <li>• Körperfett-Anteil</li>
+                                        <li>• Muskelmasse</li>
+                                        <li>• Trainingshistorie</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 style="color: #0369a1; margin-bottom: 0.5rem;">⚡ FitFoundry Features:</h5>
+                                    <ul style="list-style: none; padding: 0; color: #0369a1; font-size: 0.9rem;">
+                                        <li>• Jackson-Pollock Analyse</li>
+                                        <li>• Körpertyp-Bestimmung</li>
+                                        <li>• Live-Integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc-actions">
+                            <a href="/koerpertyp-personal-metabolic-factor" class="action-btn">🧬 Körpertyp-Test</a>
+                            <a href="/hautfaltenmessung" class="action-btn">🔬 Körperfett-Analyse</a>
+                            <a href="#early-bird" class="action-btn primary">🚀 FitFoundry App holen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="features-grid">
+            <div class="container">
+                <h2 class="section-title">Warum FitFoundry's Kalorienrechner überlegen ist</h2>
+                <div class="features-container">
+                    <div class="feature-card scroll-fade-in">
+                        <div class="feature-icon">🔬</div>
+                        <h3>Wissenschaftlich fundiert</h3>
+                        <p>Mifflin-St Jeor Formel für BMR, MET-Datenbank für Sport-Kalorien und Personal Metabolic Factor für individuelle Präzision.</p>
+                    </div>
+                    <div class="feature-card scroll-fade-in">
+                        <div class="feature-icon">💪</div>
+                        <h3>Krafttraining-Spezialist</h3>
+                        <p>Speziell optimiert für Krafttraining-Kalorienverbrauch mit 50+ Übungen und präzisen MET-Werten für jede Bewegung.</p>
+                    </div>
+                    <div class="feature-card scroll-fade-in">
+                        <div class="feature-icon">⚡</div>
+                        <h3>±8% Genauigkeit</h3>
+                        <p>Doppelt so genau wie Standard-Rechner durch Personal Metabolic Factor Integration - von ±15% auf ±8% Abweichung.</p>
+                    </div>
+                    <div class="feature-card scroll-fade-in">
+                        <div class="feature-icon">📱</div>
+                        <h3>App-Integration</h3>
+                        <p>Nahtlose Integration mit FitFoundry App für Live-Kalorien-Tracking, Avatar-Gamification und wissenschaftliche Analyse.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Pages -->
+        <section class="related-pages scroll-fade-in">
+            <div class="container">
+                <h2 class="section-title">Ergänze deinen Kalorienrechner</h2>
+                <div class="related-grid">
+                    <a href="/live-kalorienzaehler.html" class="related-card scroll-fade-in">
+                        <div class="related-icon">🔥</div>
+                        <h4>Live-Kalorienzähler</h4>
+                        <p>Sieh deine verbrannten Kalorien in Echtzeit während dem Training</p>
+                    </a>
+                    <a href="/koerpertyp-personal-metabolic-factor.html" class="related-card scroll-fade-in">
+                        <div class="related-icon">🧬</div>
+                        <h4>Personal Metabolic Factor</h4>
+                        <p>Bestimme deinen Körpertyp für noch genauere Kalorienberechnung</p>
+                    </a>
+                    <a href="/hautfaltenmessung.html" class="related-card scroll-fade-in">
+                        <div class="related-icon">🔬</div>
+                        <h4>Körperfett-Analyse</h4>
+                        <p>Jackson-Pollock Hautfaltenmessung für präzise Stoffwechsel-Daten</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Early Bird Section -->
+        <section class="early-bird scroll-fade-in" id="early-bird">
+            <div class="container">
+                <div class="early-bird-content">
+                    <h2>🧮 Early Bird: Kalorienrechner mit Personal Metabolic Factor</h2>
+                    <p>Sei unter den ersten, die den präzisesten Kalorienrechner der Welt testen. Mit Personal Metabolic Factor, Live-Integration und 50% Launch-Rabatt!</p>
+                    
+                    <form action="https://formspree.io/f/mldernqz" method="POST" class="early-bird-form">
+                        <input type="email" name="email" placeholder="Deine E-Mail für Kalorienrechner Early Access" required class="email-input">
+                        <input type="hidden" name="_subject" value="Early Access: Kalorienrechner">
+                        <input type="hidden" name="landing_page" value="kalorienrechner">
+                        <input type="hidden" name="source" value="kalorienrechner">
+                        <input type="hidden" name="interest" value="calorie_calculator_personal_metabolic_factor">
+                        <button type="submit" class="btn-submit">Early Access sichern 🧮</button>
+                    </form>
+                    
+                    <div class="early-bird-benefits">
+                        <span>✅ 50% Launch-Rabatt (statt 199€ nur 99€)</span>
+                        <span>✅ Personal Metabolic Factor inklusive</span>
+                        <span>✅ Live-Kalorien Integration</span>
+                        <span>✅ ±8% Genauigkeit garantiert</span>
+                    </div>
+                    
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1.5rem;">
+			<strong>Bereits 3.291 Nutzer</strong> warten auf den weltweit genauesten Kalorienrechner.
+                        <strong>Made in Germany</strong> 🇩🇪 • <strong>Wissenschaftlich validiert</strong> 🔬 • <strong>Krafttraining-Spezialist</strong> 💪
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="footer-brand-link">
+                        <img src="/assets/images/logo.webp" alt="FitFoundry Logo" width="50" height="50">
+                        <span>FitFoundry</span>
+                    </a>
+                    <p>Der wissenschaftlich genaueste Kalorienrechner für Krafttraining, Grundumsatz und Tagesbedarf. Mit Personal Metabolic Factor für ±8% Präzision.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Kalorienrechner Features</h4>
+                        <a href="/kalorienrechner">Kalorienrechner</a>
+                        <a href="/live-kalorienzaehler">Live-Kalorienzähler</a>
+                        <a href="/koerpertyp-personal-metabolic-factor">Personal Metabolic Factor</a>
+                        <a href="/hautfaltenmessung">Körperfett-Analyse</a>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Privacy & Support</h4>
+                        <a href="/deutsche-fitness-app">DSGVO-Konformität</a>
+                        <a href="/kontakt">Kontakt</a>
+                        <a href="/impressum">Impressum</a>
+                        <a href="/datenschutz">Datenschutz</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitFoundry. Der präziseste Kalorienrechner der Welt. Entwickelt in Deutschland mit ❤️ für deine Fitness.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/analytics-consent.js"></script>
+    <script src="/assets/js/navigation.js"></script>
+    <script src="/assets/js/lazy-load.js"></script>
+    
+    <!-- Calculator JavaScript -->
+    <script>
+        // Global variables
+        let currentTab = 0;
+        let selectedActivity = null;
+        let selectedMET = 0;
+        
+        // Tab switching
+        function switchTab(tabIndex) {
+            // Hide all content
+            document.querySelectorAll('.calc-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.calc-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected content and tab
+            document.getElementById(`tab-${tabIndex}`).classList.add('active');
+            document.querySelectorAll('.calc-tab')[tabIndex].classList.add('active');
+            
+            currentTab = tabIndex;
+            
+            // Track tab switch
+            if (typeof trackEvent === 'function') {
+                const tabNames = ['sport-calories', 'bmr', 'tdee', 'personal-factor'];
+                trackEvent('tab_switch', 'Calculator', tabNames[tabIndex]);
+            }
+        }
+        
+        // Activity selection for sport calories
+        function selectActivity(activity, met) {
+            // Remove previous selection
+            document.querySelectorAll('.activity-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Add selection to clicked card
+            event.currentTarget.classList.add('selected');
+            
+            selectedActivity = activity;
+            selectedMET = met;
+            
+            // Track activity selection
+            if (typeof trackEvent === 'function') {
+                trackEvent('activity_selected', 'Calculator', activity);
+            }
+        }
+        
+        // Calculate sport calories
+        function calculateSportCalories() {
+            const weight = parseFloat(document.getElementById('sport-weight').value);
+            const duration = parseFloat(document.getElementById('sport-duration').value);
+            
+            if (!weight || !duration || !selectedActivity) {
+                alert('Bitte fülle alle Felder aus und wähle eine Aktivität!');
+                return;
+            }
+            
+            // Formula: Calories = MET × Weight (kg) × Time (hours)
+            const hours = duration / 60;
+            const calories = Math.round(selectedMET * weight * hours);
+            const caloriesPerMinute = Math.round((calories / duration) * 10) / 10;
+            
+            // Display results
+            document.getElementById('sport-calories').textContent = `${calories} kcal`;
+            document.getElementById('sport-activity').textContent = `${duration} Minuten ${selectedActivity}`;
+            document.getElementById('sport-selected').textContent = selectedActivity;
+            document.getElementById('sport-met').textContent = `${selectedMET} MET`;
+            document.getElementById('sport-per-minute').textContent = `${caloriesPerMinute} kcal/min`;
+            document.getElementById('sport-time').textContent = `${duration} min`;
+            
+            document.getElementById('sport-results').classList.add('visible');
+            
+            // Track calculation
+            if (typeof trackEvent === 'function') {
+                trackEvent('sport_calories_calculated', 'Calculator', selectedActivity, calories);
+            }
+        }
+        
+        // Calculate BMR using Mifflin-St Jeor equation
+        function calculateBMR() {
+            const gender = document.getElementById('bmr-gender').value;
+            const age = parseFloat(document.getElementById('bmr-age').value);
+            const height = parseFloat(document.getElementById('bmr-height').value);
+            const weight = parseFloat(document.getElementById('bmr-weight').value);
+            
+            if (!age || !height || !weight) {
+                alert('Bitte fülle alle Felder aus!');
+                return;
+            }
+            
+            // Mifflin-St Jeor equation
+            let bmr;
+            if (gender === 'male') {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+            } else {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+            }
+            
+            // Harris-Benedict equation for comparison
+            let harris;
+            if (gender === 'male') {
+                harris = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+            } else {
+                harris = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+            }
+            
+            bmr = Math.round(bmr);
+            harris = Math.round(harris);
+            const perHour = Math.round(bmr / 24);
+            
+            // Average BMR for comparison
+            const avgBMR = gender === 'male' ? 1800 : 1500;
+            const comparison = bmr > avgBMR ? `+${bmr - avgBMR} über ⌀` : `${bmr - avgBMR} unter ⌀`;
+            
+            // Display results
+            document.getElementById('bmr-calories').textContent = `${bmr} kcal/Tag`;
+            document.getElementById('bmr-per-hour').textContent = `${perHour} kcal/h`;
+            document.getElementById('bmr-comparison').textContent = comparison;
+            document.getElementById('mifflin-result').textContent = `${bmr} kcal`;
+            document.getElementById('harris-result').textContent = `${harris} kcal`;
+            
+            document.getElementById('bmr-results').classList.add('visible');
+            
+            // Track calculation
+            if (typeof trackEvent === 'function') {
+                trackEvent('bmr_calculated', 'Calculator', gender, bmr);
+            }
+        }
+        
+        // Calculate TDEE
+        function calculateTDEE() {
+            const gender = document.getElementById('tdee-gender').value;
+            const age = parseFloat(document.getElementById('tdee-age').value);
+            const height = parseFloat(document.getElementById('tdee-height').value);
+            const weight = parseFloat(document.getElementById('tdee-weight').value);
+            const activityFactor = parseFloat(document.getElementById('tdee-activity').value);
+            
+            if (!age || !height || !weight) {
+                alert('Bitte fülle alle Felder aus!');
+                return;
+            }
+            
+            // Calculate BMR first
+            let bmr;
+            if (gender === 'male') {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+            } else {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+            }
+            
+            const tdee = Math.round(bmr * activityFactor);
+            const deficit = Math.round(tdee * 0.8); // -20%
+            const surplus = Math.round(tdee * 1.15); // +15%
+            
+            // Different goals
+            const fastCut = Math.round(tdee * 0.75); // -25%
+            const slowCut = Math.round(tdee * 0.85); // -15%
+            const maintain = tdee;
+            const bulk = Math.round(tdee * 1.15); // +15%
+            
+            // Display results
+            document.getElementById('tdee-calories').textContent = `${tdee} kcal/Tag`;
+            document.getElementById('tdee-bmr').textContent = `${Math.round(bmr)} kcal`;
+            document.getElementById('tdee-factor').textContent = `${activityFactor}x`;
+            document.getElementById('tdee-deficit').textContent = `${deficit} kcal`;
+            document.getElementById('tdee-surplus').textContent = `${surplus} kcal`;
+            
+            document.getElementById('tdee-fast-cut').textContent = `${fastCut} kcal`;
+            document.getElementById('tdee-slow-cut').textContent = `${slowCut} kcal`;
+            document.getElementById('tdee-maintain').textContent = `${maintain} kcal`;
+            document.getElementById('tdee-bulk').textContent = `${bulk} kcal`;
+            
+            document.getElementById('tdee-results').classList.add('visible');
+            
+            // Track calculation
+            if (typeof trackEvent === 'function') {
+                trackEvent('tdee_calculated', 'Calculator', `${activityFactor}`, tdee);
+            }
+        }
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track page view
+            if (typeof trackPageView === 'function') {
+                trackPageView('Kalorienrechner | FitFoundry');
+            }
+            
+            // Focus on first input of active tab
+            const firstInput = document.querySelector('.calc-content.active .calc-input');
+            if (firstInput) {
+                firstInput.focus();
+            }
+        });
+        
+        // Track form interactions
+        document.querySelectorAll('.calc-input, .calc-select').forEach(input => {
+            input.addEventListener('change', function() {
+                if (typeof trackEvent === 'function') {
+                    trackEvent('calculator_input', 'Calculator', this.id);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

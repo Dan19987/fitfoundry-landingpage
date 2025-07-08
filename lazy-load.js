@@ -1,330 +1,271 @@
-// ================================================================
-// FITFOUNDRY LAZY LOADING SYSTEM
-// ================================================================
+/**
+ * FitFoundry Lazy Loading System
+ * Performance-optimiert für Landing Pages
+ */
 
-class FitFoundryLazyLoader {
-    constructor() {
-        this.imageObserver = null;
-        this.sectionObserver = null;
-        this.animationObserver = null;
-        this.loadedSections = new Set();
+(function() {
+    'use strict';
+    
+    // Configuration
+    const CONFIG = {
+        rootMargin: '50px 0px',
+        threshold: 0.1,
+        imagePlaceholder: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yMCAyNUMyMi43NjE0IDI1IDI1IDIyLjc2MTQgMjUgMjBDMjUgMTcuMjM4NiAyMi43NjE0IDE1IDIwIDE1QzE3LjIzODYgMTUgMTUgMTcuMjM4NiAxNSAyMEMxNSAyMi43NjE0IDE3LjIzODYgMjUgMjAgMjVaIiBmaWxsPSIjOUIxOUY5Ii8+Cjwvc3ZnPgo='
+    };
+    
+    // Lazy loading for images
+    function initImageLazyLoading() {
+        const images = document.querySelectorAll('img[data-src]');
         
-        this.init();
-    }
-
-    init() {
-        // Nur wenn IntersectionObserver unterstützt wird
         if ('IntersectionObserver' in window) {
-            this.setupImageLazyLoading();
-            this.setupSectionLazyLoading();
-            this.setupAnimationLazyLoading();
-            this.optimizeFonts();
-            this.deferNonCriticalCSS();
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        loadImage(img);
+                        observer.unobserve(img);
+                    }
+                });
+            }, CONFIG);
+            
+            images.forEach(img => imageObserver.observe(img));
         } else {
-            // Fallback für alte Browser
-            this.loadAllImages();
-            console.warn('IntersectionObserver nicht unterstützt - Lazy Loading deaktiviert');
+            // Fallback for older browsers
+            images.forEach(loadImage);
         }
     }
-
-    // ================================================================
-    // BILDER LAZY LOADING
-    // ================================================================
-    setupImageLazyLoading() {
-        const imageOptions = {
-            root: null,
-            rootMargin: '50px',
-            threshold: 0.01
+    
+    // Load individual image
+    function loadImage(img) {
+        const src = img.getAttribute('data-src');
+        if (!src) return;
+        
+        // Create new image for preloading
+        const newImg = new Image();
+        
+        newImg.onload = function() {
+            img.src = src;
+            img.classList.add('loaded');
+            img.removeAttribute('data-src');
+            
+            // Track successful image load
+            if (typeof trackEvent === 'function') {
+                trackEvent('image_loaded', 'Performance', src);
+            }
         };
-
-        this.imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    
-                    // Normales img Tag
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                    }
-                    
-                    // Background Images
-                    if (img.dataset.bg) {
-                        img.style.backgroundImage = `url(${img.dataset.bg})`;
-                        img.removeAttribute('data-bg');
-                    }
-                    
-                    // Klasse für fade-in Animation
-                    img.classList.add('lazy-loaded');
-                    
-                    // Nicht mehr beobachten
-                    observer.unobserve(img);
-                }
-            });
-        }, imageOptions);
-
-        // Alle lazy images finden
-        document.querySelectorAll('img[data-src], [data-bg]').forEach(img => {
-            this.imageObserver.observe(img);
-        });
-    }
-
-    // ================================================================
-    // SEKTIONEN LAZY LOADING
-    // ================================================================
-    setupSectionLazyLoading() {
-        const sectionOptions = {
-            root: null,
-            rootMargin: '100px',
-            threshold: 0.1
+        
+        newImg.onerror = function() {
+            img.classList.add('error');
+            console.warn('Failed to load image:', src);
         };
-
-        this.sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !this.loadedSections.has(entry.target)) {
-                    const section = entry.target;
-                    this.loadedSections.add(section);
-                    
-                    // Sektion als geladen markieren
-                    section.classList.add('section-loaded');
-                    
-                    // Spezielle Behandlung je nach Sektion
-                    this.handleSectionLoad(section);
-                }
-            });
-        }, sectionOptions);
-
-        // Alle Sektionen außer Hero lazy laden
-        document.querySelectorAll('.section:not(.hero)').forEach(section => {
-            // Initial verstecken
-            section.classList.add('lazy-section');
-            this.sectionObserver.observe(section);
-        });
+        
+        newImg.src = src;
     }
-
-    handleSectionLoad(section) {
-        // Features Section
-        if (section.classList.contains('gradient-features')) {
-            this.loadFeatureCards();
-        }
+    
+    // Lazy loading for videos
+    function initVideoLazyLoading() {
+        const videos = document.querySelectorAll('video[data-src]');
         
-        // Pricing Section
-        else if (section.classList.contains('gradient-pricing')) {
-            this.loadPricingCards();
-        }
-        
-        // Testimonials
-        else if (section.classList.contains('gradient-social')) {
-            this.loadTestimonials();
-        }
-        
-        // Science Section
-        else if (section.classList.contains('gradient-science')) {
-            this.initScienceCounters();
-        }
-        
-        // Audio/Live Sections
-        else if (section.classList.contains('gradient-audio') || 
-                 section.classList.contains('gradient-live')) {
-            this.loadDemoContainers();
+        if ('IntersectionObserver' in window) {
+            const videoObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const video = entry.target;
+                        loadVideo(video);
+                        observer.unobserve(video);
+                    }
+                });
+            }, CONFIG);
+            
+            videos.forEach(video => videoObserver.observe(video));
+        } else {
+            videos.forEach(loadVideo);
         }
     }
-
-    // ================================================================
-    // ANIMATIONEN LAZY LOADING
-    // ================================================================
-    setupAnimationLazyLoading() {
-        const animationOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.3
+    
+    // Load individual video
+    function loadVideo(video) {
+        const src = video.getAttribute('data-src');
+        if (!src) return;
+        
+        video.src = src;
+        video.classList.add('loaded');
+        video.removeAttribute('data-src');
+        
+        // Auto-load video for better UX
+        video.load();
+        
+        // Track video load
+        if (typeof trackEvent === 'function') {
+            trackEvent('video_loaded', 'Performance', src);
+        }
+    }
+    
+    // Lazy loading for background images
+    function initBackgroundLazyLoading() {
+        const elements = document.querySelectorAll('[data-bg]');
+        
+        if ('IntersectionObserver' in window) {
+            const bgObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        loadBackgroundImage(element);
+                        observer.unobserve(element);
+                    }
+                });
+            }, CONFIG);
+            
+            elements.forEach(el => bgObserver.observe(el));
+        } else {
+            elements.forEach(loadBackgroundImage);
+        }
+    }
+    
+    // Load background image
+    function loadBackgroundImage(element) {
+        const bgSrc = element.getAttribute('data-bg');
+        if (!bgSrc) return;
+        
+        const img = new Image();
+        img.onload = function() {
+            element.style.backgroundImage = `url(${bgSrc})`;
+            element.classList.add('bg-loaded');
+            element.removeAttribute('data-bg');
         };
-
-        this.animationObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const element = entry.target;
-                    
-                    // Animation starten
-                    if (element.dataset.animation) {
-                        element.style.animation = element.dataset.animation;
-                        element.removeAttribute('data-animation');
+        img.src = bgSrc;
+    }
+    
+    // Lazy loading for iframes (embeds, maps, etc.)
+    function initIframeLazyLoading() {
+        const iframes = document.querySelectorAll('iframe[data-src]');
+        
+        if ('IntersectionObserver' in window) {
+            const iframeObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const iframe = entry.target;
+                        loadIframe(iframe);
+                        observer.unobserve(iframe);
                     }
-                    
-                    // Klassen für CSS Animationen
-                    if (element.dataset.animClass) {
-                        element.classList.add(element.dataset.animClass);
-                        element.removeAttribute('data-anim-class');
-                    }
-                    
-                    this.animationObserver.unobserve(element);
-                }
-            });
-        }, animationOptions);
-
-        // Elemente mit Animationen vorbereiten
-        this.prepareAnimations();
-    }
-
-    prepareAnimations() {
-        // Counter stoppen bis sichtbar
-        document.querySelectorAll('.animated-counter').forEach(counter => {
-            counter.textContent = '0';
-            counter.dataset.animClass = 'start-counting';
-            this.animationObserver.observe(counter);
-        });
-
-        // Floating badges
-        document.querySelectorAll('.floating-badge').forEach(badge => {
-            badge.style.animation = 'none';
-            badge.dataset.animation = 'floatBadgeEnhanced 6s ease-in-out infinite';
-            this.animationObserver.observe(badge);
-        });
-
-        // Pulse animations
-        document.querySelectorAll('.pulse').forEach(el => {
-            el.style.animation = 'none';
-            el.dataset.animation = 'pulse 2s ease-in-out infinite';
-            this.animationObserver.observe(el);
-        });
-    }
-
-    // ================================================================
-    // SPEZIFISCHE LADE-FUNKTIONEN
-    // ================================================================
-    loadFeatureCards() {
-        const cards = document.querySelectorAll('.feature-card');
-        cards.forEach((card, index) => {
-            setTimeout(() => {
-                card.classList.add('visible');
-            }, index * 100);
-        });
-    }
-
-    loadPricingCards() {
-        const cards = document.querySelectorAll('.pricing-card');
-        cards.forEach((card, index) => {
-            setTimeout(() => {
-                card.classList.add('visible');
-            }, index * 150);
-        });
-    }
-
-    loadTestimonials() {
-        const cards = document.querySelectorAll('.testimonial-card');
-        cards.forEach((card, index) => {
-            setTimeout(() => {
-                card.classList.add('visible');
-            }, index * 200);
-        });
-    }
-
-    initScienceCounters() {
-        // Nur Counter in der Science Section starten
-        const section = document.querySelector('.gradient-science');
-        if (section) {
-            const counters = section.querySelectorAll('.animated-counter');
-            counters.forEach(counter => {
-                if (counter.classList.contains('start-counting')) {
-                    this.animateCounter(counter);
-                    counter.classList.remove('start-counting');
-                }
-            });
+                });
+            }, CONFIG);
+            
+            iframes.forEach(iframe => iframeObserver.observe(iframe));
+        } else {
+            iframes.forEach(loadIframe);
         }
     }
-
-    animateCounter(counter) {
-        const target = parseFloat(counter.getAttribute('data-target'));
-        if (isNaN(target)) return;
+    
+    // Load individual iframe
+    function loadIframe(iframe) {
+        const src = iframe.getAttribute('data-src');
+        if (!src) return;
         
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
+        iframe.src = src;
+        iframe.classList.add('loaded');
+        iframe.removeAttribute('data-src');
+    }
+    
+    // Add loading placeholder for images
+    function addImagePlaceholders() {
+        const images = document.querySelectorAll('img[data-src]:not([src])');
+        images.forEach(img => {
+            if (!img.src || img.src === '') {
+                img.src = CONFIG.imagePlaceholder;
+                img.classList.add('lazy-placeholder');
+            }
+        });
+    }
+    
+    // Preload critical images
+    function preloadCriticalImages() {
+        const criticalImages = document.querySelectorAll('img[data-critical]');
+        criticalImages.forEach(img => {
+            const src = img.getAttribute('data-src') || img.getAttribute('src');
+            if (src) {
+                const preloadImg = new Image();
+                preloadImg.src = src;
+            }
+        });
+    }
+    
+    // Initialize all lazy loading
+    function init() {
+        // Add CSS for smooth transitions
+        addLazyLoadingStyles();
         
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
+        // Add placeholders
+        addImagePlaceholders();
+        
+        // Preload critical images
+        preloadCriticalImages();
+        
+        // Initialize lazy loading
+        initImageLazyLoading();
+        initVideoLazyLoading();
+        initBackgroundLazyLoading();
+        initIframeLazyLoading();
+        
+        console.log('✅ FitFoundry Lazy Loading initialized');
+    }
+    
+    // Add CSS styles for lazy loading
+    function addLazyLoadingStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+            img[data-src] {
+                transition: opacity 0.3s ease;
+                opacity: 0.7;
             }
             
-            if (target % 1 !== 0) {
-                counter.textContent = current.toFixed(1);
-            } else {
-                counter.textContent = Math.floor(current);
+            img.loaded {
+                opacity: 1;
             }
-        }, 16);
-    }
-
-    loadDemoContainers() {
-        // Demo Container animationen starten
-        document.querySelectorAll('.audio-demo-container, .live-demo-container').forEach(container => {
-            container.style.opacity = '1';
-            container.style.transform = 'translateY(0)';
-        });
-    }
-
-    // ================================================================
-    // FONT OPTIMIERUNG
-    // ================================================================
-    optimizeFonts() {
-        // Font-display: swap für bessere Performance
-        const fontLink = document.querySelector('link[href*="fonts.googleapis.com"]');
-        if (fontLink) {
-            fontLink.href += '&display=swap';
-        }
-    }
-
-    // ================================================================
-    // CSS LAZY LOADING
-    // ================================================================
-    deferNonCriticalCSS() {
-        // Mobile CSS nur auf Mobile laden
-        if (window.innerWidth > 768) {
-            const mobileCss = document.querySelector('link[href*="mobile-fixes.css"]');
-            if (mobileCss) {
-                mobileCss.media = 'print';
-                mobileCss.onload = function() { this.media = 'all'; };
+            
+            img.error {
+                opacity: 0.5;
+                filter: grayscale(100%);
             }
-        }
+            
+            img.lazy-placeholder {
+                background: #f3f4f6;
+                border-radius: 8px;
+            }
+            
+            [data-bg] {
+                transition: opacity 0.3s ease;
+            }
+            
+            [data-bg].bg-loaded {
+                opacity: 1;
+            }
+            
+            video[data-src] {
+                background: #f3f4f6;
+                border-radius: 8px;
+            }
+            
+            iframe[data-src] {
+                background: #f3f4f6;
+                min-height: 200px;
+            }
+        `;
+        document.head.appendChild(style);
     }
-
-    // ================================================================
-    // FALLBACK FÜR ALTE BROWSER
-    // ================================================================
-    loadAllImages() {
-        document.querySelectorAll('img[data-src]').forEach(img => {
-            img.src = img.dataset.src;
-        });
-        
-        document.querySelectorAll('[data-bg]').forEach(el => {
-            el.style.backgroundImage = `url(${el.dataset.bg})`;
-        });
-    }
-
-    // ================================================================
-    // PERFORMANCE MONITORING
-    // ================================================================
-    logPerformance() {
-        if (window.performance && performance.getEntriesByType) {
-            const perfData = performance.getEntriesByType('navigation')[0];
-            console.log('🚀 FitFoundry Performance:', {
-                'DOM geladen': perfData.domContentLoadedEventEnd + 'ms',
-                'Seite komplett': perfData.loadEventEnd + 'ms',
-                'Geladene Sektionen': this.loadedSections.size
-            });
-        }
-    }
-}
-
-// ================================================================
-// LAZY LOADER STARTEN
-// ================================================================
-document.addEventListener('DOMContentLoaded', () => {
-    window.fitFoundryLazyLoader = new FitFoundryLazyLoader();
     
-    // Performance nach 3 Sekunden loggen
-    setTimeout(() => {
-        window.fitFoundryLazyLoader.logPerformance();
-    }, 3000);
-});
+    // Public API
+    window.FitFoundryLazyLoad = {
+        init: init,
+        loadImage: loadImage,
+        loadVideo: loadVideo
+    };
+    
+    // Auto-initialize on DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+})();
