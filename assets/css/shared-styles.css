@@ -384,6 +384,7 @@ img {
 }
 
 .hero-actions {
+    margin-top: 2.5rem;
   display: flex;
   gap: var(--spacing-md);
   flex-direction: column;
@@ -457,16 +458,36 @@ img {
 }
 
 .btn-primary {
-  background: var(--primary-color);
-  color: var(--white);
-  border-color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 2rem; /* Stark abgerundet */
+    font-weight: var(--font-weight-bold);
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(237, 85, 59, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
-  background: var(--primary-dark);
-  border-color: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(237, 85, 59, 0.4);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+/* Optional: Icon hinzufügen */
+.btn-primary::after {
+    content: "🔥";
+    font-size: 1.5rem;
 }
 
 .btn-secondary {
