@@ -82,6 +82,222 @@
       ]
     }
     </script>
+
+    <!-- Mobile-First Responsive CSS -->
+    <style>
+        /* =============================================================================
+           MOBILE-FIRST RESPONSIVE PRICING STYLES
+           ============================================================================= */
+        
+        /* Mobile-responsive Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Mobile-responsive Grid System Override */
+        .grid-mobile-first {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-mobile-first {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .grid-mobile-first {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Pricing Card Mobile Optimierung */
+        .pricing-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 2px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @media (min-width: 768px) {
+            .pricing-card {
+                padding: 2.5rem;
+            }
+        }
+        
+        /* Mobile Button Optimierung */
+        .pricing-button {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        @media (min-width: 768px) {
+            .pricing-button {
+                padding: 1.2rem;
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Mobile Feature Lists */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            color: #374151;
+            font-size: 0.85rem;
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .feature-list {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+            }
+        }
+        
+        .feature-list li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        @media (min-width: 768px) {
+            .feature-list li {
+                padding: 0.4rem 0;
+            }
+        }
+        
+        /* Mobile Typography */
+        .pricing-title {
+            color: #1f2937;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+        
+        @media (min-width: 768px) {
+            .pricing-title {
+                margin-bottom: 1rem;
+                font-size: 1.8rem;
+            }
+        }
+        
+        .pricing-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+        
+        @media (min-width: 768px) {
+            .pricing-price {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+        }
+        
+        /* Mobile Responsive Table Override */
+        .responsive-table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+        }
+        
+        .responsive-table-container table {
+            min-width: 600px;
+            margin: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .responsive-table-container {
+                margin: 2rem 0;
+            }
+            
+            .responsive-table-container table {
+                min-width: 800px;
+            }
+        }
+        
+        /* Mobile FAQ Grid */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .faq-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+        }
+        
+        /* Mobile Early Bird Optimierung */
+        .early-bird-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (min-width: 480px) {
+            .early-bird-form {
+                flex-direction: row;
+            }
+        }
+        
+        /* Mobile Benefits */
+        .early-bird-benefits {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        @media (min-width: 480px) {
+            .early-bird-benefits {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -145,7 +361,7 @@
                     <p class="hero-subtitle scroll-fade-in">Wähle was zu dir passt: Kostenlos testen, flexibles Monats-Abo (4,99€) oder einmalig Lifetime (99€). 50% Early Bird Rabatt auf alle Pläne. Wissenschaftliche Fitness-App mit transparenten Preisen.</p>
                 </div>
                 <div class="hero-visual-center scroll-fade-in">
-                    <img src="/assets/images/fitfoundry-pricing-hero.webp" alt="FitFoundry Preise - Fitness App ohne Abo mit transparenter Preisgestaltung" class="hero-img-large">
+                    <img src="/assets/images/fitfoundry-hero-app-mockup.webp" alt="FitFoundry Preise - Fitness App ohne Abo mit transparenter Preisgestaltung" class="hero-img-large">
                 </div>
             </div>
         </section>
@@ -180,47 +396,38 @@
             <div class="container">
                 <h2 class="section-title">Wähle dein FitFoundry Paket</h2>
                 
-                <div class="scroll-fade-in" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: white; padding: 2rem; border-radius: 20px; margin-bottom: 3rem; text-align: center;">
-                    <h3 style="color: white; margin-bottom: 1rem; font-size: 2rem;">🎯 Early Bird: 50% Rabatt auf alle Pläne!</h3>
-                    <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
+                <div class="scroll-fade-in" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: white; padding: 2rem; border-radius: 20px; margin-bottom: 2rem; text-align: center;">
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.5rem;">🎯 Early Bird: 50% Rabatt auf alle Pläne!</h3>
+                    <p style="font-size: 1rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
                         <strong>Nur für kurze Zeit: 50% Rabatt auf Monthly und Lifetime!</strong> 
                         Sichere dir die wissenschaftlichste Fitness-App zum halben Preis.
                     </p>
                 </div>
 
-                <div class="grid grid-3" style="gap: 2rem; margin-top: 3rem;">
+                <!-- MOBILE-RESPONSIVE PRICING GRID -->
+                <div class="pricing-grid">
                     <!-- Free Plan -->
-                    <div style="background: white; padding: 2.5rem; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 2px solid #e5e7eb;">
-                        <div style="font-size: 3rem; margin-bottom: 1.5rem;">🆓</div>
-                        <h3 style="color: #1f2937; margin-bottom: 1rem; font-size: 1.8rem;">FitFoundry Free</h3>
-                        <div style="font-size: 2.5rem; font-weight: bold; color: #22c55e; margin-bottom: 1rem;">0€</div>
-                        <div style="color: #6b7280; margin-bottom: 2rem;">Kostenlos für immer</div>
+                    <div class="pricing-card">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🆓</div>
+                        <h3 class="pricing-title">FitFoundry Free</h3>
+                        <div class="pricing-price" style="color: #22c55e;">0€</div>
+                        <div style="color: #6b7280; margin-bottom: 1.5rem;">Kostenlos für immer</div>
                         
-                        <div style="text-align: left; margin-bottom: 2rem;">
-                            <h4 style="color: #1f2937; margin-bottom: 1rem;">✅ Enthalten:</h4>
-                            <ul style="list-style: none; padding: 0; color: #374151; font-size: 0.9rem;">
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid #f3f4f6;">✅ Basis Körperfett-Messung</li>
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid #f3f4f6;">✅ Grundlegende Workouts</li>
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid #f3f4f6;">✅ Community-Zugang</li>
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid #f3f4f6;">❌ Avatar-System</li>
-                                <li style="padding: 0.4rem 0;">❌ Jackson-Pollock</li>
+                        <div style="text-align: left; margin-bottom: 1.5rem;">
+                            <h4 style="color: #1f2937; margin-bottom: 0.8rem;">✅ Enthalten:</h4>
+                            <ul class="feature-list">
+                                <li>✅ Basis Körperfett-Messung</li>
+                                <li>✅ Grundlegende Workouts</li>
+                                <li>✅ Community-Zugang</li>
+                                <li>❌ Avatar-System</li>
+                                <li>❌ Jackson-Pollock</li>
                             </ul>
                         </div>
                         
-                        <button style="
-                            width: 100%; 
-                            padding: 1.2rem; 
+                        <button class="pricing-button" style="
                             background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
                             color: white;
-                            border: none;
-                            border-radius: 12px;
-                            font-size: 1.1rem;
-                            font-weight: 600;
-                            cursor: pointer;
                             box-shadow: 0 4px 15px rgba(107, 114, 128, 0.3);
-                            transition: all 0.3s ease;
-                            text-transform: uppercase;
-                            letter-spacing: 0.5px;
                         " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(107, 114, 128, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(107, 114, 128, 0.3)'">
                             Early Access sichern
                         </button>
@@ -231,43 +438,33 @@
                     </div>
                     
                     <!-- Monthly Plan -->
-                    <div style="background: white; padding: 2.5rem; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 2px solid #3b82f6;">
-                        <div style="position: absolute; top: -10px; right: -10px; background: #3b82f6; color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-weight: bold; font-size: 0.8rem;">
+                    <div class="pricing-card" style="border: 2px solid #3b82f6;">
+                        <div style="position: absolute; top: -8px; right: -8px; background: #3b82f6; color: white; padding: 0.3rem 0.6rem; border-radius: 6px; font-weight: bold; font-size: 0.7rem;">
                             FLEXIBEL
                         </div>
-                        <div style="font-size: 3rem; margin-bottom: 1.5rem;">📅</div>
-                        <h3 style="color: #1f2937; margin-bottom: 1rem; font-size: 1.8rem;">FitFoundry Monthly</h3>
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📅</div>
+                        <h3 class="pricing-title">FitFoundry Monthly</h3>
                         <div style="margin-bottom: 1rem;">
-                            <span style="font-size: 1.2rem; color: #6b7280; text-decoration: line-through;">9,99€</span>
-                            <div style="font-size: 2.5rem; font-weight: bold; color: #3b82f6;">4,99€</div>
+                            <span style="font-size: 1rem; color: #6b7280; text-decoration: line-through;">9,99€</span>
+                            <div class="pricing-price" style="color: #3b82f6;">4,99€</div>
                         </div>
-                        <div style="color: #6b7280; margin-bottom: 2rem;">Pro Monat • Jederzeit kündbar</div>
+                        <div style="color: #6b7280; margin-bottom: 1.5rem;">Pro Monat • Jederzeit kündbar</div>
                         
-                        <div style="text-align: left; margin-bottom: 2rem;">
-                            <h4 style="color: #1f2937; margin-bottom: 1rem;">🚀 Alle Features:</h4>
-                            <ul style="list-style: none; padding: 0; color: #374151; font-size: 0.9rem;">
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid #f3f4f6;">✅ Avatar-System</li>
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid #f3f4f6;">✅ Jackson-Pollock Analyse</li>
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid #f3f4f6;">✅ Apple Watch (Q4 2025)</li>
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid #f3f4f6;">✅ Avatar-Battles</li>
-                                <li style="padding: 0.4rem 0;">✅ Live-Kalorienzähler</li>
+                        <div style="text-align: left; margin-bottom: 1.5rem;">
+                            <h4 style="color: #1f2937; margin-bottom: 0.8rem;">🚀 Alle Features:</h4>
+                            <ul class="feature-list">
+                                <li>✅ Avatar-System</li>
+                                <li>✅ Jackson-Pollock Analyse</li>
+                                <li>✅ Apple Watch (Q4 2025)</li>
+                                <li>✅ Avatar-Battles</li>
+                                <li>✅ Live-Kalorienzähler</li>
                             </ul>
                         </div>
                         
-                        <button style="
-                            width: 100%; 
-                            padding: 1.2rem; 
+                        <button class="pricing-button" style="
                             background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
                             color: white;
-                            border: none;
-                            border-radius: 12px;
-                            font-size: 1.1rem;
-                            font-weight: 600;
-                            cursor: pointer;
                             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-                            transition: all 0.3s ease;
-                            text-transform: uppercase;
-                            letter-spacing: 0.5px;
                         " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(59, 130, 246, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(59, 130, 246, 0.4)'">
                             Early Access sichern
                         </button>
@@ -278,43 +475,34 @@
                     </div>
                     
                     <!-- Lifetime Plan -->
-                    <div style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%); padding: 2.5rem; border-radius: 20px; text-align: center; box-shadow: 0 12px 35px rgba(124, 58, 237, 0.3); border: 3px solid #7c3aed; position: relative; overflow: hidden;">
-                        <div style="position: absolute; top: 15px; right: 15px; background: #22c55e; color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-weight: bold; font-size: 0.8rem; transform: rotate(12deg); z-index: 10;">
+                    <div class="pricing-card" style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%); border: 3px solid #7c3aed; color: white;">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #22c55e; color: white; padding: 0.3rem 0.6rem; border-radius: 6px; font-weight: bold; font-size: 0.7rem; transform: rotate(12deg); z-index: 10;">
                             BESTER WERT
                         </div>
-                        <div style="font-size: 3rem; margin-bottom: 1.5rem;">💎</div>
-                        <h3 style="color: white; margin-bottom: 1rem; font-size: 1.8rem;">FitFoundry Lifetime</h3>
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">💎</div>
+                        <h3 class="pricing-title" style="color: white;">FitFoundry Lifetime</h3>
                         <div style="margin-bottom: 1rem;">
-                            <span style="font-size: 1.2rem; color: rgba(255,255,255,0.7); text-decoration: line-through;">199€</span>
-                            <div style="font-size: 2.5rem; font-weight: bold; color: white;">99€</div>
+                            <span style="font-size: 1rem; color: rgba(255,255,255,0.7); text-decoration: line-through;">199€</span>
+                            <div class="pricing-price" style="color: white;">99€</div>
                         </div>
-                        <div style="color: rgba(255,255,255,0.9); margin-bottom: 2rem;">Einmalzahlung • Für immer</div>
+                        <div style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Einmalzahlung • Für immer</div>
                         
-                        <div style="text-align: left; margin-bottom: 2rem;">
-                            <h4 style="color: white; margin-bottom: 1rem;">🏆 Alle Features + Bonus:</h4>
-                            <ul style="list-style: none; padding: 0; color: white; font-size: 0.9rem;">
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">✅ Avatar-System Premium</li>
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">✅ Jackson-Pollock Analyse</li>
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">✅ Apple Watch Integration</li>
-                                <li style="padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">✅ Alle zukünftigen Features</li>
-                                <li style="padding: 0.4rem 0;">✅ Priority Support</li>
+                        <div style="text-align: left; margin-bottom: 1.5rem;">
+                            <h4 style="color: white; margin-bottom: 0.8rem;">🏆 Alle Features + Bonus:</h4>
+                            <ul class="feature-list" style="color: white;">
+                                <li style="border-bottom: 1px solid rgba(255,255,255,0.2);">✅ Avatar-System Premium</li>
+                                <li style="border-bottom: 1px solid rgba(255,255,255,0.2);">✅ Jackson-Pollock Analyse</li>
+                                <li style="border-bottom: 1px solid rgba(255,255,255,0.2);">✅ Apple Watch Integration</li>
+                                <li style="border-bottom: 1px solid rgba(255,255,255,0.2);">✅ Alle zukünftigen Features</li>
+                                <li>✅ Priority Support</li>
                             </ul>
                         </div>
                         
-                        <button style="
-                            width: 100%; 
-                            padding: 1.2rem; 
+                        <button class="pricing-button" style="
                             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
                             color: #7c3aed;
                             border: 2px solid #7c3aed;
-                            border-radius: 12px;
-                            font-size: 1.1rem;
-                            font-weight: 700;
-                            cursor: pointer;
                             box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
-                            transition: all 0.3s ease;
-                            text-transform: uppercase;
-                            letter-spacing: 0.5px;
                         " onmouseover="this.style.transform='translateY(-2px)'; this.style.background='linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)'; this.style.color='white'; this.style.boxShadow='0 8px 25px rgba(124, 58, 237, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)'; this.style.color='#7c3aed'; this.style.boxShadow='0 4px 15px rgba(124, 58, 237, 0.2)'">
                             Early Access sichern
                         </button>
@@ -333,64 +521,64 @@
                 <h2 class="section-title">Detaillierter Feature-Vergleich</h2>
                 
                 <div class="scroll-fade-in" style="margin-top: 2rem;">
-                    <div class="table-scroll-container" style="overflow-x: auto;">
-                        <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                    <div class="responsive-table-container">
+                        <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden;">
                             <thead style="background: linear-gradient(135deg, #7c3aed, #8b5cf6); color: white;">
                                 <tr>
-                                    <th style="padding: 1.5rem; text-align: left; font-size: 1.1rem;">Feature</th>
-                                    <th style="padding: 1.5rem; text-align: center; font-size: 1.1rem;">🆓 Free</th>
-                                    <th style="padding: 1.5rem; text-align: center; font-size: 1.1rem;">📅 Monthly</th>
-                                    <th style="padding: 1.5rem; text-align: center; font-size: 1.1rem;">💎 Lifetime</th>
+                                    <th style="padding: 1rem; text-align: left; font-size: 1rem;">Feature</th>
+                                    <th style="padding: 1rem; text-align: center; font-size: 1rem;">🆓 Free</th>
+                                    <th style="padding: 1rem; text-align: center; font-size: 1rem;">📅 Monthly</th>
+                                    <th style="padding: 1rem; text-align: center; font-size: 1rem;">💎 Lifetime</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr style="border-bottom: 1px solid #e2e8f0;">
-                                    <td style="padding: 1.2rem; font-weight: 600; color: #1f2937;">Körperfett-Messung</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #f59e0b;">⚠️ Basis (±8%)</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Jackson-Pollock (±3%)</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Jackson-Pollock (±3%)</td>
+                                    <td style="padding: 1rem; font-weight: 600; color: #1f2937;">Körperfett-Messung</td>
+                                    <td style="padding: 1rem; text-align: center; color: #f59e0b;">⚠️ Basis (±8%)</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Jackson-Pollock (±3%)</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Jackson-Pollock (±3%)</td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
-                                    <td style="padding: 1.2rem; font-weight: 600; color: #1f2937;">Avatar-System</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #ef4444;">❌</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Vollzugang</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Premium</td>
+                                    <td style="padding: 1rem; font-weight: 600; color: #1f2937;">Avatar-System</td>
+                                    <td style="padding: 1rem; text-align: center; color: #ef4444;">❌</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Vollzugang</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Premium</td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid #e2e8f0;">
-                                    <td style="padding: 1.2rem; font-weight: 600; color: #1f2937;">Apple Watch Integration</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #ef4444;">❌</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Q4 2025</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Q4 2025</td>
+                                    <td style="padding: 1rem; font-weight: 600; color: #1f2937;">Apple Watch Integration</td>
+                                    <td style="padding: 1rem; text-align: center; color: #ef4444;">❌</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Q4 2025</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Q4 2025</td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
-                                    <td style="padding: 1.2rem; font-weight: 600; color: #1f2937;">Avatar-Battles</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #ef4444;">❌</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Vollzugang</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Vollzugang</td>
+                                    <td style="padding: 1rem; font-weight: 600; color: #1f2937;">Avatar-Battles</td>
+                                    <td style="padding: 1rem; text-align: center; color: #ef4444;">❌</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Vollzugang</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Vollzugang</td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid #e2e8f0;">
-                                    <td style="padding: 1.2rem; font-weight: 600; color: #1f2937;">Live-Kalorienzähler</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #f59e0b;">⚠️ Begrenzt</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Unbegrenzt</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Unbegrenzt</td>
+                                    <td style="padding: 1rem; font-weight: 600; color: #1f2937;">Live-Kalorienzähler</td>
+                                    <td style="padding: 1rem; text-align: center; color: #f59e0b;">⚠️ Begrenzt</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Unbegrenzt</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Unbegrenzt</td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
-                                    <td style="padding: 1.2rem; font-weight: 600; color: #1f2937;">Zukünftige Features</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #f59e0b;">⚠️ Basis-Updates</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Während Abo aktiv</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Alle für immer</td>
+                                    <td style="padding: 1rem; font-weight: 600; color: #1f2937;">Zukünftige Features</td>
+                                    <td style="padding: 1rem; text-align: center; color: #f59e0b;">⚠️ Basis-Updates</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Während Abo aktiv</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Alle für immer</td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid #e2e8f0;">
-                                    <td style="padding: 1.2rem; font-weight: 600; color: #1f2937;">Support</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #f59e0b;">⚠️ Community</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Email Support</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Priority Support</td>
+                                    <td style="padding: 1rem; font-weight: 600; color: #1f2937;">Support</td>
+                                    <td style="padding: 1rem; text-align: center; color: #f59e0b;">⚠️ Community</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Email Support</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">✅ Priority Support</td>
                                 </tr>
                                 <tr style="background: #fafafa;">
-                                    <td style="padding: 1.2rem; font-weight: 600; color: #1f2937;"><strong>Kosten (5 Jahre)</strong></td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">0€</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #f59e0b; font-weight: bold;">299€</td>
-                                    <td style="padding: 1.2rem; text-align: center; color: #22c55e; font-weight: bold;">99€</td>
+                                    <td style="padding: 1rem; font-weight: 600; color: #1f2937;"><strong>Kosten (5 Jahre)</strong></td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">0€</td>
+                                    <td style="padding: 1rem; text-align: center; color: #f59e0b; font-weight: bold;">299€</td>
+                                    <td style="padding: 1rem; text-align: center; color: #22c55e; font-weight: bold;">99€</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -404,15 +592,15 @@
             <div class="container">
                 <h2 class="section-title">Welches Preismodell passt zu dir?</h2>
                 
-                <div class="grid grid-3" style="gap: 2rem; margin-top: 3rem;">
+                <div class="grid-mobile-first" style="margin-top: 2rem;">
                     <!-- Tester -->
-                    <div style="background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center;">
-                        <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔍</div>
-                        <h3 style="color: #22c55e; margin-bottom: 1.5rem;">Du bist Tester</h3>
-                        <p style="color: #374151; margin-bottom: 2rem; line-height: 1.6;">
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔍</div>
+                        <h3 style="color: #22c55e; margin-bottom: 1rem;">Du bist Tester</h3>
+                        <p style="color: #374151; margin-bottom: 1.5rem; line-height: 1.6;">
                             Du willst FitFoundry erst einmal ausprobieren und schauen, ob die App zu dir passt?
                         </p>
-                        <div style="background: #22c55e; color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem;">
+                        <div style="background: #22c55e; color: white; padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
                             <strong>👉 Free Plan</strong>
                         </div>
                         <ul style="list-style: none; padding: 0; color: #6b7280; font-size: 0.9rem;">
@@ -423,13 +611,13 @@
                     </div>
                     
                     <!-- Flexibler -->
-                    <div style="background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center; border: 2px solid #3b82f6;">
-                        <div style="font-size: 3rem; margin-bottom: 1.5rem;">🤸</div>
-                        <h3 style="color: #3b82f6; margin-bottom: 1.5rem;">Du bist flexibel</h3>
-                        <p style="color: #374151; margin-bottom: 2rem; line-height: 1.6;">
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center; border: 2px solid #3b82f6;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤸</div>
+                        <h3 style="color: #3b82f6; margin-bottom: 1rem;">Du bist flexibel</h3>
+                        <p style="color: #374151; margin-bottom: 1.5rem; line-height: 1.6;">
                             Du willst alle Features, aber möchtest flexibel bleiben und jederzeit kündigen können?
                         </p>
-                        <div style="background: #3b82f6; color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem;">
+                        <div style="background: #3b82f6; color: white; padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
                             <strong>👉 Monthly Plan</strong>
                         </div>
                         <ul style="list-style: none; padding: 0; color: #6b7280; font-size: 0.9rem;">
@@ -440,13 +628,13 @@
                     </div>
                     
                     <!-- Langzeit-Nutzer -->
-                    <div style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%); padding: 3rem; border-radius: 16px; box-shadow: 0 12px 35px rgba(124, 58, 237, 0.3); text-align: center; color: white;">
-                        <div style="font-size: 3rem; margin-bottom: 1.5rem;">💎</div>
-                        <h3 style="color: white; margin-bottom: 1.5rem;">Du bist Langzeit-Nutzer</h3>
-                        <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem; line-height: 1.6;">
+                    <div style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 12px 35px rgba(124, 58, 237, 0.3); text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">💎</div>
+                        <h3 style="color: white; margin-bottom: 1rem;">Du bist Langzeit-Nutzer</h3>
+                        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; line-height: 1.6;">
                             Du weißt: Fitness ist ein Marathon. Du willst die beste App für Jahre und dabei sparen?
                         </p>
-                        <div style="background: rgba(255,255,255,0.2); color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem;">
+                        <div style="background: rgba(255,255,255,0.2); color: white; padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
                             <strong>👉 Lifetime Plan</strong>
                         </div>
                         <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
@@ -458,39 +646,33 @@
                 </div>
 
                 <!-- Kostenvergleich über Zeit -->
-                <div class="scroll-fade-in" style="margin-top: 4rem;">
-                    <h3 style="color: #ed553b; margin-bottom: 2rem; text-align: center; font-size: 1.8rem;">📊 Kostenvergleich über Zeit</h3>
+                <div class="scroll-fade-in" style="margin-top: 3rem;">
+                    <h3 style="color: #ed553b; margin-bottom: 1.5rem; text-align: center; font-size: 1.5rem;">📊 Kostenvergleich über Zeit</h3>
                     
-                    <div style="background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-                            <div style="text-align: center;">
-                                <h4 style="color: #1f2937; margin-bottom: 1rem;">Nach 6 Monaten:</h4>
-                                <div style="font-size: 1.2rem;">Free: <strong style="color: #22c55e;">0€</strong></div>
-                                <div style="font-size: 1.2rem;">Monthly: <strong style="color: #3b82f6;">30€</strong></div>
-                                <div style="font-size: 1.2rem;">Lifetime: <strong style="color: #7c3aed;">99€</strong></div>
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                        <div class="grid-mobile-first" style="margin-bottom: 1.5rem; text-align: center;">
+                            <div>
+                                <h4 style="color: #1f2937; margin-bottom: 0.8rem; font-size: 1rem;">Nach 6 Monaten:</h4>
+                                <div style="font-size: 1rem;">Free: <strong style="color: #22c55e;">0€</strong></div>
+                                <div style="font-size: 1rem;">Monthly: <strong style="color: #3b82f6;">30€</strong></div>
+                                <div style="font-size: 1rem;">Lifetime: <strong style="color: #7c3aed;">99€</strong></div>
                             </div>
-                            <div style="text-align: center;">
-                                <h4 style="color: #1f2937; margin-bottom: 1rem;">Nach 1 Jahr:</h4>
-                                <div style="font-size: 1.2rem;">Free: <strong style="color: #22c55e;">0€</strong></div>
-                                <div style="font-size: 1.2rem;">Monthly: <strong style="color: #3b82f6;">60€</strong></div>
-                                <div style="font-size: 1.2rem;">Lifetime: <strong style="color: #7c3aed;">99€</strong></div>
+                            <div>
+                                <h4 style="color: #1f2937; margin-bottom: 0.8rem; font-size: 1rem;">Nach 1 Jahr:</h4>
+                                <div style="font-size: 1rem;">Free: <strong style="color: #22c55e;">0€</strong></div>
+                                <div style="font-size: 1rem;">Monthly: <strong style="color: #3b82f6;">60€</strong></div>
+                                <div style="font-size: 1rem;">Lifetime: <strong style="color: #7c3aed;">99€</strong></div>
                             </div>
-                            <div style="text-align: center;">
-                                <h4 style="color: #1f2937; margin-bottom: 1rem;">Nach 2 Jahren:</h4>
-                                <div style="font-size: 1.2rem;">Free: <strong style="color: #22c55e;">0€</strong></div>
-                                <div style="font-size: 1.2rem;">Monthly: <strong style="color: #f59e0b;">120€</strong></div>
-                                <div style="font-size: 1.2rem;">Lifetime: <strong style="color: #7c3aed;">99€</strong></div>
-                            </div>
-                            <div style="text-align: center;">
-                                <h4 style="color: #1f2937; margin-bottom: 1rem;">Nach 5 Jahren:</h4>
-                                <div style="font-size: 1.2rem;">Free: <strong style="color: #22c55e;">0€</strong></div>
-                                <div style="font-size: 1.2rem;">Monthly: <strong style="color: #ef4444;">300€</strong></div>
-                                <div style="font-size: 1.2rem;">Lifetime: <strong style="color: #7c3aed;">99€</strong></div>
+                            <div>
+                                <h4 style="color: #1f2937; margin-bottom: 0.8rem; font-size: 1rem;">Nach 2 Jahren:</h4>
+                                <div style="font-size: 1rem;">Free: <strong style="color: #22c55e;">0€</strong></div>
+                                <div style="font-size: 1rem;">Monthly: <strong style="color: #f59e0b;">120€</strong></div>
+                                <div style="font-size: 1rem;">Lifetime: <strong style="color: #7c3aed;">99€</strong></div>
                             </div>
                         </div>
                         
-                        <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: white; border-radius: 12px;">
-                            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">💡 Lifetime Break-Even: Nach 20 Monaten</div>
+                        <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: white; border-radius: 12px;">
+                            <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">💡 Lifetime Break-Even: Nach 20 Monaten</div>
                             <div style="font-size: 0.9rem; opacity: 0.9;">Ab Monat 21 sparst du mit Lifetime richtig Geld!</div>
                         </div>
                     </div>
@@ -503,25 +685,25 @@
             <div class="container">
                 <h2 class="section-title">Häufige Fragen zu FitFoundry Preisen</h2>
                 
-                <div class="grid grid-2" style="gap: 2rem; margin-top: 2rem;">
-                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-                        <h3 style="color: #ed553b; margin-bottom: 1rem;">Welcher Plan ist der beste für mich?</h3>
-                        <p style="line-height: 1.6; color: #374151;"><strong>Free:</strong> Perfekt zum Testen. <strong>Monthly (4,99€):</strong> Du willst Flexibilität und alle Features. <strong>Lifetime (99€):</strong> Du planst langfristig (2+ Jahre) und willst die beste Ersparnis.</p>
+                <div class="faq-grid">
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                        <h3 style="color: #ed553b; margin-bottom: 1rem; font-size: 1.1rem;">Welcher Plan ist der beste für mich?</h3>
+                        <p style="line-height: 1.6; color: #374151; font-size: 0.95rem;"><strong>Free:</strong> Perfekt zum Testen. <strong>Monthly (4,99€):</strong> Du willst Flexibilität und alle Features. <strong>Lifetime (99€):</strong> Du planst langfristig (2+ Jahre) und willst die beste Ersparnis.</p>
                     </div>
                     
-                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-                        <h3 style="color: #ed553b; margin-bottom: 1rem;">Kann ich später von Free auf Pro upgraden?</h3>
-                        <p style="line-height: 1.6; color: #374151;">Ja! Du kannst jederzeit upgraden. Alle deine Daten bleiben erhalten und du erhältst sofort Zugang zu allen Pro-Features. Der Early Bird Rabatt gilt nur für kurze Zeit.</p>
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                        <h3 style="color: #ed553b; margin-bottom: 1rem; font-size: 1.1rem;">Kann ich später von Free auf Pro upgraden?</h3>
+                        <p style="line-height: 1.6; color: #374151; font-size: 0.95rem;">Ja! Du kannst jederzeit upgraden. Alle deine Daten bleiben erhalten und du erhältst sofort Zugang zu allen Pro-Features. Der Early Bird Rabatt gilt nur für kurze Zeit.</p>
                     </div>
                     
-                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-                        <h3 style="color: #ed553b; margin-bottom: 1rem;">Gibt es versteckte Kosten?</h3>
-                        <p style="line-height: 1.6; color: #374151;">Absolut nicht! 99€ einmalig ist alles was du zahlst. Keine In-App-Käufe, keine Premium-Features für extra Geld, keine Abo-Fallen. Was du siehst, ist was du bekommst.</p>
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                        <h3 style="color: #ed553b; margin-bottom: 1rem; font-size: 1.1rem;">Gibt es versteckte Kosten?</h3>
+                        <p style="line-height: 1.6; color: #374151; font-size: 0.95rem;">Absolut nicht! 99€ einmalig ist alles was du zahlst. Keine In-App-Käufe, keine Premium-Features für extra Geld, keine Abo-Fallen. Was du siehst, ist was du bekommst.</p>
                     </div>
                     
-                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-                        <h3 style="color: #ed553b; margin-bottom: 1rem;">Was passiert mit meinen Daten bei Nicht-Zahlung?</h3>
-                        <p style="line-height: 1.6; color: #374151;">Nichts! Anders als bei Abo-Apps bleiben deine Daten lokal auf deinem iPhone gespeichert. Du behältst immer die Kontrolle über deine Fitness-Daten, unabhängig vom gewählten Plan.</p>
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                        <h3 style="color: #ed553b; margin-bottom: 1rem; font-size: 1.1rem;">Was passiert mit meinen Daten bei Nicht-Zahlung?</h3>
+                        <p style="line-height: 1.6; color: #374151; font-size: 0.95rem;">Nichts! Anders als bei Abo-Apps bleiben deine Daten lokal auf deinem iPhone gespeichert. Du behältst immer die Kontrolle über deine Fitness-Daten, unabhängig vom gewählten Plan.</p>
                     </div>
                 </div>
             </div>
@@ -532,17 +714,17 @@
             <div class="container">
                 <h2 class="section-title">Mehr über FitFoundry erfahren</h2>
                 <div class="related-grid">
-                    <a href="/fitness-gamification" class="related-card scroll-fade-in">
+                    <a href="/fitness-gamification.html" class="related-card scroll-fade-in">
                         <div class="related-icon">🎮</div>
                         <h4>Avatar-System</h4>
                         <p>Wie das Avatar-System deine Motivation revolutioniert</p>
                     </a>
-                    <a href="/hautfaltenmessung" class="related-card scroll-fade-in">
+                    <a href="/hautfaltenmessung.html" class="related-card scroll-fade-in">
                         <div class="related-icon">🔬</div>
                         <h4>Jackson-Pollock Analyse</h4>
                         <p>Wissenschaftliche Körperfett-Messung mit ±3% Genauigkeit</p>
                     </a>
-                    <a href="/deutsche-fitness-app" class="related-card scroll-fade-in">
+                    <a href="/deutsche-fitness-app.html" class="related-card scroll-fade-in">
                         <div class="related-icon">🛡️</div>
                         <h4>Privacy-First</h4>
                         <p>DSGVO-konforme Speicherung made in Germany</p>
@@ -558,7 +740,7 @@
                     <h2>💰 Early Bird: 50% Rabatt auf alle Pläne</h2>
                     <p>Sichere dir FitFoundry mit 50% Early Bird Rabatt. Monthly nur 4,99€ (statt 9,99€) oder Lifetime nur 99€ (statt 199€)!</p>
                     
-                    <form action="https://formspree.io/f/mldernqz" method="POST" class="early-bird-form">
+                    <form action="https://formspree.io/f/mkgberjk" method="POST" class="early-bird-form">
                         <input type="email" name="email" placeholder="Deine E-Mail für den 50% Early Bird Rabatt" required class="email-input">
                         <input type="hidden" name="source" value="pricing-early-bird">
                         <input type="hidden" name="interest" value="early_bird_all_plans">
@@ -593,17 +775,20 @@
                     <p>Fitness App ohne Abo-Zwang. Transparente Preise, wissenschaftliche Features, faire Konditionen. Einmalzahlung für lebenslangen Zugang zur besten Fitness-App.</p>
                 </div>
                 
-                <div class="footer-links">
+                 <div class="footer-links">
                     <div class="footer-section">
-                        <h4>Pricing & Features</h4>
-                        <a href="/pricing.html">Preise & Pakete</a>
-                        <a href="/fitness-gamification.html">Avatar-System</a>
+                        <h4>Wissenschaftliche Features</h4>
                         <a href="/hautfaltenmessung.html">Jackson-Pollock Analyse</a>
+                        <a href="/apple-watch-trainingsarten.html">Apple Watch Training</a>
+                        <a href="/fitness-gamification.html">Avatar-Gamification</a>
+                        <a href="/live-kalorienzaehler.html">Live-Kalorienzähler</a>
                     </div>
                     
                     <div class="footer-section">
-                        <h4>Support & Info</h4>
-                        <a href="/kontakt.html">Kontakt & Support</a>
+                        <h4>Privacy & Support</h4>
+                        <a href="/deutsche-fitness-app.html">DSGVO-Konformität</a>
+                        <a href="/pricing.html">Preismodell</a>
+                        <a href="/kontakt.html">Kontakt</a>
                         <a href="/impressum.html">Impressum</a>
                         <a href="/datenschutz.html">Datenschutz</a>
                     </div>
@@ -631,9 +816,9 @@
         });
 
         // Track plan selection clicks
-        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+        document.querySelectorAll('.pricing-button').forEach(button => {
             button.addEventListener('click', function() {
-                const planType = this.textContent.includes('kostenlos') ? 'free' : 'pro';
+                const planType = this.closest('.pricing-card').querySelector('.pricing-title').textContent.toLowerCase();
                 if (typeof trackEvent === 'function') {
                     trackEvent('plan_selection', 'Pricing', planType);
                 }
