@@ -8,7 +8,7 @@
     <!-- Homepage - Highest Priority -->
     <url>
         <loc>https://fitfoundry.de/</loc>
-        <lastmod>2025-07-06</lastmod>
+        <lastmod>2025-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -18,10 +18,10 @@
         </image:image>
     </url>
 
-    <!-- TIER 1 Landing Pages - High Priority Keywords (5000+/Monat) -->
+    <!-- TIER 1 Landing Pages - High Priority Keywords -->
     <url>
         <loc>https://fitfoundry.de/apple-watch-trainingsarten.html</loc>
-        <lastmod>2025-07-06</lastmod>
+        <lastmod>2025-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -32,47 +32,10 @@
     </url>
 
     <url>
-        <loc>https://fitfoundry.de/apple-fitness-app.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/apple-fitness-alternative.webp</image:loc>
-            <image:title>Apple Fitness App Alternative - FitFoundry</image:title>
-            <image:caption>Die wissenschaftlich fundierte Alternative zu Apple Fitness+ mit Jackson-Pollock Analyse</image:caption>
-        </image:image>
-    </url>
-
-    <url>
-        <loc>https://fitfoundry.de/fitness-app.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/beste-fitness-app.webp</image:loc>
-            <image:title>Fitness App - Wissenschaftlich fundiert</image:title>
-            <image:caption>Die erste Fitness App mit Jackson-Pollock Körperfett-Analyse und Avatar-Gamification</image:caption>
-        </image:image>
-    </url>
-
-    <url>
-        <loc>https://fitfoundry.de/sport-app.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/sport-app-wissenschaftlich.webp</image:loc>
-            <image:title>Sport App - Wissenschaftlich präzise</image:title>
-            <image:caption>Die Sport App mit wissenschaftlicher Körperfett-Analyse und Gamification-Elementen</image:caption>
-        </image:image>
-    </url>
-
-    <!-- TIER 2 Landing Pages - Medium Priority Keywords (500+/Monat) -->
-    <url>
         <loc>https://fitfoundry.de/hautfaltenmessung.html</loc>
-        <lastmod>2025-07-06</lastmod>
+        <lastmod>2025-07-09</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
         <image:image>
             <image:loc>https://fitfoundry.de/assets/images/jackson-pollock-hautfaltenmessung.webp</image:loc>
             <image:title>Hautfaltenmessung App - Jackson-Pollock Methode</image:title>
@@ -82,9 +45,9 @@
 
     <url>
         <loc>https://fitfoundry.de/deutsche-fitness-app.html</loc>
-        <lastmod>2025-07-06</lastmod>
+        <lastmod>2025-07-09</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
         <image:image>
             <image:loc>https://fitfoundry.de/assets/images/deutsche-fitness-app-dsgvo.webp</image:loc>
             <image:title>Deutsche Fitness App - DSGVO-konform</image:title>
@@ -92,72 +55,12 @@
         </image:image>
     </url>
 
-    <url>
-        <loc>https://fitfoundry.de/fitness-app-iphone.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/fitness-app-iphone-optimiert.webp</image:loc>
-            <image:title>Fitness App iPhone - iOS optimiert</image:title>
-            <image:caption>Speziell für iPhone optimierte Fitness App mit Health Integration und Apple Watch Support</image:caption>
-        </image:image>
-    </url>
-
-    <url>
-        <loc>https://fitfoundry.de/fitness-app-senioren.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/fitness-app-senioren-kostenlos.webp</image:loc>
-            <image:title>Fitness App für Senioren - Kostenlos</image:title>
-            <image:caption>Seniorengerechte Fitness App mit einfacher Bedienung und wissenschaftlich fundiertem Training</image:caption>
-        </image:image>
-    </url>
-
-    <url>
-        <loc>https://fitfoundry.de/beste-kostenlose-fitness-app.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/beste-kostenlose-fitness-app.webp</image:loc>
-            <image:title>Beste kostenlose Fitness App</image:title>
-            <image:caption>Die beste kostenlose Fitness App mit wissenschaftlicher Analyse und Avatar-Gamification</image:caption>
-        </image:image>
-    </url>
-
-    <url>
-        <loc>https://fitfoundry.de/workout-zuhause-app.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/workout-zuhause-app.webp</image:loc>
-            <image:title>Workout zuhause App</image:title>
-            <image:caption>Effektive Home-Workouts mit wissenschaftlicher Körperfett-Analyse und Fortschrittstracking</image:caption>
-        </image:image>
-    </url>
-
-    <url>
-        <loc>https://fitfoundry.de/myfitnesspal-alternative.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/myfitnesspal-alternative-dsgvo.webp</image:loc>
-            <image:title>MyFitnessPal Alternative - DSGVO-konform</image:title>
-            <image:caption>Die deutsche MyFitnessPal Alternative mit Jackson-Pollock Analyse und lokaler Datenspeicherung</image:caption>
-        </image:image>
-    </url>
-
-    <!-- TIER 3 Landing Pages - Nischen Keywords (50+/Monat) -->
+    <!-- TIER 2 Feature Pages - Medium Priority -->
     <url>
         <loc>https://fitfoundry.de/fitness-gamification.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <lastmod>2025-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
         <image:image>
             <image:loc>https://fitfoundry.de/assets/images/fitness-gamification-avatar.webp</image:loc>
             <image:title>Fitness Gamification - Avatar System</image:title>
@@ -166,94 +69,101 @@
     </url>
 
     <url>
-        <loc>https://fitfoundry.de/avatar-fitness-app.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fitfoundry.de/kalorienrechner.html</loc>
+        <lastmod>2025-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
         <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/avatar-fitness-app-rpg.webp</image:loc>
-            <image:title>Avatar Fitness App - RPG Elemente</image:title>
-            <image:caption>Einzigartige Avatar Fitness App mit RPG-Elementen und wissenschaftlicher Fortschrittsmessung</image:caption>
+            <image:loc>https://fitfoundry.de/assets/images/kalorienrechner-personal-metabolic-factor.webp</image:loc>
+            <image:title>Kalorienrechner - Personal Metabolic Factor</image:title>
+            <image:caption>Wissenschaftlicher Kalorienrechner mit Personal Metabolic Factor für individuelle Kalorienwerte</image:caption>
         </image:image>
     </url>
 
     <url>
-        <loc>https://fitfoundry.de/koerperfett-messen-app.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fitfoundry.de/live-kalorienzaehler.html</loc>
+        <lastmod>2025-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
         <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/koerperfett-messen-app-praezise.webp</image:loc>
-            <image:title>Körperfett messen App - Präzise</image:title>
-            <image:caption>Die präziseste Körperfett messen App mit Jackson-Pollock 4-Punkt Hautfaltenmessung</image:caption>
+            <image:loc>https://fitfoundry.de/assets/images/live-kalorienzaehler-echtzeit.webp</image:loc>
+            <image:title>Live Kalorienzähler - Echtzeit Tracking</image:title>
+            <image:caption>Der präziseste Live Kalorienzähler mit Personal Metabolic Factor und wissenschaftlicher Berechnung</image:caption>
         </image:image>
     </url>
 
     <url>
-        <loc>https://fitfoundry.de/fitness-app-ohne-abo.html</loc>
-        <lastmod>2025-07-06</lastmod>
+        <loc>https://fitfoundry.de/koerpertyp-personal-metabolic-factor.html</loc>
+        <lastmod>2025-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://fitfoundry.de/assets/images/koerpertyp-metabolic-og.webp</image:loc>
+            <image:title>Körpertyp bestimmen + Personal Metabolic Factor</image:title>
+            <image:caption>Wissenschaftlicher Test: Bestimme deinen Körpertyp und Personal Metabolic Factor für optimalen Stoffwechsel</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Business Pages -->
+    <url>
+        <loc>https://fitfoundry.de/pricing.html</loc>
+        <lastmod>2025-07-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/fitness-app-ohne-abo-einmalzahlung.webp</image:loc>
-            <image:title>Fitness App ohne Abo</image:title>
-            <image:caption>Die Fitness App ohne Abo-Zwang mit Einmalzahlung oder kostenloser Basis-Version</image:caption>
+            <image:loc>https://fitfoundry.de/assets/images/fitfoundry-pricing.webp</image:loc>
+            <image:title>FitFoundry Preise - Transparente Fitness App Kosten</image:title>
+            <image:caption>Faire Preise für wissenschaftlich fundierte Fitness: Kostenlos bis Lifetime-Lizenz</image:caption>
         </image:image>
     </url>
 
     <url>
-        <loc>https://fitfoundry.de/dsgvo-konforme-fitness-app.html</loc>
-        <lastmod>2025-07-06</lastmod>
+        <loc>https://fitfoundry.de/link.html</loc>
+        <lastmod>2025-07-09</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
         <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/dsgvo-konforme-fitness-app-privacy.webp</image:loc>
-            <image:title>DSGVO-konforme Fitness App</image:title>
-            <image:caption>100% DSGVO-konforme Fitness App mit lokaler Datenspeicherung und Privacy-First Design</image:caption>
+            <image:loc>https://fitfoundry.de/assets/images/link-in-bio-fitfoundry.webp</image:loc>
+            <image:title>FitFoundry Links - Alle wichtigen Seiten</image:title>
+            <image:caption>Zentrale Übersicht aller FitFoundry Links und Features für Social Media</image:caption>
         </image:image>
     </url>
 
-    <!-- Support/Legal Pages - Standard Priority -->
+    <!-- Support Pages -->
     <url>
         <loc>https://fitfoundry.de/kontakt.html</loc>
-        <lastmod>2025-07-06</lastmod>
+        <lastmod>2025-07-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
 
     <url>
-        <loc>https://fitfoundry.de/impressum.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
+        <loc>https://fitfoundry.de/support.html</loc>
+        <lastmod>2025-07-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
     </url>
 
+    <!-- Legal Pages - Lower Priority -->
     <url>
         <loc>https://fitfoundry.de/datenschutz.html</loc>
-        <lastmod>2025-07-06</lastmod>
+        <lastmod>2025-07-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
     </url>
 
-    <!-- Blog/Content Pages (Future) -->
     <url>
-        <loc>https://fitfoundry.de/blog.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
+        <loc>https://fitfoundry.de/agb.html</loc>
+        <lastmod>2025-07-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
     </url>
 
-    <!-- Download/App Store Pages -->
     <url>
-        <loc>https://fitfoundry.de/download.html</loc>
-        <lastmod>2025-07-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-        <image:image>
-            <image:loc>https://fitfoundry.de/assets/images/fitfoundry-app-download.webp</image:loc>
-            <image:title>FitFoundry App Download</image:title>
-            <image:caption>Lade FitFoundry herunter - Die wissenschaftlich fundierte Fitness-Gamification-App</image:caption>
-        </image:image>
+        <loc>https://fitfoundry.de/impressum.html</loc>
+        <lastmod>2025-07-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
 
 </urlset>
