@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>🎉 Anmeldung erfolgreich! | FitFoundry Early Access</title>
+    <meta name="description" content="Herzlichen Glückwunsch! Du bist nun Teil der FitFoundry Early Access Community. Erhalte exklusive Updates zur App mit Jackson-Pollock Analyse.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="author" content="Daniel Lahmer">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="🎉 Willkommen bei FitFoundry Early Access!">
+    <meta property="og:description" content="Du bist nun Teil der exklusiven FitFoundry Community. Erlebe die Fitness-Revolution mit Jackson-Pollock Wissenschaft.">
+    <meta property="og:image" content="https://fitfoundry.de/assets/images/early-bird-success.webp">
+    <meta property="og:url" content="https://fitfoundry.de/early-bird-success.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FitFoundry">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🎉 FitFoundry Early Access - Erfolgreich angemeldet!">
+    <meta name="twitter:description" content="Willkommen in der FitFoundry Community! Die Fitness-Revolution mit Jackson-Pollock Wissenschaft beginnt.">
+    <meta name="twitter:image" content="https://fitfoundry.de/assets/images/early-bird-success.webp">
+    
+    <!-- Apple Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FitFoundry">
+    <meta name="theme-color" content="#ED553B">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fitfoundry.de/early-bird-success.html">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/assets/css/shared-styles.css" as="style">
+    <link rel="preload" href="/assets/js/countdown.js" as="script">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/shared-styles.css">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "FitFoundry Early Access Anmeldung erfolgreich",
+      "description": "Bestätigungsseite für die erfolgreiche Anmeldung zum FitFoundry Early Access Programm",
+      "url": "https://fitfoundry.de/early-bird-success.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://fitfoundry.de/#website"
+      },
+      "about": {
+        "@type": "MobileApplication",
+        "name": "FitFoundry",
+        "applicationCategory": "HealthApplication"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FitFoundry",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fitfoundry.de/assets/images/logo.webp"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        /* =============================================================================
+           SUCCESS PAGE SPECIFIC STYLES
+           ============================================================================= */
+
+        /* Orange Background wie Header - KORRIGIERT */
+        body {
+            background: linear-gradient(135deg, 
+                #1F2937 0%, 
+                #374151 25%, 
+                #ED553B 50%, 
+                #FF6B35 75%, 
+                #FFD700 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+            min-height: 100vh;
+            color: white;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Navigation Links - Schwarz wie in index.html */
+        .main-nav .nav-link {
+            color: #1F2937 !important;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .main-nav .nav-link:hover {
+            color: #ED553B !important;
+        }
+        
+        .main-nav .nav-brand {
+            color: #1F2937 !important;
+            font-weight: 700;
+        }
+        
+        .main-nav .nav-cta {
+background: var(--primary-color);
+color: var(--gray-800);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .main-nav .nav-cta:hover {
+            background: #DC2626;
+            transform: translateY(-1px);
+        }
+        
+        .main-content {
+            background: transparent;
+        }
+        
+        /* Content Section mit transparentem Background */
+        .content-section {
+            background: transparent;
+            padding: 1rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .content-section {
+                padding: 2rem 0;
+            }
+        }
+
+        /* Success Animation */
+        .success-animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10B981, #059669);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            animation: successPulse 2s ease-in-out infinite;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+        
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .success-rings {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #10B981;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: ripple 3s ease-out infinite;
+        }
+        
+        .success-rings:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            animation-delay: 0.5s;
+        }
+        
+        .success-rings:nth-child(3) {
+            width: 140px;
+            height: 140px;
+            animation-delay: 1s;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.6;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Success Content - Mobile First */
+        .success-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .success-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            animation: slideInFromTop 1s ease-out;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        
+        .success-subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            animation: slideInFromBottom 1s ease-out 0.3s both;
+        }
+        
+        /* Desktop Optimierungen */
+        @media (min-width: 768px) {
+            .success-content {
+                padding: 2rem;
+            }
+            
+            .success-title {
+                font-size: 2.5rem;
+            }
+            
+            .success-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Benefits Grid - Mobile First */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        
+        .benefit-card {
+            background: rgba(255,255,255,0.95);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ED553B, #FF6B35);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,1);
+        }
+        
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ED553B;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        
+        .benefit-description {
+            color: #6b7280;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+        
+        /* Desktop Optimierungen */
+        @media (min-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                margin: 3rem 0;
+            }
+            
+            .benefit-card {
+                padding: 2rem;
+            }
+            
+            .benefit-icon {
+                font-size: 2.5rem;
+            }
+            
+            .benefit-title {
+                font-size: 1.2rem;
+            }
+            
+            .benefit-description {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Action Buttons - Mobile First */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            animation: slideInFromBottom 1s ease-out 0.9s both;
+        }
+        
+        .action-buttons .btn-primary {
+            background: #FFD700;
+            color: #1a1a1a;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(255,215,0,0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+            display: inline-block;
+            min-width: 200px;
+        }
+        
+        .action-buttons .btn-primary:hover {
+            background: #FFA500;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255,215,0,0.4);
+        }
+        
+        /* Desktop Optimierungen */
+        @media (min-width: 768px) {
+            .action-buttons {
+                margin: 3rem 0;
+            }
+            
+            .action-buttons .btn-primary {
+                font-size: 1.1rem;
+                padding: 1.2rem 2.5rem;
+            }
+        }
+        
+        /* Social Proof - Mobile First - KORRIGIERT */
+        .social-proof {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            animation: fadeIn 1s ease-out 1.2s both;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .social-proof h3 {
+            color: var(--gold) !important;
+            margin-bottom: 1rem !important;
+            font-size: 1.2rem !important;
+            line-height: 1.3 !important;
+            word-wrap: break-word;
+        }
+        
+        .social-proof p {
+            color: rgba(255,255,255,0.9) !important;
+            margin-bottom: 1.5rem !important;
+            font-size: 0.9rem !important;
+            line-height: 1.5 !important;
+            word-wrap: break-word;
+        }
+        
+        .social-proof-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 0.5rem;
+        }
+        
+        .stat-number {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 0.25rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            word-wrap: break-word;
+        }
+        
+        .stat-label {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            word-wrap: break-word;
+        }
+        
+        /* Desktop Optimierungen */
+        @media (min-width: 768px) {
+            .social-proof {
+                padding: 2rem;
+                margin: 3rem 0;
+            }
+            
+            .social-proof h3 {
+                font-size: 1.5rem !important;
+            }
+            
+            .social-proof p {
+                font-size: 1rem !important;
+            }
+            
+            .social-proof-stats {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Sehr kleine Screens */
+        @media (max-width: 480px) {
+            .social-proof {
+                padding: 1rem;
+                margin: 1.5rem 0;
+            }
+            
+            .social-proof h3 {
+                font-size: 1.1rem !important;
+            }
+            
+            .social-proof p {
+                font-size: 0.85rem !important;
+            }
+            
+            .social-proof-stats {
+                gap: 0.5rem;
+            }
+            
+            .stat-number {
+                font-size: 1.1rem;
+            }
+            
+            .stat-label {
+                font-size: 0.65rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Mobile Optimierung - Allgemein */
+        @media (max-width: 768px) {
+            .success-title {
+                font-size: 1.6rem;
+                line-height: 1.2;
+            }
+            
+            .success-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .benefits-grid {
+                margin: 1.5rem 0;
+                gap: 1rem;
+            }
+            
+            .benefit-card {
+                padding: 1.25rem;
+            }
+            
+            .benefit-title {
+                font-size: 1rem;
+            }
+            
+            .benefit-description {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+            
+            .social-proof {
+                padding: 1.25rem;
+                margin: 1.5rem 0;
+            }
+            
+            .social-proof h3 {
+                font-size: 1.1rem;
+            }
+            
+            .social-proof p {
+                font-size: 0.85rem;
+            }
+            
+            .social-proof-stats {
+                gap: 0.75rem;
+            }
+            
+            .stat-number {
+                font-size: 1.3rem;
+            }
+            
+            .stat-label {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-consent" style="display: none;">
+        <div class="cookie-content">
+            <p>🍪 Wir nutzen Google Analytics um unsere Website zu verbessern. 
+            <a href="/datenschutz.html" class="cookie-link">Datenschutz</a></p>
+            <div class="cookie-buttons">
+                <button onclick="acceptCookies()" class="btn-accept">Akzeptieren</button>
+                <button onclick="declineCookies()" class="btn-decline">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/assets/images/logo.webp" alt="FitFoundry Logo" width="40" height="40">
+                <span class="nav-brand">FitFoundry</span>
+            </a>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/kalorienrechner.html" class="nav-link">Kalorienrechner</a>
+                <a href="/hautfaltenmessung.html" class="nav-link">Körperfett</a>
+                <a href="/live-kalorienzaehler.html" class="nav-link">Kalorien</a>
+                <a href="/pricing.html" class="nav-link">Preise</a>
+                <a href="/#early-bird" class="nav-cta">Early Access</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Success Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="success-content">
+                    <!-- Success Animation -->
+                    <div class="success-animation">
+                        <div class="success-rings"></div>
+                        <div class="success-rings"></div>
+                        <div class="success-rings"></div>
+                        <div class="success-checkmark">✓</div>
+                    </div>
+                    
+                    <!-- Success Message -->
+                    <h1 class="success-title">🎉 Willkommen bei FitFoundry!</h1>
+                    <p class="success-subtitle">
+                        <strong>Herzlichen Glückwunsch!</strong> Du bist nun Teil der exklusiven FitFoundry Community. 
+                        Du erhältst in Kürze eine Bestätigungs-E-Mail mit allen Details.
+                    </p>
+                    
+                    <!-- Launch Countdown -->
+                    <div id="countdown-success" style="margin: 3rem 0;"></div>
+                    
+                    <!-- Benefits Grid -->
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">💰</div>
+                            <h3 class="benefit-title">50% Early Bird Rabatt</h3>
+                            <p class="benefit-description">
+                                Sichere dir 50% Rabatt auf alle FitFoundry Pläne - nur für Early Access Mitglieder!
+                            </p>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🔬</div>
+                            <h3 class="benefit-title">Jackson-Pollock App</h3>
+                            <p class="benefit-description">
+                                Weltweit erste mobile App mit echter Hautfaltenmessung (±3-4% Genauigkeit).
+                            </p>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🎮</div>
+                            <h3 class="benefit-title">Avatar-System Beta</h3>
+                            <p class="benefit-description">
+                                Exklusiver Zugang zum Avatar-System, das mit deinen echten Fortschritten wächst.
+                            </p>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <div class="benefit-icon">⌚</div>
+                            <h3 class="benefit-title">Apple Watch Preview</h3>
+                            <p class="benefit-description">
+                                Erste Einblicke in die Apple Watch Integration mit wissenschaftlichen Features.
+                            </p>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🇩🇪</div>
+                            <h3 class="benefit-title">DSGVO-Konform</h3>
+                            <p class="benefit-description">
+                                100% deutsche Entwicklung mit lokaler Datenspeicherung - deine Daten bleiben privat!
+                            </p>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <div class="benefit-icon">📧</div>
+                            <h3 class="benefit-title">Exklusive Updates</h3>
+                            <p class="benefit-description">
+                                Regelmäßige Updates über App-Entwicklung und wissenschaftliche Erkenntnisse.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <a href="/" class="btn-primary">
+                            🏠 Zurück zur Startseite
+                        </a>
+                    </div>
+                    
+                    <!-- Social Proof -->
+                    <div class="social-proof">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+                            🚀 Du bist Teil einer wachsenden Community
+                        </h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                            Über <strong>5.000+ Fitness-Enthusiasten</strong> warten bereits auf die FitFoundry App-Revolution!
+                        </p>
+                        
+                        <div class="social-proof-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">5.000+</div>
+                                <div class="stat-label">Early Birds</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">±3-4%</div>
+                                <div class="stat-label">Genauigkeit</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">DSGVO-Konform</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">1978</div>
+                                <div class="stat-label">Wissenschaft</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Next Steps -->
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 1.5rem; margin: 2rem 0; text-align: left; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+                        <h3 style="color: #FFD700; margin-bottom: 1rem; font-size: 1.2rem;">📋 Was passiert als nächstes?</h3>
+                        <ul style="color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0; padding-left: 1.5rem; font-size: 0.9rem;">
+                            <li><strong>Bestätigungs-E-Mail:</strong> Du erhältst in wenigen Minuten eine Bestätigung</li>
+                            <li><strong>Regelmäßige Updates:</strong> Wir informieren dich über wichtige Meilensteine</li>
+                            <li><strong>Beta-Zugang:</strong> Als Early Bird bekommst du exklusiven Zugang</li>
+                            <li><strong>Launch-Info:</strong> Du bist der Erste, der über den Launch erfährt</li>
+                            <li><strong>Wissenschaft:</strong> Exklusive Insights und Behind-the-Scenes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/analytics-consent.js"></script>
+    <script src="/assets/js/navigation.js"></script>
+    <script src="/assets/js/countdown.js"></script>
+    <script src="/assets/js/footer-loader.js"></script>
+    
+    <!-- Success Page JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track successful form submission
+            if (typeof trackEvent === 'function') {
+                trackEvent('early_bird_success', 'Form_Completion', 'success_page_viewed');
+            }
+            
+            // Add confetti effect (optional)
+            setTimeout(() => {
+                if (typeof createConfetti === 'function') {
+                    createConfetti();
+                }
+            }, 1000);
+            
+            // Track page engagement
+            let engagementTime = 0;
+            const engagementInterval = setInterval(() => {
+                engagementTime += 5;
+                if (engagementTime === 30) {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('success_page_engagement', 'User_Behavior', '30_seconds');
+                    }
+                } else if (engagementTime === 60) {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('success_page_engagement', 'User_Behavior', '1_minute');
+                    }
+                    clearInterval(engagementInterval);
+                }
+            }, 5000);
+            
+            // Track button clicks
+            document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+                button.addEventListener('click', function() {
+                    const buttonText = this.textContent.trim();
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('success_page_cta', 'Navigation', buttonText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

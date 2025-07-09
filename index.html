@@ -251,8 +251,7 @@
                     </div>
                 </div>
                 <div class="hero-visual scroll-fade-in">
-                    <img src="./assets/images/icon-512.webp" 
-                         alt="FitFoundry App Interface mit Avatar-System" class="hero-img">
+                  <div id="countdown-homepage"></div>
                 </div>
             </div>
         </section>
@@ -463,7 +462,8 @@
                         <input type="hidden" name="landing_page" value="homepage">
                         <input type="hidden" name="source" value="homepage_hub">
                         <input type="hidden" name="interest" value="complete_fitfoundry_experience">
-                        <button type="submit" class="btn-submit">Early Access sichern</button>
+    			<input type="hidden" name="_next" value="https://fitfoundry.de/early-bird-success.html">
+   			<button type="submit" class="btn-submit">Early Access sichern 🎯</button>
                     </form>
                     
                     <div class="early-bird-benefits">
@@ -482,52 +482,14 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="/" class="footer-brand-link">
-                        <img src="/assets/images/logo.webp" alt="FitFoundry Logo" width="50" height="50">
-                        <span>FitFoundry</span>
-                    </a>
-                    <p>Die erste wissenschaftlich fundierte Fitness-Gamification-App der Welt. Jackson-Pollock Körperfett-Analyse mit ±3-4% Genauigkeit, Avatar-System und Apple Watch Integration Q4 2025.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Wissenschaftliche Features</h4>
-                        <a href="/hautfaltenmessung.html">Jackson-Pollock Analyse</a>
-                        <a href="/apple-watch-trainingsarten.html">Apple Watch Training</a>
-                        <a href="/fitness-gamification.html">Avatar-Gamification</a>
-                        <a href="/live-kalorienzaehler.html">Live-Kalorienzähler</a>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Privacy & Support</h4>
-                        <a href="/deutsche-fitness-app.html">DSGVO-Konformität</a>
-                        <a href="/pricing.html">Preismodell</a>
-                        <a href="/kontakt.html">Kontakt</a>
-                        <a href="/agb.html">AGB</a>
-                        <a href="/impressum.html">Impressum</a>
-                        <a href="/datenschutz.html">Datenschutz</a>
-			<a href="/support.html">Support</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 FitFoundry. Avatar-System basierend auf Jackson-Pollock Wissenschaft seit 1978" → korrekt!
+<div id="footer-placeholder"></div>
 
- Made in Germany mit ❤️ für deine Gesundheit.</p>
-            </div>
-        </div>
-    </footer>
 
     <!-- JavaScript -->
     <script src="/assets/js/analytics-consent.js"></script>
     <script src="/assets/js/navigation.js"></script>
     <script src="/assets/js/lazy-load.js"></script>
+    <script src="/assets/js/footer-loader.js"></script>
     
     <!-- Homepage specific JavaScript -->
     <script>
@@ -570,5 +532,6 @@
             }
         });
     </script>
+<script src="/assets/js/countdown.js"></script>
 </body>
 </html>
