@@ -688,6 +688,23 @@
 
     <script>
         // Deutsche Fitness App specific Analytics Tracking
+
+<script>
+// Analytics Debug für Deutsche Fitness App (ergänze am Anfang vom existierenden Script)
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_loaded_debug', {
+                'event_category': 'Debug',
+                'event_label': 'deutsche_fitness_app_debug_success'
+            });
+            console.log('✅ Analytics funktioniert auf deutsche-fitness-app.html');
+        } else {
+            console.error('❌ Analytics nicht geladen auf deutsche-fitness-app.html');
+        }
+    }, 2000);
+});
+
         document.addEventListener('DOMContentLoaded', function() {
             // Track page view
             if (typeof trackEvent === 'function') {

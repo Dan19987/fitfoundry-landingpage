@@ -743,5 +743,62 @@
     <script src="/assets/js/lazy-load.js"></script>
     <script src="/assets/js/audio-demo.js"></script>
     <script src="/assets/js/footer-loader.js"></script>
+
+<script>
+// Analytics Debug & Tracking für Hautfaltenmessung
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_loaded_debug', {
+                'event_category': 'Debug',
+                'event_label': 'hautfaltenmessung_debug_success'
+            });
+            console.log('✅ Analytics funktioniert auf hautfaltenmessung.html');
+        } else {
+            console.error('❌ Analytics nicht geladen auf hautfaltenmessung.html');
+        }
+    }, 2000);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Track page view
+    if (typeof trackEvent === 'function') {
+        trackEvent('hautfaltenmessung_page_view', 'Landing_Pages');
+    }
+    
+    // Track wichtige Sektionen
+    document.querySelectorAll('h2').forEach(heading => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const headingText = entry.target.textContent.toLowerCase();
+                    
+                    if (headingText.includes('jackson-pollock') || headingText.includes('wissenschaft')) {
+                        if (typeof trackEvent === 'function') {
+                            trackEvent('hautfaltenmessung_wissenschaft_viewed', 'Content_Engagement');
+                        }
+                    } else if (headingText.includes('anleitung') || headingText.includes('schritt')) {
+                        if (typeof trackEvent === 'function') {
+                            trackEvent('hautfaltenmessung_anleitung_viewed', 'Content_Engagement');
+                        }
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(heading);
+    });
+    
+    // Track Early Bird Form
+    document.querySelectorAll('form[action*="formspree"]').forEach(form => {
+        form.addEventListener('submit', function() {
+            if (typeof trackEvent === 'function') {
+                trackEvent('hautfaltenmessung_early_bird_submit', 'Conversion');
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
