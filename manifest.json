@@ -74,7 +74,7 @@
       "name": "Apple Watch Trainingsarten",
       "short_name": "Apple Watch",
       "description": "Alle Apple Watch Trainingsarten entdecken",
-      "url": "/apple-watch-trainingsarten",
+      "url": "/apple-watch-trainingsarten.html",
       "icons": [
         {
           "src": "/assets/images/apple-watch-shortcut.png",
@@ -86,7 +86,7 @@
       "name": "Körperfett-Analyse",
       "short_name": "Jackson-Pollock",
       "description": "Wissenschaftliche Hautfaltenmessung",
-      "url": "/hautfaltenmessung",
+      "url": "/hautfaltenmessung.html",
       "icons": [
         {
           "src": "/assets/images/hautfaltenmessung-shortcut.png",
@@ -98,7 +98,7 @@
       "name": "Deutsche Privacy",
       "short_name": "DSGVO",
       "description": "DSGVO-konforme Fitness App",
-      "url": "/deutsche-fitness-app",
+      "url": "/deutsche-fitness-app.html",
       "icons": [
         {
           "src": "/assets/images/privacy-shortcut.png",
@@ -148,7 +148,7 @@
   
   "protocol_handlers": [
     {
-      "protocol": "fitfoundry",
+      "protocol": "web+fitfoundry",
       "url": "/?protocol=%s"
     }
   ]
