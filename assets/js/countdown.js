@@ -1,5 +1,5 @@
 // =============================================================================
-// FITFOUNDRY APP LAUNCH COUNTDOWN
+// FITFOUNDRY APP LAUNCH COUNTDOWN - MONATE & TAGE VERSION
 // =============================================================================
 
 class FitFoundryCountdown {
@@ -33,30 +33,20 @@ class FitFoundryCountdown {
                 
                 <div class="countdown-display">
                     <div class="countdown-item">
-                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-number" id="months">0</div>
+                        <div class="countdown-label">Monate</div>
+                    </div>
+                    <div class="countdown-separator">+</div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">0</div>
                         <div class="countdown-label">Tage</div>
-                    </div>
-                    <div class="countdown-separator">:</div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="hours">00</div>
-                        <div class="countdown-label">Stunden</div>
-                    </div>
-                    <div class="countdown-separator">:</div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="minutes">00</div>
-                        <div class="countdown-label">Minuten</div>
-                    </div>
-                    <div class="countdown-separator">:</div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="seconds">00</div>
-                        <div class="countdown-label">Sekunden</div>
                     </div>
                 </div>
                 
                 <div class="countdown-footer">
                     <p class="countdown-note">
-                        ⚡ <strong>Early Bird Rabatt:</strong> Nur noch wenige Tage! 
-                        <span class="highlight-gold">50% Rabatt</span> sichern
+⚡ <strong>Herbst 2025:</strong> Jetzt anmelden, um nichts zu verpassen! 
+<span class="highlight-gold">Erinnerung zum Launch</span> garantiert ;)
                     </p>
                 </div>
             </div>
@@ -64,38 +54,57 @@ class FitFoundryCountdown {
     }
     
     updateCountdown() {
-        const now = new Date().getTime();
-        const distance = this.targetDate.getTime() - now;
+        const now = new Date();
         
-        if (distance < 0) {
+        if (now >= this.targetDate) {
             this.handleExpired();
             return;
         }
         
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Berechne Monate und Tage
+        const { months, days } = this.calculateMonthsAndDays(now, this.targetDate);
         
-        // Update display with leading zeros
-        document.getElementById('days').textContent = days.toString().padStart(2, '0');
-        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        // Update display
+        document.getElementById('months').textContent = months;
+        document.getElementById('days').textContent = days;
         
-        // Add pulsing effect when time is running low
-        if (days <= 7) {
+        // Add urgent styling when less than 1 month
+        if (months === 0 && days <= 30) {
             this.container.classList.add('countdown-urgent');
         }
         
         // Track countdown milestones
-        this.trackMilestones(days, hours, minutes, seconds);
+        this.trackMilestones(months, days);
+    }
+    
+    calculateMonthsAndDays(startDate, endDate) {
+        let months = 0;
+        let currentDate = new Date(startDate);
+        
+        // Count full months
+        while (currentDate.getMonth() !== endDate.getMonth() || 
+               currentDate.getFullYear() !== endDate.getFullYear()) {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            if (currentDate <= endDate) {
+                months++;
+            } else {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                break;
+            }
+        }
+        
+        // Calculate remaining days
+        const timeDiff = endDate.getTime() - currentDate.getTime();
+        const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+        
+        return { months, days };
     }
     
     startCountdown() {
+        // Update every hour (weniger frequent da nur Monate/Tage)
         this.interval = setInterval(() => {
             this.updateCountdown();
-        }, 1000); // Update every second for seconds display
+        }, 1000 * 60 * 60); // Every hour
         
         // Update immediately
         this.updateCountdown();
@@ -137,17 +146,25 @@ class FitFoundryCountdown {
         }
     }
     
-    trackMilestones(days, hours, minutes, seconds) {
-        // Track significant milestones
-        const milestones = [30, 14, 7, 3, 1];
-        
-        milestones.forEach(milestone => {
-            if (days === milestone && hours === 0 && minutes === 0 && seconds === 0) {
-                if (typeof trackEvent === 'function') {
-                    trackEvent('countdown_milestone', 'App_Launch', `${milestone}_days_remaining`);
+    trackMilestones(months, days) {
+        // Track significant milestones for months/days
+        if (days === 0) { // Volle Monate
+            const milestones = [6, 3, 2, 1];
+            milestones.forEach(milestone => {
+                if (months === milestone) {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('countdown_milestone', 'App_Launch', `${milestone}_months_remaining`);
+                    }
                 }
+            });
+        }
+        
+        // Track when less than 30 days
+        if (months === 0 && [30, 14, 7, 1].includes(days)) {
+            if (typeof trackEvent === 'function') {
+                trackEvent('countdown_milestone', 'App_Launch', `${days}_days_remaining`);
             }
-        });
+        }
     }
     
     destroy() {
@@ -158,7 +175,7 @@ class FitFoundryCountdown {
 }
 
 // =============================================================================
-// COUNTDOWN STYLES (Injected via JavaScript)
+// COUNTDOWN STYLES (Angepasst für Monate/Tage)
 // =============================================================================
 
 function injectCountdownStyles() {
@@ -215,7 +232,7 @@ function injectCountdownStyles() {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: 2rem;
             margin: 2rem 0;
             position: relative;
             z-index: 2;
@@ -225,15 +242,15 @@ function injectCountdownStyles() {
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 60px;
+            min-width: 100px;
         }
         
         .countdown-number {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             font-weight: 900;
             color: #FFD700;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(135deg, #FFD700, #FFA500);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -241,15 +258,15 @@ function injectCountdownStyles() {
         }
         
         .countdown-label {
-            font-size: 0.8rem;
+            font-size: 1rem;
             color: rgba(255,255,255,0.8);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             font-weight: 600;
         }
         
         .countdown-separator {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #FFD700;
             font-weight: 900;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -303,7 +320,7 @@ function injectCountdownStyles() {
         }
         
         .countdown-expired .countdown-number {
-            font-size: 3rem;
+            font-size: 4rem;
             animation: bounce 2s ease-in-out infinite;
         }
         
@@ -327,40 +344,30 @@ function injectCountdownStyles() {
             }
             
             .countdown-display {
-                gap: 0.3rem;
+                gap: 1rem;
             }
             
             .countdown-item {
-                min-width: 50px;
+                min-width: 80px;
             }
             
             .countdown-number {
-                font-size: 1.6rem;
+                font-size: 2.5rem;
             }
             
             .countdown-label {
-                font-size: 0.6rem;
+                font-size: 0.8rem;
             }
             
             .countdown-separator {
-                font-size: 1.2rem;
-            }
-            
-            .countdown-note {
-                font-size: 0.8rem;
+                font-size: 1.8rem;
             }
         }
         
         @media (max-width: 480px) {
             .countdown-display {
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                justify-content: center;
-            }
-            
-            .countdown-item {
-                min-width: 70px;
-                margin: 0.2rem;
+                flex-direction: column;
+                gap: 1rem;
             }
             
             .countdown-separator {
@@ -368,11 +375,11 @@ function injectCountdownStyles() {
             }
             
             .countdown-number {
-                font-size: 1.8rem;
+                font-size: 3rem;
             }
             
             .countdown-label {
-                font-size: 0.7rem;
+                font-size: 0.9rem;
             }
         }
         </style>
@@ -390,8 +397,8 @@ document.addEventListener('DOMContentLoaded', function() {
     injectCountdownStyles();
     
     // Initialize countdown
-    // Target: 5. August 2025, 00:00:00 (German Time)
-    const targetDate = '2025-08-19T00:00:00';
+    // Target: 21. November 2025, 00:00:00
+    const targetDate = '2025-11-21T00:00:00';
     
     // Find countdown containers and initialize
     const countdownContainers = document.querySelectorAll('[id^="countdown-"]');
