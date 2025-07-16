@@ -650,35 +650,75 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Alle Karussell-Slides finden
     const carouselSlides = document.querySelectorAll('.carousel-slide');
     const mainMockup = document.querySelector('.mockup-frame img');
     
-    // Klick-Event für jedes Karussell-Bild
-    carouselSlides.forEach(slide => {
+    if (!carouselSlides.length || !mainMockup) return;
+    
+    let currentIndex = 0;
+    let intervalId;
+    
+    // Funktion zum Wechseln des Bildes
+    function changeSlide(index) {
+        // Aktive Klasse entfernen
+        carouselSlides.forEach(slide => slide.classList.remove('active'));
+        
+        // Neues Bild setzen
+        const currentSlide = carouselSlides[index];
+        currentSlide.classList.add('active');
+        
+        // Hauptbild mit Fade-Effekt wechseln
+        mainMockup.style.opacity = '0.7';
+        setTimeout(() => {
+            mainMockup.src = currentSlide.src;
+            mainMockup.alt = currentSlide.alt;
+            mainMockup.style.opacity = '1';
+        }, 200);
+    }
+    
+    // Automatisches Karussell starten
+    function startCarousel() {
+        intervalId = setInterval(() => {
+            currentIndex = (currentIndex + 1) % carouselSlides.length;
+            changeSlide(currentIndex);
+        }, 3000); // Alle 3 Sekunden wechseln
+    }
+    
+    // Karussell stoppen
+    function stopCarousel() {
+        clearInterval(intervalId);
+    }
+    
+    // Klick-Events für manuelle Steuerung
+    carouselSlides.forEach((slide, index) => {
         slide.addEventListener('click', function() {
-            // Hauptbild ersetzen
-            mainMockup.src = this.src;
-            mainMockup.alt = this.alt;
-            
-            // Aktive Klasse entfernen
-            document.querySelectorAll('.carousel-slide').forEach(s => s.classList.remove('active'));
-            
-            // Aktive Klasse hinzufügen
-            this.classList.add('active');
-            
-            // Smooth fade-in Effekt
-            mainMockup.style.opacity = '0.7';
-            setTimeout(() => {
-                mainMockup.style.opacity = '1';
-            }, 150);
+            stopCarousel();
+            currentIndex = index;
+            changeSlide(currentIndex);
+            // Nach 5 Sekunden wieder automatisch starten
+            setTimeout(startCarousel, 5000);
         });
     });
     
-    // Erstes Bild als aktiv markieren
-    if (carouselSlides.length > 0) {
-        carouselSlides[0].classList.add('active');
+    // Hover-Events für Pause/Resume
+    const mockupShowcase = document.querySelector('.mockup-showcase');
+    if (mockupShowcase) {
+        mockupShowcase.addEventListener('mouseenter', stopCarousel);
+        mockupShowcase.addEventListener('mouseleave', startCarousel);
     }
+    
+    // Erstes Bild als aktiv setzen und Karussell starten
+    changeSlide(0);
+    startCarousel();
+    
+    // Karussell stoppen wenn Seite nicht sichtbar (Performance)
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            stopCarousel();
+        } else {
+            startCarousel();
+        }
+    });
 });
 </script>
 

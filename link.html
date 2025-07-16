@@ -726,7 +726,108 @@
             opacity: 1;
             transform: translateY(0);
         }
-    </style>
+   
+
+/* MOCKUP SECTION */
+.mockup-showcase {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.mockup-frame {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 2.5rem;
+    padding: 1rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    margin-bottom: 2rem;
+}
+
+.mockup-frame::before {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 6px;
+    background: #333;
+    border-radius: 3px;
+    z-index: 2;
+}
+
+.mockup-frame img {
+    max-width: 240px;
+    width: 100%;
+    border-radius: 1.5rem;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.1);
+    transition: opacity 0.3s ease;
+    display: block;
+}
+
+.mockup-carousel {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.mockup-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    width: max-content;
+    animation: infiniteScroll 20s linear infinite;
+}
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.carousel-slide {
+    width: 100px;
+    border-radius: 1rem;
+    border: 2px solid #f4f4f4;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-slide:hover {
+    transform: scale(1.05);
+    border-color: #FFD700;
+}
+
+.carousel-slide.active {
+    border-color: #FFD700;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+@keyframes infiniteScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-108px * 8)); }
+}
+</style>
 </head>
 
 <body>
@@ -760,12 +861,12 @@
         <div class="stats-banner animate-on-scroll">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number" data-target="4247">0</div>
-                    <div class="stat-label">Early Access User</div>
+                    <div class="stat-number" data-target="150">0</div>
+                    <div class="stat-label">Übungen +</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">±3%</div>
-                    <div class="stat-label">Körperfett-Genauigkeit</div>
+    <div class="stat-number">100%</div>
+    <div class="stat-label">Wissenschaftlich</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">100%</div>
@@ -782,18 +883,32 @@
         <!-- Main CTA -->
         <div class="main-cta animate-on-scroll">
             <div class="cta-content">
-                <div class="cta-title">🚀 50% Early Bird Rabatt sichern!</div>
-                <div class="cta-subtitle">Jackson-Pollock Analyse • Avatar-System • Made in Germany</div>
+                <div class="cta-title">🚀 Direkte Info bei App-Launch!</div>
+                <div class="cta-subtitle">Avatar-System • Made in Germany</div>
                 <button class="cta-button" onclick="location.href='/#early-bird'">
                     Early Access sichern 🔥
                 </button>
             </div>
         </div>
 
-<!-- COUNTDOWN SECTION - NEU HINZUGEFÜGT -->
-<section class="countdown-section animate-on-scroll">
-    <div id="countdown-link"></div>
-</section>
+<!-- MOCKUP SHOWCASE -->
+<div class="mockup-showcase scroll-fade-in">
+    <div class="mockup-frame">
+        <img src="/assets/images/screen1.webp" alt="FitFoundry App Mockup" loading="lazy">
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-track" id="carousel-track">
+            <img src="/assets/images/screen1.webp" alt="FitFoundry App" class="carousel-slide">
+            <img src="/assets/images/screen2.webp" alt="Tutorial" class="carousel-slide">
+            <img src="/assets/images/screen3.webp" alt="Einleitung" class="carousel-slide">
+            <img src="/assets/images/screen4.webp" alt="Bibliothek" class="carousel-slide">
+            <img src="/assets/images/screen5.webp" alt="Workout" class="carousel-slide">
+            <img src="/assets/images/screen6.webp" alt="Charakter" class="carousel-slide">
+            <img src="/assets/images/screen7.webp" alt="Profil" class="carousel-slide">
+            <img src="/assets/images/screen8.webp" alt="AudioCoach" class="carousel-slide">
+        </div>
+    </div>
+</div>
 
         <!-- Feature Links -->
         <section class="links-section">
@@ -803,8 +918,8 @@
                     <div class="link-content">
                         <div class="link-icon">🔬</div>
                         <div class="link-text">
-                            <div class="link-title">Jackson-Pollock Analyse</div>
-                            <div class="link-description">±3-4% Genauigkeit • Peer-reviewed Wissenschaft</div>
+                            <div class="link-title">Körperfett-Analyse</div>
+                            <div class="link-description">Wissenschaftlich fundiert • präzise Wissenschaft</div>
                         </div>
                     </div>
                 </a>
@@ -1143,6 +1258,45 @@
             e.preventDefault();
         });
     </script>
-<script src="/assets/js/countdown.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('#carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const mainMockup = document.querySelector('.mockup-frame img');
+    
+    if (!track || !slides.length || !mainMockup) return;
+    
+    // Slides 3x duplizieren für wirklich endlosen Effekt
+    const originalSlides = Array.from(slides);
+    
+    for (let i = 0; i < 3; i++) {
+        originalSlides.forEach(slide => {
+            const clone = slide.cloneNode(true);
+            track.appendChild(clone);
+        });
+    }
+    
+    // Klick-Funktionalität für alle Slides
+    track.addEventListener('click', function(e) {
+        if (e.target.classList.contains('carousel-slide')) {
+            document.querySelectorAll('.carousel-slide').forEach(s => s.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            mainMockup.style.opacity = '0.7';
+            setTimeout(() => {
+                mainMockup.src = e.target.src;
+                mainMockup.alt = e.target.alt;
+                mainMockup.style.opacity = '1';
+            }, 150);
+        }
+    });
+    
+    // Erstes Bild aktivieren
+    if (slides[0]) {
+        slides[0].classList.add('active');
+    }
+});
+</script>
+
 </body>
 </html>
