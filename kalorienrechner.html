@@ -993,11 +993,17 @@
                         </div>
                     </div>
                 </div>
+        <!-- NEUER "Mehr Features" Button -->
+        <div class="show-more-features scroll-fade-in" style="text-align: center; margin: 2rem 0;">
+            <button id="toggleFeatures" class="btn-primary">
+                📋 Alle Features anzeigen (7 weitere)
+            </button>
+        </div>
             </div>
         </section>
 
         <!-- Features Grid -->
-        <section class="features-grid">
+        <section class="features-grid feature-card-hidden">
             <div class="container">
                 <h2 class="section-title">Warum FitFoundry's Kalorienrechner überlegen ist</h2>
                 <div class="features-container">
@@ -1026,7 +1032,7 @@
         </section>
 
         <!-- Related Pages -->
-        <section class="related-pages scroll-fade-in">
+        <section class="related-pages feature-card-hidden scroll-fade-in">
             <div class="container">
                 <h2 class="section-title">Ergänze deinen Kalorienrechner</h2>
                 <div class="related-grid">
@@ -1053,29 +1059,28 @@
         <section class="early-bird scroll-fade-in" id="early-bird">
             <div class="container">
                 <div class="early-bird-content">
-                    <h2>🧮 Early Bird: Kalorienrechner mit Personal Metabolic Factor</h2>
-                    <p>Sei unter den ersten, die den präzisesten Kalorienrechner der Welt testen. Mit Personal Metabolic Factor, Live-Integration und 50% Launch-Rabatt!</p>
+                   <h2>🚀 Sichere dir den Launch-Preis</h2>
+<p>Erfahre sofort, wenn FitFoundry im App Store verfügbar ist und sichere dir den günstigen Launch-Preis!</p>
                     
                     <form action="https://formspree.io/f/mkgberjk" method="POST" class="early-bird-form">
-                        <input type="email" name="email" placeholder="Deine E-Mail für Kalorienrechner Early Access" required class="email-input">
-                        <input type="hidden" name="_subject" value="Early Access: Kalorienrechner">
-                        <input type="hidden" name="landing_page" value="kalorienrechner">
-                        <input type="hidden" name="source" value="kalorienrechner">
-                        <input type="hidden" name="interest" value="calorie_calculator_personal_metabolic_factor">
-			<input type="hidden" name="_next" value="https://fitfoundry.de/early-bird-success.html">
-                        <button type="submit" class="btn-submit">Early Access sichern 🧮</button>
+                        <input type="email" name="email" placeholder="Deine E-Mail für wissenschaftliche Fitness-Revolution" required class="email-input">
+                        <input type="hidden" name="_subject" value="Early Access: FitFoundry Homepage">
+                        <input type="hidden" name="landing_page" value="homepage">
+                        <input type="hidden" name="source" value="homepage_hub">
+                        <input type="hidden" name="interest" value="complete_fitfoundry_experience">
+    			<input type="hidden" name="_next" value="https://fitfoundry.de/early-bird-success.html">
+   			<button type="submit" class="btn-submit">Early Access sichern 🎯</button>
                     </form>
                     
-                    <div class="early-bird-benefits">
-                        <span>✅ 50% Launch-Rabatt (statt 199€ nur 99€)</span>
-                        <span>✅ Personal Metabolic Factor inklusive</span>
-                        <span>✅ Live-Kalorien Integration</span>
-                        <span>✅ ±8% Genauigkeit garantiert</span>
-                    </div>
+			<div class="early-bird-benefits">
+   				 <span>✅ Launch-Preis: 4,99€ statt später 9,99€</span>
+   				 <span>✅ Sofortige Benachrichtigung bei App Store Release</span>
+  				  <span>✅ Folge @fitfoundry_app für Live-Entwicklung</span>
+			</div>
                     
                     <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1.5rem;">
-			<strong>Bereits 3.291 Nutzer</strong> warten auf den weltweit genauesten Kalorienrechner.
-                        <strong>Made in Germany</strong> 🇩🇪 • <strong>Wissenschaftlich validiert</strong> 🔬 • <strong>Krafttraining-Spezialist</strong> 💪
+			<strong>Werde Teil der FitFoundry Community</strong> und sichere dir den Launch-Preis.<br>
+			<strong>Made in Germany</strong> 🇩🇪 • <strong>Launch Herbst 2025</strong> 🚀 • <strong>4,99€ Launch-Preis</strong> 💰
                     </p>
                 </div>
             </div>
@@ -1292,5 +1297,28 @@
             });
         });
     </script>
+<script>
+// Feature Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const style = document.createElement('style');
+    style.textContent = '.feature-card-hidden { display: none; }';
+    document.head.appendChild(style);
+    
+    const toggleButton = document.getElementById('toggleFeatures');
+    if (toggleButton) {
+        toggleButton.onclick = function() {
+            const hiddenCards = document.querySelectorAll('.feature-card-hidden');
+            const isHidden = hiddenCards[0].style.display === 'none' || !hiddenCards[0].style.display;
+            
+            hiddenCards.forEach(card => {
+                card.style.display = isHidden ? 'block' : 'none';
+            });
+            
+            this.textContent = isHidden ? 
+                '📋 Weniger Features anzeigen' : '📋 Alle Features anzeigen (7 weitere)';
+        };
+    }
+});
+</script>
 </body>
 </html>

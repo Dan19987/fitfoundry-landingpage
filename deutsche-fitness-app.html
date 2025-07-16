@@ -648,30 +648,31 @@
         </section>
 
         <!-- Early Bird Section -->
-        <section class="early-bird" id="early-bird">
+        <section class="early-bird scroll-fade-in" id="early-bird">
             <div class="container">
                 <div class="early-bird-content">
-                    <h2>🇩🇪 Early Bird: Deutsche Fitness-Revolution mit Privacy-First</h2>
-                    <p>Sei unter den ersten, die echte Jackson-Pollock Körperfett-Analyse mit 100% DSGVO-Konformität erleben. Made in Germany, für Deutschland!</p>
+                   <h2>🚀 Sichere dir den Launch-Preis</h2>
+<p>Erfahre sofort, wenn FitFoundry im App Store verfügbar ist und sichere dir den günstigen Launch-Preis!</p>
                     
                     <form action="https://formspree.io/f/mkgberjk" method="POST" class="early-bird-form">
-                        <input type="email" name="email" placeholder="Deine E-Mail für deutsche Privacy-First Fitness" required class="email-input">
-                        <input type="hidden" name="source" value="deutsche-fitness-app">
-                        <input type="hidden" name="interest" value="privacy_first_fitness">
-			<input type="hidden" name="_next" value="https://fitfoundry.de/early-bird-success.html">
-                        <button type="submit" class="btn-submit">Deutsche Fitness-Revolution 🇩🇪</button>
+                        <input type="email" name="email" placeholder="Deine E-Mail für wissenschaftliche Fitness-Revolution" required class="email-input">
+                        <input type="hidden" name="_subject" value="Early Access: FitFoundry Homepage">
+                        <input type="hidden" name="landing_page" value="homepage">
+                        <input type="hidden" name="source" value="homepage_hub">
+                        <input type="hidden" name="interest" value="complete_fitfoundry_experience">
+    			<input type="hidden" name="_next" value="https://fitfoundry.de/early-bird-success.html">
+   			<button type="submit" class="btn-submit">Early Access sichern 🎯</button>
                     </form>
                     
-                    <div class="early-bird-benefits">
-                        <span>🇩🇪 100% Made in Germany</span>
-                        <span>✅ 50% DSGVO-Early-Bird-Rabatt</span>
-                        <span>🛡️ Lokale Datenspeicherung</span>
-                        <span>🔬 Jackson-Pollock Wissenschaft</span>
-                    </div>
+			<div class="early-bird-benefits">
+   				 <span>✅ Launch-Preis: 4,99€ statt später 9,99€</span>
+   				 <span>✅ Sofortige Benachrichtigung bei App Store Release</span>
+  				  <span>✅ Folge @fitfoundry_app für Live-Entwicklung</span>
+			</div>
                     
                     <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1.5rem;">
-                        <strong>Bereits 1.647 Privacy-bewusste Nutzer</strong> haben sich für die deutsche Fitness-Revolution registriert.<br>
-                        <strong>Entwickelt in Berlin</strong> 🏛️ • <strong>DSGVO seit Tag 1</strong> 🛡️ • <strong>Kein Datenverkauf - niemals!</strong> 🚫
+			<strong>Werde Teil der FitFoundry Community</strong> und sichere dir den Launch-Preis.<br>
+			<strong>Made in Germany</strong> 🇩🇪 • <strong>Launch Herbst 2025</strong> 🚀 • <strong>4,99€ Launch-Preis</strong> 💰
                     </p>
                 </div>
             </div>
@@ -835,5 +836,29 @@ window.addEventListener('load', function() {
             });
         });
     </script>
+
+<script>
+// Feature Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const style = document.createElement('style');
+    style.textContent = '.feature-card-hidden { display: none; }';
+    document.head.appendChild(style);
+    
+    const toggleButton = document.getElementById('toggleFeatures');
+    if (toggleButton) {
+        toggleButton.onclick = function() {
+            const hiddenCards = document.querySelectorAll('.feature-card-hidden');
+            const isHidden = hiddenCards[0].style.display === 'none' || !hiddenCards[0].style.display;
+            
+            hiddenCards.forEach(card => {
+                card.style.display = isHidden ? 'block' : 'none';
+            });
+            
+            this.textContent = isHidden ? 
+                '📋 Weniger Features anzeigen' : '📋 Alle Features anzeigen (7 weitere)';
+        };
+    }
+});
+</script>
 </body>
 </html>
