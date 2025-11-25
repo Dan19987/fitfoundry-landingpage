@@ -15,6 +15,7 @@ import {
   Volume2,
   VolumeX
 } from 'lucide-react';
+import { usePageTracking } from './usePageTracking';  
 import HeroBackgroundEffect from './components/HeroBackgroundEffect';
 import HeroLogo from './components/HeroLogo';
 import Navigation from './components/Navigation';
