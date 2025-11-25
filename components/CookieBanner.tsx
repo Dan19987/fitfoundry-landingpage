@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, Cookie } from 'lucide-react';
 
+// TypeScript Definition für gtag
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 const CookieBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -17,13 +24,22 @@ const CookieBanner: React.FC = () => {
 
   const handleAccept = () => {
     localStorage.setItem('fitfoundry-consent', 'accepted');
+    
+    // GA4 Consent Update - Tracking aktivieren
+    if (window.gtag) {
+      window.gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
+    
     setIsVisible(false);
-    // Here you would trigger Google Analytics initialization if using real GTM/GA
-    // if (window.gtag) window.gtag('consent', 'update', { 'analytics_storage': 'granted' });
   };
 
   const handleDecline = () => {
     localStorage.setItem('fitfoundry-consent', 'declined');
+    
+    // GA4 bleibt denied (default) - kein Update nötig
+    
     setIsVisible(false);
   };
 
