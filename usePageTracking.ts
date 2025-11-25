@@ -1,10 +1,11 @@
 // usePageTracking.ts
-// Hook für cookieless UTM Tracking zu Google Sheet
-
 import { useEffect } from 'react';
 
-// Google Apps Script URL für Page View Tracking
-const TRACKING_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1BKhF9XWZYX739HqnYbDH3n9DbjATcHQMSjolwrGRHz1HeF4RQ2FABaJGo44AJ2M/exec'; // ← Wird noch erstellt!
+const TRACKING_SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbx1BKhF9XWZYX739HqnYbDH3n9DbjATcHQMSjolwrGRHz1HeF4RQ2FABaJGo44AJ2M/exec';
+
+// exakt derselbe wie in PageViewTracking.gs
+const PAGEVIEW_TOKEN = 'FitFoundry$2025!PageView#Tracking';
 
 interface PageViewData {
   timestamp: string;
@@ -21,29 +22,28 @@ interface PageViewData {
 export const usePageTracking = () => {
   useEffect(() => {
     const trackPageView = async () => {
-      // URL Parameter auslesen
       const params = new URLSearchParams(window.location.search);
-      
-      // UTM Parameter extrahieren
+
       const utmSource = params.get('utm_source');
       const utmMedium = params.get('utm_medium');
       const utmCampaign = params.get('utm_campaign');
       const utmContent = params.get('utm_content');
-      
-      // UTM in Session Storage speichern (für Conversion Tracking)
+
+      // UTM im Session Storage parken
       if (utmSource || utmMedium || utmCampaign) {
-        sessionStorage.setItem('fitfoundry_utm', JSON.stringify({
-          source: utmSource,
-          medium: utmMedium,
-          campaign: utmCampaign,
-          content: utmContent
-        }));
+        sessionStorage.setItem(
+          'fitfoundry_utm',
+          JSON.stringify({
+            source: utmSource,
+            medium: utmMedium,
+            campaign: utmCampaign,
+            content: utmContent,
+          }),
+        );
       }
-      
-      // Device Detection
+
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      
-      // Page View Daten sammeln
+
       const data: PageViewData = {
         timestamp: new Date().toISOString(),
         page: window.location.pathname,
@@ -53,28 +53,28 @@ export const usePageTracking = () => {
         utm_campaign: utmCampaign,
         utm_content: utmContent,
         device: isMobile ? 'mobile' : 'desktop',
-        userAgent: navigator.userAgent
+        userAgent: navigator.userAgent,
       };
-      
-      // Zu Google Sheet senden (fire and forget)
+
       try {
         const body = new URLSearchParams();
+
+        // **Token hinzufügen**
+        body.append('token', PAGEVIEW_TOKEN);
+
         Object.entries(data).forEach(([key, value]) => {
           body.append(key, value?.toString() || '');
         });
-        
+
         fetch(TRACKING_SCRIPT_URL, {
           method: 'POST',
-          body: body
-        }).catch(e => console.debug('Tracking failed', e));
-        
+          body,
+        }).catch((e) => console.debug('Tracking failed', e));
       } catch (e) {
         console.debug('Tracking error', e);
       }
     };
-    
-    // Track beim Mount
+
     trackPageView();
-    
-  }, []); // Nur einmal pro Seitenaufruf
+  }, []);
 };
