@@ -46,6 +46,7 @@ const staggerContainer: Variants = {
 };
 
 function App() {
+  usePageTracking(); 
   const [legalModalOpen, setLegalModalOpen] = useState(false);
   const [legalModalType, setLegalModalType] = useState<'impressum' | 'datenschutz' | 'agb' | null>(null);
 
