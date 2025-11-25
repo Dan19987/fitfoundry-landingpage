@@ -4,7 +4,7 @@
 import { useEffect } from 'react';
 
 // Google Apps Script URL für Page View Tracking
-const TRACKING_SCRIPT_URL = 'DEINE_TRACKING_SCRIPT_URL_HIER'; // ← Wird noch erstellt!
+const TRACKING_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1BKhF9XWZYX739HqnYbDH3n9DbjATcHQMSjolwrGRHz1HeF4RQ2FABaJGo44AJ2M/exec'; // ← Wird noch erstellt!
 
 interface PageViewData {
   timestamp: string;
