@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-08FBC0TKGP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-08FBC0TKGP', { 'anonymize_ip': true });
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>FitFoundry: Live Audio-Coach & Kalorienzähler | Made in Germany</title>
+    <meta name="title" content="FitFoundry: Live Audio-Coach & Kalorienzähler">
+    <meta name="description" content="Die intelligente deutsche Fitness App. Wissenschaftlich präziser Echtzeit-Kalorienzähler und reaktiver Audio-Coach für maximalen Fokus. Launch Herbst 2025." />
+    <meta name="keywords" content="Fitness App, Audio Coach, Kalorienzähler, Live Tracking, Workout Tracker, Abnehmen, Muskelaufbau, Deutsch, iOS, Android, FitFoundry" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="German" />
+    <meta name="author" content="FitFoundry GmbH (i.G.)" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fitfoundry.de/" />
+    <meta property="og:title" content="FitFoundry: Live Audio-Coach & Kalorienzähler" />
+    <meta property="og:description" content="Verwandle dein Training mit dem ersten Live Audio-Coach, der auf deine Echtzeit-Daten reagiert." />
+    <meta property="og:image" content="/assets/images/og-image.png" />
+    <meta property="og:locale" content="de_DE" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://fitfoundry.de/" />
+    <meta property="twitter:title" content="FitFoundry: Live Audio-Coach & Kalorienzähler" />
+    <meta property="twitter:description" content="Verwandle dein Training mit dem ersten Live Audio-Coach, der auf deine Echtzeit-Daten reagiert." />
+    <meta property="twitter:image" content="/assets/images/twitter-card.png" />
+
+    <link rel="canonical" href="https://fitfoundry.de/" />
+    <link rel="icon" type="image/png" href="/assets/images/logo.webp" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0D1117;
+        color: #F0F6FC;
+        overflow-x: hidden;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0D1117;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #30363D;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ED553B;
+      }
+
+      /* User Requested: Focus state for group elements */
+      .group:focus {
+        outline: none;
+        box-shadow: 0 0 15px 2px rgba(59, 130, 246, 0.5); /* Medium intensity blue glow */
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                orange: '#ED553B',
+                gold: '#FFD700',
+                dark: '#0D1117',
+                surface: '#161B22',
+                border: '#30363D',
+                text: '#F0F6FC',
+                muted: '#8B949E'
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          }
+        }
+      }
+    </script>
+    <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "FitFoundry",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "4.99",
+        "priceCurrency": "EUR"
+      },
+      "description": "Die intelligente deutsche Fitness App mit Live Audio-Coach und Echtzeit-Kalorienzähler.",
+      "featureList": "Live Audio Coach, Real-time Calorie Tracking, Body Analysis",
+      "screenshot": "https://fitfoundry.de/assets/images/app-preview.png",
+      "author": {
+        "@type": "Organization",
+        "name": "FitFoundry GmbH",
+        "url": "https://fitfoundry.de"
+      }
+    }
+    </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
