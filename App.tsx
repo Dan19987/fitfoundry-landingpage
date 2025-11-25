@@ -66,17 +66,33 @@ function App() {
 
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycfa9JQLVeiLtCUSz3zz_DGfjWNbizcQXnYIb17F4d1_aho8D4GwzhOSOgZSZp1GZO/exec';
     const TOKEN = 'FitFoundry$2025!EarlyAccess#LaunchRabatt';
-
-    try {
-      const body = new URLSearchParams({
-        name: name,
-        email: email,
-        token: TOKEN,
-        source: 'landingpage',
-        website: '',
-        ip: '',
-        userAgent: navigator.userAgent
-      });
+    
+  try {
+    // UTM Parameter aus Session Storage holen (falls vorhanden)
+    const utmData = sessionStorage.getItem('fitfoundry_utm');
+    let utmSource = '-';
+    let utmMedium = '-';
+    let utmCampaign = '-';
+    
+    if (utmData) {
+      const utm = JSON.parse(utmData);
+      utmSource = utm.source || '-';
+      utmMedium = utm.medium || '-';
+      utmCampaign = utm.campaign || '-';
+    }
+    const body = new URLSearchParams({
+      name: name,
+      email: email,
+      token: TOKEN,
+      source: 'landingpage',
+      page: window.location.pathname,
+      utm_source: utmSource,      // NEU!
+      utm_medium: utmMedium,        // NEU!
+      utm_campaign: utmCampaign,    // NEU!
+      website: '',
+      ip: '',
+      userAgent: navigator.userAgent
+    });
 
       const response = await fetch(SCRIPT_URL, {
         method: 'POST',
