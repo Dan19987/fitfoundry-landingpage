@@ -1,11 +1,7 @@
+// HeroBackgroundEffect.tsx - KOMPLETT ERSETZT:
+
 import React, { useEffect, useRef } from 'react';
 
-/**
- * HeroBackgroundEffect
- * A visual simulation of a "Foundry" - rising embers/sparks in a dark environment.
- * Uses HTML5 Canvas for high performance.
- * Now features a "Force Field" around the center where the logo sits.
- */
 const HeroBackgroundEffect: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -13,19 +9,16 @@ const HeroBackgroundEffect: React.FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d', { alpha: false }); // Optimization: Disable alpha channel for background canvas
+    const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
 
     let animationFrameId: number;
     let particles: Particle[] = [];
     
-    // Barrier settings (The Logo Shield)
     let barrierRadius = 260; 
     let centerX = canvas.width / 2;
-    // MOVED UP: Center Y matches visual logo position
     let centerY = canvas.height * 0.33;
 
-    // Colors extracted from logo/branding
     const colors = ['#ED553B', '#FF6B35', '#FFD700', '#FFFFFF'];
 
     class Particle {
@@ -34,22 +27,20 @@ const HeroBackgroundEffect: React.FC = () => {
       size: number;
       speedY: number;
       speedX: number;
-      vx: number; // Velocity X for physics
-      vy: number; // Velocity Y for physics
+      vx: number;
+      vy: number;
       color: string;
       opacity: number;
       fadeSpeed: number;
 
       constructor() {
         this.x = Math.random() * canvas!.width;
-        this.y = canvas!.height + Math.random() * 100; // Start below screen
-        this.size = Math.random() * 3 + 0.5; // Random size
+        this.y = canvas!.height + Math.random() * 100;
+        this.size = Math.random() * 3 + 0.5;
         
-        // Base upward movement
         this.speedY = Math.random() * 1.5 + 0.5; 
         this.speedX = (Math.random() - 0.5) * 0.5; 
         
-        // Physics velocity vectors
         this.vx = this.speedX;
         this.vy = -this.speedY;
 
@@ -59,37 +50,29 @@ const HeroBackgroundEffect: React.FC = () => {
       }
 
       update() {
-        // Apply velocity
         this.x += this.vx;
         this.y += this.vy;
         
-        // Slowly return to natural upward speed if disturbed
         this.vx = this.vx * 0.95 + this.speedX * 0.05;
         this.vy = this.vy * 0.95 + (-this.speedY) * 0.05;
 
-        // --- BARRIER PHYSICS ---
         const dx = this.x - centerX;
         const dy = this.y - centerY;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < barrierRadius) {
-          // Collision detected!
-          // Calculate angle of impact
           const angle = Math.atan2(dy, dx);
           
-          // Push particle outside the barrier
           const targetX = centerX + Math.cos(angle) * barrierRadius;
           const targetY = centerY + Math.sin(angle) * barrierRadius;
           
           this.x = targetX;
           this.y = targetY;
 
-          // Reflect velocity (Bounce)
           this.vx += Math.cos(angle) * 1.5;
           this.vy += Math.sin(angle) * 1.5;
         }
 
-        // Fading
         this.opacity -= this.fadeSpeed;
 
         if (this.opacity <= 0 || this.y < -10) {
@@ -115,14 +98,10 @@ const HeroBackgroundEffect: React.FC = () => {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
-        
-        // Manual alpha blending logic to avoid using globalAlpha if possible, 
-        // but for particles simple globalAlpha is okay if background is solid.
         ctx.globalAlpha = this.opacity;
         ctx.fill();
         ctx.globalAlpha = 1;
 
-        // Add a subtle glow
         ctx.shadowBlur = 10;
         ctx.shadowColor = this.color;
       }
@@ -146,17 +125,22 @@ const HeroBackgroundEffect: React.FC = () => {
     const animate = () => {
       if (!ctx || !canvas) return;
       
-      // FIX: Use a solid color fill with very low opacity to create trail,
-      // BUT ensure the base is the correct dark color to avoid green drift.
-      ctx.fillStyle = '#1a0f0e'; 
-      ctx.globalAlpha = 0.5; // Increased opacity slightly to clear "green" artifacts faster
+      // FIX: Höhere Opacity für stabileren Background
+      ctx.fillStyle = '#1a0f0e';  // Dunkelrot
+      ctx.globalAlpha = 0.85;     // ← ERHÖHT von 0.5 auf 0.85
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.globalAlpha = 1.0;
+
+      // Reset shadow for particles
+      ctx.shadowBlur = 0;
 
       particles.forEach((particle) => {
         particle.update();
         particle.draw();
       });
+
+      // Reset shadow after drawing
+      ctx.shadowBlur = 0;
 
       animationFrameId = requestAnimationFrame(animate);
     };
@@ -170,7 +154,7 @@ const HeroBackgroundEffect: React.FC = () => {
       init();
     };
 
-    // Fill background immediately to prevent flash
+    // Initial fill - Dunkelrot
     if (ctx) {
         ctx.fillStyle = '#1a0f0e';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -192,8 +176,7 @@ const HeroBackgroundEffect: React.FC = () => {
       ref={canvasRef}
       className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
       style={{ 
-        // FIX: Force the background color via CSS so it exists before Canvas paints
-        backgroundColor: '#0D1117', 
+        backgroundColor: '#1a0f0e',  // Dunkelrot
         transform: 'translateZ(0)'
       }}
     />
