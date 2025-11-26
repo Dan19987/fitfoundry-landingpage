@@ -67,7 +67,7 @@ function App() {
     setSubmitStatus(null);
 
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycfa9JQLVeiLtCUSz3zz_DGfjWNbizcQXnYIb17F4d1_aho8D4GwzhOSOgZSZp1GZO/exec';
-    const TOKEN = 'FitFoundry$2025!EarlyAccess#LaunchRabatt';
+    const TOKEN = 'FitFoundry2025EarlyAccessLaunchRabatt';
     
   try {
     // UTM Parameter aus Session Storage holen (falls vorhanden)
