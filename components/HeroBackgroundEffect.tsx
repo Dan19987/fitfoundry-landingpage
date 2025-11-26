@@ -148,8 +148,8 @@ const HeroBackgroundEffect: React.FC = () => {
       
       // FIX: Use a solid color fill with very low opacity to create trail,
       // BUT ensure the base is the correct dark color to avoid green drift.
-      ctx.fillStyle = '#0D1117'; 
-      ctx.globalAlpha = 0.3; // Increased opacity slightly to clear "green" artifacts faster
+      ctx.fillStyle = '#1a0f0e'; 
+      ctx.globalAlpha = 0.5; // Increased opacity slightly to clear "green" artifacts faster
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.globalAlpha = 1.0;
 
@@ -172,7 +172,7 @@ const HeroBackgroundEffect: React.FC = () => {
 
     // Fill background immediately to prevent flash
     if (ctx) {
-        ctx.fillStyle = '#0D1117';
+        ctx.fillStyle = '#1a0f0e';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
