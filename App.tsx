@@ -66,7 +66,7 @@ function App() {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycfa9JQLVeiLtCUSz3zz_DGfjWNbizcQXnYIb17F4d1_aho8D4GwzhOSOgZSZp1GZO/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzOlhtX8MmDvvGheJIroylMUY6tXdQK8Ulm80oQjhfaLt3C92SHKxr23xNJWGCDBh42/exec';
     const TOKEN = 'FitFoundry$2025!EarlyAccess#LaunchRabatt';
     
   try {
