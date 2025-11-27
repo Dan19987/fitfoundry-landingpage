@@ -86,9 +86,8 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
              <div className="w-16 h-16 rounded-full bg-brand-surface border border-brand-gold/30 flex items-center justify-center mb-6 text-brand-gold">
                <Cpu size={32} />
              </div>
-             <h4 className="text-xl font-bold text-brand-orange mb-2 uppercase tracking-widest">{techTitle}</h4>
-             <p className="text-white text-2xl font-black mb-4">The Tech Inside</p>
-             <p className="text-brand-muted leading-relaxed mb-8">
+             <h4 className="text-2xl font-bold text-brand-orange mb-6 uppercase tracking-widest">{techTitle}</h4>
+             <p className="text-brand-muted leading-relaxed mb-8 text-lg">
                {techDesc}
              </p>
              <button className="px-6 py-2 rounded-full border border-brand-muted text-brand-muted text-sm hover:border-brand-text hover:text-white transition-colors">
@@ -120,7 +119,7 @@ const MotivationGallery: React.FC = () => {
             title="Iron Will"
             subtitle="Strength Training"
             techTitle="Progressive Overload"
-            techDesc="Der Algorithmus berechnet dein 1RM live neu und schlägt automatisch das nächste Gewicht vor, basierend auf deiner Tagesform."
+            techDesc="Dein digitaler Trainingspartner. Kennt deine Limits, pusht deine Grenzen – jeden Tag ein bisschen stärker."
             index={0}
           />
           {/* Card 2: Unstoppable */}
@@ -128,17 +127,17 @@ const MotivationGallery: React.FC = () => {
             src="/assets/images/unstoppable.webp"
             title="Unstoppable"
             subtitle="Cardio & Endurance"
-            techTitle="Zone Monitoring"
-            techDesc="Echtzeit-Analyse deiner Herzfrequenz-Zonen. Der Audio-Coach sagt dir genau, wann du Gas geben musst und wann du bremst."
+            techTitle="Smart Pacing"
+            techDesc="Die perfekte Balance. Der Audio-Coach hält dich in der optimalen Zone, während du live siehst wie die Kalorien schmelzen."
             index={1}
           />
           {/* Card 3: Laser Focus */}
           <FlipCard 
             src="/assets/images/laserfocus.webp"
             title="Laser Focus"
-            subtitle="Mindset & Audio"
+            subtitle="Zero Distraction"
             techTitle="Audio Injection"
-            techDesc="Kein Blick aufs Handy nötig. Wichtige Stats und Motivation werden direkt über deine Musik gelegt (Ducking-Effekt)."
+            techDesc="Fokus auf die wichtigen Sachen. Alle wichtigen Infos kommen direkt ins Ohr – du bleibst 100% im Flow."
             index={2}
           />
         </div>
