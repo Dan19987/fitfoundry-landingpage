@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Cpu, Zap, Activity } from 'lucide-react';
+import { ArrowUpRight, Cpu } from 'lucide-react';
 
 interface FlipCardProps {
   src: string;
@@ -39,7 +39,12 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
           {/* ============ FRONT SIDE ============ */}
           <div 
             className="absolute inset-0 w-full h-full bg-brand-surface border border-brand-border rounded-2xl overflow-hidden shadow-2xl backface-hidden group"
-            style={{ backfaceVisibility: 'hidden' }}
+            style={{ 
+              backfaceVisibility: 'hidden',
+              WebkitBackfaceVisibility: 'hidden',
+              transform: 'rotateY(0deg)',
+              zIndex: isFlipped ? 1 : 2
+            }}
           >
              {/* Background Image */}
              <div 
@@ -69,7 +74,9 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
             className="absolute inset-0 w-full h-full bg-brand-dark border-2 border-brand-orange rounded-2xl overflow-hidden shadow-2xl p-8 flex flex-col justify-center items-center text-center backface-hidden"
             style={{ 
               transform: "rotateY(180deg)",
-              backfaceVisibility: 'hidden'
+              backfaceVisibility: 'hidden',
+              WebkitBackfaceVisibility: 'hidden',
+              zIndex: isFlipped ? 2 : 1
             }}
           >
              <div className="w-16 h-16 rounded-full bg-brand-surface border border-brand-gold/30 flex items-center justify-center mb-6 text-brand-gold">
