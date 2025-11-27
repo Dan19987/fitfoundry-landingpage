@@ -38,22 +38,18 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
        >
           {/* ============ FRONT SIDE ============ */}
           <div 
-            className="absolute inset-0 w-full h-full bg-brand-surface border border-brand-border rounded-2xl shadow-2xl backface-hidden group"
+            className="absolute inset-0 w-full h-full bg-brand-surface border border-brand-border rounded-2xl overflow-hidden shadow-2xl backface-hidden group"
             style={{ 
               backfaceVisibility: 'hidden',
               WebkitBackfaceVisibility: 'hidden',
               transform: 'rotateY(0deg)',
-              zIndex: isFlipped ? 1 : 2,
-              overflow: 'hidden' // ⚡ KRITISCH: Safari scale-Bug Fix
+              zIndex: isFlipped ? 1 : 2
             }}
           >
              {/* Background Image */}
              <div 
                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-               style={{ 
-                 backgroundImage: `url(${src})`,
-                 borderRadius: 'inherit' // ⚡ Safari: Border-radius behalten
-               }}
+               style={{ backgroundImage: `url(${src})` }}
              />
              <div className="absolute inset-0 bg-brand-orange/20 mix-blend-overlay" />
              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80" />
