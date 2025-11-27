@@ -5,12 +5,11 @@ const ParallaxDivider: React.FC = () => {
   return (
     <section className="relative h-[500px] w-full overflow-hidden flex items-center justify-center">
       {/* Fixed Background Image for Parallax Effect */}
+      {/* ⚡ FIX: bg-fixed funktioniert nicht auf iOS - daher md:bg-fixed bg-scroll */}
       <div 
-        className="absolute inset-0 bg-fixed bg-center bg-cover bg-no-repeat"
+        className="absolute inset-0 bg-center bg-cover bg-no-repeat md:bg-fixed bg-scroll"
         style={{ 
           backgroundImage: `url('/assets/images/ironwill.webp')`,
-          
-          // ⚡ Safari Performance: will-change
           willChange: 'transform'
         }}
       />
