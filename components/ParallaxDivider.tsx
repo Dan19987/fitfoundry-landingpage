@@ -9,7 +9,7 @@ const ParallaxDivider: React.FC = () => {
       <div 
         className="absolute inset-0 bg-center bg-cover bg-no-repeat md:bg-fixed bg-scroll"
         style={{ 
-          backgroundImage: `url('/assets/images/ironwill.webp')`,
+          backgroundImage: `url('/assets/images/legacy.webp')`,
           willChange: 'transform'
         }}
       />
