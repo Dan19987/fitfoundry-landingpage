@@ -193,7 +193,7 @@ function App() {
   };
 
 return (
-  <div className="min-h-screen bg-brand-dark text-brand-text overflow-hidden selection:bg-brand-orange selection:text-white relative">
+  <div className="min-h-screen bg-brand-dark text-brand-text selection:bg-brand-orange selection:text-white relative">
     {/* <MouseSpotlight /> */}
     <Navigation />
     <CookieBanner />
