@@ -1,8 +1,25 @@
-// HeroBackgroundEffect.tsx - SAFARI OPTIMIERT
+// HeroBackgroundEffect.tsx - SAFARI DESKTOP OPTIMIERT
 
 import React, { useEffect, useRef, useState } from 'react';
 
 const HeroBackgroundEffect: React.FC = () => {
+  // ⚡ Safari Desktop Detection
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
+  
+  // ⚡ FÜR SAFARI DESKTOP: Statischer Gradient statt Animation
+  if (isSafari && isDesktop) {
+    return (
+      <div 
+        className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
+        style={{ 
+          background: 'radial-gradient(ellipse at center, #2d1810 0%, #1a0f0e 50%, #0d0706 100%)',
+        }}
+      />
+    );
+  }
+
+  // ⚡ FÜR ALLE ANDEREN: Volle Canvas-Animation
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isVisible, setIsVisible] = useState(true);
 
@@ -16,11 +33,6 @@ const HeroBackgroundEffect: React.FC = () => {
     });
     if (!ctx) return;
 
-    // ⚡ SAFARI DETECTION
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    const targetFPS = isSafari ? 30 : 60; // Safari: 30 FPS, Chrome: 60 FPS
-    const frameInterval = 1000 / targetFPS;
-
     let animationFrameId: number;
     let particles: Particle[] = [];
     let lastFrameTime = 0;
@@ -28,6 +40,10 @@ const HeroBackgroundEffect: React.FC = () => {
     let barrierRadius = 260; 
     let centerX = canvas.width / 2;
     let centerY = canvas.height * 0.33;
+
+    // FPS-Limiting (30 FPS für Safari Mobile, 60 FPS für Rest)
+    const targetFPS = isSafari ? 30 : 60;
+    const frameInterval = 1000 / targetFPS;
 
     const colors = ['#ED553B', '#FF6B35', '#FFD700', '#FFFFFF'];
 
@@ -112,7 +128,6 @@ const HeroBackgroundEffect: React.FC = () => {
         ctx.fill();
         ctx.globalAlpha = 1;
 
-        // ⚡ SAFARI: Reduzierter Shadow-Blur
         if (!isSafari) {
           ctx.shadowBlur = 10;
           ctx.shadowColor = this.color;
@@ -124,12 +139,11 @@ const HeroBackgroundEffect: React.FC = () => {
       particles = [];
       const isMobile = window.innerWidth < 768;
       
-      // ⚡ SAFARI: Noch weniger Particles
       let particleCount;
       if (isSafari) {
-        particleCount = isMobile ? 50 : 100; // Safari: 50/100
+        particleCount = isMobile ? 50 : 100;
       } else {
-        particleCount = isMobile ? 80 : 150; // Chrome: 80/150
+        particleCount = isMobile ? 80 : 150;
       }
       
       for (let i = 0; i < particleCount; i++) {
@@ -147,7 +161,6 @@ const HeroBackgroundEffect: React.FC = () => {
     const animate = (currentTime: number) => {
       if (!ctx || !canvas || !isVisible) return;
 
-      // ⚡ FPS-LIMITING für Safari
       const elapsed = currentTime - lastFrameTime;
       
       if (elapsed < frameInterval) {
