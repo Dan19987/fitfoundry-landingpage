@@ -174,7 +174,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-brand-dark text-brand-text overflow-hidden selection:bg-brand-orange selection:text-white relative">
-      /* <MouseSpotlight /> */
+      {/* <MouseSpotlight /> */}
       <Navigation />
       <CookieBanner />
       <LegalModals isOpen={legalModalOpen} onClose={() => setLegalModalOpen(false)} type={legalModalType} />
