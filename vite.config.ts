@@ -28,7 +28,7 @@ export default defineConfig(({ mode }) => {
     // ⚡ PERFORMANCE OPTIMIERUNGEN
     build: {
       target: 'esnext',
-      minify: 'terser',
+      minify: 'esbuild', // Built-in, keine extra dependency
       cssMinify: true,
       rollupOptions: {
         output: {
@@ -37,12 +37,6 @@ export default defineConfig(({ mode }) => {
             'motion': ['framer-motion'],
             'icons': ['lucide-react'],
           }
-        }
-      },
-      terserOptions: {
-        compress: {
-          drop_console: true,
-          drop_debugger: true
         }
       }
     },
