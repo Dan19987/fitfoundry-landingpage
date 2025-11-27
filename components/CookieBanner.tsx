@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, Cookie } from 'lucide-react';
-
 // TypeScript Definition für gtag
 declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
   }
 }
-
 const CookieBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     // Check if user has already consented
     const consent = localStorage.getItem('fitfoundry-consent');
@@ -21,28 +18,25 @@ const CookieBanner: React.FC = () => {
       return () => clearTimeout(timer);
     }
   }, []);
-
   const handleAccept = () => {
     localStorage.setItem('fitfoundry-consent', 'accepted');
-    
+
     // GA4 Consent Update - Tracking aktivieren
     if (window.gtag) {
       window.gtag('consent', 'update', {
         'analytics_storage': 'granted'
       });
     }
-    
+
     setIsVisible(false);
   };
-
   const handleDecline = () => {
     localStorage.setItem('fitfoundry-consent', 'declined');
-    
+
     // GA4 bleibt denied (default) - kein Update nötig
-    
+
     setIsVisible(false);
   };
-
   return (
     <AnimatePresence>
       {isVisible && (
@@ -50,12 +44,7 @@ const CookieBanner: React.FC = () => {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
-          className="fixed left-4 right-4 md:left-auto md:right-4 md:w-[400px]"
-          style={{ 
-            zIndex: 9999,
-            bottom: '1rem',
-            position: 'fixed'
-          }}
+          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-[400px] z-50"
         >
           <div className="bg-brand-surface/95 backdrop-blur-xl border border-brand-border p-6 rounded-2xl shadow-2xl shadow-black/50">
             <div className="flex items-start gap-4 mb-4">
@@ -69,7 +58,7 @@ const CookieBanner: React.FC = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="flex gap-3">
               <button
                 onClick={handleDecline}
@@ -84,7 +73,7 @@ const CookieBanner: React.FC = () => {
                 Akzeptieren
               </button>
             </div>
-            
+
             <div className="mt-4 flex justify-center gap-4 text-xs text-brand-muted/50">
                 <span className="flex items-center gap-1"><ShieldCheck size={10}/> DSGVO Konform</span>
             </div>
@@ -94,5 +83,4 @@ const CookieBanner: React.FC = () => {
     </AnimatePresence>
   );
 };
-
 export default CookieBanner;
