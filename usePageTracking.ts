@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const TRACKING_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzOlhtX8MmDvvGheJIroylMUY6tXdQK8Ulm80oQjhfaLt3C92SHKxr23xNJWGCDBh42/exec';
+const TRACKING_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxBHEVQkJvLjxTU_Vy7R70NjF7NhFLAg1d1QIwzzq5bU25lI3kthbDFXrKEcwvIWXom/exec';
 const PAGEVIEW_TOKEN = 'FitFoundry$2025!PageView#Tracking';
 
 export const usePageTracking = () => {
