@@ -44,7 +44,7 @@ const CookieBanner: React.FC = () => {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
-          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-[400px] z-50"
+          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-[400px] z-100"
         >
           <div className="bg-brand-surface/95 backdrop-blur-xl border border-brand-border p-6 rounded-2xl shadow-2xl shadow-black/50">
             <div className="flex items-start gap-4 mb-4">
