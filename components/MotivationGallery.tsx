@@ -15,9 +15,6 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
   const [isFlipped, setIsFlipped] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // ⚡ Safari Detection
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
   const handleFlip = () => {
     if (!isAnimating) {
       setIsFlipped(!isFlipped);
@@ -28,13 +25,10 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
   return (
     <div className="w-full h-[450px] perspective-1000 cursor-pointer" onClick={handleFlip}>
        <motion.div
-        initial={{ opacity: 0, y: isSafari ? 0 : 50 }}  // ⚡ Kein Y-Movement auf Safari
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ 
-          delay: index * 0.2,
-          duration: isSafari ? 0.3 : 0.5  // ⚡ Schneller auf Safari
-        }}
+        transition={{ delay: index * 0.2 }}
         className="relative w-full h-full transition-all duration-500"
         style={{
           transformStyle: "preserve-3d"
@@ -55,10 +49,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
              {/* Background Image */}
              <div 
                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-               style={{ 
-                 backgroundImage: `url(${src})`,
-                 willChange: 'transform'  // ⚡ GPU hint
-               }}
+               style={{ backgroundImage: `url(${src})` }}
              />
              <div className="absolute inset-0 bg-brand-orange/20 mix-blend-overlay" />
              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80" />
