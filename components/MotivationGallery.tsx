@@ -24,12 +24,12 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
 
   return (
     <div className="w-full h-[450px] perspective-1000 cursor-pointer" onClick={handleFlip}>
-       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: index * 0.2 }}
-        className="relative w-full h-full transition-all duration-500"
+<motion.div
+  initial={{ opacity: 1, y: 0 }}
+  animate={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0 }}
+  className="relative w-full h-full transition-all duration-500"
         style={{
           transformStyle: "preserve-3d"
         }}
