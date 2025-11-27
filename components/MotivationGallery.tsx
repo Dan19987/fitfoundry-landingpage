@@ -15,6 +15,9 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
   const [isFlipped, setIsFlipped] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // ⚡ Safari Detection
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
   const handleFlip = () => {
     if (!isAnimating) {
       setIsFlipped(!isFlipped);
@@ -24,12 +27,13 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
 
   return (
     <div className="w-full h-[450px] perspective-1000 cursor-pointer" onClick={handleFlip}>
-<motion.div
-  initial={{ opacity: 1, y: 0 }}
-  animate={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0 }}
-  className="relative w-full h-full transition-all duration-500"
+       <motion.div
+        // ⚡ Safari: Keine whileInView Animation (verursacht Flicker)
+        initial={{ opacity: isSafari ? 1 : 0, y: isSafari ? 0 : 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: isSafari ? 0 : index * 0.2 }}
+        className="relative w-full h-full transition-all duration-500"
         style={{
           transformStyle: "preserve-3d"
         }}
@@ -46,9 +50,9 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
               zIndex: isFlipped ? 1 : 2
             }}
           >
-             {/* Background Image */}
+             {/* Background Image - ⚡ Safari: Kein Scale (Border-Radius Flicker) */}
              <div 
-               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+               className={`absolute inset-0 bg-cover bg-center ${!isSafari ? 'transition-transform duration-700 group-hover:scale-110' : ''}`}
                style={{ backgroundImage: `url(${src})` }}
              />
              <div className="absolute inset-0 bg-brand-orange/20 mix-blend-overlay" />
