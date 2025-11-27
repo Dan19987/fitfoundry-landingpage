@@ -201,19 +201,32 @@ function App() {
                 </span>
               </motion.div>
               
-              <motion.h1 
-                variants={fadeInUp} 
-                className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight leading-tight"
-                style={{ filter: "drop-shadow(0 10px 10px rgba(0,0,0,0.8))" }}
-              >
-                <span className="text-white">Fit</span>
-                <span className="text-white">Foundry</span>
-              </motion.h1>
-              
-              <motion.div
-                 variants={fadeInUp} 
-                 className="relative max-w-2xl mx-auto mb-12"
-              >
+<motion.h1 
+  variants={fadeInUp} 
+  className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight leading-tight"
+  style={{ filter: "drop-shadow(0 10px 10px rgba(0,0,0,0.8))" }}
+>
+  <span className="text-white">Fit</span>
+  <span className="text-white">Foundry</span>
+</motion.h1>
+
+{/* ✅ NEU: FORGE YOURSELF Slogan */}
+<motion.div 
+  variants={fadeInUp}
+  className="mb-8"
+>
+  <p className="text-2xl md:text-4xl font-black text-brand-gold tracking-tight uppercase mb-2">
+    FORGE YOURSELF!
+  </p>
+  <p className="text-lg md:text-xl text-brand-muted font-medium">
+    Trainiere smart! Spiel hart!
+  </p>
+</motion.div>
+
+<motion.div
+   variants={fadeInUp} 
+   className="relative max-w-2xl mx-auto mb-12"
+>
                  <div className="absolute inset-0 bg-brand-dark/60 blur-2xl -z-10 rounded-full"></div>
                  <p className="text-xl md:text-2xl text-white/95 font-medium drop-shadow-lg leading-relaxed">
                   Die erste wissenschaftlich fundierte Fitness-App mit <span className="text-brand-gold font-bold">Live Audio-Coach</span> und <span className="text-brand-gold font-bold">Echtzeit-Kalorienzähler</span>.
