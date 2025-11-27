@@ -70,9 +70,10 @@
         -webkit-overflow-scrolling: touch;
       }
 
-        /* BESSER: */
+/* Safari-spezifische Performance-Optimierung - NUR für Sections */
 @supports (-webkit-appearance: none) {
-  main, section, div:not([class*="fixed"]) {  /* ← NUR Content, NICHT fixed */
+  section,
+  section > div {
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
   }
