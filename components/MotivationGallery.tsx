@@ -15,6 +15,9 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
   const [isFlipped, setIsFlipped] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // ⚡ Safari Detection
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
   const handleFlip = () => {
     if (!isAnimating) {
       setIsFlipped(!isFlipped);
@@ -46,9 +49,9 @@ const FlipCard: React.FC<FlipCardProps> = ({ src, title, subtitle, techTitle, te
               zIndex: isFlipped ? 1 : 2
             }}
           >
-             {/* Background Image */}
+             {/* Background Image - Scale nur für Chrome */}
              <div 
-               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+               className={`absolute inset-0 bg-cover bg-center transition-transform duration-700 ${!isSafari ? 'group-hover:scale-110' : ''}`}
                style={{ backgroundImage: `url(${src})` }}
              />
              <div className="absolute inset-0 bg-brand-orange/20 mix-blend-overlay" />
