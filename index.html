@@ -69,7 +69,14 @@
         /* ⚡ Safari Scroll-Optimierung */
         -webkit-overflow-scrolling: touch;
       }
-      
+
+        /* BESSER: */
+@supports (-webkit-appearance: none) {
+  main, section, div:not([class*="fixed"]) {  /* ← NUR Content, NICHT fixed */
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+  }
+}
 
       
       #root {
