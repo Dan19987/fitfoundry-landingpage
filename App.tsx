@@ -193,14 +193,13 @@ function App() {
   };
 
 return (
-  <>
+  <div className="min-h-screen bg-brand-dark text-brand-text overflow-hidden selection:bg-brand-orange selection:text-white relative">
+    {/* <MouseSpotlight /> */}
+    <Navigation />
     <CookieBanner />
-    <div className="min-h-screen bg-brand-dark text-brand-text overflow-hidden selection:bg-brand-orange selection:text-white relative">
-      {/* <MouseSpotlight /> */}
-      <Navigation />
-      <LegalModals isOpen={legalModalOpen} onClose={() => setLegalModalOpen(false)} type={legalModalType} />
-      
-      <main>
+    <LegalModals isOpen={legalModalOpen} onClose={() => setLegalModalOpen(false)} type={legalModalType} />
+    
+    <main>
         {/* ================= HERO SECTION ================= */}
         <section className="relative min-h-screen flex items-center justify-center pt-20 pb-20 overflow-hidden" aria-label="Introduction">
           {/* Background Layers */}
@@ -765,7 +764,6 @@ return (
         </div>
       </footer>
     </div>
-    </>
   );
 }
 
