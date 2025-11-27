@@ -1,15 +1,19 @@
-// HeroBackgroundEffect.tsx - KOMPLETT ERSETZT:
+// HeroBackgroundEffect.tsx - PERFORMANCE OPTIMIERT
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const HeroBackgroundEffect: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d', { alpha: false });
+    const ctx = canvas.getContext('2d', { 
+      alpha: false,
+      desynchronized: true // ⚡ Performance-Boost: Async rendering
+    });
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -109,7 +113,13 @@ const HeroBackgroundEffect: React.FC = () => {
 
     const init = () => {
       particles = [];
-      const particleCount = Math.min(window.innerWidth / 4, 200);
+      // ⚡ Reduzierte Particle-Count für Mobile Performance
+      const isMobile = window.innerWidth < 768;
+      const particleCount = Math.min(
+        isMobile ? 80 : 150, 
+        200
+      );
+      
       for (let i = 0; i < particleCount; i++) {
         const p = new Particle();
         p.y = Math.random() * canvas!.height;
@@ -123,15 +133,14 @@ const HeroBackgroundEffect: React.FC = () => {
     };
 
     const animate = () => {
-      if (!ctx || !canvas) return;
+      // ⚡ Stop animation wenn Component nicht sichtbar
+      if (!ctx || !canvas || !isVisible) return;
       
-      // FIX: Höhere Opacity für stabileren Background
-      ctx.fillStyle = '#1a0f0e';  // Dunkelrot
-      ctx.globalAlpha = 0.85;     // ← ERHÖHT von 0.5 auf 0.85
+      ctx.fillStyle = '#1a0f0e';
+      ctx.globalAlpha = 0.85;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.globalAlpha = 1.0;
 
-      // Reset shadow for particles
       ctx.shadowBlur = 0;
 
       particles.forEach((particle) => {
@@ -139,7 +148,6 @@ const HeroBackgroundEffect: React.FC = () => {
         particle.draw();
       });
 
-      // Reset shadow after drawing
       ctx.shadowBlur = 0;
 
       animationFrameId = requestAnimationFrame(animate);
@@ -154,10 +162,17 @@ const HeroBackgroundEffect: React.FC = () => {
       init();
     };
 
-    // Initial fill - Dunkelrot
+    // ⚡ Intersection Observer - pausiert Animation außerhalb viewport
+    const observer = new IntersectionObserver((entries) => {
+      setIsVisible(entries[0].isIntersecting);
+    }, { threshold: 0.1 });
+
+    observer.observe(canvas);
+
+    // Initial fill
     if (ctx) {
-        ctx.fillStyle = '#1a0f0e';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#1a0f0e';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
     handleResize();
@@ -168,16 +183,18 @@ const HeroBackgroundEffect: React.FC = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
     };
-  }, []);
+  }, [isVisible]);
 
   return (
     <canvas
       ref={canvasRef}
       className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
       style={{ 
-        backgroundColor: '#1a0f0e',  // Dunkelrot
-        transform: 'translateZ(0)'
+        backgroundColor: '#1a0f0e',
+        transform: 'translateZ(0)',
+        willChange: 'transform' // ⚡ GPU-Beschleunigung
       }}
     />
   );
