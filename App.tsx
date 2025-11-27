@@ -239,7 +239,7 @@ function App() {
     FORGE YOURSELF!
   </p>
   <p className="text-lg md:text-xl text-brand-muted font-medium">
-    Trainiere smart! Spiel hart!
+    Trainiere smart! Spiele hart!
   </p>
 </motion.div>
 
