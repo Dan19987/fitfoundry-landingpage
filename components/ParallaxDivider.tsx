@@ -8,14 +8,17 @@ const ParallaxDivider: React.FC = () => {
       <div 
         className="absolute inset-0 bg-fixed bg-center bg-cover bg-no-repeat"
         style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1504221502049-adc5272a8a04?q=80&w=2070&auto=format&fit=crop')` // Sparks/Welding image
+          backgroundImage: `url('/assets/images/ironwill.webp')`,
+          
+          // ⚡ Safari Performance: will-change
+          willChange: 'transform'
         }}
       />
       
       {/* Dark Gradient Overlay to blend with site */}
       <div className="absolute inset-0 bg-brand-dark/60 mix-blend-multiply" />
       <div className="absolute inset-0 bg-gradient-to-b from-brand-dark via-transparent to-brand-dark" />
-
+      
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl px-4">
         <motion.div
@@ -24,9 +27,9 @@ const ParallaxDivider: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-            <h2 className="text-4xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-brand-gold tracking-tighter uppercase drop-shadow-2xl">
-              Forge Your Legacy
-            </h2>
+          <h2 className="text-4xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-brand-gold tracking-tighter uppercase drop-shadow-2xl">
+            Forge Your Legacy
+          </h2>
         </motion.div>
       </div>
     </section>

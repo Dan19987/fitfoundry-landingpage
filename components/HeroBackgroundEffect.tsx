@@ -1,4 +1,4 @@
-// HeroBackgroundEffect.tsx - PERFORMANCE OPTIMIERT
+// HeroBackgroundEffect.tsx - SAFARI OPTIMIERT
 
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -12,12 +12,18 @@ const HeroBackgroundEffect: React.FC = () => {
 
     const ctx = canvas.getContext('2d', { 
       alpha: false,
-      desynchronized: true // ⚡ Performance-Boost: Async rendering
+      desynchronized: true
     });
     if (!ctx) return;
 
+    // ⚡ SAFARI DETECTION
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const targetFPS = isSafari ? 30 : 60; // Safari: 30 FPS, Chrome: 60 FPS
+    const frameInterval = 1000 / targetFPS;
+
     let animationFrameId: number;
     let particles: Particle[] = [];
+    let lastFrameTime = 0;
     
     let barrierRadius = 260; 
     let centerX = canvas.width / 2;
@@ -106,19 +112,25 @@ const HeroBackgroundEffect: React.FC = () => {
         ctx.fill();
         ctx.globalAlpha = 1;
 
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = this.color;
+        // ⚡ SAFARI: Reduzierter Shadow-Blur
+        if (!isSafari) {
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = this.color;
+        }
       }
     }
 
     const init = () => {
       particles = [];
-      // ⚡ Reduzierte Particle-Count für Mobile Performance
       const isMobile = window.innerWidth < 768;
-      const particleCount = Math.min(
-        isMobile ? 80 : 150, 
-        200
-      );
+      
+      // ⚡ SAFARI: Noch weniger Particles
+      let particleCount;
+      if (isSafari) {
+        particleCount = isMobile ? 50 : 100; // Safari: 50/100
+      } else {
+        particleCount = isMobile ? 80 : 150; // Chrome: 80/150
+      }
       
       for (let i = 0; i < particleCount; i++) {
         const p = new Particle();
@@ -132,9 +144,18 @@ const HeroBackgroundEffect: React.FC = () => {
       }
     };
 
-    const animate = () => {
-      // ⚡ Stop animation wenn Component nicht sichtbar
+    const animate = (currentTime: number) => {
       if (!ctx || !canvas || !isVisible) return;
+
+      // ⚡ FPS-LIMITING für Safari
+      const elapsed = currentTime - lastFrameTime;
+      
+      if (elapsed < frameInterval) {
+        animationFrameId = requestAnimationFrame(animate);
+        return;
+      }
+      
+      lastFrameTime = currentTime - (elapsed % frameInterval);
       
       ctx.fillStyle = '#1a0f0e';
       ctx.globalAlpha = 0.85;
@@ -162,21 +183,19 @@ const HeroBackgroundEffect: React.FC = () => {
       init();
     };
 
-    // ⚡ Intersection Observer - pausiert Animation außerhalb viewport
     const observer = new IntersectionObserver((entries) => {
       setIsVisible(entries[0].isIntersecting);
     }, { threshold: 0.1 });
 
     observer.observe(canvas);
 
-    // Initial fill
     if (ctx) {
       ctx.fillStyle = '#1a0f0e';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
     handleResize();
-    animate();
+    animationFrameId = requestAnimationFrame(animate);
 
     window.addEventListener('resize', handleResize);
 
@@ -194,7 +213,7 @@ const HeroBackgroundEffect: React.FC = () => {
       style={{ 
         backgroundColor: '#1a0f0e',
         transform: 'translateZ(0)',
-        willChange: 'transform' // ⚡ GPU-Beschleunigung
+        willChange: 'transform'
       }}
     />
   );
