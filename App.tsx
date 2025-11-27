@@ -30,6 +30,40 @@ import CookieBanner from './components/CookieBanner';
 import LegalModals from './components/LegalModals';
 import FAQ from './components/FAQ';
 
+// ⚡ Safari Desktop Detection
+const isSafariDesktop = (() => {
+  if (typeof window === 'undefined') return false;
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const isDesktop = window.innerWidth >= 1024;
+  return isSafari && isDesktop;
+})();
+
+// Animation variants - Safari-optimiert
+const fadeInUp: Variants = {
+  hidden: { 
+    opacity: 0, 
+    y: isSafariDesktop ? 0 : 40  // ⚡ Kein Y-Movement auf Safari Desktop
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: isSafariDesktop ? 0.3 : 0.8,  // ⚡ Schneller auf Safari Desktop
+      ease: "easeOut" 
+    } 
+  }
+};
+
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: isSafariDesktop ? 0.05 : 0.15  // ⚡ Schneller auf Safari Desktop
+    }
+  }
+};
+
 // Animation variants
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -196,7 +230,7 @@ function App() {
               style={{ marginTop: "35vh" }}
             >
               <motion.div variants={fadeInUp} className="mb-8 inline-block -mt-6">
-                <span className="bg-brand-surface/90 border border-brand-orange/30 text-brand-orange px-4 py-1.5 rounded-full text-sm font-semibold tracking-wider uppercase backdrop-blur-md shadow-[0_0_15px_rgba(237,85,59,0.3)]">
+                <span className="bg-brand-surface/90 border border-brand-orange/30 text-brand-orange px-4 py-1.5 rounded-full text-sm font-semibold tracking-wider uppercase shadow-[0_0_15px_rgba(237,85,59,0.3)]">
                   Coming Winter 2025
                 </span>
               </motion.div>
@@ -313,7 +347,7 @@ function App() {
                 <div className="absolute top-4 right-4 z-20">
                   <button 
                     onClick={toggleVideoMute}
-                    className="p-2 rounded-full bg-black/50 backdrop-blur-md text-white border border-white/20 hover:bg-black/70 transition-colors"
+                    className="p-2 rounded-full bg-black/50 text-white border border-white/20 hover:bg-black/70 transition-colors"
                   >
                     {isVideoMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
                   </button>
@@ -541,7 +575,7 @@ function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-brand-surface/50 backdrop-blur-md border border-brand-border p-8 rounded-2xl text-center hover:border-brand-gold/50 transition-colors group"
+                  className="bg-brand-surface/50 border border-brand-border p-8 rounded-2xl text-center hover:border-brand-gold/50 transition-colors group"
                   tabIndex={0}
                 >
                   <div className="w-20 h-20 mx-auto bg-gradient-to-br from-brand-border to-brand-dark rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-brand-text group-hover:text-brand-gold">
