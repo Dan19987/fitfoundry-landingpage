@@ -192,11 +192,12 @@ function App() {
     }
   };
 
-  return (
+return (
+  <>
+    <CookieBanner />
     <div className="min-h-screen bg-brand-dark text-brand-text overflow-hidden selection:bg-brand-orange selection:text-white relative">
       {/* <MouseSpotlight /> */}
       <Navigation />
-      <CookieBanner />
       <LegalModals isOpen={legalModalOpen} onClose={() => setLegalModalOpen(false)} type={legalModalType} />
       
       <main>
@@ -764,6 +765,7 @@ function App() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
 
