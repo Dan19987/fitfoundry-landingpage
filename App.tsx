@@ -20,7 +20,7 @@ import HeroBackgroundEffect from './components/HeroBackgroundEffect';
 import HeroLogo from './components/HeroLogo';
 import Navigation from './components/Navigation';
 import AudioPlayerDemo from './components/AudioPlayerDemo';
-import MouseSpotlight from './components/MouseSpotlight';
+/*import MouseSpotlight from './components/MouseSpotlight';*/
 import MotivationGallery from './components/MotivationGallery';
 import MagmaCoreSection from './components/MagmaCoreSection';
 import Roadmap from './components/Roadmap';
@@ -194,7 +194,7 @@ function App() {
 
 return (
   <div className="min-h-screen bg-brand-dark text-brand-text overflow-hidden selection:bg-brand-orange selection:text-white relative">
-    <MouseSpotlight />
+    {/* <MouseSpotlight /> */}
     <Navigation />
     <CookieBanner />
     <LegalModals isOpen={legalModalOpen} onClose={() => setLegalModalOpen(false)} type={legalModalType} />
