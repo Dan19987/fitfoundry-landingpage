@@ -65,7 +65,19 @@
         overflow-x: hidden;
         margin: 0;
         padding: 0;
+        
+        /* ⚡ Safari Scroll-Optimierung */
+        -webkit-overflow-scrolling: touch;
       }
+      
+      /* ⚡ Safari-spezifische Performance-Optimierung */
+      @supports (-webkit-appearance: none) {
+        * {
+          -webkit-transform: translateZ(0);
+          -webkit-backface-visibility: hidden;
+        }
+      }
+      
       #root {
         min-height: 100vh;
       }
@@ -145,7 +157,7 @@
       "screenshot": "https://fitfoundry.de/assets/images/app-preview.png",
       "author": {
         "@type": "Organization",
-        "name": "FitFoundry",
+        "name": "FitFoundry GmbH",
         "url": "https://fitfoundry.de"
       }
     }
